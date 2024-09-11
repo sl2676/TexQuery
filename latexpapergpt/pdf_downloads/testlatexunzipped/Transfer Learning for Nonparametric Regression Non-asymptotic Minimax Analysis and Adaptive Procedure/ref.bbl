@@ -1,0 +1,177 @@
+\begin{thebibliography}{}
+
+\bibitem[Apostolopoulos and Mpesiana, 2020]{apostolopoulos2020covid}
+Apostolopoulos, I.~D. and Mpesiana, T.~A. (2020).
+\newblock Covid-19: automatic detection from x-ray images utilizing transfer learning with convolutional neural networks.
+\newblock {\em Physical and Engineering Sciences in Medicine}, 43(2):635--640.
+
+\bibitem[Ben-David et~al., 2007]{ben2007analysis}
+Ben-David, S., Blitzer, J., Crammer, K., Pereira, F., et~al. (2007).
+\newblock Analysis of representations for domain adaptation.
+\newblock {\em Advances in Neural Information Processing Systems}, 19:137.
+
+\bibitem[Blitzer et~al., 2008]{blitzer2008learning}
+Blitzer, J., Crammer, K., Kulesza, A., Pereira, F., and Wortman, J. (2008).
+\newblock Learning bounds for domain adaptation.
+\newblock In {\em Proc. Conf. Empirical Methods in Natural Language}, pages 120--128.
+
+\bibitem[Breiman, 2001]{breiman2001random}
+Breiman, L. (2001).
+\newblock Random forests.
+\newblock {\em Machine learning}, 45(1):5--32.
+
+\bibitem[Cai and Pu, 2022]{CaiPu}
+Cai, T.~T. and Pu, H. (2022).
+\newblock Supplement to ``{T}ransfer learning for nonparametric regression: {N}on-asymptotic minimax rate and adaptive procedure".
+
+\bibitem[Cai and Wei, 2021]{cai2021transfer}
+Cai, T.~T. and Wei, H. (2021).
+\newblock Transfer learning for nonparametric classification: Minimax rate and adaptive classifier.
+\newblock {\em The Annals of Statistics}, 49(1):100--128.
+
+\bibitem[Cao et~al., 2010]{cao2010adaptive}
+Cao, B., Pan, S.~J., Zhang, Y., Yeung, D.-Y., and Yang, Q. (2010).
+\newblock Adaptive transfer learning.
+\newblock In {\em proceedings of the AAAI Conference on Artificial Intelligence}, volume~24, pages 407--412.
+
+\bibitem[Cleveland, 1979]{cleveland1979robust}
+Cleveland, W.~S. (1979).
+\newblock Robust locally weighted regression and smoothing scatterplots.
+\newblock {\em Journal of the American Statistical Association}, 74(368):829--836.
+
+\bibitem[Cleveland and Devlin, 1988]{cleveland1988locally}
+Cleveland, W.~S. and Devlin, S.~J. (1988).
+\newblock Locally weighted regression: an approach to regression analysis by local fitting.
+\newblock {\em Journal of the American Statistical Association}, 83(403):596--610.
+
+\bibitem[Cortez et~al., 2009]{cortez2009modeling}
+Cortez, P., Cerdeira, A., Almeida, F., Matos, T., and Reis, J. (2009).
+\newblock Modeling wine preferences by data mining from physicochemical properties.
+\newblock {\em Decision support systems}, 47(4):547--553.
+
+\bibitem[Daum{\'e}~III, 2009]{daume2009frustratingly}
+Daum{\'e}~III, H. (2009).
+\newblock Frustratingly easy domain adaptation.
+\newblock {\em arXiv preprint arXiv:0907.1815}.
+
+\bibitem[Fan, 1993]{fan1993local}
+Fan, J. (1993).
+\newblock Local linear regression smoothers and their minimax efficiencies.
+\newblock {\em The Annals of Statistics}, pages 196--216.
+
+\bibitem[Fan and Gijbels, 1992]{fan1992variable}
+Fan, J. and Gijbels, I. (1992).
+\newblock Variable bandwidth and local linear regression smoothers.
+\newblock {\em The Annals of Statistics}, 20:2008--2036.
+
+\bibitem[Gy{\"o}rfi et~al., 2002]{gyorfi2002distribution}
+Gy{\"o}rfi, L., Kohler, M., Krzy{\.z}ak, A., and Walk, H. (2002).
+\newblock {\em A distribution-free theory of nonparametric regression}, volume~1.
+\newblock Springer.
+
+\bibitem[Huang et~al., 2006]{huang2006correcting}
+Huang, J., Gretton, A., Borgwardt, K., Sch{\"o}lkopf, B., and Smola, A. (2006).
+\newblock Correcting sample selection bias by unlabeled data.
+\newblock {\em Advances in Neural Information Processing Systems}, 19:601--608.
+
+\bibitem[Li et~al., 2022a]{li2020transfer}
+Li, S., Cai, T.~T., and Li, H. (2022a).
+\newblock Transfer learning for high-dimensional linear regression: Prediction, estimation, and minimax optimality.
+\newblock {\em Journal of the Royal Statistical Society: Series B}, (to appear).
+
+\bibitem[Li et~al., 2022b]{Li2020Transfer-GMM}
+Li, S., Cai, T.~T., and Li, H. (2022b).
+\newblock Transfer learning in large-scale gaussian graphical models with false discovery rate control.
+\newblock {\em Journal of the American Statistical Association}, (to appear).
+
+\bibitem[Li et~al., 2021]{Li2021Transfer-GLM}
+Li, S., Zhang, L., Cai, T.~T., and Li, H. (2021).
+\newblock Estimation and inference for high-dimensional generalized linear models with knowledge transfer.
+\newblock {\em Technical Report}.
+
+\bibitem[Mansour et~al., 2009]{mansour2009domain}
+Mansour, Y., Mohri, M., and Rostamizadeh, A. (2009).
+\newblock Domain adaptation: Learning bounds and algorithms.
+\newblock {\em arXiv preprint arXiv:0902.3430}.
+
+\bibitem[Mei et~al., 2014]{mei2014inferring}
+Mei, S., Li, H., Fan, J., Zhu, X., and Dyer, C.~R. (2014).
+\newblock Inferring air pollution by sniffing social media.
+\newblock In {\em 2014 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining (ASONAM 2014)}, pages 534--539. IEEE.
+
+\bibitem[Nguyen-Tuong et~al., 2008a]{nguyen2008learning}
+Nguyen-Tuong, D., Peters, J., Seeger, M., and Sch{\"o}lkopf, B. (2008a).
+\newblock Learning inverse dynamics: a comparison.
+\newblock In {\em European Symposium on Artificial Neural Networks}, number CONF.
+
+\bibitem[Nguyen-Tuong et~al., 2008b]{nguyen2008computed}
+Nguyen-Tuong, D., Seeger, M., and Peters, J. (2008b).
+\newblock Computed torque control with nonparametric regression models.
+\newblock In {\em Proc. American Control Conference}, pages 212--217. IEEE.
+
+\bibitem[Reeve et~al., 2021]{reeve2021adaptive}
+Reeve, H. W.~J., Cannings, T.~I., and Samworth, R.~J. (2021).
+\newblock Adaptive transfer learning.
+\newblock {\em The Annals of Statistics}, 49(6):3618--3649.
+
+\bibitem[Shimodaira, 2000]{shimodaira2000improving}
+Shimodaira, H. (2000).
+\newblock Improving predictive inference under covariate shift by weighting the log-likelihood function.
+\newblock {\em Journal of Statistical Planning and Inference}, 90(2):227--244.
+
+\bibitem[Stone, 1977]{stone1977consistent}
+Stone, C.~J. (1977).
+\newblock Consistent nonparametric regression.
+\newblock {\em The Annals of Statistics}, 5:595--620.
+
+\bibitem[Sugiyama et~al., 2007]{sugiyama2007direct}
+Sugiyama, M., Nakajima, S., Kashima, H., Von~Buenau, P., and Kawanabe, M. (2007).
+\newblock Direct importance estimation with model selection and its application to covariate shift adaptation.
+\newblock In {\em NIPS}, volume~7, pages 1433--1440. Citeseer.
+
+\bibitem[Tsybakov, 1986]{tsybakov1986robust}
+Tsybakov, A.~B. (1986).
+\newblock Robust reconstruction of functions by the local-approximation method.
+\newblock {\em Problemy Peredachi Informatsii}, 22(2):69--84.
+
+\bibitem[Tzeng et~al., 2017]{tzeng2017adversarial}
+Tzeng, E., Hoffman, J., Saenko, K., and Darrell, T. (2017).
+\newblock Adversarial discriminative domain adaptation.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition}, pages 7167--7176.
+
+\bibitem[Vijayakumar et~al., 2002]{vijayakumar2002statistical}
+Vijayakumar, S., D'souza, A., Shibata, T., Conradt, J., and Schaal, S. (2002).
+\newblock Statistical learning for humanoid robots.
+\newblock {\em Autonomous Robots}, 12(1):55--69.
+
+\bibitem[Wang et~al., 2016]{wang2016nonparametric}
+Wang, X., Oliva, J.~B., Schneider, J.~G., and P{\'o}czos, B. (2016).
+\newblock Nonparametric risk and stability analysis for multi-task learning problems.
+\newblock In {\em IJCAI}, pages 2146--2152.
+
+\bibitem[Weiss et~al., 2016]{weiss2016survey}
+Weiss, K., Khoshgoftaar, T.~M., and Wang, D. (2016).
+\newblock A survey of transfer learning.
+\newblock {\em Journal of Big data}, 3(1):1--40.
+
+\bibitem[Wen et~al., 2014]{wen2014robust}
+Wen, J., Yu, C.-N., and Greiner, R. (2014).
+\newblock Robust learning under uncertain test distributions: Relating covariate shift to model misspecification.
+\newblock In {\em International Conference on Machine Learning}, pages 631--639. PMLR.
+
+\bibitem[Xiao et~al., 2003]{xiao2003more}
+Xiao, Z., Linton, O.~B., Carroll, R.~J., and Mammen, E. (2003).
+\newblock More efficient local polynomial estimation in nonparametric regression with autocorrelated errors.
+\newblock {\em Journal of the American Statistical Association}, 98(464):980--992.
+
+\bibitem[Yeung and Zhang, 2009]{yeung2009learning}
+Yeung, D.-Y. and Zhang, Y. (2009).
+\newblock Learning inverse dynamics by gaussian process begrression under the multi-task learning framework.
+\newblock In {\em The Path to Autonomous Robots}, pages 1--12. Springer.
+
+\bibitem[Zhuang et~al., 2020]{zhuang2020comprehensive}
+Zhuang, F., Qi, Z., Duan, K., Xi, D., Zhu, Y., Zhu, H., Xiong, H., and He, Q. (2020).
+\newblock A comprehensive survey on transfer learning.
+\newblock {\em Proceedings of the IEEE}, 109(1):43--76.
+
+\end{thebibliography}

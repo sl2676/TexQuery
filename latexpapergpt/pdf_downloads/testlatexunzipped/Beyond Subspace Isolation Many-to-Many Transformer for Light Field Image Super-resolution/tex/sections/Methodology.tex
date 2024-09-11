@@ -1,0 +1,66 @@
+\input{tex/figures/network.tex}
+
+\section{Methodology}
+\subsection{Problem Formulation} \label{section:Preliminary}
+In formal terms, the procedure of LFSR is to upsample the spatial resolution from a low-resolution (LR) LF image $I_{LR}$ to a super-resolved (SR) LF image $I_{SR}$, which serves as an approximation to the corresponding high-resolution (HR) LF image $I_{HR}$. It can be denoted as
+\begin{equation}\label{eq:obj}
+\begin{split}
+    I_{SR} = \mathcal{F}(I_{LR}), & \quad I_{LR}(u,v,x,y) \in \mathbb{R}^{U \times V \times W \times H \times C}, \\
+    & \quad I_{SR}(u,v,x,y) \in \mathbb{R}^{U \times V \times rW \times rH \times C}
+\end{split}
+\end{equation}
+where $(U, V)$ and $(W, H)$ stand for the LR image's angular and spatial resolutions respectively, $C$ denotes the channel dimension, $(u, v)$ indicates an angular location, $(x, y)$ indicates a spatial location, while $r$ represents the scale factor. 
+
+A LF image or tensor, as shown in Figure \ref{fig:Cubes}(a), can be reshaped into various forms to reveal distinctive subspaces. These encompass a spatial tensor $I_S$, revealing the spatial subspace $(W, H)$ depicted in Figure \ref{fig:Cubes}(b), an angular tensor $I_A$ in the angular subspace $(U, V)$ depicted in Figure \ref{fig:Cubes}(c), and EPI tensors $I_{EPI-i}$ which expose the EPI subspace consisting of a spatial and an angular dimension. Figure \ref{fig:Cubes}(d) illustrates $(U, W)$, a variant of EPI tensor.
+
+\subsection{Network Architecture}
+The architecture of our proposed M2MT-Net is depicted in Figure \ref{fig:M2MT}(a). It adopts a streamlined yet effective design, comprising three phases. The initial phase involves preliminary feature extraction, accomplished through $n_1$ spatial convolutions. The crux of our architecture, the second component, encompasses a sequence of $n_2$ correlation blocks. Each block incorporates two distinctive Transformers, namely a Many-to-Many Transformer (M2MT) and an angular Transformer, operating consecutively. A simplified visualization of a correlation block is given in Figure \ref{fig:M2MT}(d). The last phase is pixel generation, which upsamples the extracted features by expanding the channel dimensions by $r^2$ times with a $1 \times 1$ convolution, followed by a pixel shuffler to increase the spatial resolution from $U \times V \times W \times H \times (C \times r^2)$ to $U \times V \times rW \times rH \times C$, and lastly, a $3 \times 3$ convolution to squeeze the channels. Additionally, residual learning is enforced to allow the network to effectively capture residual information by learning from the differences between the HR and the bicubic-interpolated LR input. Also, within each correlation block, a residual skip connection is utilized to improve the information flow.
+
+\subsection{Many-to-Many Transformer}
+As the pivotal component, M2MT is proposed to mitigate the challenge posed by subspace isolation. Its objective is to holistically extract spatial-angular features with all spatial and angular cues from a LF image.
+
+A simplified illustration of M2MT is depicted in Figure \ref{fig:M2MT} (b), and a detailed one in Figure \ref{fig:Cubes} (e). Specifically, given a 4D LF tensor in a batch $I \in \mathbb{R}^{B \times U \times V \times W \times H \times C}$, it initiates by reshaping it into a spatial tensor $I_{\tilde{S}}$ in a special form. Diverging from the conventional approach of merging angular dimensions with the batch dimension as shown in Figure \ref{fig:Cubes}(b), which yields a spatial tensor $I_{S}$ of dimensions $(BUV \times WH \times C)$ with $WH$ as tokens and $C$ as embedding, we instead merge the angular dimensions with the channel dimensions, resulting in a shape of $(B \times WH \times UVC)$. This approach prepares the tensor for the following correlation encoding process, transforming it into a correlation tensor denoted as $I_{Cor}$ using a linear layer:
+
+\begin{equation}
+I_{Cor} = L_{encode}(I_{\tilde{S}}), \quad I_{Cor} \in \mathbb{R}^{B \times WH \times C_{Cor}}
+\end{equation}
+where $L_{encode}$ represents a linear layer with a projection matrix $W_{encode} \in \mathbb{R}^{UVC \times C_{Cor}}$. The resultant $I_{Cor}$ aggregates the angular correlations at each spatial location. This schema facilitates the succeeding Transformer to invoke the self-attention mechanism in the spatial subspace while concurrently tapping into correlation information from all SAIs. The self-attention mechanism is formally defined as
+\begin{equation}
+    \begin{aligned}
+        \label{eq:self-attention}
+        \hat{I}_{Cor} & = \text{Self-Attention}(Q, K, V) \\
+                     & = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right), \\
+               Q,K,V & = L_Q({I_{Cor}}),L_K({I_{Cor}}),L_V({I_{Cor}})
+    \end{aligned}
+\end{equation}
+
+In this context, $\hat{I}_{Cor}$ signifies the tensor enhanced by self-attention. $L_Q$, $L_K$, and $L_V$ are the linear layers for calculating queries, keys, and values respectively. Notably, we replace commonly used predefined positional encodings with two $3 \times 3$ spatial convolutions to capture locality as suggested by \cite{chuCPVT_arxiv2021}.
+
+As last, a linear layer is employed to decode $\hat{I}_{Cor}$ and recover the angular dimensions, resulting in the output feature tensor $\hat{I}$:
+\begin{equation}
+    \hat{I} = L_{decode}(\hat{I}_{Cor})
+\end{equation}
+
+In essence, M2MT fulfills the objectives of Equation \ref{eq:after}, where $I_{Cor}$ aggregates all SAI information at each spatial location:
+\begin{equation}
+    I_{Cor}(x, y) \simeq \{I(\bar{u}, \bar{v}, x, y)\}_{(\bar{u}, \bar{v}) \in \mathbb{R}^{U \times V}},
+\end{equation}
+and the self-attention mechanism models the long-range dependencies among the spatial locations:
+\begin{equation}
+    \hat{I}_{Cor}(x, y) \simeq \{I(u, v, \bar{x}, \bar{y})\}_{(\bar{x}, \bar{y}) \in \mathbb{R}^{W \times H}} \\
+\end{equation}
+
+Consequently, M2MT is enabled to access the entirety of LF data in a non-local context spatially and angularly with no information remain isolated within the batch dimension:
+\begin{equation}
+    \hat{I}(u, v, x, y) \simeq \{I(\bar{u}, \bar{v}, \bar{x}, \bar{y})\}_{(\bar{u}, \bar{v}, \bar{x}, \bar{y}) \in \mathbb{R}^{U \times V \times W \times H}}
+\end{equation}
+where the inference process for any given location $(u, v, x, y)$ is many-to-one. Since M2MT concurrently infers all pixels, the overall operation is inherently many-to-many.
+
+\input{tex/tables/OverallComparison}
+\input{tex/figures/qual.tex}
+\input{tex/figures/qual_matrix.tex}
+
+\subsection{Angular Transformer}
+With M2MT operating in the spatial subspace, an angular transformer is utilized to refine the correlations in the angular subspace. An illustration is depicted in Figure \ref{fig:M2MT}(c). This transformer is fundamentally vanilla as in \cite{liangLFT_SPL2022,wangDPT_AAAI2022}, aligning closely with Equation \ref{eq:self-attention}, but specifically operates on angular tensors $I_{A} \in \mathbb{R}^{BUV \times WH \times C}$ like Figure \ref{fig:Cubes}(c).
+
+Notably, although the M2MT and angular Transformer operate in distinct subspaces, their primary objective converges on the establishment of a comprehensive spatial-angular representation of LF images. In subsequent experiments, we will demonstrate the synergistic benefits of their collaboration, highlighting their complementary nature.

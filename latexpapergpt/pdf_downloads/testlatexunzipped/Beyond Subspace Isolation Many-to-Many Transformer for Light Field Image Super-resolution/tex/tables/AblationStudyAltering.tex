@@ -1,0 +1,19 @@
+\begin{table}[t!]
+    \centering
+    %\scriptsize
+    \caption{Ablation study on altering components in correlation blocks. The best PSNR/SSIM are in bold.}
+    \label{tab:ablation_altering}
+    \resizebox{.45\textwidth}{!}{
+    \begin{tabular}{|c|c|c|}
+    \hline
+
+    Spatial Component   &   Angular Component   & PSNR/SSIM \\ \hline
+    M2MT                &   Vanilla Transformer & \textbf{29.80}/\textbf{0.9277} \\
+    Vanilla Transformer &   Vanilla Transformer & 29.29/0.9213 \\
+    Convolution         &   Vanilla Transformer & 29.02/0.9199 \\
+    M2MT                &   Convolution         & 29.42/0.9208 \\
+    % Convolution         &   Convolution         & 28.77/0.9135 \\
+    \hline
+    \end{tabular}
+    }
+\end{table}

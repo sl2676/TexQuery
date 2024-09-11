@@ -1,0 +1,102 @@
+latexml (LaTeXML version 0.8.7) processing /Users/seanly/lsearch/test_suite/build/main2.tex
+(Digesting TeX main2...
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/TeX.pool.ltxml...
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/eTeX.pool.ltxml... 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/pdfTeX.pool.ltxml... 0.00 sec) 0.06 sec)
+(Processing content /Users/seanly/lsearch/test_suite/build/main2.tex...
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/LaTeX.pool.ltxml...
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/textcomp.sty.ltxml... 0.00 sec) 0.09 sec)
+Info:fallback:aastex631.cls Interpreted 631 as a versioned package/class name, falling back to generic aastex.cls
+	at main2.tex; line 2 col 0 - line 2 col 1
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/aastex.cls.ltxml...
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/article.cls.ltxml... 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/aas_support.sty.ltxml...
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/aas_macros.sty.ltxml... 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/url.sty.ltxml... 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/longtable.sty.ltxml... 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/xcolor.sty.ltxml...
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/color.sty.ltxml... 0.00 sec) 0.02 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/hyperref.sty.ltxml...
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/ltxcmds.sty.ltxml...
+Warning:missing_file:ltxcmds Can't find package ltxcmds
+	at ltxcmds.sty.ltxml; line 20
+	Anticipate undefined macros or environments
+	search paths are /Users/seanly/lsearch/test_suite/build
+	In Core::Gullet[@0x13534a718] /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/ltxcmds.sty.ltxml; line 20
+ 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/keyval.sty.ltxml...
+Warning:missing_file:keyval Can't find package keyval
+	at keyval.sty.ltxml; line 19
+	Anticipate undefined macros or environments
+	In Core::Gullet[@0x13534a718] /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/keyval.sty.ltxml; line 19
+ 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/kvsetkeys.sty.ltxml...
+Warning:missing_file:kvsetkeys Can't find package kvsetkeys
+	at kvsetkeys.sty.ltxml; line 20
+	Anticipate undefined macros or environments
+	In Core::Gullet[@0x13534a718] /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/kvsetkeys.sty.ltxml; line 20
+ 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/kvdefinekeys.sty.ltxml...
+Warning:missing_file:kvdefinekeys Can't find package kvdefinekeys
+	at kvdefinekeys.sty.ltxml; line 20
+	Anticipate undefined macros or environments
+	In Core::Gullet[@0x13534a718] /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/kvdefinekeys.sty.ltxml; line 20
+ 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/kvoptions.sty.ltxml...
+Warning:missing_file:kvoptions Can't find package kvoptions
+	at kvoptions.sty.ltxml; line 20
+	Anticipate undefined macros or environments
+	In Core::Gullet[@0x13534a718] /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/kvoptions.sty.ltxml; line 20
+ 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/nameref.sty.ltxml...
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/refcount.sty.ltxml...
+Warning:missing_file:refcount Can't find package refcount
+	at refcount.sty.ltxml; line 20
+	Anticipate undefined macros or environments
+	In Core::Gullet[@0x13534a718] /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/refcount.sty.ltxml; line 20
+ 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/gettitlestring.sty.ltxml...
+Warning:missing_file:gettitlestring Can't find package gettitlestring
+	at gettitlestring.sty.ltxml; line 20
+	Anticipate undefined macros or environments
+	In Core::Gullet[@0x13534a718] /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/gettitlestring.sty.ltxml; line 20
+ 0.00 sec) 0.01 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/bitset.sty.ltxml...
+Warning:missing_file:bitset Can't find package bitset
+	at bitset.sty.ltxml; line 20
+	Anticipate undefined macros or environments
+	In Core::Gullet[@0x13534a718] /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/bitset.sty.ltxml; line 20
+ 0.00 sec) 0.05 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/array.sty.ltxml... 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/lineno.sty.ltxml... 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/ulem.sty.ltxml... 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/natbib.sty.ltxml... 0.01 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/graphicx.sty.ltxml...
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/graphics.sty.ltxml... 0.00 sec) 0.01 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/deluxetable.sty.ltxml... 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/latexsym.sty.ltxml... 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/amssymb.sty.ltxml...
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/amsfonts.sty.ltxml... 0.00 sec) 0.01 sec) 0.14 sec) 0.15 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/upgreek.sty.ltxml... 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/wasysym.sty.ltxml... 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/blindtext.sty.ltxml...
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/babel.sty.ltxml...
+Warning:missing_file:babel Can't find package babel
+	at babel.sty.ltxml; line 26
+	Anticipate undefined macros or environments
+	In Core::Gullet[@0x13534a718] /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/babel.sty.ltxml; line 26
+ 0.00 sec)
+Warning:missing_file:blindtext Can't find package blindtext
+	at blindtext.sty.ltxml; line 23
+	Anticipate undefined macros or environments
+	In Core::Gullet[@0x13534a718] /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/blindtext.sty.ltxml; line 23
+ 0.00 sec) 0.75 sec) 0.81 sec)
+(Building...
+(Loading compiled schema /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/resources/RelaxNG/LaTeXML.model... 0.01 sec) 0.37 sec)
+(Rewriting... 0.00 sec)
+(Math Parsing 2 formulae ...... 0.00 sec)
+Math parsing succeeded:
+   ltx:XMath: 2/2
+   ltx:XMArg: 1/1
+(Finalizing... 0.01 sec)
+Conversion complete 10 warnings; 10 missing files[babel.sty, keyval.sty, ltxcmds.sty, kvoptions.sty, bitset.sty, refcount.sty, kvsetkeys.sty, blindtext.sty, kvdefinekeys.sty, gettitlestring.sty] (See /Users/seanly/lsearch/test_suite/build/main2.latexml.log) (reqd. 1.27s)

@@ -1,0 +1,43 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 746 225" width="746" height="225">
+	<title>New Project</title>
+	<defs>
+		<radialGradient id="g1" cx="372.7" cy="30" r="362.3" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#c3a8fc"/>
+			<stop offset=".188" stop-color="#ffc3ef"/>
+			<stop offset=".38" stop-color="#ffa9a9"/>
+			<stop offset=".619" stop-color="#fff1a8"/>
+			<stop offset=".801" stop-color="#acffb7"/>
+			<stop offset="1" stop-color="#8ceafd"/>
+		</radialGradient>
+		<linearGradient id="g2" x1="5" y1="141" x2="681" y2="141" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#c3a8fc"/>
+			<stop offset=".188" stop-color="#ffc3ef"/>
+			<stop offset=".38" stop-color="#ffa9a9"/>
+			<stop offset=".619" stop-color="#fff1a8"/>
+			<stop offset=".801" stop-color="#acffb7"/>
+			<stop offset="1" stop-color="#8ceafd"/>
+		</linearGradient>
+		<radialGradient id="g3" cx="343" cy="141" r="338.2" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#c3a8fc"/>
+			<stop offset=".188" stop-color="#ffc3ef"/>
+			<stop offset=".38" stop-color="#ffa9a9"/>
+			<stop offset=".619" stop-color="#fff1a8"/>
+			<stop offset=".801" stop-color="#acffb7"/>
+			<stop offset="1" stop-color="#8ceafd"/>
+		</radialGradient>
+		<linearGradient id="g4" x1="741" y1="112.5" x2="689" y2="112.5" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#ffa9a9"/>
+			<stop offset=".12" stop-color="#fff1a8"/>
+			<stop offset=".428" stop-color="#acffb7"/>
+			<stop offset="1" stop-color="#8ceafd"/>
+		</linearGradient>
+	</defs>
+	<style>
+		.s0 { fill: #ffffff;stroke: url(#g1);stroke-miterlimit:100;stroke-width: 8 } 
+		.s1 { fill: url(#g2);stroke: url(#g3);stroke-miterlimit:100;stroke-width: 8 } 
+		.s2 { fill: #ffffff;stroke: url(#g4);stroke-miterlimit:100;stroke-width: 8 } 
+	</style>
+	<path id="Shape 1 copy" class="s0" d="m62.9 5h672.1l-52.4 50h-672.1z"/>
+	<path id="Shape 1" class="s1" d="m5 62h676v158h-676z"/>
+	<path id="Shape 1 copy 2" class="s2" d="m689 58.3l51.9-48.3 0.1 156.7-51.9 48.3z"/>
+</svg>

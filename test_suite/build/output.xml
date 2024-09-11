@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?latexml searchpaths="/Users/seanly/lsearch/test_suite/build"?>
+<?latexml class="aastex631" options="twocolumn"?>
+<?latexml package="upgreek"?>
+<?latexml package="textcomp"?>
+<?latexml package="wasysym"?>
+<?latexml package="blindtext"?>
+<?latexml package="lineno"?>
+<!--  %“linenumbers --><?latexml graphicspath="/Users/seanly/lsearch/test_suite/build"?>
+<?latexml graphicspath="/Users/seanly/lsearch/test_suite/build/figures"?>
+<?latexml RelaxNGSchema="LaTeXML"?>
+<document xmlns="http://dlmf.nist.gov/LaTeXML" class="ltx_authors_multiline">
+  <resource src="LaTeXML.css" type="text/css"/>
+  <resource src="ltx-article.css" type="text/css"/>
+  <resource src="ltx-ulem.css" type="text/css"/>
+  <title>WRAP: A Tool for Efficient Cross-Identification of Proper Motion Objects Spanning Multiple Surveys </title>
+  <toctitle>Wide-field Retrieval of Astrodata Program</toctitle>
+  <creator role="author">
+    <personname><ref class="orcid" href="https://orcid.org/0000-0002-5253-0383">Hunter Brooks</ref></personname>
+    <picture height="9.61" tex="\@@personname[0000-0002-5253-0383]{Hunter Brooks}" width="213.67" xml:id="pic1">
+      <text>)</text>
+    </picture>
+    <contact role="affiliation">Department of Astronomy and Planetary Science, Northern Arizona University, Flagstaff, AZ 86011, USA</contact>
+    <contact role="affiliation">IPAC, Mail Code 100-22, Caltech, 1200 E. California Blvd., Pasadena, CA 91125, USA</contact>
+  </creator>
+  <creator role="author">
+    <personname><ref class="orcid" href="https://orcid.org/0000-0003-4269-260X">J. Davy Kirkpatrick</ref></personname>
+    <picture height="12.3" tex="\@@personname[0000-0003-4269-260X]{J.\ Davy Kirkpatrick}" width="251.83" xml:id="pic2">
+      <text>)</text>
+    </picture>
+    <contact role="affiliation">IPAC, Mail Code 100-22, Caltech, 1200 E. California Blvd., Pasadena, CA 91125, USA</contact>
+  </creator>
+  <creator role="author">
+    <personname><ref class="orcid" href="https://orcid.org/0000-0001-7896-5791">Dan Caselden</ref></personname>
+    <picture height="9.61" tex="\@@personname[0000-0001-7896-5791]{Dan Caselden}" width="208.21" xml:id="pic3">
+      <text>)</text>
+    </picture>
+    <contact role="affiliation">Department of Astrophysics, American Museum of Natural History, Central Park West at 79th Street, New York, NY 10024, USA</contact>
+    <contact role="affiliation">Backyard Worlds: Planet 9</contact>
+  </creator>
+  <creator role="author">
+    <personname><ref class="orcid" href="https://orcid.org/0000-0002-6294-5937">Adam C. Schneider</ref></personname>
+    <picture height="9.61" tex="\@@personname[0000-0002-6294-5937]{Adam C. Schneider}" width="242.19" xml:id="pic4">
+      <text>)</text>
+    </picture>
+    <contact role="affiliation">United States Naval Observatory, Flagstaff Station, 10391 West Naval Observatory Rd., Flagstaff, AZ 86005, USA</contact>
+  </creator>
+  <creator role="author">
+    <personname><ref class="orcid" href="https://orcid.org/0000-0002-1125-7384">Aaron M. Meisner</ref></personname>
+    <picture height="9.46" tex="\@@personname[0000-0002-1125-7384]{Aaron M. Meisner}" width="235" xml:id="pic5">
+      <text>)</text>
+    </picture>
+    <contact role="affiliation">NSF’s National Optical-Infrared Astronomy Research
+Laboratory, 950 N. Cherry Ave., Tucson, AZ 85719, USA</contact>
+  </creator>
+  <creator role="author">
+    <personname><ref class="orcid" href="https://orcid.org/0000-0001-9778-7054">Yadukrishna Raghu</ref></personname>
+    <picture height="12.3" tex="\@@personname[0000-0001-9778-7054]{Yadukrishna Raghu}" width="243.99" xml:id="pic6">
+      <text>)</text>
+    </picture>
+    <contact role="affiliation">Backyard Worlds: Planet 9</contact>
+  </creator>
+  <creator role="author">
+    <personname><ref class="orcid" href="https://orcid.org/0009-0009-1388-1541">Farid Cedeno</ref></personname>
+    <picture height="9.61" tex="\@@personname[0009-0009-1388-1541]{Farid Cedeno}" width="205.48" xml:id="pic7">
+      <text>)</text>
+    </picture>
+    <contact role="affiliation">Backyard Worlds: Planet 9</contact>
+  </creator>
+  <creator role="author">
+    <personname><ref class="orcid" href="https://orcid.org/0000-0001-6251-0573">Jacqueline K. Faherty</ref></personname>
+    <picture height="12.3" tex="\@@personname[0000-0001-6251-0573]{Jacqueline K. Faherty}" width="257.56" xml:id="pic8">
+      <text>)</text>
+    </picture>
+    <contact role="affiliation">Department of Astrophysics, American Museum of Natural History, Central Park West at 79th Street, New York, NY 10024, USA</contact>
+  </creator>
+  <creator role="author">
+    <personname><ref class="orcid" href="https://orcid.org/0000-0001-7519-1700">Federico Marocco</ref></personname>
+    <picture height="9.61" tex="\@@personname[0000-0001-7519-1700]{Federico Marocco}" width="230.89" xml:id="pic9">
+      <text>)</text>
+    </picture>
+    <contact role="affiliation">IPAC, Mail Code 100-22, Caltech, 1200 E. California Blvd., Pasadena, CA 91125, USA</contact>
+  </creator>
+  <creator role="author">
+    <personname><ref class="orcid" href="https://orcid.org/0000-0002-2387-5489">Marc J. Kuchner</ref></personname>
+    <picture height="9.61" tex="\@@personname[0000-0002-2387-5489]{Marc J. Kuchner}" width="227.04" xml:id="pic10">
+      <text>)</text>
+    </picture>
+    <contact role="affiliation">NASA Goddard Space Flight Center, Exoplanets and Stellar Astrophysics Laboratory, Code 667, Greenbelt, MD 20771, USA</contact>
+  </creator>
+  <creator role="author">
+    <personname><ref class="orcid" href="https://orcid.org/0000-0003-2478-0120">S.L.Casewell</ref></personname>
+    <picture height="9.61" tex="\@@personname[0000-0003-2478-0120]{S.L.Casewell}" width="200.52" xml:id="pic11">
+      <text>)</text>
+    </picture>
+    <contact role="affiliation">School of Physics and Astronomy, University of Leicester, University Road, Leicester, LE1 7RH, UK</contact>
+  </creator>
+  <creator role="author">
+    <personname>The Backyard Worlds: Planet 9 Collaboration</personname>
+    <picture height="12.3" tex="\@@personname{The Backyard Worlds: Planet 9 Collaboration}" width="278.85" xml:id="pic12">
+      <text>)</text>
+    </picture>
+  </creator>
+  <abstract name="Abstract">
+    <p>We introduce the Wide-field Retrieval of Astrodata Program (WRAP), a tool created to aid astronomers in gathering photometric and astrometric data for point sources that may confuse simple cross-matching algorithms because of their faintness or motion. WRAP allows astronomers to correctly cross-identify objects with proper motion across multiple surveys by wedding the catalog data with its underlying images, thus providing visual confirmation of cross-associations in real time. Developed within the Backyard Worlds: Planet 9 citizen science project, WRAP aims to aid in the characterization of faint, high motion sources by this collaboration (and others).</p>
+  </abstract>
+  <keywords>Direct Imaging, Catalogs</keywords>
+  <note class="ltx_note_frontmatter" role="software">WiseView (<cite class="ltx_citemacro_citet"><bibref bibrefs="Caseldenetal.2018" separator=";" show="Authors Phrase1YearPhrase2" yyseparator=",">
+        <bibrefphrase/>
+        <bibrefphrase/>
+      </bibref></cite>)</note>
+  <note class="ltx_note_frontmatter" role="facilities">NEOWISE, Gaia, ESO:VISTA, UKIRT, CTIO:2MASS, FLWO:2MASS, PS2, Astro Data Lab, IRSA, CDS, MAST</note>
+<!--  %**** main2.tex Line 25 **** 
+     %**** main2.tex Line 50 **** -->  <section inlist="toc" labels="LABEL:intro" xml:id="S1">
+    <tags>
+      <tag>1</tag>
+      <tag role="autoref">section 1</tag>
+      <tag role="refnum">1</tag>
+      <tag role="typerefnum">§1</tag>
+    </tags>
+    <title><tag close=" ">1</tag>Introduction</title>
+    <para xml:id="S1.p1">
+      <p>Gathering catalog photometry and astrometry is generally straight-forward, although the process becomes notably challenging when dealing with faint or high proper motion objects. There are multiple ways to gather this information, like Aladin (<cite class="ltx_citemacro_citet"><bibref bibrefs="Bonnareletal.(2000)" separator=";" show="Authors Phrase1YearPhrase2" yyseparator=",">
+            <bibrefphrase/>
+            <bibrefphrase/>
+          </bibref></cite>), CDS Cross-Match Service (<cite class="ltx_citemacro_citet"><bibref bibrefs="Bochetal.(2012)" separator=";" show="Authors Phrase1YearPhrase2" yyseparator=",">
+            <bibrefphrase/>
+            <bibrefphrase/>
+          </bibref></cite>), etc. We built upon previous techniques to develop the Wide-field Retrieval of Astrodata Program (WRAP) to improve the process. Other techniques have several drawbacks, such as complex GUI interfaces, a need for understanding multiple programming languages, or a lack of visual verification. WRAP is designed to address these challenges. We start by examining previous techniques and programs in §<ref labelref="LABEL:prev_tech"/>. Following that, we leverage the advantages of these prior methods to develop WRAP in §<ref labelref="LABEL:WRAP"/>.</p>
+    </para>
+  </section>
+  <section inlist="toc" labels="LABEL:prev_tech" xml:id="S2">
+    <tags>
+      <tag>2</tag>
+      <tag role="autoref">section 2</tag>
+      <tag role="refnum">2</tag>
+      <tag role="typerefnum">§2</tag>
+    </tags>
+    <title><tag close=" ">2</tag>Previous Techniques</title>
+    <figure inlist="lof" labels="LABEL:Figure_1" placement="ht" xml:id="S2.F1">
+      <tags>
+        <tag>Figure 1</tag>
+        <tag role="autoref">Figure 1</tag>
+        <tag role="refnum">1</tag>
+        <tag role="typerefnum">Figure 1</tag>
+      </tags>
+<!--  %**** main2.tex Line 75 **** -->      <graphics class="ltx_centering" graphic="Figure1.pdf" options="scale=0.35" xml:id="S2.F1.g1"/>
+      <toccaption class="ltx_centering"><tag close=" ">1</tag>A flowchart illustrating the WRAP procedure. Here we utilize 2MASSI J1721039+334415 (<cite class="ltx_citemacro_citet"><bibref bibrefs="BardalezGagliuffietal.(2014)" separator=";" show="Authors Phrase1YearPhrase2" yyseparator=",">
+            <bibrefphrase/>
+            <bibrefphrase/>
+          </bibref></cite>). It is highlighted in red for CatWISE, WFCAM, and PanSTARRS. The process begins by opening WRAP in a terminal window. Then, the user inputs the coordinates, sets the search radius, and chooses the catalogs for their search. WRAP executes API queries, interacting with the chosen catalog APIs to retrieve relevant data. If the designated region is found through the API, WRAP displays an image of the area with catalog detections overlaid. Users interact by clicking on the image, prompting WRAP to identify the nearest object and writing pertinent information from the catalog into an output file. </toccaption>
+      <caption class="ltx_centering"><tag close=": ">Figure 1</tag>A flowchart illustrating the WRAP procedure. Here we utilize 2MASSI J1721039+334415 (<cite class="ltx_citemacro_citet"><bibref bibrefs="BardalezGagliuffietal.(2014)" separator=";" show="Authors Phrase1YearPhrase2" yyseparator=",">
+            <bibrefphrase/>
+            <bibrefphrase/>
+          </bibref></cite>). It is highlighted in red for CatWISE, WFCAM, and PanSTARRS. The process begins by opening WRAP in a terminal window. Then, the user inputs the coordinates, sets the search radius, and chooses the catalogs for their search. WRAP executes API queries, interacting with the chosen catalog APIs to retrieve relevant data. If the designated region is found through the API, WRAP displays an image of the area with catalog detections overlaid. Users interact by clicking on the image, prompting WRAP to identify the nearest object and writing pertinent information from the catalog into an output file. </caption>
+    </figure>
+    <para xml:id="S2.p1">
+      <p>Numerous additional tools have been developed to facilitate the gathering of astrophysical data. However, discussing every software in detail here would be too enormous a task for a research note. Instead, we have highlighted some of the most popular techniques and software currently available to provide context for understanding the improvements WRAP provides.</p>
+    </para>
+    <para xml:id="S2.p2">
+      <p>The most prevalent approach for collecting photometric and astrometric data involves conducting cross-matches based on Right Ascension (R.A.) and Declination (Decl.). One such program is the CDS X-Match Service (<cite class="ltx_citemacro_citet"><bibref bibrefs="Bochetal.(2012)" separator=";" show="Authors Phrase1YearPhrase2" yyseparator=",">
+            <bibrefphrase/>
+            <bibrefphrase/>
+          </bibref></cite>; <cite class="ltx_citemacro_citet"><bibref bibrefs="Pineauetal.(2020)" separator=";" show="Authors Phrase1YearPhrase2" yyseparator=",">
+            <bibrefphrase/>
+            <bibrefphrase/>
+          </bibref></cite>) allowing users to search various catalogs using an input coordinate table. However, a drawback is the absence of visual confirmation for matched data. This makes it susceptible to errors from incorrect cross-matches if the object in question has large proper motion. In contrast, other services offer visual confirmation, enhancing the accuracy of gathering astrophysical data.</p>
+    </para>
+    <para xml:id="S2.p3">
+      <p>The Aladin catalog search feature (<cite class="ltx_citemacro_citet"><bibref bibrefs="Bonnareletal.(2000)" separator=";" show="Authors Phrase1YearPhrase2" yyseparator=",">
+            <bibrefphrase/>
+            <bibrefphrase/>
+          </bibref></cite>) shares similarities with WRAP in terms of functionality. It enables users to load images and superimpose them onto the corresponding source catalog. However, this method can be hampered by slow performance, primarily when dealing with substantial amounts of data simultaneously. Moreover, this approach is primarily designed for single object searches, limiting its applicability for more extensive cross-identification tasks.</p>
+    </para>
+    <para xml:id="S2.p4">
+      <p>Additional software includes the IRSA Viewer (<ref class="ltx_url" font="typewriter" href="https://irsa.ipac.caltech.edu/irsaviewer">https://irsa.ipac.caltech.edu/irsaviewer</ref>), VizieR Photometry Viewer (<cite class="ltx_citemacro_citet"><bibref bibrefs="Ochsenbeinetal.(2000)" separator=";" show="Authors Phrase1YearPhrase2" yyseparator=",">
+            <bibrefphrase/>
+            <bibrefphrase/>
+          </bibref></cite>), and AstroToolBox (also developed by the Backyward Worlds: Planet 9 collaboration; <cite class="ltx_citemacro_citet"><bibref bibrefs="Kiwy(2022)" separator=";" show="Authors Phrase1YearPhrase2" yyseparator=",">
+            <bibrefphrase/>
+            <bibrefphrase/>
+          </bibref></cite>). However, these tools have certain drawbacks, briefly described here. The IRSA Viewer, for instance, lacks catalogs beyond those supported at IPAC, limiting the available data. The VizieR Photometry Viewer is comparable to the CDS X-Match Service in that it lacks readily available imaging for visual confirmation. Lastly, AstroToolBox offers both visual confirmation and cross-matching, but these features are located in separate tabs.</p>
+    </para>
+  </section>
+  <section inlist="toc" labels="LABEL:WRAP" xml:id="S3">
+    <tags>
+      <tag>3</tag>
+      <tag role="autoref">section 3</tag>
+      <tag role="refnum">3</tag>
+      <tag role="typerefnum">§3</tag>
+    </tags>
+    <title><tag close=" ">3</tag>WRAP Overview</title>
+    <para xml:id="S3.p1">
+      <p>To address these complications, we developed WRAP. Developed in Python 3.8 (the recommended version for using WRAP), WRAP is an open-source application designed to have minimal dependencies and low computational expenses, ensuring it remains freely accessible. After installation, the user inputs single or multi-object files (in CSV, FITS, ASCII, or IPAC table formats): R.A. (deg), Decl. (deg), search radius (arcsec), then selects the desired catalogs. The catalogs included are: CatWISE2020 Point Source Catalog (<cite class="ltx_citemacro_citet"><bibref bibrefs="Maroccoetal.(2021)" separator=";" show="Authors Phrase1YearPhrase2" yyseparator=",">
+            <bibrefphrase/>
+            <bibrefphrase/>
+          </bibref></cite>), AllWISE Source Catalog (WISE; <cite class="ltx_citemacro_citet"><bibref bibrefs="Cutrietal.(2021)" separator=";" show="Authors Phrase1YearPhrase2" yyseparator=",">
+            <bibrefphrase/>
+            <bibrefphrase/>
+          </bibref></cite>), Gaia Data Release 3 (Gaia; <cite class="ltx_citemacro_citet"><bibref bibrefs="GaiaCollaborationetal.(2021)" separator=";" show="Authors Phrase1YearPhrase2" yyseparator=",">
+            <bibrefphrase/>
+            <bibrefphrase/>
+          </bibref></cite>), VISTA Science Archive catalogs (VSA; <cite class="ltx_citemacro_citet"><bibref bibrefs="Irwinetal.(2004)" separator=";" show="Authors Phrase1YearPhrase2" yyseparator=",">
+            <bibrefphrase/>
+            <bibrefphrase/>
+          </bibref></cite>), WFCAM Science Archive catalogs (WFCAM; <cite class="ltx_citemacro_citet"><bibref bibrefs="Hamblyetal.(2008)" separator=";" show="Authors Phrase1YearPhrase2" yyseparator=",">
+            <bibrefphrase/>
+            <bibrefphrase/>
+          </bibref></cite>), 2MASS Point Source Catalog (2MASS; <cite class="ltx_citemacro_citet"><bibref bibrefs="Cutrietal.(2003)" separator=";" show="Authors Phrase1YearPhrase2" yyseparator=",">
+            <bibrefphrase/>
+            <bibrefphrase/>
+          </bibref></cite> and <cite class="ltx_citemacro_citet"><bibref bibrefs="Skrutskieetal.(2006)" separator=";" show="Authors Phrase1YearPhrase2" yyseparator=",">
+            <bibrefphrase/>
+            <bibrefphrase/>
+          </bibref></cite>), PanSTARRS Data Release 2 (PanSTARRS; <cite class="ltx_citemacro_citet"><bibref bibrefs="Chambersetal.(2016)" separator=";" show="Authors Phrase1YearPhrase2" yyseparator=",">
+            <bibrefphrase/>
+            <bibrefphrase/>
+          </bibref></cite>), NOIRLab Source Catalog Data Release 2 (NSC; <cite class="ltx_citemacro_citet"><bibref bibrefs="Nideveretal.(2021)" separator=";" show="Authors Phrase1YearPhrase2" yyseparator=",">
+            <bibrefphrase/>
+            <bibrefphrase/>
+          </bibref></cite>), and the GALEX Catalog (GALEX; <cite class="ltx_citemacro_citet"><bibref bibrefs="Martinetal.(2005)" separator=";" show="Authors Phrase1YearPhrase2" yyseparator=",">
+            <bibrefphrase/>
+            <bibrefphrase/>
+          </bibref></cite>).</p>
+    </para>
+    <para xml:id="S3.p2">
+      <p>Once inputs are selected, a WISEView (<cite class="ltx_citemacro_citet"><bibref bibrefs="Caseldenetal.2018" separator=";" show="Authors Phrase1YearPhrase2" yyseparator=",">
+            <bibrefphrase/>
+            <bibrefphrase/>
+          </bibref></cite>) window will display WISE coadd images to aid the user in finding their object. WRAP begins by running through each catalog, showing the images with overlaid sources. Each catalog overlay comes with customizable image features, such as image stretch, photometric band selection, and circle size. Furthermore, users may add notes to any selected catalog. After the user clicks on their chosen object, WRAP identifies the nearest object through a proximity check within the field, and the results are then saved to a .csv table (no images are saved in WRAP).</p>
+    </para>
+    <para xml:id="S3.p3">
+      <p>In Figure <ref labelref="LABEL:Figure_1"/>, the flowchart demonstrates the intuitive functionality of WRAP, emphasizing its user-friendly interface. The catalog overlay feature of WRAP is essential for confirmation of high motion objects, such as the illustrated object with its high proper motion of <Math mode="inline" tex="\sim" text="similar-to" xml:id="S3.p3.m1">
+          <XMath>
+            <XMTok meaning="similar-to" name="sim" role="RELOP">∼</XMTok>
+          </XMath>
+        </Math>1.95 arcsec yr<Math mode="inline" tex="{}^{-1}" text="^- 1" xml:id="S3.p3.m2">
+          <XMath>
+            <XMApp role="FLOATSUPERSCRIPT" scriptpos="1">
+              <XMApp>
+                <XMTok fontsize="70%" meaning="minus" role="ADDOP">-</XMTok>
+                <XMTok fontsize="70%" meaning="1" role="NUMBER">1</XMTok>
+              </XMApp>
+            </XMApp>
+          </XMath>
+        </Math> (<cite class="ltx_citemacro_citet"><bibref bibrefs="BardalezGagliuffietal.(2014)" separator=";" show="Authors Phrase1YearPhrase2" yyseparator=",">
+            <bibrefphrase/>
+            <bibrefphrase/>
+          </bibref></cite>), that would be difficult to cross-identify through a simple positional cross-match.</p>
+    </para>
+  </section>
+  <section inlist="toc" labels="LABEL:conclusion" xml:id="S4">
+    <tags>
+      <tag>4</tag>
+      <tag role="autoref">section 4</tag>
+      <tag role="refnum">4</tag>
+      <tag role="typerefnum">§4</tag>
+    </tags>
+    <title><tag close=" ">4</tag>Conclusion</title>
+    <para xml:id="S4.p1">
+      <p>WRAP was developed to serve as a tool for astronomers seeking photometric and astrometric data for faint and high proper motion objects. It incorporates the most effective features from previous methods, resulting in a user-friendly and streamlined process. This is achieved by offering visual verification, consolidating popular catalogs in one location, and requiring no coding experience. WRAP is accessible from GitHub at the following link: <ref class="ltx_url" font="typewriter" href="https://github.com/huntbrooks85/WRAP">https://github.com/huntbrooks85/WRAP</ref>. The DOI for WRAP is: <ref class="ltx_url" font="typewriter" href="https://doi.org/10.5281/zenodo.10359982">https://doi.org/10.5281/zenodo.10359982</ref>. Please refer to the ReadMe file on the GitHub page for detailed installation and usage instructions.</p>
+    </para>
+  </section>
+  <section inlist="toc" xml:id="S5">
+    <tags>
+      <tag>5</tag>
+      <tag role="autoref">section 5</tag>
+      <tag role="refnum">5</tag>
+      <tag role="typerefnum">§5</tag>
+    </tags>
+    <title><tag close=" ">5</tag>Acknowledgements</title>
+<!--  %**** main2.tex Line 100 **** -->    <para xml:id="S5.p1">
+      <p>This Backyard Worlds research was supported by NASA grant 2017-ADAP17-0067. All PanSTARRS data used in this paper can be found in MAST: <text class="ltx_ast_dataset">http://dx.doi.org/10.17909/s0zg-jx37 (catalog 10.17909/s0zg-jx37)</text></p>
+    </para>
+    <pagination role="newpage"/>
+  </section>
+  <bibliography xml:id="bib">
+    <title>References</title>
+    <biblist>
+      <bibitem key="BardalezGagliuffietal.(2014)" xml:id="bib.bib1">
+        <tags>
+          <tag role="number">1</tag>
+          <tag role="year">2014</tag>
+          <tag role="authors">Bardalez Gagliuffi et al.</tag>
+          <tag role="refnum">Bardalez Gagliuffi et al. (2014)</tag>
+          <tag role="key">Bardalez Gagliuffi et al.(2014)</tag>
+        </tags>
+        <bibblock> Bardalez Gagliuffi, D. C., Burgasser, A. J., Gelino, C. R., et al. 2014, ApJ, 794, 143. doi:10.1088/0004-637X/794/2/143
+</bibblock>
+      </bibitem>
+      <bibitem key="Bochetal.(2012)" xml:id="bib.bib2">
+        <tags>
+          <tag role="number">2</tag>
+          <tag role="year">2012</tag>
+          <tag role="authors">Boch et al.</tag>
+          <tag role="refnum">Boch et al. (2012)</tag>
+          <tag role="key">Boch et al.(2012)</tag>
+        </tags>
+        <bibblock> Boch, T., Pineau, F., &amp; Derriere, S. 2012, Astronomical Data Analysis Software and Systems XXI, 461, 291
+</bibblock>
+      </bibitem>
+      <bibitem key="Bonnareletal.(2000)" xml:id="bib.bib3">
+        <tags>
+          <tag role="number">3</tag>
+          <tag role="year">2000</tag>
+          <tag role="authors">Bonnarel et al.</tag>
+          <tag role="refnum">Bonnarel et al. (2000)</tag>
+          <tag role="key">Bonnarel et al.(2000)</tag>
+        </tags>
+        <bibblock> Bonnarel, F., Fernique, P., Bienaymé, O., et al. 2000, A&amp;AS, 143, 33. doi:10.1051/aas:2000331
+</bibblock>
+      </bibitem>
+      <bibitem key="GaiaCollaborationetal.(2021)" xml:id="bib.bib4">
+        <tags>
+          <tag role="number">4</tag>
+          <tag role="year">2021</tag>
+          <tag role="authors">Gaia Collaboration et al.</tag>
+          <tag role="refnum">Gaia Collaboration et al. (2021)</tag>
+          <tag role="key">Gaia Collaboration et al.(2021)</tag>
+        </tags>
+        <bibblock> Gaia Collaboration, Brown, A. G. A., Vallenari, A., et al. 2021, A&amp;A, 649, A1. doi:10.1051/0004-6361/202039657
+</bibblock>
+      </bibitem>
+      <bibitem key="Caseldenetal.2018" xml:id="bib.bib5">
+        <tags>
+          <tag role="number">5</tag>
+          <tag role="year">2018</tag>
+          <tag role="authors">Caselden et al.</tag>
+          <tag role="refnum">Caselden et al. (2018)</tag>
+          <tag role="key">Caselden et al. 2018</tag>
+        </tags>
+        <bibblock> Caselden, D., Westin, P., Meisner, A., et al. 2018, Astrophysics Source Code Library. ascl:1806.004
+</bibblock>
+      </bibitem>
+      <bibitem key="Chambersetal.(2016)" xml:id="bib.bib6">
+        <tags>
+          <tag role="number">6</tag>
+          <tag role="year">2016</tag>
+          <tag role="authors">Chambers et al.</tag>
+          <tag role="refnum">Chambers et al. (2016)</tag>
+          <tag role="key">Chambers et al.(2016)</tag>
+        </tags>
+        <bibblock> Chambers, K. C., Magnier, E. A., Metcalfe, N., et al. 2016, arXiv:1612.05560. doi:10.48550/arXiv.1612.05560
+</bibblock>
+      </bibitem>
+      <bibitem key="Cutrietal.(2003)" xml:id="bib.bib7">
+        <tags>
+          <tag role="number">7</tag>
+          <tag role="year">2003</tag>
+          <tag role="authors">Cutri et al.</tag>
+          <tag role="refnum">Cutri et al. (2003)</tag>
+          <tag role="key">Cutri et al.(2003)</tag>
+        </tags>
+        <bibblock> Cutri, R. M., Skrutskie, M. F., van Dyk, S., et al. 2003, “The IRSA 2MASS All-Sky Point Source Catalog, NASA/IPAC Infrared Science Archive.
+</bibblock>
+      </bibitem>
+      <bibitem key="Cutrietal.(2021)" xml:id="bib.bib8">
+        <tags>
+          <tag role="number">8</tag>
+          <tag role="year">2021</tag>
+          <tag role="authors">Cutri et al.</tag>
+          <tag role="refnum">Cutri et al. (2021)</tag>
+          <tag role="key">Cutri et al.(2021)</tag>
+        </tags>
+        <bibblock> Cutri, R. M., Wright, E. L., Conrow, T., et al. 2021, VizieR Online Data Catalog, II/328
+<!--  %**** main2.tex Line 125 **** --></bibblock>
+      </bibitem>
+      <bibitem key="Dyeetal.(2018)" xml:id="bib.bib9">
+        <tags>
+          <tag role="number">9</tag>
+          <tag role="year">2018</tag>
+          <tag role="authors">Dye et al.</tag>
+          <tag role="refnum">Dye et al. (2018)</tag>
+          <tag role="key">Dye et al.(2018)</tag>
+        </tags>
+        <bibblock> Dye, S., Lawrence, A., Read, M. A., et al. 2018, MNRAS, 473, 5113. doi:10.1093/mnras/stx2622
+</bibblock>
+      </bibitem>
+      <bibitem key="Emersonetal.(2004a)" xml:id="bib.bib10">
+        <tags>
+          <tag role="number">10</tag>
+          <tag role="year">2004a</tag>
+          <tag role="authors">Emerson et al.</tag>
+          <tag role="refnum">Emerson et al. (2004a)</tag>
+          <tag role="key">Emerson et al.(2004a)</tag>
+        </tags>
+        <bibblock> Emerson, J. P., Sutherland, W. J., McPherson, A. M., et al. 2004, The Messenger, 117, 27
+</bibblock>
+      </bibitem>
+      <bibitem key="Emersonetal.(2004b)" xml:id="bib.bib11">
+        <tags>
+          <tag role="number">11</tag>
+          <tag role="year">2004b</tag>
+          <tag role="authors">Emerson et al.</tag>
+          <tag role="refnum">Emerson et al. (2004b)</tag>
+          <tag role="key">Emerson et al.(2004b)</tag>
+        </tags>
+        <bibblock> Emerson, J. P., Irwin, M. J., Lewis, J., et al. 2004, Proc. SPIE, 5493, 401. doi:10.1117/12.551582
+</bibblock>
+      </bibitem>
+      <bibitem key="Hamblyetal.(2008)" xml:id="bib.bib12">
+        <tags>
+          <tag role="number">12</tag>
+          <tag role="year">2008</tag>
+          <tag role="authors">Hambly et al.</tag>
+          <tag role="refnum">Hambly et al. (2008)</tag>
+          <tag role="key">Hambly et al.(2008)</tag>
+        </tags>
+        <bibblock> Hambly, N. C., Collins, R. S., Cross, N. J. G., et al. 2008, MNRAS, 384, 637. doi:10.1111/j.1365-2966.2007.12700.x
+</bibblock>
+      </bibitem>
+      <bibitem key="Irwinetal.(2004)" xml:id="bib.bib13">
+        <tags>
+          <tag role="number">13</tag>
+          <tag role="year">2004</tag>
+          <tag role="authors">Irwin et al.</tag>
+          <tag role="refnum">Irwin et al. (2004)</tag>
+          <tag role="key">Irwin et al.(2004)</tag>
+        </tags>
+        <bibblock> Irwin, M. J., Lewis, J., Hodgkin, S., et al. 2004, Proc. SPIE, 5493, 411. doi:10.1117/12.551449
+</bibblock>
+      </bibitem>
+      <bibitem key="Kiwy(2022)" xml:id="bib.bib14">
+        <tags>
+          <tag role="number">14</tag>
+          <tag role="year">2022</tag>
+          <tag role="authors">Kiwy</tag>
+          <tag role="refnum">Kiwy (2022)</tag>
+          <tag role="key">Kiwy(2022)</tag>
+        </tags>
+        <bibblock> Kiwy, F. 2022, Astrophysics Source Code Library. ascl:2201.002
+</bibblock>
+      </bibitem>
+      <bibitem key="Lawrenceetal.(2007)" xml:id="bib.bib15">
+        <tags>
+          <tag role="number">15</tag>
+          <tag role="year">2007</tag>
+          <tag role="authors">Lawrence et al.</tag>
+          <tag role="refnum">Lawrence et al. (2007)</tag>
+          <tag role="key">Lawrence et al.(2007)</tag>
+        </tags>
+        <bibblock> Lawrence, A., Warren, S. J., Almaini, O., et al. 2007, MNRAS, 379, 1599. doi:10.1111/j.1365-2966.2007.12040.x
+</bibblock>
+      </bibitem>
+      <bibitem key="Maroccoetal.(2021)" xml:id="bib.bib16">
+        <tags>
+          <tag role="number">16</tag>
+          <tag role="year">2021</tag>
+          <tag role="authors">Marocco et al.</tag>
+          <tag role="refnum">Marocco et al. (2021)</tag>
+          <tag role="key">Marocco et al.(2021)</tag>
+        </tags>
+        <bibblock> Marocco, F., Eisenhardt, P. R. M., Fowler, J. W., et al. 2021, ApJS, 253, 8. doi:10.3847/1538-4365/abd805
+</bibblock>
+      </bibitem>
+      <bibitem key="Martinetal.(2005)" xml:id="bib.bib17">
+        <tags>
+          <tag role="number">17</tag>
+          <tag role="year">2005</tag>
+          <tag role="authors">Martin et al.</tag>
+          <tag role="refnum">Martin et al. (2005)</tag>
+          <tag role="key">Martin et al.(2005)</tag>
+        </tags>
+        <bibblock> Martin, D. C., Fanson, J., Schiminovich, D., et al. 2005, ApJ, 619, L1. doi:10.1086/426387
+</bibblock>
+      </bibitem>
+      <bibitem key="Nideveretal.(2021)" xml:id="bib.bib18">
+        <tags>
+          <tag role="number">18</tag>
+          <tag role="year">2021</tag>
+          <tag role="authors">Nidever et al.</tag>
+          <tag role="refnum">Nidever et al. (2021)</tag>
+          <tag role="key">Nidever et al.(2021)</tag>
+        </tags>
+        <bibblock> Nidever, D. L., Dey, A., Fasbender, K., et al. 2021, AJ, 161, 192. doi:10.3847/1538-3881/abd6e1
+</bibblock>
+      </bibitem>
+      <bibitem key="Ochsenbeinetal.(2000)" xml:id="bib.bib19">
+        <tags>
+          <tag role="number">19</tag>
+          <tag role="year">2000</tag>
+          <tag role="authors">Ochsenbein et al.</tag>
+          <tag role="refnum">Ochsenbein et al. (2000)</tag>
+          <tag role="key">Ochsenbein et al.(2000)</tag>
+        </tags>
+        <bibblock> Ochsenbein, F., Bauer, P., &amp; Marcout, J. 2000, A&amp;AS, 143, 23. doi:10.1051/aas:2000169
+</bibblock>
+      </bibitem>
+      <bibitem key="Pineauetal.(2020)" xml:id="bib.bib20">
+        <tags>
+          <tag role="number">20</tag>
+          <tag role="year">2020</tag>
+          <tag role="authors">Pineau et al.</tag>
+          <tag role="refnum">Pineau et al. (2020)</tag>
+          <tag role="key">Pineau et al.(2020)</tag>
+        </tags>
+        <bibblock> Pineau, F.-X., Boch, T., Derrière, S., et al. 2020, Astronomical Data Analysis Software and Systems XXVII, 522, 125
+<!--  %**** main2.tex Line 150 **** --></bibblock>
+      </bibitem>
+      <bibitem key="Skrutskieetal.(2006)" xml:id="bib.bib21">
+        <tags>
+          <tag role="number">21</tag>
+          <tag role="year">2006</tag>
+          <tag role="authors">Skrutskie et al.</tag>
+          <tag role="refnum">Skrutskie et al. (2006)</tag>
+          <tag role="key">Skrutskie et al.(2006)</tag>
+        </tags>
+        <bibblock> Skrutskie, M. F., Cutri, R. M., Stiening, R., et al. 2006, AJ, 131, 1163. doi:10.1086/498708
+</bibblock>
+      </bibitem>
+    </biblist>
+  </bibliography>
+</document>

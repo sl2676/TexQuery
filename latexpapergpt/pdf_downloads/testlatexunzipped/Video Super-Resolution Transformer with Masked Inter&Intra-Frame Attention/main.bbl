@@ -1,0 +1,213 @@
+\begin{thebibliography}{41}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Caballero et~al.(2017)Caballero, Ledig, Aitken, Acosta, Totz, Wang, and Shi]{caballero2017real}
+Jose Caballero, Christian Ledig, Andrew Aitken, Alejandro Acosta, Johannes Totz, Zehan Wang, and Wenzhe Shi.
+\newblock Real-time video super-resolution with spatio-temporal networks and motion compensation.
+\newblock In \emph{Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, pages 4778--4787, 2017.
+
+\bibitem[Cao et~al.(2021)Cao, Li, Zhang, Liang, and Van~Gool]{cao2021video}
+Jiezhang Cao, Yawei Li, Kai Zhang, Jingyun Liang, and Luc Van~Gool.
+\newblock Video super-resolution transformer.
+\newblock \emph{arXiv preprint arXiv:2106.06847}, 2021.
+
+\bibitem[Chan et~al.(2020)Chan, Wang, Yu, Dong, and Loy]{chan2020basicvsr}
+Kelvin~CK Chan, Xintao Wang, Ke Yu, Chao Dong, and Chen~Change Loy.
+\newblock Basicvsr: The search for essential components in video super-resolution and beyond.
+\newblock \emph{arXiv preprint arXiv:2012.02181}, 2020.
+
+\bibitem[Chan et~al.(2021)Chan, Wang, Yu, Dong, and Loy]{chan2021basicvsr}
+Kelvin~CK Chan, Xintao Wang, Ke Yu, Chao Dong, and Chen~Change Loy.
+\newblock Basicvsr: The search for essential components in video super-resolution and beyond.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 4947--4956, 2021.
+
+\bibitem[Chan et~al.(2022)Chan, Zhou, Xu, and Loy]{chan2022basicvsr++}
+Kelvin~CK Chan, Shangchen Zhou, Xiangyu Xu, and Chen~Change Loy.
+\newblock Basicvsr++: Improving video super-resolution with enhanced propagation and alignment.
+\newblock In \emph{Proceedings of the IEEE/CVF conference on computer vision and pattern recognition}, pages 5972--5981, 2022.
+
+\bibitem[Charbonnier et~al.(1994)Charbonnier, Blanc-Feraud, Aubert, and Barlaud]{charbonnier1994two}
+Pierre Charbonnier, Laure Blanc-Feraud, Gilles Aubert, and Michel Barlaud.
+\newblock Two deterministic half-quadratic regularization algorithms for computed imaging.
+\newblock In \emph{Proceedings of 1st international conference on image processing}, pages 168--172. IEEE, 1994.
+
+\bibitem[Dai et~al.(2017)Dai, Qi, Xiong, Li, Zhang, Hu, and Wei]{dai2017deformable}
+Jifeng Dai, Haozhi Qi, Yuwen Xiong, Yi Li, Guodong Zhang, Han Hu, and Yichen Wei.
+\newblock Deformable convolutional networks.
+\newblock In \emph{Proceedings of the IEEE international conference on computer vision (ICCV)}, pages 764--773, 2017.
+
+\bibitem[Fuoli et~al.(2019)Fuoli, Gu, and Timofte]{fuoli2019efficient}
+Dario Fuoli, Shuhang Gu, and Radu Timofte.
+\newblock Efficient video super-resolution through recurrent latent space propagation.
+\newblock In \emph{2019 IEEE/CVF International Conference on Computer Vision Workshop (ICCVW)}, pages 3476--3485. IEEE, 2019.
+
+\bibitem[Habibian et~al.(2021)Habibian, Abati, Cohen, and Bejnordi]{habibian2021skip}
+Amirhossein Habibian, Davide Abati, Taco~S Cohen, and Babak~Ehteshami Bejnordi.
+\newblock Skip-convolutions for efficient video processing.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 2695--2704, 2021.
+
+\bibitem[Habibian et~al.(2022)Habibian, Ben~Yahia, Abati, Gavves, and Porikli]{habibian2022delta}
+Amirhossein Habibian, Haitam Ben~Yahia, Davide Abati, Efstratios Gavves, and Fatih Porikli.
+\newblock Delta distillation for efficient video processing.
+\newblock In \emph{Computer Vision--ECCV 2022: 17th European Conference, Tel Aviv, Israel, October 23--27, 2022, Proceedings, Part XXXV}, pages 213--229. Springer, 2022.
+
+\bibitem[Hu et~al.(2020)Hu, Caba, Wang, Lin, Sclaroff, and Perazzi]{hu2020temporally}
+Ping Hu, Fabian Caba, Oliver Wang, Zhe Lin, Stan Sclaroff, and Federico Perazzi.
+\newblock Temporally distributed networks for fast video semantic segmentation.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 8818--8827, 2020.
+
+\bibitem[Isobe et~al.(2020{\natexlab{a}})Isobe, Jia, Gu, Li, Wang, and Tian]{isobe2020video}
+Takashi Isobe, Xu Jia, Shuhang Gu, Songjiang Li, Shengjin Wang, and Qi Tian.
+\newblock Video super-resolution with recurrent structure-detail network.
+\newblock \emph{arXiv preprint arXiv:2008.00455}, 2020{\natexlab{a}}.
+
+\bibitem[Isobe et~al.(2020{\natexlab{b}})Isobe, Li, Jia, Yuan, Slabaugh, Xu, Li, Wang, and Tian]{Isobe_2020_CVPR}
+Takashi Isobe, Songjiang Li, Xu Jia, Shanxin Yuan, Gregory Slabaugh, Chunjing Xu, Ya-Li Li, Shengjin Wang, and Qi Tian.
+\newblock Video super-resolution with temporal group attention.
+\newblock In \emph{IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, 2020{\natexlab{b}}.
+
+\bibitem[Isobe et~al.(2022)Isobe, Jia, Tao, Li, Li, Shi, Mu, Lu, and Tai]{isobe2022look}
+Takashi Isobe, Xu Jia, Xin Tao, Changlin Li, Ruihuang Li, Yongjie Shi, Jing Mu, Huchuan Lu, and Yu-Wing Tai.
+\newblock Look back and forth: Video super-resolution with explicit temporal difference modeling.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 17411--17420, 2022.
+
+\bibitem[Jain et~al.(2019)Jain, Wang, and Gonzalez]{jain2019accel}
+Samvit Jain, Xin Wang, and Joseph~E Gonzalez.
+\newblock Accel: A corrective fusion network for efficient semantic segmentation on video.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 8866--8875, 2019.
+
+\bibitem[Jang et~al.(2016)Jang, Gu, and Poole]{jang2016categorical}
+Eric Jang, Shixiang Gu, and Ben Poole.
+\newblock Categorical reparameterization with gumbel-softmax.
+\newblock \emph{arXiv preprint arXiv:1611.01144}, 2016.
+
+\bibitem[Jo et~al.(2018)Jo, Wug~Oh, Kang, and Joo~Kim]{jo2018deep}
+Younghyun Jo, Seoung Wug~Oh, Jaeyeon Kang, and Seon Joo~Kim.
+\newblock Deep video super-resolution network using dynamic upsampling filters without explicit motion compensation.
+\newblock In \emph{Proceedings of the IEEE conference on computer vision and pattern recognition (CVPR)}, pages 3224--3232, 2018.
+
+\bibitem[Li et~al.(2020)Li, Tao, Guo, Qi, Lu, and Jia]{li2020mucan}
+Wenbo Li, Xin Tao, Taian Guo, Lu Qi, Jiangbo Lu, and Jiaya Jia.
+\newblock Mucan: Multi-correspondence aggregation network for video super-resolution.
+\newblock \emph{arXiv preprint arXiv:2007.11803}, 2020.
+
+\bibitem[Li et~al.(2018)Li, Shi, and Lin]{li2018low}
+Yule Li, Jianping Shi, and Dahua Lin.
+\newblock Low-latency video semantic segmentation.
+\newblock In \emph{Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition}, pages 5997--6005, 2018.
+
+\bibitem[Liang et~al.(2022{\natexlab{a}})Liang, Cao, Fan, Zhang, Ranjan, Li, Timofte, and Van~Gool]{liang2022vrt}
+Jingyun Liang, Jiezhang Cao, Yuchen Fan, Kai Zhang, Rakesh Ranjan, Yawei Li, Radu Timofte, and Luc Van~Gool.
+\newblock Vrt: A video restoration transformer.
+\newblock \emph{arXiv preprint arXiv:2201.12288}, 2022{\natexlab{a}}.
+
+\bibitem[Liang et~al.(2022{\natexlab{b}})Liang, Fan, Xiang, Ranjan, Ilg, Green, Cao, Zhang, Timofte, and Gool]{liang2022recurrent}
+Jingyun Liang, Yuchen Fan, Xiaoyu Xiang, Rakesh Ranjan, Eddy Ilg, Simon Green, Jiezhang Cao, Kai Zhang, Radu Timofte, and Luc~V Gool.
+\newblock Recurrent video restoration transformer with guided deformable attention.
+\newblock \emph{Advances in Neural Information Processing Systems}, 35:\penalty0 378--393, 2022{\natexlab{b}}.
+
+\bibitem[Lin et~al.(2023)Lin, Wang, Qi, and Shan]{lin2023accelerating}
+Lijian Lin, Xintao Wang, Zhongang Qi, and Ying Shan.
+\newblock Accelerating the training of video super-resolution models.
+\newblock In \emph{Proceedings of the AAAI Conference on Artificial Intelligence}, pages 1595--1603, 2023.
+
+\bibitem[Liu and Sun(2013)]{liu2013bayesian}
+Ce Liu and Deqing Sun.
+\newblock On bayesian adaptive video super resolution.
+\newblock \emph{IEEE transactions on pattern analysis and machine intelligence}, 36\penalty0 (2):\penalty0 346--360, 2013.
+
+\bibitem[Liu et~al.(2022)Liu, Yang, Fu, and Qian]{liu2022learning}
+Chengxu Liu, Huan Yang, Jianlong Fu, and Xueming Qian.
+\newblock Learning trajectory-aware transformer for video super-resolution.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 5687--5696, 2022.
+
+\bibitem[Liu et~al.(2017)Liu, Wang, Fan, Liu, Wang, Chang, and Huang]{liu2017robust}
+Ding Liu, Zhaowen Wang, Yuchen Fan, Xianming Liu, Zhangyang Wang, Shiyu Chang, and Thomas Huang.
+\newblock Robust video super-resolution with learned temporal dynamics.
+\newblock In \emph{Proceedings of the IEEE International Conference on Computer Vision (ICCV)}, pages 2507--2515, 2017.
+
+\bibitem[Liu et~al.(2021)Liu, Lin, Cao, Hu, Wei, Zhang, Lin, and Guo]{liu2021swin}
+Ze Liu, Yutong Lin, Yue Cao, Han Hu, Yixuan Wei, Zheng Zhang, Stephen Lin, and Baining Guo.
+\newblock Swin transformer: Hierarchical vision transformer using shifted windows.
+\newblock In \emph{Proceedings of the IEEE/CVF international conference on computer vision}, pages 10012--10022, 2021.
+
+\bibitem[Nah et~al.(2019)Nah, Baik, Hong, Moon, Son, Timofte, and Mu~Lee]{nah2019ntire}
+Seungjun Nah, Sungyong Baik, Seokil Hong, Gyeongsik Moon, Sanghyun Son, Radu Timofte, and Kyoung Mu~Lee.
+\newblock Ntire 2019 challenge on video deblurring and super-resolution: Dataset and study.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops}, pages 0--0, 2019.
+
+\bibitem[Nie et~al.(2019)Nie, Li, Luo, Zhang, and Feng]{nie2019dynamic}
+Xuecheng Nie, Yuncheng Li, Linjie Luo, Ning Zhang, and Jiashi Feng.
+\newblock Dynamic kernel distillation for efficient pose estimation in videos.
+\newblock In \emph{Proceedings of the IEEE/CVF International Conference on Computer Vision}, pages 6942--6950, 2019.
+
+\bibitem[Qiu et~al.(2022)Qiu, Yang, Fu, and Fu]{qiu2022learning}
+Zhongwei Qiu, Huan Yang, Jianlong Fu, and Dongmei Fu.
+\newblock Learning spatiotemporal frequency-transformer for compressed video super-resolution.
+\newblock In \emph{European Conference on Computer Vision}, pages 257--273. Springer, 2022.
+
+\bibitem[Sajjadi et~al.(2018)Sajjadi, Vemulapalli, and Brown]{sajjadi2018frame}
+Mehdi~SM Sajjadi, Raviteja Vemulapalli, and Matthew Brown.
+\newblock Frame-recurrent video super-resolution.
+\newblock In \emph{Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, pages 6626--6634, 2018.
+
+\bibitem[Shi et~al.(2022)Shi, Gu, Xie, Wang, Yang, and Dong]{shi2022rethinking}
+Shuwei Shi, Jinjin Gu, Liangbin Xie, Xintao Wang, Yujiu Yang, and Chao Dong.
+\newblock Rethinking alignment in video super-resolution transformers.
+\newblock \emph{arXiv preprint arXiv:2207.08494}, 2022.
+
+\bibitem[Shi et~al.(2016)Shi, Caballero, Husz{\'a}r, Totz, Aitken, Bishop, Rueckert, and Wang]{shi2016real}
+Wenzhe Shi, Jose Caballero, Ferenc Husz{\'a}r, Johannes Totz, Andrew~P Aitken, Rob Bishop, Daniel Rueckert, and Zehan Wang.
+\newblock Real-time single image and video super-resolution using an efficient sub-pixel convolutional neural network.
+\newblock In \emph{Proceedings of the IEEE conference on computer vision and pattern recognition}, pages 1874--1883, 2016.
+
+\bibitem[Tao et~al.(2017)Tao, Gao, Liao, Wang, and Jia]{tao2017detail}
+Xin Tao, Hongyun Gao, Renjie Liao, Jue Wang, and Jiaya Jia.
+\newblock Detail-revealing deep video super-resolution.
+\newblock In \emph{Proceedings of the IEEE International Conference on Computer Vision (ICCV)}, pages 4472--4480, 2017.
+
+\bibitem[Tian et~al.(2020)Tian, Zhang, Fu, and Xu]{tian2020tdan}
+Yapeng Tian, Yulun Zhang, Yun Fu, and Chenliang Xu.
+\newblock Tdan: Temporally-deformable alignment network for video super-resolution.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, pages 3360--3369, 2020.
+
+\bibitem[Wang et~al.(2019)Wang, Chan, Yu, Dong, and Change~Loy]{wang2019edvr}
+Xintao Wang, Kelvin~CK Chan, Ke Yu, Chao Dong, and Chen Change~Loy.
+\newblock Edvr: Video restoration with enhanced deformable convolutional networks.
+\newblock In \emph{Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)}, pages 0--0, 2019.
+
+\bibitem[Xia et~al.(2022)Xia, He, Zhang, Hang, Yang, and Van~Gool]{xia2022residual}
+Bin Xia, Jingwen He, Yulun Zhang, Yucheng Hang, Wenming Yang, and Luc Van~Gool.
+\newblock Residual sparsity connection learning for efficient video super-resolution.
+\newblock \emph{arXiv preprint arXiv:2206.07687}, 2022.
+
+\bibitem[Xiao et~al.(2021)Xiao, Fu, Huang, Cheng, and Xiong]{xiao2021space}
+Zeyu Xiao, Xueyang Fu, Jie Huang, Zhen Cheng, and Zhiwei Xiong.
+\newblock Space-time distillation for video super-resolution.
+\newblock In \emph{Proceedings of the IEEE/CVF conference on computer vision and pattern recognition}, pages 2113--2122, 2021.
+
+\bibitem[Xu et~al.(2023)Xu, Yu, Wang, Mi, and Yao]{xu2023implicit}
+Kai Xu, Ziwei Yu, Xin Wang, Michael~Bi Mi, and Angela Yao.
+\newblock An implicit alignment for video super-resolution.
+\newblock \emph{arXiv preprint arXiv:2305.00163}, 2023.
+
+\bibitem[Xue et~al.(2019)Xue, Chen, Wu, Wei, and Freeman]{xue2019video}
+Tianfan Xue, Baian Chen, Jiajun Wu, Donglai Wei, and William~T Freeman.
+\newblock Video enhancement with task-oriented flow.
+\newblock \emph{International Journal of Computer Vision}, 127\penalty0 (8):\penalty0 1106--1125, 2019.
+
+\bibitem[Zhu et~al.(2017)Zhu, Xiong, Dai, Yuan, and Wei]{zhu2017deep}
+Xizhou Zhu, Yuwen Xiong, Jifeng Dai, Lu Yuan, and Yichen Wei.
+\newblock Deep feature flow for video recognition.
+\newblock In \emph{Proceedings of the IEEE conference on computer vision and pattern recognition}, pages 2349--2358, 2017.
+
+\bibitem[Zhu et~al.(2018)Zhu, Dai, Yuan, and Wei]{zhu2018towards}
+Xizhou Zhu, Jifeng Dai, Lu Yuan, and Yichen Wei.
+\newblock Towards high performance video object detection.
+\newblock In \emph{Proceedings of the IEEE conference on computer vision and pattern recognition}, pages 7210--7218, 2018.
+
+\end{thebibliography}

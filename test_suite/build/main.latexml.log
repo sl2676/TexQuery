@@ -1,0 +1,267 @@
+latexml (LaTeXML version 0.8.7) processing main.tex
+(Digesting TeX main...
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/TeX.pool.ltxml...
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/eTeX.pool.ltxml... 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/pdfTeX.pool.ltxml... 0.00 sec) 0.05 sec)
+(Processing content /Users/seanly/lsearch/test_suite/build/main.tex...
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/LaTeX.pool.ltxml...
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/textcomp.sty.ltxml... 0.00 sec) 0.07 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/article.cls.ltxml... 0.00 sec)
+Warning:missing_file:cvpr Can't find binding for package cvpr
+	at main.tex; line 9 col 0 - line 9 col 1
+	Anticipate undefined macros or environments
+	search paths are /Users/seanly/lsearch/test_suite/build
+	In Core::Definition::Constructor[\usepac... /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/LaTeX.pool.ltxml; line 863
+Error:missing_file:preamble Can't find TeX file preamble
+	at main.tex; line 11 col 0 - line 11 col 16
+	Next token is T_SPACE[U+000a/LF] ( == T_SPACE[U+000a/LF])
+	In Core::Definition::Primitive[\ltx@inpu... /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/LaTeX.pool.ltxml; line 4259
+	 <= Core::Stomach[@0x14da17d78] <= ...
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/enumitem.sty.ltxml... 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/bm.sty.ltxml... 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/url.sty.ltxml... 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/comment.sty.ltxml... 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/graphicx.sty.ltxml...
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/graphics.sty.ltxml... 0.00 sec) 0.02 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/colortbl.sty.ltxml...
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/color.sty.ltxml... 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/array.sty.ltxml... 0.00 sec) 0.01 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/amsmath.sty.ltxml...
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/amsbsy.sty.ltxml...
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/amsgen.sty.ltxml... 0.00 sec) 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/amstext.sty.ltxml... 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/amsopn.sty.ltxml... 0.00 sec) 0.02 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/multirow.sty.ltxml... 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/adjustbox.sty.ltxml...
+Warning:missing_file:adjustbox Can't find package adjustbox
+	at adjustbox.sty.ltxml; line 18
+	Anticipate undefined macros or environments
+	In Core::Gullet[@0x12dfaa8a0] /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/adjustbox.sty.ltxml; line 18
+ 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/threeparttable.sty.ltxml... 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/epsfig.sty.ltxml... 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/wrapfig.sty.ltxml... 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/marvosym.sty.ltxml... 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/ifsym.sty.ltxml...
+Warning:missing_file:ifsym Can't find package ifsym
+	at ifsym.sty.ltxml; line 18
+	Anticipate undefined macros or environments
+	In Core::Gullet[@0x12dfaa8a0] /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/ifsym.sty.ltxml; line 18
+ 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/hyperref.sty.ltxml...
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/ltxcmds.sty.ltxml...
+Warning:missing_file:ltxcmds Can't find package ltxcmds
+	at ltxcmds.sty.ltxml; line 20
+	Anticipate undefined macros or environments
+	In Core::Gullet[@0x12dfaa8a0] /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/ltxcmds.sty.ltxml; line 20
+ 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/keyval.sty.ltxml...
+Warning:missing_file:keyval Can't find package keyval
+	at keyval.sty.ltxml; line 19
+	Anticipate undefined macros or environments
+	In Core::Gullet[@0x12dfaa8a0] /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/keyval.sty.ltxml; line 19
+ 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/kvsetkeys.sty.ltxml...
+Warning:missing_file:kvsetkeys Can't find package kvsetkeys
+	at kvsetkeys.sty.ltxml; line 20
+	Anticipate undefined macros or environments
+	In Core::Gullet[@0x12dfaa8a0] /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/kvsetkeys.sty.ltxml; line 20
+ 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/kvdefinekeys.sty.ltxml...
+Warning:missing_file:kvdefinekeys Can't find package kvdefinekeys
+	at kvdefinekeys.sty.ltxml; line 20
+	Anticipate undefined macros or environments
+	In Core::Gullet[@0x12dfaa8a0] /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/kvdefinekeys.sty.ltxml; line 20
+ 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/kvoptions.sty.ltxml...
+Warning:missing_file:kvoptions Can't find package kvoptions
+	at kvoptions.sty.ltxml; line 20
+	Anticipate undefined macros or environments
+	In Core::Gullet[@0x12dfaa8a0] /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/kvoptions.sty.ltxml; line 20
+ 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/nameref.sty.ltxml...
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/refcount.sty.ltxml...
+Warning:missing_file:refcount Can't find package refcount
+	at refcount.sty.ltxml; line 20
+	Anticipate undefined macros or environments
+	In Core::Gullet[@0x12dfaa8a0] /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/refcount.sty.ltxml; line 20
+ 0.00 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/gettitlestring.sty.ltxml...
+Warning:missing_file:gettitlestring Can't find package gettitlestring
+	at gettitlestring.sty.ltxml; line 20
+	Anticipate undefined macros or environments
+	In Core::Gullet[@0x12dfaa8a0] /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/gettitlestring.sty.ltxml; line 20
+ 0.00 sec) 0.01 sec)
+(Loading /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/bitset.sty.ltxml...
+Warning:missing_file:bitset Can't find package bitset
+	at bitset.sty.ltxml; line 20
+	Anticipate undefined macros or environments
+	In Core::Gullet[@0x12dfaa8a0] /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/bitset.sty.ltxml; line 20
+ 0.00 sec) 0.04 sec)
+Error:undefined:\etal The token T_CS[\etal] is not defined.
+	at main.tex; line 108 col 39 - line 108 col 39
+	Defining it now as <ltx:ERROR/>
+	Next token is T_CS[\cite] ( == Core::Definition::Expandable[\cite []Semiverbatim])
+	In Core::Gullet[@0x12dfaa8a0] /Users/seanly/lsearch/test_suite/build/main.tex; from line 108 col 44 to line 108 col 44
+	 <= Core::Stomach[@0x14da17d78] <= ...
+Error:undefined:\mathbb The token T_CS[\mathbb] is not defined.
+	at main.tex; line 221 col 75 - line 221 col 75
+	Defining it now as <ltx:ERROR/>
+	Next token is T_BEGIN[{] ( == T_BEGIN[{])
+	In Core::Gullet[@0x12dfaa8a0] /Users/seanly/lsearch/test_suite/build/main.tex; from line 221 col 76 to line 221 col 76
+	 <= Core::Stomach[@0x14da17d78] <= Core::Definition::Constructor[\@@BEGI... <= Core::Stomach[@0x14da17d78] <= ...
+Error:undefined:{adjustbox} The environment {adjustbox} is not defined.
+	at main.tex; line 447 col 21 - line 447 col 21
+	Next token is T_BEGIN[{] ( == T_BEGIN[{])
+	In Core::Definition::Expandable[\begin {}] /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/LaTeX.pool.ltxml; line 181
+	 <= Core::Gullet[@0x12dfaa8a0] <= Core::Stomach[@0x14da17d78] <= Core::Definition::Constructor[\begin{... <= ...
+Error:undefined:\toprule The token T_CS[\toprule] is not defined.
+	at main.tex; line 466 col 0 - line 466 col 16
+	Defining it now as <ltx:ERROR/>
+	Next token is T_CS[\multirow] ( == Core::Definition::Primitive[\multirow []{Number}[Number]{}[Dimension]{}]) more: {2}{*}{Model} &\multirow{2}{*}{ $\lambda$}&Params& \multicolumn{3}{c}{REDS4} \\
+&&(M)& PSNR & SSIM &FLOPs(G) \\
+\midruleMFSAB-VSR & - & 6.41 & 31.03 & 0.8965 & 871.59 \\
+IIAB-VSR & - & 6.34 & 31.12 & 0.8979 & 518.92 \\
+\midrule\midruleIIAB-VSR + HM & - & 6.34& 29.83 & 0.8390 & 420.53 \\
+MIA-VSR & 1e-4& 6.35&31.11& 0.8978& 506.28\\
+MIA-VSR & 3e-4& 6.35&31.07&0.8972 &469.78 \\
+MIA-VSR & 5e-4& 6.35& 31.01 & 0.8966 & 442.32 \\
+MIA-VSR & 1e-3& 6.35& 30.76& 0.8773 & 426.84 \\
+\bottomrule\end{tabular}
+	In Core::Gullet[@0x12dfaa8a0] /Users/seanly/lsearch/test_suite/build/main.tex; from line 466 col 0 to line 466 col 16
+	 <= Core::Definition::Constructor[\@start... <= Core::Stomach[@0x14da17d78] <= Core::Definition::Constructor[\@@tabu... <= ...
+Error:undefined:\midrule The token T_CS[\midrule] is not defined.
+	at main.tex; line 466 col 0 - line 466 col 16
+	Defining it now as <ltx:ERROR/>
+	Next token is T_LETTER[M] ( == T_LETTER[M]) more: FSAB-VSR & - & 6.41 & 31.03 & 0.8965 & 871.59 \\
+IIAB-VSR & - & 6.34 & 31.12 & 0.8979 & 518.92 \\
+\midrule\midruleIIAB-VSR + HM & - & 6.34& 29.83 & 0.8390 & 420.53 \\
+MIA-VSR & 1e-4& 6.35&31.11& 0.8978& 506.28\\
+MIA-VSR & 3e-4& 6.35&31.07&0.8972 &469.78 \\
+MIA-VSR & 5e-4& 6.35& 31.01 & 0.8966 & 442.32 \\
+MIA-VSR & 1e-3& 6.35& 30.76& 0.8773 & 426.84 \\
+\bottomrule\end{tabular}
+	In Core::Gullet[@0x12dfaa8a0] /Users/seanly/lsearch/test_suite/build/main.tex; from line 466 col 0 to line 466 col 16
+	 <= Core::Definition::Constructor[\@start... <= Core::Stomach[@0x14da17d78] <= Core::Definition::Constructor[\@@tabu... <= ...
+Error:undefined:\bottomrule The token T_CS[\bottomrule] is not defined.
+	at main.tex; line 466 col 0 - line 466 col 16
+	Defining it now as <ltx:ERROR/>
+	Next token is T_CS[\end] ( == Core::Definition::Expandable[\end {}]) more: {tabular}
+	In Core::Gullet[@0x12dfaa8a0] /Users/seanly/lsearch/test_suite/build/main.tex; from line 466 col 0 to line 466 col 16
+	 <= Core::Definition::Constructor[\@start... <= Core::Stomach[@0x14da17d78] <= Core::Definition::Constructor[\@@tabu... <= ...
+Error:undefined:{adjustbox} The environment {adjustbox} is not defined.
+	at main.tex; line 496 col 21 - line 496 col 21
+	Next token is T_BEGIN[{] ( == T_BEGIN[{])
+	In Core::Definition::Expandable[\begin {}] /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/LaTeX.pool.ltxml; line 181
+	 <= Core::Gullet[@0x12dfaa8a0] <= Core::Stomach[@0x14da17d78] <= Core::Definition::Constructor[\begin{... <= ...
+Error:undefined:gray!20 color 'gray!20' is undefined...
+	at main.tex; line 514 col 0 - line 514 col 22
+	In Core::Definition::Primitive[\pagecolo... /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/color.sty.ltxml; line 91
+	 <= Core::Stomach[@0x14da17d78] <= Core::Gullet[@0x12dfaa8a0] <= Core::Stomach[@0x14da17d78] <= ...
+Error:undefined:gray!20 color 'gray!20' is undefined...
+	at main.tex; line 524 col 0 - line 524 col 22
+	In Core::Definition::Primitive[\pagecolo... /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/color.sty.ltxml; line 91
+	 <= Core::Stomach[@0x14da17d78] <= Core::Gullet[@0x12dfaa8a0] <= Core::Stomach[@0x14da17d78] <= ...
+Error:undefined:{adjustbox} The environment {adjustbox} is not defined.
+	at main.tex; line 619 col 21 - line 619 col 21
+	Next token is T_BEGIN[{] ( == T_BEGIN[{])
+	In Core::Definition::Expandable[\begin {}] /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/LaTeX.pool.ltxml; line 181
+	 <= Core::Gullet[@0x12dfaa8a0] <= Core::Stomach[@0x14da17d78] <= Core::Definition::Constructor[\begin{... <= ...
+Info:unexpected:ieeenat˙fullname Unknown bibstyle 'ieeenat˙fullname', it will be ignored
+	at main.tex; line 656 col 0 - line 656 col 40
+Error:undefined:\maketitlesupplementary The token T_CS[\maketitlesupplementary] is not defined.
+	at main.tex; line 661 col 0 - line 661 col 23
+	Defining it now as <ltx:ERROR/>
+	Next token is T_CS[\appendix] ( == Core::Definition::Expandable[\appendix])
+	In Core::Gullet[@0x12dfaa8a0] /Users/seanly/lsearch/test_suite/build/main.tex; from line 662 col 0 to line 662 col 9
+	 <= Core::Stomach[@0x14da17d78] <= ...
+Error:undefined:{adjustbox} The environment {adjustbox} is not defined.
+	at main.tex; line 784 col 21 - line 784 col 21
+	Next token is T_BEGIN[{] ( == T_BEGIN[{])
+	In Core::Definition::Expandable[\begin {}] /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/LaTeX.pool.ltxml; line 181
+	 <= Core::Gullet[@0x12dfaa8a0] <= Core::Stomach[@0x14da17d78] <= Core::Definition::Constructor[\begin{... <= ...
+Error:undefined:gray!20 color 'gray!20' is undefined...
+	at main.tex; line 803 col 0 - line 803 col 22
+	In Core::Definition::Primitive[\pagecolo... /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/color.sty.ltxml; line 91
+	 <= Core::Stomach[@0x14da17d78] <= Core::Gullet[@0x12dfaa8a0] <= Core::Stomach[@0x14da17d78] <= ...
+Error:undefined:gray!20 color 'gray!20' is undefined...
+	at main.tex; line 805 col 0 - line 805 col 22
+	In Core::Definition::Primitive[\pagecolo... /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/color.sty.ltxml; line 91
+	 <= Core::Stomach[@0x14da17d78] <= Core::Gullet[@0x12dfaa8a0] <= Core::Stomach[@0x14da17d78] <= ...
+Error:undefined:gray!20 color 'gray!20' is undefined...
+	at main.tex; line 811 col 0 - line 811 col 22
+	In Core::Definition::Primitive[\pagecolo... /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/color.sty.ltxml; line 91
+	 <= Core::Stomach[@0x14da17d78] <= Core::Gullet[@0x12dfaa8a0] <= Core::Stomach[@0x14da17d78] <= ...
+Error:undefined:gray!20 color 'gray!20' is undefined...
+	at main.tex; line 813 col 0 - line 813 col 22
+	In Core::Definition::Primitive[\pagecolo... /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/Package/color.sty.ltxml; line 91
+	 <= Core::Stomach[@0x14da17d78] <= Core::Gullet[@0x12dfaa8a0] <= Core::Stomach[@0x14da17d78] <= ...
+ 1.58 sec) 1.63 sec)
+(Building...
+(Loading compiled schema /opt/homebrew/Cellar/latexml/0.8.7_1/libexec/lib/perl5/LaTeXML/resources/RelaxNG/LaTeXML.model... 0.00 sec) 1.32 sec)
+(Rewriting... 0.01 sec)
+(Math Parsing 133 formulae ......
+Warning:not_parsed:POSTSUBSCRIPT.POSTSUPERSCRIPT.CLOSE>CLOSE MathParser failed to match rule 'Anything'
+	at main.tex; line 366 col 12 - line 366 col 12
+	In "\begin{equation}\left\{\begin{aligned} &\texttt{Mask}(\Delta\bm{X}_{m,n}^{t-1%
+	\to t}))=\frac{\exp\left(\left(\log\left(\pi_{1}\right)+g_{1}\right)/\tau%
+	\right)}{\sum_{i=1}^{2}\exp\left(\left(\log\left(\pi_{i}\right)+g_{i}\right)/%
+	\tau\right)},\\
+	&\pi_{1}=\texttt{Sigmoid}(f(\Delta\bm{X}_{m,n}^{t-1\to t})),\\
+	&\pi_{2}=1-\texttt{Sigmoid}(f(\Delta\bm{X}_{m,n}^{t-1\to t})),\end{aligned}%
+	\right.\end{equation}"
+	\texttt{Mask}[[UNKNOWN]] ([[OPEN]] Δ[[UNKNOWN]] X[[UNKNOWN]] _{m,n}[[POSTSUBSCRIPT]] ^{t-1\tot}[[POSTSUPERSCRIPT]] )[[CLOSE]]
+	        > )[[CLOSE]] =[[RELOP]] \frac{\exp\left(\left(\log\left(\pi_{1}\right)+g_{1}\right)/\tau\right)}{\sum_{i=1}^{2}\exp\left(\left(\log\left(\pi_{i}\right)+g_{i}\right)/\tau\right)}[[UNKNOWN]]
+Warning:not_parsed:>OPEN MathParser failed to match rule 'Anything'
+	at main.tex; line 363 col 0 - line 371 col 14
+	> \left\{[[OPEN]] Alignment[][[UNKNOWN]]
+Warning:not_parsed:POSTSUBSCRIPT.POSTSUPERSCRIPT.CLOSE>CLOSE MathParser failed to match rule 'Anything'
+	at main.tex; line 378 col 34 - line 378 col 74
+	In "$\texttt{Mask}(\Delta\bm{X}_{m,n}^{t-1\to t}))$"
+	\texttt{Mask}[[UNKNOWN]] ([[OPEN]] Δ[[UNKNOWN]] X[[UNKNOWN]] _{m,n}[[POSTSUBSCRIPT]] ^{t-1\tot}[[POSTSUPERSCRIPT]] )[[CLOSE]]
+	        > )[[CLOSE]]
+Warning:not_parsed:POSTSUBSCRIPT.POSTSUPERSCRIPT.CLOSE>CLOSE MathParser failed to match rule 'Anything'
+	at main.tex; line 411 col 0 - line 413 col 14
+	In "\begin{equation}\mathcal{L}_{mask}=\frac{1}{MNZ}\sum\nolimits_{m=1}^{M}\sum%
+	\nolimits_{n=1}^{N}\|\texttt{Mask}(\Delta\bm{X}_{m,n}^{t-1\to t}))\|_{1},\end{equation}"
+	L[[UNKNOWN]] _{mask}[[POSTSUBSCRIPT]] =[[RELOP]] \frac{1}{MNZ}[[UNKNOWN]] ∑[[SUMOP]] _{m=1}[[POSTSUBSCRIPT]] ^{M}[[POSTSUPERSCRIPT]] ∑[[SUMOP]] _{n=1}[[POSTSUBSCRIPT]] ^{N}[[POSTSUPERSCRIPT]] ∥[[VERTBAR]] \texttt{Mask}[[UNKNOWN]] ([[OPEN]] Δ[[UNKNOWN]] X[[UNKNOWN]] _{m,n}[[POSTSUBSCRIPT]] ^{t-1\tot}[[POSTSUPERSCRIPT]] )[[CLOSE]]
+	        > )[[CLOSE]] ∥[[VERTBAR]] _{1}[[POSTSUBSCRIPT]]
+Warning:not_parsed:NUMBER>MULOP MathParser failed to match rule 'Anything'
+	at main.tex; line 534 col 0 - line 534 col 22
+	In "$4\times$"
+	4[[NUMBER]]
+	        > ×[[MULOP]]
+Warning:not_parsed:NUMBER>MULOP MathParser failed to match rule 'Anything'
+	at main.tex; line 534 col 0 - line 534 col 22
+	In "$4\times$"
+	4[[NUMBER]]
+	        > ×[[MULOP]]
+Warning:not_parsed:NUMBER>MULOP MathParser failed to match rule 'Anything'
+	at main.tex; line 837 col 0 - line 837 col 26
+	In "$4\times$"
+	4[[NUMBER]]
+	        > ×[[MULOP]]
+Warning:not_parsed:NUMBER>MULOP MathParser failed to match rule 'Anything'
+	at main.tex; line 837 col 0 - line 837 col 26
+	In "$4\times$"
+	4[[NUMBER]]
+	        > ×[[MULOP]]
+Warning:not_parsed:NUMBER>MULOP MathParser failed to match rule 'Anything'
+	at main.tex; line 843 col 0 - line 843 col 26
+	In "$4\times$"
+	4[[NUMBER]]
+	        > ×[[MULOP]]
+Warning:not_parsed:NUMBER>MULOP MathParser failed to match rule 'Anything'
+	at main.tex; line 843 col 0 - line 843 col 26
+	In "$4\times$"
+	4[[NUMBER]]
+	        > ×[[MULOP]]
+ 0.88 sec)
+Math parsing succeeded:
+   ltx:XMArg: 289/290
+   ltx:XMath: 124/133
+Symbols assumed as simple identifiers (with # of occurences):
+   'B{italic}' (1), 'C{italic}' (7), 'Delta' (11), 'H{italic}' (11), 'I{bold italic}' (4), 'K{bold italic}' (12), 'L{caligraphic}' (8), 'L{italic}' (1), 'M{bold italic}' (6), 'M{italic}' (1), 'N{italic}' (9), 'Q{bold italic}' (5), 'Q{italic}' (4), 'R{italic}' (4), 'T{italic}' (2), 'V{bold italic}' (12), 'W{bold italic}' (13), 'W{italic}' (8), 'X{bold italic}' (53), 'Z{italic}' (1), 'alpha' (3), 'a{italic}' (13), 'ell' (1), 'e{italic}' (17), 'f{italic}' (9), 'g{italic}' (4), 'h{italic}' (4), 'i{italic}' (20), 'k{italic}' (3), 'lambda' (1), 'l{italic}' (1), 'm{italic}' (91), 'n{italic}' (92), 'pi' (5), 'r{italic}' (21), 's{italic}' (9), 'tau' (2), 't{italic}' (80), 'varepsilon' (1), 'x{bold italic}' (2)
+Set MATHPARSER_SPECULATE to speculate on possible notations.
+(Finalizing... 0.12 sec)
+Conversion complete 21 warnings; 17 errors; 7 undefined macros[\mathbb, \bottomrule, {adjustbox}, \midrule, \etal, \toprule, \maketitlesupplementary]; 12 missing files[kvoptions.sty, kvdefinekeys.sty, adjustbox.sty, preamble, refcount.sty, cvpr.sty, ltxcmds.sty, ifsym.sty, kvsetkeys.sty, bitset.sty, gettitlestring.sty, keyval.sty] (See /Users/seanly/lsearch/test_suite/build/main.latexml.log) (reqd. 4.10s)
