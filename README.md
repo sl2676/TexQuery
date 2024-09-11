@@ -22,8 +22,8 @@ WIP
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/latex-search-engine.git
-    cd latex-search-engine
+    git clone https://github.com/sl2676/TexQuery.git
+    cd TexQuery
     ```
 
 2. Install the required dependencies:
@@ -44,13 +44,13 @@ WIP
     - Place your LaTeX files in the `papers/` directory.
     - Run the indexing script to chunk and prepare the papers for searching:
       ```bash
-      python index_papers.py
+      WIP
       ```
 
-2. **Searching Using Regex**:
-    - Use the search functionality to find patterns in your research papers:
+2. **Prompt Response**:
+    - Use the prompt functionality to find accurate and precise response:
       ```bash
-      python search.py --pattern "your-regex-pattern"
+      WIP
       ```
 
 3. **Analyzing Results**:
