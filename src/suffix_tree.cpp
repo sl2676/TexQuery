@@ -8,6 +8,7 @@
 #include <unordered_set>
 #include <unordered_map>
 #include <nlohmann/json.hpp>
+#include <chrono>
 
 // Insert Time: 0(M) where M is the length of the string
 // Search Time: 0(M) where M is the length of the string
@@ -164,25 +165,26 @@ std::string contents_of(const std::string& path_to_file) {
 }
 
 int main() {
-    std::ifstream file("main.tex");
+    std::ifstream file("main_ex.tex");
     std::ostringstream oss;
     oss << file.rdbuf();
     std::string file_contents = oss.str();
 
+	auto start_time = std::chrono::high_resolution_clock::now();
+
     SuffixTree suffixTree(file_contents);
-
     suffixTree.searchLatexTags();
-    
     suffixTree.printLatexTagSet();
-
     suffixTree.chunkLatexContent(file_contents);
-
     suffixTree.printChunks();
-
     suffixTree.createFSM();
-	
 	suffixTree.exportChunksToFile("latex_chunks.json");
 	
+	auto end_time = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count();
+
+    std::cout << "Time taken: " << duration << " milliseconds" << std::endl;	
+
     return 0;
 }
 
