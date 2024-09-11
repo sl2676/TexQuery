@@ -1,0 +1,298 @@
+[
+    {
+        "content": "\\documentclass[twocolumn]{aastex631}\n\n",
+        "tag": "\\usepackage{upgreek}"
+    },
+    {
+        "content": "\n",
+        "tag": "\\usepackage{textcomp}"
+    },
+    {
+        "content": "\n",
+        "tag": "\\usepackage{wasysym}"
+    },
+    {
+        "content": "\n",
+        "tag": "\\usepackage{blindtext}"
+    },
+    {
+        "content": "\n",
+        "tag": "\\usepackage{lineno}"
+    },
+    {
+        "content": "\n\n",
+        "tag": "\\newcommand{\\vdag}"
+    },
+    {
+        "content": "{(v)^\\dagger}\n\\newcommand",
+        "tag": "\\aastex{AAS\\TeX}"
+    },
+    {
+        "content": "\n\\newcommand",
+        "tag": "\\latex{La\\TeX}"
+    },
+    {
+        "content": "\n\n% \\linenumbers\n\n",
+        "tag": "\\shorttitle{Wide-field Retrieval of Astrodata Program}"
+    },
+    {
+        "content": "\n",
+        "tag": "\\shortauthors{Hunter Brooks}"
+    },
+    {
+        "content": "\n\n",
+        "tag": "\\graphicspath{{./}"
+    },
+    {
+        "content": "{figures/}}\n\n",
+        "tag": "\\begin{document}"
+    },
+    {
+        "content": "\n\n",
+        "tag": "\\title{WRAP: A Tool for Efficient Cross-Identification of Proper Motion Objects Spanning Multiple Surveys }"
+    },
+    {
+        "content": "\n\n\\author[0000-0002-5253-0383]{Hunter Brooks}\n",
+        "tag": "\\affiliation{Department of Astronomy and Planetary Science, Northern Arizona University, Flagstaff, AZ 86011, USA}"
+    },
+    {
+        "content": "\n",
+        "tag": "\\affiliation{IPAC, Mail Code 100-22, Caltech, 1200 E. California Blvd., Pasadena, CA 91125, USA}"
+    },
+    {
+        "content": "\n\n\\author[0000-0003-4269-260X]{J.\\ Davy Kirkpatrick}\n",
+        "tag": "\\affiliation{IPAC, Mail Code 100-22, Caltech, 1200 E. California Blvd., Pasadena, CA 91125, USA}"
+    },
+    {
+        "content": "\n\n\\author[0000-0001-7896-5791]{Dan Caselden}\n",
+        "tag": "\\affiliation{Department of Astrophysics, American Museum of Natural History, Central Park West at 79th Street, New York, NY 10024, USA}"
+    },
+    {
+        "content": "\n",
+        "tag": "\\affiliation{Backyard Worlds: Planet 9}"
+    },
+    {
+        "content": "\n\n\\author[0000-0002-6294-5937]{Adam C. Schneider}\n",
+        "tag": "\\affiliation{United States Naval Observatory, Flagstaff Station, 10391 West Naval Observatory Rd., Flagstaff, AZ 86005, USA}"
+    },
+    {
+        "content": " \n\n\\author[0000-0002-1125-7384]{Aaron M. Meisner}\n",
+        "tag": "\\affiliation{NSF's National Optical-Infrared Astronomy Research\nLaboratory, 950 N. Cherry Ave., Tucson, AZ 85719, USA}"
+    },
+    {
+        "content": "\n\n\\author[0000-0001-9778-7054]{Yadukrishna Raghu}\n",
+        "tag": "\\affiliation{Backyard Worlds: Planet 9}"
+    },
+    {
+        "content": "\n\n\\author[0009-0009-1388-1541]{Farid Cedeno}\n",
+        "tag": "\\affiliation{Backyard Worlds: Planet 9}"
+    },
+    {
+        "content": "\n\n\\author[0000-0001-6251-0573]{Jacqueline K. Faherty}\n",
+        "tag": "\\affiliation{Department of Astrophysics, American Museum of Natural History, Central Park West at 79th Street, New York, NY 10024, USA}"
+    },
+    {
+        "content": "\n\n\\author[0000-0001-7519-1700]{Federico Marocco}\n",
+        "tag": "\\affiliation{IPAC, Mail Code 100-22, Caltech, 1200 E. California Blvd., Pasadena, CA 91125, USA}"
+    },
+    {
+        "content": "\n\n\\author[0000-0002-2387-5489]{Marc J. Kuchner}\n",
+        "tag": "\\affiliation{NASA Goddard Space Flight Center, Exoplanets and Stellar Astrophysics Laboratory, Code 667, Greenbelt, MD 20771, USA}"
+    },
+    {
+        "content": "\n\n\\author[0000-0003-2478-0120]{S.L.Casewell}\n",
+        "tag": "\\affiliation{School of Physics and Astronomy, University of Leicester, University Road, Leicester, LE1 7RH, UK}"
+    },
+    {
+        "content": "\n\n",
+        "tag": "\\author{The Backyard Worlds:  Planet 9 Collaboration}"
+    },
+    {
+        "content": "\n\n",
+        "tag": "\\begin{abstract}"
+    },
+    {
+        "content": "\nWe introduce the Wide-field Retrieval of Astrodata Program (WRAP), a tool created to aid astronomers in gathering photometric and astrometric data for point sources that may confuse simple cross-matching algorithms because of their faintness or motion. WRAP allows astronomers to correctly cross-identify objects with proper motion across multiple surveys by wedding the catalog data with its underlying images, thus providing visual confirmation of cross-associations in real time. Developed within the Backyard Worlds: Planet 9 citizen science project, WRAP aims to aid in the characterization of faint, high motion sources by this collaboration (and others).\n",
+        "tag": "\\end{abstract}"
+    },
+    {
+        "content": "\n\n",
+        "tag": "\\keywords{Direct Imaging, Catalogs}"
+    },
+    {
+        "content": "\n\n",
+        "tag": "\\section{Introduction}"
+    },
+    {
+        "content": "",
+        "tag": "\\label{intro}"
+    },
+    {
+        "content": "\nGathering catalog photometry and astrometry is generally straight-forward, although the process becomes notably challenging when dealing with faint or high proper motion objects. There are multiple ways to gather this information, like Aladin (",
+        "tag": "\\citealt{Bonnarel et al.(2000)}"
+    },
+    {
+        "content": "), CDS Cross-Match Service (",
+        "tag": "\\citealt{Boch et al.(2012)}"
+    },
+    {
+        "content": "), etc. We built upon previous techniques to develop the Wide-field Retrieval of Astrodata Program (WRAP) to improve the process. Other techniques have several drawbacks, such as complex GUI interfaces, a need for understanding multiple programming languages, or a lack of visual verification. WRAP is designed to address these challenges. We start by examining previous techniques and programs in \\S",
+        "tag": "\\ref{prev tech}"
+    },
+    {
+        "content": ". Following that, we leverage the advantages of these prior methods to develop WRAP in \\S",
+        "tag": "\\ref{WRAP}"
+    },
+    {
+        "content": ".\n\n",
+        "tag": "\\section{Previous Techniques}"
+    },
+    {
+        "content": " ",
+        "tag": "\\label{prev tech}"
+    },
+    {
+        "content": "\n\n",
+        "tag": "\\begin{figure*}"
+    },
+    {
+        "content": "[ht]\n        \\centering\n        \\includegraphics[scale = 0.35]{Figure1.pdf}\n        ",
+        "tag": "\\caption{A flowchart illustrating the WRAP procedure. Here we utilize 2MASSI J1721039+334415 (\\citealt{Bardalez Gagliuffi et al.(2014)}"
+    },
+    {
+        "content": "). It is highlighted in red for CatWISE, WFCAM, and PanSTARRS. The process begins by opening WRAP in a terminal window. Then, the user inputs the coordinates, sets the search radius, and chooses the catalogs for their search. WRAP executes API queries, interacting with the chosen catalog APIs to retrieve relevant data. If the designated region is found through the API, WRAP displays an image of the area with catalog detections overlaid. Users interact by clicking on the image, prompting WRAP to identify the nearest object and writing pertinent information from the catalog into an output file. }\n        ",
+        "tag": "\\label{Figure 1}"
+    },
+    {
+        "content": "\n",
+        "tag": "\\end{figure*}"
+    },
+    {
+        "content": "\n\nNumerous additional tools have been developed to facilitate the gathering of astrophysical data. However, discussing every software in detail here would be too enormous a task for a research note. Instead, we have highlighted some of the most popular techniques and software currently available to provide context for understanding the improvements WRAP provides.\n\nThe most prevalent approach for collecting photometric and astrometric data involves conducting cross-matches based on Right Ascension (R.A.) and Declination (Decl.). One such program is the CDS X-Match Service (",
+        "tag": "\\citealt{Boch et al.(2012)}"
+    },
+    {
+        "content": "; ",
+        "tag": "\\citealt{Pineau et al.(2020)}"
+    },
+    {
+        "content": ") allowing users to search various catalogs using an input coordinate table.  However, a drawback is the absence of visual confirmation for matched data. This makes it susceptible to errors from incorrect cross-matches if the object in question has large proper motion. In contrast, other services offer visual confirmation, enhancing the accuracy of gathering astrophysical data.\n\nThe Aladin catalog search feature (",
+        "tag": "\\citealt{Bonnarel et al.(2000)}"
+    },
+    {
+        "content": ") shares similarities with WRAP in terms of functionality. It enables users to load images and superimpose them onto the corresponding source catalog. However, this method can be hampered by slow performance, primarily when dealing with substantial amounts of data simultaneously. Moreover, this approach is primarily designed for single object searches, limiting its applicability for more extensive cross-identification tasks.\n\nAdditional software includes the IRSA Viewer (",
+        "tag": "\\url{https://irsa.ipac.caltech.edu/irsaviewer}"
+    },
+    {
+        "content": "), VizieR Photometry Viewer (",
+        "tag": "\\citealt{Ochsenbein et al.(2000)}"
+    },
+    {
+        "content": "), and AstroToolBox (also developed by the Backyward Worlds: Planet 9 collaboration; ",
+        "tag": "\\citealt{Kiwy(2022)}"
+    },
+    {
+        "content": "). However, these tools have certain drawbacks,  briefly described here. The IRSA Viewer, for instance, lacks catalogs beyond those supported at IPAC, limiting the available data. The VizieR Photometry Viewer is comparable to the CDS X-Match Service in that it lacks readily available imaging for visual confirmation. Lastly, AstroToolBox offers both visual confirmation and cross-matching, but these features are located in separate tabs.\n\n",
+        "tag": "\\section{WRAP Overview}"
+    },
+    {
+        "content": " ",
+        "tag": "\\label{WRAP}"
+    },
+    {
+        "content": "\nTo address these complications, we developed WRAP. Developed in Python 3.8 (the recommended version for using WRAP), WRAP is an open-source application designed to have minimal dependencies and low computational expenses, ensuring it remains freely accessible. After installation, the user inputs single or multi-object files (in CSV, FITS, ASCII, or IPAC table formats): R.A. (deg), Decl. (deg), search radius (arcsec), then selects the desired catalogs. The catalogs included are: CatWISE2020 Point Source Catalog (",
+        "tag": "\\citealt{Marocco et al.(2021)}"
+    },
+    {
+        "content": "), AllWISE Source Catalog (WISE; ",
+        "tag": "\\citealt{Cutri et al.(2021)}"
+    },
+    {
+        "content": "), Gaia Data Release 3 (Gaia; ",
+        "tag": "\\citealt{Gaia Collaboration et al.(2021)}"
+    },
+    {
+        "content": "), VISTA Science Archive catalogs (VSA; ",
+        "tag": "\\citealt{Irwin et al.(2004)}"
+    },
+    {
+        "content": "), WFCAM Science Archive catalogs (WFCAM; ",
+        "tag": "\\citealt{Hambly et al.(2008)}"
+    },
+    {
+        "content": "), 2MASS Point Source Catalog (2MASS; ",
+        "tag": "\\citealt{Cutri et al.(2003)}"
+    },
+    {
+        "content": " and ",
+        "tag": "\\citealt{Skrutskie et al.(2006)}"
+    },
+    {
+        "content": "), PanSTARRS Data Release 2 (PanSTARRS; ",
+        "tag": "\\citealt{Chambers et al.(2016)}"
+    },
+    {
+        "content": "), NOIRLab Source Catalog Data Release 2 (NSC; ",
+        "tag": "\\citealt{Nidever et al.(2021)}"
+    },
+    {
+        "content": "), and the GALEX Catalog (GALEX; ",
+        "tag": "\\citealt{Martin et al.(2005)}"
+    },
+    {
+        "content": "). \n\nOnce inputs are selected, a WISEView (",
+        "tag": "\\citealt{Caselden et al. 2018}"
+    },
+    {
+        "content": ") window will display WISE coadd images to aid the user in finding their object. WRAP begins by running through each catalog, showing the images with overlaid sources. Each catalog overlay comes with customizable image features, such as image stretch, photometric band selection, and circle size. Furthermore, users may add notes to any selected catalog.  After the user clicks on their chosen object, WRAP identifies the nearest object through a proximity check within the field, and the results are then saved to a .csv table (no images are saved in WRAP).\n\nIn Figure ",
+        "tag": "\\ref{Figure 1}"
+    },
+    {
+        "content": ", the flowchart demonstrates the intuitive functionality of WRAP, emphasizing its user-friendly interface. The catalog overlay feature of WRAP is essential for confirmation of high motion objects, such as the illustrated object with its high proper motion of $\\sim$1.95 arcsec yr$^{-1}$ (",
+        "tag": "\\citealt{Bardalez Gagliuffi et al.(2014)}"
+    },
+    {
+        "content": "), that would be difficult to cross-identify through a simple positional cross-match. \n\n",
+        "tag": "\\section{Conclusion}"
+    },
+    {
+        "content": " ",
+        "tag": "\\label{conclusion}"
+    },
+    {
+        "content": "\nWRAP was developed to serve as a tool for astronomers seeking photometric and astrometric data for faint and high proper motion objects. It incorporates the most effective features from previous methods, resulting in a user-friendly and streamlined process. This is achieved by offering visual verification, consolidating popular catalogs in one location, and requiring no coding experience. WRAP is accessible from GitHub at the following link: ",
+        "tag": "\\url{https://github.com/huntbrooks85/WRAP}"
+    },
+    {
+        "content": ". The DOI for WRAP is: ",
+        "tag": "\\url{https://doi.org/10.5281/zenodo.10359982}"
+    },
+    {
+        "content": ". Please refer to the ReadMe file on the GitHub page for detailed installation and usage instructions. \n\n",
+        "tag": "\\section{Acknowledgements}"
+    },
+    {
+        "content": " \n\n\nThis Backyard Worlds research was supported by NASA grant 2017-ADAP17-0067. All PanSTARRS data used in this paper can be found in MAST: \\dataset[10.17909/s0zg-jx37]{http://dx.doi.org/10.17909/s0zg-jx37}\n\n",
+        "tag": "\\software{WiseView (\\citealt{Caselden et al. 2018}"
+    },
+    {
+        "content": ")}\n",
+        "tag": "\\facilities{NEOWISE, Gaia, ESO:VISTA, UKIRT, CTIO:2MASS, FLWO:2MASS, PS2, Astro Data Lab, IRSA, CDS, MAST}"
+    },
+    {
+        "content": "\n\n\\newpage \n\n",
+        "tag": "\\begin{thebibliography}"
+    },
+    {
+        "content": "{}\n\n\\bibitem[Bardalez Gagliuffi et al.(2014)]{Bardalez Gagliuffi et al.(2014)} Bardalez Gagliuffi, D.~C., Burgasser, A.~J., Gelino, C.~R., et al.\\ 2014, \\apj, 794, 143. doi:10.1088/0004-637X/794/2/143\n\n\\bibitem[Boch et al.(2012)]{Boch et al.(2012)} Boch, T., Pineau, F., \\& Derriere, S.\\ 2012, Astronomical Data Analysis Software and Systems XXI, 461, 291\n\n\\bibitem[Bonnarel et al.(2000)]{Bonnarel et al.(2000)} Bonnarel, F., Fernique, P., Bienaym{\\'e}, O., et al.\\ 2000, \\aaps, 143, 33. doi:10.1051/aas:2000331\n\n\\bibitem[Gaia Collaboration et al.(2021)]{Gaia Collaboration et al.(2021)} Gaia Collaboration, Brown, A.~G.~A., Vallenari, A., et al.\\ 2021, \\aap, 649, A1. doi:10.1051/0004-6361/202039657\n\n\\bibitem[Caselden et al.(2018)]{Caselden et al. 2018} Caselden, D., Westin, P., Meisner, A., et al.\\ 2018, Astrophysics Source Code Library. ascl:1806.004\n\n\\bibitem[Chambers et al.(2016)]{Chambers et al.(2016)} Chambers, K.~C., Magnier, E.~A., Metcalfe, N., et al.\\ 2016, arXiv:1612.05560. doi:10.48550/arXiv.1612.05560\n\n\\bibitem[Cutri et al.(2003)]{Cutri et al.(2003)} Cutri, R.~M., Skrutskie, M.~F., van Dyk, S., et al.\\ 2003, ``The IRSA 2MASS All-Sky Point Source Catalog, NASA/IPAC Infrared Science Archive. \n\n\\bibitem[Cutri et al.(2021)]{Cutri et al.(2021)} Cutri, R.~M., Wright, E.~L., Conrow, T., et al.\\ 2021, VizieR Online Data Catalog, II/328\n\n\\bibitem[Dye et al.(2018)]{Dye et al.(2018)} Dye, S., Lawrence, A., Read, M.~A., et al.\\ 2018, \\mnras, 473, 5113. doi:10.1093/mnras/stx2622\n\n\\bibitem[Emerson et al.(2004a)]{Emerson et al.(2004a)} Emerson, J.~P., Sutherland, W.~J., McPherson, A.~M., et al.\\ 2004, The Messenger, 117, 27\n\n\\bibitem[Emerson et al.(2004b)]{Emerson et al.(2004b)} Emerson, J.~P., Irwin, M.~J., Lewis, J., et al.\\ 2004, \\procspie, 5493, 401. doi:10.1117/12.551582\n\n\\bibitem[Hambly et al.(2008)]{Hambly et al.(2008)} Hambly, N.~C., Collins, R.~S., Cross, N.~J.~G., et al.\\ 2008, \\mnras, 384, 637. doi:10.1111/j.1365-2966.2007.12700.x\n\n\\bibitem[Irwin et al.(2004)]{Irwin et al.(2004)} Irwin, M.~J., Lewis, J., Hodgkin, S., et al.\\ 2004, \\procspie, 5493, 411. doi:10.1117/12.551449\n\n\\bibitem[Kiwy(2022)]{Kiwy(2022)} Kiwy, F.\\ 2022, Astrophysics Source Code Library. ascl:2201.002\n\n\\bibitem[Lawrence et al.(2007)]{Lawrence et al.(2007)} Lawrence, A., Warren, S.~J., Almaini, O., et al.\\ 2007, \\mnras, 379, 1599. doi:10.1111/j.1365-2966.2007.12040.x\n\n\\bibitem[Marocco et al.(2021)]{Marocco et al.(2021)} Marocco, F., Eisenhardt, P.~R.~M., Fowler, J.~W., et al.\\ 2021, \\apjs, 253, 8. doi:10.3847/1538-4365/abd805\n\n\\bibitem[Martin et al.(2005)]{Martin et al.(2005)} Martin, D.~C., Fanson, J., Schiminovich, D., et al.\\ 2005, \\apjl, 619, L1. doi:10.1086/426387\n\n\\bibitem[Nidever et al.(2021)]{Nidever et al.(2021)} Nidever, D.~L., Dey, A., Fasbender, K., et al.\\ 2021, \\aj, 161, 192. doi:10.3847/1538-3881/abd6e1\n\n\\bibitem[Ochsenbein et al.(2000)]{Ochsenbein et al.(2000)} Ochsenbein, F., Bauer, P., \\& Marcout, J.\\ 2000, \\aaps, 143, 23. doi:10.1051/aas:2000169\n\n\\bibitem[Pineau et al.(2020)]{Pineau et al.(2020)} Pineau, F.-X., Boch, T., Derri{\\`e}re, S., et al.\\ 2020, Astronomical Data Analysis Software and Systems XXVII, 522, 125\n\n\\bibitem[Skrutskie et al.(2006)]{Skrutskie et al.(2006)} Skrutskie, M.~F., Cutri, R.~M., Stiening, R., et al.\\ 2006, \\aj, 131, 1163. doi:10.1086/498708\n\n",
+        "tag": "\\end{thebibliography}"
+    },
+    {
+        "content": "\n\n",
+        "tag": "\\end{document}"
+    },
+    {
+        "content": "\n",
+        "tag": "Remaining"
+    }
+]
