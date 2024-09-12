@@ -33,8 +33,13 @@ WIP
 
 3. Set up your GPT API key:
     ```bash
-    export GPT_API_KEY=your-api-key
+    export OPENAI_API_KEY="your-api-key"
     ```
+4. Set up your Pinecone API key:
+    ```base
+    export PINECONE_API_KEY="your-api-key"
+    ```
+   
 
 ---
 WIP
