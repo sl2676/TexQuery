@@ -10,16 +10,6 @@
 #include <nlohmann/json.hpp>
 #include <chrono>
 
-// Insert Time: 0(M) where M is the length of the string
-// Search Time: 0(M) where M is the length of the string
-/* Space: 0(ALPHABET_SIZE * M * N) where N is the number of 
-	keys in trie, ALPHABET_SIZE is 26 if we are only considering upper case latin
-	characters
-*/
-// Deletion time: 0(M)
-
-
-
 struct Node {
     std::string substring;
     std::vector<int> child;
@@ -33,7 +23,7 @@ struct SuffixTree {
     size_t num_nodes;
     std::vector<Node> nodes;
     std::unordered_set<std::string> latexTagsSet;
-    std::vector<std::pair<std::string, std::string>> chunks;  
+    std::vector<std::pair<std::string, std::string>> chunks;
 
     SuffixTree(const std::string& string) {
         nodes.push_back(Node{});
@@ -101,25 +91,56 @@ struct SuffixTree {
         search(0);
     }
 
+    enum class FSMState {
+        OUTSIDE,
+        INSIDE_ENVIRONMENT,
+        INSIDE_TAG
+    };
+
     void chunkLatexContent(const std::string& content) {
         std::regex latexTagPattern(R"(\\[a-zA-Z]+\{[^}]*\}|\\begin\{[^}]*\}|\\end\{[^}]*\})");
         std::smatch match;
         std::string remaining_content = content;
         std::string current_chunk = "";
+        FSMState state = FSMState::OUTSIDE;
 
         while (std::regex_search(remaining_content, match, latexTagPattern)) {
             std::string tag = match.str();
             size_t tag_position = match.position();
+            std::string before_tag = remaining_content.substr(0, tag_position);
             
-            current_chunk += remaining_content.substr(0, tag_position);
-            chunks.emplace_back(tag, current_chunk);  
-            current_chunk = "";  
+            if (tag.find("\\begin") != std::string::npos) {
+                if (state == FSMState::OUTSIDE) {
+                    if (!before_tag.empty()) {
+                        chunks.emplace_back("Outside", before_tag); 
+                    }
+                    current_chunk = "";  
+                    state = FSMState::INSIDE_ENVIRONMENT;
+                }
+            } else if (tag.find("\\end") != std::string::npos) {
+                if (state == FSMState::INSIDE_ENVIRONMENT) {
+                    chunks.emplace_back(tag, current_chunk + before_tag);  
+                    state = FSMState::OUTSIDE;  
+                    current_chunk = "";  
+                }
+            } else {
+                if (state == FSMState::OUTSIDE) {
+                    chunks.emplace_back(tag, before_tag); 
+                } else {
+                    current_chunk += before_tag + tag; 
+                }
+            }
             
-            remaining_content = remaining_content.substr(tag_position + tag.length());  
+            remaining_content = remaining_content.substr(tag_position + tag.length());
         }
-        
+
         if (!remaining_content.empty()) {
-            chunks.emplace_back("Remaining", remaining_content);
+            if (state == FSMState::OUTSIDE) {
+                chunks.emplace_back("Remaining", remaining_content);
+            } else {
+                current_chunk += remaining_content;
+                chunks.emplace_back("Remaining Inside Environment", current_chunk);
+            }
         }
     }
 
@@ -143,20 +164,18 @@ struct SuffixTree {
             std::cout << "State for tag: " << tag << "\n";
         }
     }
-	
-	void exportChunksToFile(const std::string& filename) const {
-		nlohmann::json json_output;
-		for (const auto& chunk : chunks) {
-			json_output.push_back({
-				{"tag", chunk.first},
-				{"content", chunk.second}
-			});
-		}
-		std::ofstream output_file(filename);
-		output_file << json_output.dump(4);  
-	}
 
-
+    void exportChunksToFile(const std::string& filename) const {
+        nlohmann::json json_output;
+        for (const auto& chunk : chunks) {
+            json_output.push_back({
+                {"tag", chunk.first},
+                {"content", chunk.second}
+            });
+        }
+        std::ofstream output_file(filename);
+        output_file << json_output.dump(4);
+    }
 };
 
 std::string contents_of(const std::string& path_to_file) {
@@ -165,12 +184,12 @@ std::string contents_of(const std::string& path_to_file) {
 }
 
 int main() {
-    std::ifstream file("main_ex.tex");
+    std::ifstream file("main.tex");
     std::ostringstream oss;
     oss << file.rdbuf();
     std::string file_contents = oss.str();
 
-	auto start_time = std::chrono::high_resolution_clock::now();
+    auto start_time = std::chrono::high_resolution_clock::now();
 
     SuffixTree suffixTree(file_contents);
     suffixTree.searchLatexTags();
@@ -178,12 +197,12 @@ int main() {
     suffixTree.chunkLatexContent(file_contents);
     suffixTree.printChunks();
     suffixTree.createFSM();
-	suffixTree.exportChunksToFile("latex_chunks.json");
-	
-	auto end_time = std::chrono::high_resolution_clock::now();
+    suffixTree.exportChunksToFile("latex_chunks.json");
+
+    auto end_time = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count();
 
-    std::cout << "Time taken: " << duration << " milliseconds" << std::endl;	
+    std::cout << "Time taken: " << duration << " milliseconds" << std::endl;
 
     return 0;
 }
