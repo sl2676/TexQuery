@@ -36,7 +36,7 @@ WIP
     export OPENAI_API_KEY="your-api-key"
     ```
 4. Set up your Pinecone API key:
-    ```base
+    ```bash
     export PINECONE_API_KEY="your-api-key"
     ```
    
