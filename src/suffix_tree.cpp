@@ -10,6 +10,15 @@
 #include <nlohmann/json.hpp>
 #include <chrono>
 
+// Insert Time: 0(M) where M is the length of the string
+// Search Time: 0(M) where M is the length of the string
+/* Space: 0(ALPHABET_SIZE * M * N) where N is the number of 
+	keys in trie, ALPHABET_SIZE is 26 if we are only considering upper case latin
+	characters
+*/
+// Deletion time: 0(M)
+
+
 struct Node {
     std::string substring;
     std::vector<int> child;
@@ -108,7 +117,7 @@ struct SuffixTree {
             std::string tag = match.str();
             size_t tag_position = match.position();
             std::string before_tag = remaining_content.substr(0, tag_position);
-            
+/// Need to refine fsm for futher use ~ more precise & accurate chunking...            
             if (tag.find("\\begin") != std::string::npos) {
                 if (state == FSMState::OUTSIDE) {
                     if (!before_tag.empty()) {

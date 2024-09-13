@@ -1,154 +1,559 @@
-\documentclass[twocolumn]{aastex631}
-
-\usepackage{upgreek}
+\documentclass[conference]{IEEEtran}
+%\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, p%lease comment it out.
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{tabulary}
+\usepackage{tikz,pgfplots,pgfplotstable,tikzscale,siunitx, xcolor}
+\usetikzlibrary{patterns}
+\usepackage{filecontents}
+\usepackage{graphicx}
+\usepackage[algo2e,ruled,vlined]{algorithm2e}
+\usepackage{enumitem}
+\usepackage{stfloats}
+\usetikzlibrary{pgfplots.groupplots}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
 \usepackage{textcomp}
-\usepackage{wasysym}
-\usepackage{blindtext}
-\usepackage{lineno}
-
-\newcommand{\vdag}{(v)^\dagger}
-\newcommand\aastex{AAS\TeX}
-\newcommand\latex{La\TeX}
-
-% \linenumbers
-
-\shorttitle{Wide-field Retrieval of Astrodata Program}
-\shortauthors{Hunter Brooks}
-
-\graphicspath{{./}{figures/}}
-
+\usepackage{xcolor}
+\usepackage[breaklinks=true]{hyperref}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{WRAP: A Tool for Efficient Cross-Identification of Proper Motion Objects Spanning Multiple Surveys }
-
-\author[0000-0002-5253-0383]{Hunter Brooks}
-\affiliation{Department of Astronomy and Planetary Science, Northern Arizona University, Flagstaff, AZ 86011, USA}
-\affiliation{IPAC, Mail Code 100-22, Caltech, 1200 E. California Blvd., Pasadena, CA 91125, USA}
-
-\author[0000-0003-4269-260X]{J.\ Davy Kirkpatrick}
-\affiliation{IPAC, Mail Code 100-22, Caltech, 1200 E. California Blvd., Pasadena, CA 91125, USA}
-
-\author[0000-0001-7896-5791]{Dan Caselden}
-\affiliation{Department of Astrophysics, American Museum of Natural History, Central Park West at 79th Street, New York, NY 10024, USA}
-\affiliation{Backyard Worlds: Planet 9}
-
-\author[0000-0002-6294-5937]{Adam C. Schneider}
-\affiliation{United States Naval Observatory, Flagstaff Station, 10391 West Naval Observatory Rd., Flagstaff, AZ 86005, USA} 
-
-\author[0000-0002-1125-7384]{Aaron M. Meisner}
-\affiliation{NSF's National Optical-Infrared Astronomy Research
-Laboratory, 950 N. Cherry Ave., Tucson, AZ 85719, USA}
-
-\author[0000-0001-9778-7054]{Yadukrishna Raghu}
-\affiliation{Backyard Worlds: Planet 9}
-
-\author[0009-0009-1388-1541]{Farid Cedeno}
-\affiliation{Backyard Worlds: Planet 9}
-
-\author[0000-0001-6251-0573]{Jacqueline K. Faherty}
-\affiliation{Department of Astrophysics, American Museum of Natural History, Central Park West at 79th Street, New York, NY 10024, USA}
-
-\author[0000-0001-7519-1700]{Federico Marocco}
-\affiliation{IPAC, Mail Code 100-22, Caltech, 1200 E. California Blvd., Pasadena, CA 91125, USA}
-
-\author[0000-0002-2387-5489]{Marc J. Kuchner}
-\affiliation{NASA Goddard Space Flight Center, Exoplanets and Stellar Astrophysics Laboratory, Code 667, Greenbelt, MD 20771, USA}
-
-\author[0000-0003-2478-0120]{S.L.Casewell}
-\affiliation{School of Physics and Astronomy, University of Leicester, University Road, Leicester, LE1 7RH, UK}
-
-\author{The Backyard Worlds:  Planet 9 Collaboration}
-
+\title{FPGA-based Hyrbid Memory Emulation System
+}
+\author{\IEEEauthorblockN{Fei Wen, Mian Qin, Paul V. Gratz, A.L.Narasimha Reddy}
+\IEEEauthorblockA{
+Department of Electrical and Computer Engineering\\
+Texas A\&M University\\
+College Station, TX 77843\\
+ {\tt \{fwen, celery1124, pgratz, reddy\}@tamu.edu}}}
+\maketitle
+\thispagestyle{plain}
+\pagestyle{plain}
 \begin{abstract}
-We introduce the Wide-field Retrieval of Astrodata Program (WRAP), a tool created to aid astronomers in gathering photometric and astrometric data for point sources that may confuse simple cross-matching algorithms because of their faintness or motion. WRAP allows astronomers to correctly cross-identify objects with proper motion across multiple surveys by wedding the catalog data with its underlying images, thus providing visual confirmation of cross-associations in real time. Developed within the Backyard Worlds: Planet 9 citizen science project, WRAP aims to aid in the characterization of faint, high motion sources by this collaboration (and others).
+  Hybrid memory systems, comprised of emerging non-volatile memory
+  (NVM) and DRAM, have been proposed to address the growing memory
+  demand of applications. Emerging NVM technologies, such as
+  phase-change memories (PCM), memristor, and 3D XPoint, have higher
+  capacity density, minimal static power consumption and lower cost
+  per GB. However, NVM has longer access latency and limited write
+  endurance as opposed to DRAM. The different characteristics of two
+  memory classes point towards the design of hybrid memory systems
+  containing multiple classes of main memory.
+  
+  In the iterative and incremental development of new architectures,
+  the timeliness of simulation completion is critical to project
+  progression.  Hence, a highly efficient simulation method is needed
+  to evaluate the performance of different hybrid memory system
+  designs.  Design exploration for hybrid memory systems is challenging, because it requires emulation of the
+  full system stack, including the OS, memory controller, and
+  interconnect. Moreover, benchmark applications for memory performance test typically have much larger working sets, thus taking even longer simulation warm-up period.
+  
+  In this paper, we propose a FPGA-based hybrid memory system
+  emulation platform.  We target at the mobile computing system, which
+  is sensitive to energy consumption and is likely to adopt NVM for
+  its power efficiency.  Here, because the focus of our platform is on
+  the design of the hybrid memory system, we leverage the on-board
+  hard IP ARM processors to both improve simulation performance while
+  improving accuracy of the results.  Thus, users can implement their
+  data placement/migration policies with the FPGA logic elements and
+  evaluate new designs quickly and effectively.  Results show that our
+  emulation platform provides a speedup of 9280x in simulation time
+  compared to the software counterpart Gem5.
 \end{abstract}
+\begin{IEEEkeywords}
+Hardware emulation, FPGA accelerator, memory system, NVM
+\end{IEEEkeywords}
+\section{Introduction}
+\label{sec:intro}
+In the era of big data, the memory footprint of applications has
+expanded enormously. DRAM energy consumption grows linearly with its
+capacity, as DRAM cells constantly draw energy to refresh its stored
+data.  The non-volatile-memory (NVM) technologies, such as Intel 3D
+Xpoint~\cite{intel-3dxpoint}, memristor~\cite{memristor}, and
+Phase-change-memory (PCM)~\cite{PCM} have emerged as alternative
+memory technologies to DRAM.  These new memory technologies promise an
+order of magnitude higher density~\cite{techinsights} and minimal
+background power consumption.  Their access delay is typically within
+one order of magnitude larger than that of DRAM while the write access
+has significantly higher overheads.  
+\begin{table*}[hbt]
+  \centering
+  \small
+\caption{Approximate Performance Comparison of Different Memory
+  Technologies\cite{NVM1,NVM2,yang:2012} }
+\begin{tabular}{c|c|c|c|c|c|c}
+\hline
+Technology& HDD & FLASH & 3D XPoint & DRAM & STT-RAM & MRAM\\
+\hline
+Read Latency & 5ms & $100\mu s$  & 50 - 150ns & 50ns & 20ns & 20ns\\
+Write Latency & 5ms & $100\mu s$  & 50 - 500ns & 50ns & 20ns & 20ns\\
+Endurance (Cycles) & $>10^{15}$ & $10^{4}$ & $10^9$ & $>10^{16}$ & $>10^{16}$ & $>10^{15}$\\
+\$ per GB & 0.025-0.5 & 0.25-0.83 & 6.5~\cite{nvm_price} & 5.3-8 & N/A & N/A\\
+Cell Size & N/A & $4-6F^2$ & $4.5F^2$ ~\cite{techinsights} & $10F^2$ & $6-20F^2$ & $25F^2$\\
+\hline 
+\end{tabular}
+\label{tab:nvms}
+\end{table*}
+Such different characteristics
+require a significant redesign of the memory system architecture, in
+both data management policies and mechanisms.  Hybrid memory systems,
+comprised of emerging non-volatile memory (NVM) and DRAM, in
+particular, look promising for future system design.  As to date these
+new NVM technologies are only beginning to become widely available,
+many open questions have yet to be worked out in management policy and
+implementation.  Evaluating many alternative approaches in hybrid
+memory design is essential for future system design.
 
-\keywords{Direct Imaging, Catalogs}
+Evaluating hybrid memory systems presents several unique challenges
+because we aim to test the whole system stack, comprising not only the
+CPU, but also the memory controller, memory devices and the
+interconnections.  Further, since the study is focused on main memory,
+accurate modeling of DRAM is required.  Much of the prior work in the
+processor memory domain relies upon software simulation as the primary
+evaluation framework with tools such as Champsim~\cite{champsim} and
+gem5~\cite{gem5}. However, cycle-level software simulators that meets our requirement of system complexity and flexibility, impose huge simulation
+time slow-downs versus real hardware. Moreover, there are often
+questions of the degree of fidelity of the outcome of arbitrary
+additions to software simulators~\cite{7155440}.
 
-\section{Introduction}\label{intro}
-Gathering catalog photometry and astrometry is generally straight-forward, although the process becomes notably challenging when dealing with faint or high proper motion objects. There are multiple ways to gather this information, like Aladin (\citealt{Bonnarel et al.(2000)}), CDS Cross-Match Service (\citealt{Boch et al.(2012)}), etc. We built upon previous techniques to develop the Wide-field Retrieval of Astrodata Program (WRAP) to improve the process. Other techniques have several drawbacks, such as complex GUI interfaces, a need for understanding multiple programming languages, or a lack of visual verification. WRAP is designed to address these challenges. We start by examining previous techniques and programs in \S\ref{prev tech}. Following that, we leverage the advantages of these prior methods to develop WRAP in \S\ref{WRAP}.
+In this paper, we propose an evaluation system with the flexibility to
+allow the user to define their own hybrid memory management policy and
+with the performance to run full applications at near native speed.
+In particular our evaluation platform leverages an FPGA platform with
+a hard IP ARM Cortex A57 processors and two memory controllers
+connecting the FPGA to DRAM DIMMS.  This platform with our framework
+allows the hybrid memory management unit to be implemented in the FPGA
+in RTL, where the real application memory requests on the host ARM
+cores are redirected to memory DIMMs connected to the FPGA. Thus we
+successfully decouple the design under test, i.e, the memory
+management policies, from the detailed modelling of memory device. Our
+FPGA-based emulation platform provides the flexibility to develop and
+test sophisticated memory management policies, while its hardware-like
+nature provides near-native simulation speed.
 
-\section{Previous Techniques} \label{prev tech}
+In this paper we detail the evaluation platform and compare its
+performance to comparable simulation based approaches to hybrid memory
+management simulation.  In particular, experimental results show
+that our platform provides 2286x speedup compared to Champsim, and 9280x
+speedup over Gem5.
+%Another research group has published their study on hybrid memory management~\cite{ours} based on our platform.
+\section{Background and Motivation}
+Hybrid memories, comprised of DRAM and NVM, have recently become a hot
+research topic, with numerous works~\cite{Hassan:2015,span,
+  Liu:2017,ramos, CSu} in this domain.  For design evaluation, these
+works predominantly use either software-based platform simulation,
+with simulator runtime limiting the workloads that can be examined, or
+they use analytical modeling, which has a large impact on accuracy.
 
-\begin{figure*}[ht]
-        \centering
-        \includegraphics[scale = 0.35]{Figure1.pdf}
-        \caption{A flowchart illustrating the WRAP procedure. Here we utilize 2MASSI J1721039+334415 (\citealt{Bardalez Gagliuffi et al.(2014)}). It is highlighted in red for CatWISE, WFCAM, and PanSTARRS. The process begins by opening WRAP in a terminal window. Then, the user inputs the coordinates, sets the search radius, and chooses the catalogs for their search. WRAP executes API queries, interacting with the chosen catalog APIs to retrieve relevant data. If the designated region is found through the API, WRAP displays an image of the area with catalog detections overlaid. Users interact by clicking on the image, prompting WRAP to identify the nearest object and writing pertinent information from the catalog into an output file. }
-        \label{Figure 1}
+In other domains, FPGA-accelerated simulators have demonstrated high
+time efficiency and accuracy, far beyond the scope of typical
+software-based alternatives.  Below we summarize the main advantages
+of FPGA-accelerated simulators and show how this approach can be
+applied to hybrid memory emulation system.
+
+%Chiou \emph{et al.}~\cite{Chiou:FAST} proposed FAST, a full system, cycle accurate simulator which provide orders of magnitude speedup of simulation time compared to conventional software based simulators.  
+
+\subsection{Speed and Accuracy} 
+FPGAs are composed of millions of lookup tables, each of them
+programmable to fulfill certain logic functions.  Owing to its
+hardware nature, FPGAs are great for parallel tasks and concurrent
+execution.  Software-simulators, which are by nature sequentially
+executed, have hit the simulation wall; a phenomenon that the
+simulation efficiency declines as the target hardware system becomes
+more complex. While software-based simulators are easier to build,
+they are slower, and less accurate. Therefore several prior works have
+turned to FPGA-accelerated simulators.
+
+Chung \emph{et al.}~\cite{Chung:PROTOFLEX} introduced Protoflex for
+multiprocessor simulation, which greatly reduced the simulation
+duration for complex commercial applications.
+ReSim~\cite{Fytraki:ReSim} is a trace-driven hardware simulator using
+FPGA. It improves the timing accuracy of simulation results, while
+lowering both hardware and time cost.\par
+When it comes to studies on memory systems, the efficiency problem deteriorates for software-based simulation. First, the
+traffic events in interconnections are highly unpredictable, thus the
+latency shows a wide variability. In contrast, the CPU events can be
+modeled by a fixed number of pipeline stages. Thus, prior
+works~\cite{Aport} simply use a one-cycle ``magic" memory to avoid
+modeling a realistic memory hierarchy, due to the timing complexity.
+\par
+Memory performance benchmark applications leverage large working sets to exert pressure on memory systems. Multi-GB data of the working set must be warmed up before we could exclude the transient performance fluctuation at cold start. Simulation acceleration techniques such as SimPoint and sampling, also require repetitive memory warm-up each time before we can obtain correct and representative sample. All these factors makes the simulation time prohibitive long with traditional software simulators. 
+Hence, an efficient FPGA-based emulation platform is highly desired
+for studies on hybrid memory systems.
+
+\subsection{Flexibility and Completeness}
+While FPGA-based simulators are primarily recognized for their high
+simulation efficiency and accuracy, they also provide unique scopes to
+other system metrics.  PrEsto~\cite{Sunwoo:PrEsto} is a simulator
+created by Sunwoo \emph{et al.} for power consumption estimation. It's
+able to predict cycle-by-cycle power dissipation, at a speed several
+orders of magnitude faster than the software-based competitors. Such
+detailed dynamic power information is essential for modern processor
+designs.  ATLAS~\cite{Njoroge:ATLAS} is the first FPGA prototyping of
+a chip-multiprocessors, with hardware-level support for transactional
+memories.
+
+The programmability of FPGA is also crucial to hybrid memory system
+emulation. Researchers are free to implement their own memory
+management policies in the logic blocks. Further, they don't have to
+deal with the modelling of memory device itself, as all memory
+requests are automatically directed to the real memory DIMMs in our
+platform.
+
+The flexibility of FPGA also allow us to emulate various NMV
+technologies which has different access characteristic, as shown in
+Table~\ref{tab:nvms}. Our platform provides a simple way for
+customizing critical parameters such as latency.  FPGA also meets the
+completeness requirement for memory system evaluations: users can
+easily add a variety of performance counters of their choice. For
+example, we implemented counters for read/write transactions to each
+memory device respectively, and obtained a fairly accurate estimate of
+the dynamic power consumption.
+\section{Design}
+\label{sec:design}
+\begin{figure}[h]
+\centering
+\hspace*{-0.2in}
+\subfloat[Target System Architecture]{\includegraphics[width=\columnwidth]{figures/target.png}
+\label{fig:target}}
+\hfil
+\hspace*{-0.2in}
+\subfloat[Emulation System Architecture]{\includegraphics[width=\columnwidth]{figures/architecture.png}%
+\label{fig:emulation}}
+\caption{Target System and Emulation System Architecture}
+\label{fig:architecture}
+\end{figure}
+Figure~\ref{fig:target} shows the target system and emulation system of our proposed scheme. The target design is the Hybrid Meomory Manger Unit (HMMU) that will be integrated to the processor die. The HMMU directly manages two memory device and receives the memory requests from the host CPU after cache filtering. 
+The received memory requests are then processed based on the user-defined data placement policies, and forwarded correspondingly to either DRAM or NVM.  The HMMU also manages the data migration between DRAM and NVM, by controlling the high-bandwidth DMA engine that connects to the both memory devices.\par
+In the emulation system, as illustrated in Figure~\ref{fig:emulation}, the HMMU and DMA engine are implemented in FPGA, and connects to the host via PCIe links.
+
+\subsection{Memory Request Processing Workflow}
+\begin{figure*}[h]
+\centerline{\includegraphics[width=0.8\textwidth]{figures/flow.png}}
+\caption{Request Processing Workflow}
+\label{fig:flow}
+\end{figure*}
+Figure~\ref{fig:flow} briefly walks through the memory request processing workflow:
+PCIe hard IP block receives TLPs carrying the memory requests from the host CPU, and then forwards them to the RX module of the FPGA logic.
+RX Control module extracts the TLP header into the FIFO by the order they were received. Meanwhile the TLPs are also forwarded to the control logic which is highly pipelined. In the first stage, TLPs were decoded and the interpreted memory requests are populated into the following stages. Here, you can design your own memory management policies, which usually have three aspects: the memory access pattern recognition, data placement policy, and data migration policy.
+We'd elaborate these policies in the later sections. The outcome of the control logic can also contain actions corresponding to these policies: 
+\begin{itemize}
+    \item Memory requests are forwarded to the memory controller (MC) of target device.
+    \item Trigger data migration in the DMA.
+\end{itemize}
+The journey ends for write memory request, when they arrive at the MC and the payload data were written into target memory device.
+As for the read requests, the read back data are retrieved from memory, and returned in the same order as the requests were received.
+The TX CNTL module receives the read back data from both NVM and DRAM, and assembles them with the corresponding header into a complete response message. The response messages are then encapsulated into PCIe transactional layer packets (TLP) at TX and then are sent back to the CPU host by the PCIe hard IP block.
+\subsection{Heterogeneity Transparency}
+Although hybrid memory is composed of two separate memory devices, designer might want to hide such heterogeneity from OS, and present one single flat memory space. Thus, all the data placement and migration between DRAM and NVM becomes transparent from the user applications' perspective. This mechanism is beneficial in several aspects:
+\begin{enumerate}
+    \item All the data movement are executed by purely hardware-based HMMU, without interrupting the OS and user applications.
+    \item Programmers don't have to learn about data allocation among separate memory devices.
+    \item Compatible with legacy applications.
+\end{enumerate}
+There are many implementation methods to realize this design. A straightforward approach is to build another layer of address redirection table within the HMMU, where the physical address is translated to the actual memory device address. The mapping rule becomes part of the data placement policy.
+\subsection{Memory Consistency}
+\begin{figure}[h]
+\centerline{\includegraphics[width=\columnwidth]{figures/consistency.png}}
+\caption{Memory Consistency Risk}
+\label{fig:consistency}
+\end{figure}
+
+A risk of memory consistency error arises here as the memory requests are split into the two channels for NVM and DRAM, respectively. From the perspective of OS, there is only one single memory space and the OS cannot tell which memory device is the request for. Hence, a consistency error is possible as shown in Fig. ~\ref{fig:consistency}, when the data was not returned in the same order as it was requested. Such errors are prone to happen when the later request is aimed at DRAM, which has a lower access latency. We adopt a tag-matching mechanism to guarantee the consistency, while still allowing out-of-order memory media access for higher performance. In particular, we use the header information ,stored at \texttt{HDR FIFO} in Fig.~\ref{fig:flow}, as the tag to save the order of memory requests.
+\subsection{DMA Engine}
+To efficiently migrate data between DRAM and NVM, without interfering processor memory requests, we need to implement a dedicated DMA engine.\par
+The bit width of DMA shall be compliant with the memory controller for maximum throughput. Due to the unbalanced data rates of the two memory devices, and the discrepancy of clock frequencies between the DMA module and memory controllers, an internal buffer is needed to temporarily hold the data during migration. Besides the choice of these two primary design parameters, bit width and buffer size, a major concern is how to guarantee data coherence when a memory access conflicts with ongoing DMA data migration.\par
+When DMA swaps two pages, the data is transferred in units of 512B-block.  We carefully designed the DMA so that it keeps track of the detailed page swap progress, to be specific, the address range of sub-blocks that have been transferred. When a memory request is targeted at the page being swapped, we use the swap progress indicator to decide where to redirect the memory requests. For instance, if it's a read request and the targeting cache-line falls behind the current swap progress, i.e., the requested data has been transferred to the new location, the DMA redirects the memory request to the destination device.  We spent considerable time to design and verify the logic design to ensure all possible cases are covered and processed properly.
+\subsection{PCIe BAR Memory Mapping}
+In order to have the applications run on PCIe attached memory, we first need to map the memory space into system address space.
+PCIe devices have a set of Base Address Registers (BAR), which are assigned by the platform firmware during the booting process. These BARs carry the base address where the PCIe device is mapped in the system memory-mapped or IO-mapped space. Here we chose the memory-mapped mode as it supports prefetching on our PCIe attached memory. The size of each BAR was programmed into the PCIe IP before FPGA project compilation. \par However, some embedded system might not have enough free system address space for our PCIe memories, which is usually larger than 2GB.
+Hence we need to adjust the system mapping appropriately in the device tree of firmware image (e.g. U-boot), to reserve enough address range for the required sizes of PCIe devices. 
+\subsection{Arbitrary Latency Cycles}
+\label{mimic}
+A great advantage of our platform is the flexibility of emulating different memory technologies, by adding arbitrary stall cycles to the access latency. This is essential when you don't have access to a real NVM DIMM, which is the case for many architecture research studies.\par
+There are multiple blocks in the workflow (Fig.~\ref{fig:flow}) where you can insert extra cycles of delay, e.g., between the control logic and MC, or on the data return path. Here we use 3D Xpoint as an example to show how we calculated the number of stalling cycles to be inserted.\par 
+We measured the round trip time in FPGA cycles to access external DRAM
+DIMM first, and then scaled the number of stall cycles according to
+the speed ratio between DRAM and 3D Xpoint, as described
+in the Table~\ref{tab:nvms}.Thus we have one DRAM DIMM running at
+full speed and the other DRAM DIMM emulating the approximate speed of 3D XPoint. Hence the
+platform is not constrained to any specific type of NVM, but rather
+allows us to study and compare the behaviors across any arbitrary
+combinations of hybrid memories. 
+%Since 3D Xpoint is the only cutting edge NVM technology that has been massively manufactured (Intel Optane series), we chose it for the simulation experiments presented in the following sections. 
+\subsection{Driver and Memory Allocator}
+\begin{figure}[h]
+\centerline{\includegraphics[width=\columnwidth]{figures/middle.png}}
+\caption{Middleware}
+\label{fig:middle}
+\end{figure}
+The PCIe BAR mapping renders the targeted hybrid memories as a continuous range in the system physical address space, which is presented as a device file \texttt{/dev/mem}.
+To mandate the application to only run on the hybrid memories, we need middleware as shown in Fig.~\ref{fig:middle}:
+\begin{enumerate}
+    \item The driver (\texttt{mem\_driver.ko}) manages the physical frames of the hybrid memories (\texttt{/dev/mem}), with the help of the kernel's \texttt{genpool} subsystem. It sets up the page table using the \texttt{remap\_pfn\_range} kernel function.
+   \item We modify the \texttt{pages.c} of \texttt{jemalloc} allocator~\cite{jemalloc}, and use the \texttt{mmap} function to enforce the application allocations within the address range of the specified device file (\texttt{/dev/mem\_driver}).
+\end{enumerate}
+Users are free to implement their own optimized strategies of virtual memory management inside the allocator, or physical frames management inside the driver. For example, we extended the \texttt{malloc} API, to accept users' hints of memory device preference regarding data placement, and populate these information through the stack to the hardware hybrid memory controller. 
+\pgfplotsset{
+    /pgfplots/ybar legend/.style={
+    /pgfplots/legend image code/.code={%
+       \draw[##1,/tikz/.cd,yshift=-0.25em]
+        (0cm,0cm) rectangle (12pt, 1em);},
+   },
+}
+%Slowdown
+\pgfplotstableread{
+application	fpga	gem5	champsim
+500.perlbench	1.951451546	73839.82973	16418.9097
+505.mcf	15.36232386	31079.28459	4890.100918
+508.namd	6.353220866	49263.83823	12972.40447
+519.lbm	5.685779049	39090.61064	14428.22929
+520.omnetpp	1.985561326	10995.30433	6418.788826
+523.xalancbmk	4.900496468	13177.75896	6726.882922
+525.x264	4.501875102	18237.17124	3877.859354
+531.deepsjeng	1.663266195	48400.49791	9251.427302
+538.imagick	1.166819817	21169.82902	4064.916096
+541.leela	1.275545735	35870.07482	6850.625276
+544.nab	1.175347568	37875.96734	8418.632861
+557.xz	7.401716196	25630.0926	3809.654436
+Geomean	3.167911073	29397.82307	7241.402645
+}\slowdown
+
+\pgfplotstableread{
+application	rds	wrs
+500.perlbench	91269070848	85151563776
+505.mcf	3104449445888	3103576014848
+508.namd	8357298176	8380891136
+519.lbm	271550382080	272163438592
+520.omnetpp	257153286144	250019299328
+523.xalancbmk	693449916416	696510857216
+525.x264	39498645504	39774453760
+531.deepsjeng	61425254400	58407272448
+538.imagick	4803395584	4827742208
+541.leela	102015385600	103786201088
+544.nab	80701865984	81461706752
+557.xz	44052758528	43823579136
+}\requests
+
+\begin{filecontents*}{slowdown.tikz}
+  \begin{tikzpicture}
+    \begin{axis}[
+        width=\textwidth,
+        height=0.8\columnwidth,
+        ymode=log,
+        ymin=1,
+        %yticklabel={\pgfmathparse{\tick*100}\pgfmathprintnumber{\pgfmathresult}\%},
+        xtick = data,
+        xmin=-0.7, xmax=12.7,
+        xticklabels from table={\slowdown}{application},
+        xticklabel style={font=\small, rotate=45},
+        yticklabel style={font=\small, rotate=45},
+        ybar,
+        bar width = 0.2cm,
+        legend style={at={(0.5,1)},font=\normalsize,anchor=north,legend columns=3},
+      ]
+      \addplot [fill=white]table [ x expr=\coordindex, y expr=\thisrow{fpga} ] {\slowdown};
+      \addplot [fill=lightgray]table [ x expr=\coordindex, y expr=\thisrow{champsim} ] {\slowdown};
+      \addplot [fill=black]table [ x expr=\coordindex, y expr=\thisrow{gem5}] {\slowdown};
+            \legend{FPGA, Champsim, Gem5}
+    \end{axis}
+\end{tikzpicture}
+\end{filecontents*}
+
+\begin{filecontents*}{requests.tikz}
+  \begin{tikzpicture}
+    \begin{axis}[
+        width=1.1\columnwidth,
+        height=0.8\columnwidth,
+        ymode=log,log basis y={2},
+        ylabel style={font=\footnotesize},
+        yticklabel style={font=\footnotesize},
+        xtick = data,
+        xmin=-0.75, xmax=11.75,
+        xticklabels from table={\requests}{application},
+        xticklabel style={font=\footnotesize, rotate=45, anchor=north east},
+        yticklabel style={font=\small, rotate=45},
+        ybar,
+        bar width = 0.12cm,
+        legend style={at={(0.5,1)},font=\normalsize,anchor=north,legend columns=3},
+      ]
+      \addplot [fill=white]table [ x expr=\coordindex, y expr=\thisrow{rds} ] {\requests};
+      \addplot [fill=black]table [ x expr=\coordindex, y expr=\thisrow{wrs}] {\requests};
+            \legend{Read, Write}
+    \end{axis}
+\end{tikzpicture}
+\end{filecontents*}
+
+\section{Evaluation}
+\label{sec:eval}
+We implemented an emulation platform that's targeted at the ARM-based mobile computing hybrid memory system. Mobile systems have limited energy budgets, and they're more sensitive to memory power consumption. Hence, we believe the NVM's advantage of minimal standby power will be highly valued.\par 
+In this section,
+%we present the evaluation of our proposed FPGA-based hybrid memory emulation systems.  
+we first present the hardware implementation, and the benchmark software applications. Then
+we evaluate the performance of our proposed emulation scheme, by comparing against the two popular software-based simulators, namely Gem5~\cite{gem5} and Champsim~\cite{champsim}. Finally we analyze and discuss some of the
+more interesting data points.
+
+\subsection{Methodology}
+\label{sec:method}
+\subsubsection{Platform Implementation}
+The system implementation is illustrated in Figure~\ref{fig:implementation}.
+We used the customized LS2085A board produced by Freescale which has 8 ARM Cortex A57 cores. The LS2085a connects to the FPGA board via a high-speed PCI Express 3.0 link, and manages the two
+memory modules (DRAM and NVM) directly. The platform is physically set up as shown in Figure~\ref{fig:boards}.
+\begin{figure}[!hbt]
+\centerline{\includegraphics[width=\columnwidth]{figures/boards.jpg}}
+\caption{Hardware Boards Setup}
+\label{fig:boards}
+\end{figure}
+Since 3D Xpoint is the only NVM technology that has turned into mass-production (Intel Optane series), we chose it for the presented experiments. We emulated the 3D XPoint device with regular DRAM DIMM, using the approach explained in~\ref{mimic}.\par
+The DRAM and NVM memories are
+mapped to the address range $[0x1240000000, 0x1288000000)$ of the physical memory space via the PCIe BAR (Base Address
+Register) window. Note that the CPU caching is still enabled on the mapped memory space, due to the PCIe BAR configurations.
+\begin{figure}[!hbt]
+\centerline{\includegraphics[width=\columnwidth]{figures/implementation.png}}
+\caption{System Implementation}
+\label{fig:implementation}
+\end{figure}
+
+
+The
+detailed system specification is listed in Table~\ref{tab:System
+  Spec}.
+\begin{table}[hpbt]
+\centering
+\settowidth\tymin{\textbf{Component}}
+\caption{Emulation System Specification}
+\begin{tabulary}{\columnwidth}{L|L}
+  \hline
+  {\textbf{Component}} & Description \\
+  \hline
+  CPU & ARM Cortex-A57 @ 2.0GHz, 8 cores, ARM v8 architecture\\
+  \hline
+  L1 I-Cache & 48 KB instruction cache, 3-way set-associative\\
+  \hline
+  L1 D-Cache & 32 KB data cache, 2-way set-associative\\
+  \hline
+  L2 Cache & 1MB, 16-way associative, 64KB cache line size \\
+  \hline
+  Interconnection & PCI Express Gen3 (8.0 Gbps) \\
+  \hline
+   %\multirow{2}{*}{Memory} & 128MB DDR4\\ & 1GB 3DXpoint(emulated by DDR4 with added latency) \\
+   DRAM & 128MB DDR4\\
+   \hline
+   NVM & 1GB 3DXpoint(emulated by DDR4 with added latency) \\
+%\hline
+%Emulated NVM Latency & Read 100ns / Write 400ns\\
+\hline
+OS & Linux version 4.1.8 \\
+\hline
+\end{tabulary}
+\label{tab:System Spec}
+\end{table}
+
+
+
+
+
+\subsubsection{Workloads}
+We choose applications from the latest version SPEC CPU 2017 benchmark suite~\cite{SPEC_Official}.  To emulate memory pressures of future mobile applications, we
+prefer those SPEC CPU 2017 benchmarks which require a larger
+working set than the DRAM size in our system.  The details of tested benchmark applications are
+listed in Table~\ref{tab:Benchmarks}.
+
+\begin{table}[hbt]
+\centering
+\settowidth\tymin{\textbf{Memory Footprint}}
+\caption{Tested Workloads of SPEC 2017\cite{SPEC_Official}} \label{tab:Benchmarks}
+
+\begin{tabulary}{\columnwidth}{L|L|L}
+\hline
+{\textbf{Benchmark}} & Description & Memory footprint \\
+\hline
+\multicolumn {3}{c}{Integer Applications} \\
+\hline
+500.perlbench	& Perl interpreter & 202MB \\
+\hline
+505.mcf & Vehicle route scheduling & 602MB\\
+\hline
+508.namd & Molecular dynamics & 172MB \\
+\hline
+520.omnetpp	& Discrete Event simulation - computer network	& 241MB \\
+\hline
+523.xalancbmk	& XML to HTML conversion via XSLT & 481MB \\
+\hline
+525.x264	& Video compressing & 165MB \\
+\hline
+531.deepsjeng	& Artificial Intelligence: alpha-beta tree search (Chess) & 700MB \\
+\hline
+541.leela	& AI: Monte Carlo tree search & 22MB \\
+\hline
+557.xz & General data compression & 727MB \\
+\hline
+\multicolumn {3}{c}{Float Point Applications} \\
+\hline
+519.lbm & Fluid dynamics & 410MB \\
+\hline
+538.imagick & Image Manipulation & 287MB \\
+\hline
+544.nab & Molecular Dynamics & 147MB \\
+\hline
+\end{tabulary}
+\end{table}
+
+\subsubsection{Designs Under Test}
+\begin{itemize}
+    \item Software-based simulators: Gem5, Champsim:\par
+    We run the workloads~\ref{tab:Benchmarks} in Gem5 (SE mode) and Champsim, on a x86 workstation with 2 Six-Core Intel Xeon Processor E5-2643 v3 (20M Cache, 3.40 GHz), and 128GB DDR4 Memory. 
+    %We obtained the IPC by dividing the instruction counts against the simulation time in terms of CPU clock cycles.
+    We normalized the simulation time against the running time of native execution on the same machine.
+    \item Our proposed FPGA-based emulation platform\par
+    We run the same set of workloads on our emulation system~\ref{tab:System Spec}, then we normalized the run time against the time taken by native execution.
+    Note that in native execution, the applications run in the on-board DDR4 (16GB) of the LS2085a board.
+\end{itemize}
+
+\subsection{Results}
+\begin{figure*}[htb]
+  \centering
+  \includegraphics{slowdown}
+  \caption{Simulation Time Normalized against Native Execution}
+  \label{fig:slowdown}
 \end{figure*}
 
-Numerous additional tools have been developed to facilitate the gathering of astrophysical data. However, discussing every software in detail here would be too enormous a task for a research note. Instead, we have highlighted some of the most popular techniques and software currently available to provide context for understanding the improvements WRAP provides.
-
-The most prevalent approach for collecting photometric and astrometric data involves conducting cross-matches based on Right Ascension (R.A.) and Declination (Decl.). One such program is the CDS X-Match Service (\citealt{Boch et al.(2012)}; \citealt{Pineau et al.(2020)}) allowing users to search various catalogs using an input coordinate table.  However, a drawback is the absence of visual confirmation for matched data. This makes it susceptible to errors from incorrect cross-matches if the object in question has large proper motion. In contrast, other services offer visual confirmation, enhancing the accuracy of gathering astrophysical data.
-
-The Aladin catalog search feature (\citealt{Bonnarel et al.(2000)}) shares similarities with WRAP in terms of functionality. It enables users to load images and superimpose them onto the corresponding source catalog. However, this method can be hampered by slow performance, primarily when dealing with substantial amounts of data simultaneously. Moreover, this approach is primarily designed for single object searches, limiting its applicability for more extensive cross-identification tasks.
-
-Additional software includes the IRSA Viewer (\url{https://irsa.ipac.caltech.edu/irsaviewer}), VizieR Photometry Viewer (\citealt{Ochsenbein et al.(2000)}), and AstroToolBox (also developed by the Backyward Worlds: Planet 9 collaboration; \citealt{Kiwy(2022)}). However, these tools have certain drawbacks,  briefly described here. The IRSA Viewer, for instance, lacks catalogs beyond those supported at IPAC, limiting the available data. The VizieR Photometry Viewer is comparable to the CDS X-Match Service in that it lacks readily available imaging for visual confirmation. Lastly, AstroToolBox offers both visual confirmation and cross-matching, but these features are located in separate tabs.
-
-\section{WRAP Overview} \label{WRAP}
-To address these complications, we developed WRAP. Developed in Python 3.8 (the recommended version for using WRAP), WRAP is an open-source application designed to have minimal dependencies and low computational expenses, ensuring it remains freely accessible. After installation, the user inputs single or multi-object files (in CSV, FITS, ASCII, or IPAC table formats): R.A. (deg), Decl. (deg), search radius (arcsec), then selects the desired catalogs. The catalogs included are: CatWISE2020 Point Source Catalog (\citealt{Marocco et al.(2021)}), AllWISE Source Catalog (WISE; \citealt{Cutri et al.(2021)}), Gaia Data Release 3 (Gaia; \citealt{Gaia Collaboration et al.(2021)}), VISTA Science Archive catalogs (VSA; \citealt{Irwin et al.(2004)}), WFCAM Science Archive catalogs (WFCAM; \citealt{Hambly et al.(2008)}), 2MASS Point Source Catalog (2MASS; \citealt{Cutri et al.(2003)} and \citealt{Skrutskie et al.(2006)}), PanSTARRS Data Release 2 (PanSTARRS; \citealt{Chambers et al.(2016)}), NOIRLab Source Catalog Data Release 2 (NSC; \citealt{Nidever et al.(2021)}), and the GALEX Catalog (GALEX; \citealt{Martin et al.(2005)}). 
-
-Once inputs are selected, a WISEView (\citealt{Caselden et al. 2018}) window will display WISE coadd images to aid the user in finding their object. WRAP begins by running through each catalog, showing the images with overlaid sources. Each catalog overlay comes with customizable image features, such as image stretch, photometric band selection, and circle size. Furthermore, users may add notes to any selected catalog.  After the user clicks on their chosen object, WRAP identifies the nearest object through a proximity check within the field, and the results are then saved to a .csv table (no images are saved in WRAP).
-
-In Figure \ref{Figure 1}, the flowchart demonstrates the intuitive functionality of WRAP, emphasizing its user-friendly interface. The catalog overlay feature of WRAP is essential for confirmation of high motion objects, such as the illustrated object with its high proper motion of $\sim$1.95 arcsec yr$^{-1}$ (\citealt{Bardalez Gagliuffi et al.(2014)}), that would be difficult to cross-identify through a simple positional cross-match. 
-
-\section{Conclusion} \label{conclusion}
-WRAP was developed to serve as a tool for astronomers seeking photometric and astrometric data for faint and high proper motion objects. It incorporates the most effective features from previous methods, resulting in a user-friendly and streamlined process. This is achieved by offering visual verification, consolidating popular catalogs in one location, and requiring no coding experience. WRAP is accessible from GitHub at the following link: \url{https://github.com/huntbrooks85/WRAP}. The DOI for WRAP is: \url{https://doi.org/10.5281/zenodo.10359982}. Please refer to the ReadMe file on the GitHub page for detailed installation and usage instructions. 
-
-\section{Acknowledgements} 
-
-
-This Backyard Worlds research was supported by NASA grant 2017-ADAP17-0067. All PanSTARRS data used in this paper can be found in MAST: \dataset[10.17909/s0zg-jx37]{http://dx.doi.org/10.17909/s0zg-jx37}
-
-\software{WiseView (\citealt{Caselden et al. 2018})}
-\facilities{NEOWISE, Gaia, ESO:VISTA, UKIRT, CTIO:2MASS, FLWO:2MASS, PS2, Astro Data Lab, IRSA, CDS, MAST}
-
-\newpage 
-
-\begin{thebibliography}{}
-
-\bibitem[Bardalez Gagliuffi et al.(2014)]{Bardalez Gagliuffi et al.(2014)} Bardalez Gagliuffi, D.~C., Burgasser, A.~J., Gelino, C.~R., et al.\ 2014, \apj, 794, 143. doi:10.1088/0004-637X/794/2/143
-
-\bibitem[Boch et al.(2012)]{Boch et al.(2012)} Boch, T., Pineau, F., \& Derriere, S.\ 2012, Astronomical Data Analysis Software and Systems XXI, 461, 291
-
-\bibitem[Bonnarel et al.(2000)]{Bonnarel et al.(2000)} Bonnarel, F., Fernique, P., Bienaym{\'e}, O., et al.\ 2000, \aaps, 143, 33. doi:10.1051/aas:2000331
-
-\bibitem[Gaia Collaboration et al.(2021)]{Gaia Collaboration et al.(2021)} Gaia Collaboration, Brown, A.~G.~A., Vallenari, A., et al.\ 2021, \aap, 649, A1. doi:10.1051/0004-6361/202039657
-
-\bibitem[Caselden et al.(2018)]{Caselden et al. 2018} Caselden, D., Westin, P., Meisner, A., et al.\ 2018, Astrophysics Source Code Library. ascl:1806.004
-
-\bibitem[Chambers et al.(2016)]{Chambers et al.(2016)} Chambers, K.~C., Magnier, E.~A., Metcalfe, N., et al.\ 2016, arXiv:1612.05560. doi:10.48550/arXiv.1612.05560
-
-\bibitem[Cutri et al.(2003)]{Cutri et al.(2003)} Cutri, R.~M., Skrutskie, M.~F., van Dyk, S., et al.\ 2003, ``The IRSA 2MASS All-Sky Point Source Catalog, NASA/IPAC Infrared Science Archive. 
-
-\bibitem[Cutri et al.(2021)]{Cutri et al.(2021)} Cutri, R.~M., Wright, E.~L., Conrow, T., et al.\ 2021, VizieR Online Data Catalog, II/328
-
-\bibitem[Dye et al.(2018)]{Dye et al.(2018)} Dye, S., Lawrence, A., Read, M.~A., et al.\ 2018, \mnras, 473, 5113. doi:10.1093/mnras/stx2622
-
-\bibitem[Emerson et al.(2004a)]{Emerson et al.(2004a)} Emerson, J.~P., Sutherland, W.~J., McPherson, A.~M., et al.\ 2004, The Messenger, 117, 27
-
-\bibitem[Emerson et al.(2004b)]{Emerson et al.(2004b)} Emerson, J.~P., Irwin, M.~J., Lewis, J., et al.\ 2004, \procspie, 5493, 401. doi:10.1117/12.551582
-
-\bibitem[Hambly et al.(2008)]{Hambly et al.(2008)} Hambly, N.~C., Collins, R.~S., Cross, N.~J.~G., et al.\ 2008, \mnras, 384, 637. doi:10.1111/j.1365-2966.2007.12700.x
-
-\bibitem[Irwin et al.(2004)]{Irwin et al.(2004)} Irwin, M.~J., Lewis, J., Hodgkin, S., et al.\ 2004, \procspie, 5493, 411. doi:10.1117/12.551449
-
-\bibitem[Kiwy(2022)]{Kiwy(2022)} Kiwy, F.\ 2022, Astrophysics Source Code Library. ascl:2201.002
-
-\bibitem[Lawrence et al.(2007)]{Lawrence et al.(2007)} Lawrence, A., Warren, S.~J., Almaini, O., et al.\ 2007, \mnras, 379, 1599. doi:10.1111/j.1365-2966.2007.12040.x
-
-\bibitem[Marocco et al.(2021)]{Marocco et al.(2021)} Marocco, F., Eisenhardt, P.~R.~M., Fowler, J.~W., et al.\ 2021, \apjs, 253, 8. doi:10.3847/1538-4365/abd805
-
-\bibitem[Martin et al.(2005)]{Martin et al.(2005)} Martin, D.~C., Fanson, J., Schiminovich, D., et al.\ 2005, \apjl, 619, L1. doi:10.1086/426387
-
-\bibitem[Nidever et al.(2021)]{Nidever et al.(2021)} Nidever, D.~L., Dey, A., Fasbender, K., et al.\ 2021, \aj, 161, 192. doi:10.3847/1538-3881/abd6e1
-
-\bibitem[Ochsenbein et al.(2000)]{Ochsenbein et al.(2000)} Ochsenbein, F., Bauer, P., \& Marcout, J.\ 2000, \aaps, 143, 23. doi:10.1051/aas:2000169
-
-\bibitem[Pineau et al.(2020)]{Pineau et al.(2020)} Pineau, F.-X., Boch, T., Derri{\`e}re, S., et al.\ 2020, Astronomical Data Analysis Software and Systems XXVII, 522, 125
-
-\bibitem[Skrutskie et al.(2006)]{Skrutskie et al.(2006)} Skrutskie, M.~F., Cutri, R.~M., Stiening, R., et al.\ 2006, \aj, 131, 1163. doi:10.1086/498708
-
-\end{thebibliography}
-
+\begin{figure}[htb]
+  \centering
+  \includegraphics{requests}
+  \caption{Memory Requests (Bytes)}
+  \label{fig:requests}
+\end{figure}
+Figure~\ref{fig:slowdown} shows the simulation time of each methods, normalized against the run time of native execution.
+The geometric mean of slowdown factors indicates the overall time efficiency of each tested design (lower the better).\par
+Our FPGA-based emulation system merely experienced 3.17x slowdown versus the native execution, while Gem5 showed 29397.82x slowdown, and Champsim yielded 7241.4x.
+Among all the tested workloads, 538.imagick had smallest slowdown (1.17x), and 505.mcf suffered the largest performance penalty (15.36x).\par
+To investigate the memory behaviors of these applications, we implemented a variety of performance counters in the FPGA. We used one set of the counters to collect numbers of memory requests generated by each application, as presented in Figure~\ref{fig:requests}. We found that 538.imagick created the fewest memory requests(Read: 4.47GB, Write: 4.49GB); while 505.mcf incurred the most requests (Read: 2.83TB, Write: 2.82TB). Our observation is also confirmed by~\cite{spec2017-workload}, which reports that 505.mcf has the highest cache miss rate, and 538.imagic has the lowest L2/L3 cache miss rates among the tested workloads.
+Based on our experience developing the emulation system, we presume the major impact comes from the latency of the PCIe links. Consequently, applications with higher volume of memory accesses will be affected negatively. 
+\section{Conclusions}
+\label{sec:conc}
+Emerging non-volatile memory (NVM) technologies provide higher
+capacity and less static power consumption than traditional DRAM. Hybrid memories comprised of both NVM and DRAM
+promise to mitigate the energy limits on mobile computing/embedded system. The design space for hyrid memory management pollies are broad, with many
+possibilities for HW/SW cross-layer data allocation and migration.
+Evaluating hybrid memory systems requires full-stack system simulation involving bus/interconnection, memory controllers, memory devices, etc. With such level of complexity, cycle-level simulation becomes  prohibitive slow for traditional simulation-based techniques.\par
+  Here we propose an FPGA based platform for rapid, accurate
+hybrid memory system evaluation.  In this platform, only the hybrid
+memory management policies themselves are emulated in the FPGA
+hardware, the other system components (i.e. the processor, DRAM, etc)
+are all real components.  Thus users can focus on the core design and don't have to bother modelling system environments.
+Experiments on SPEC 2017 show that our design is 2286 times faster than Champsim, and 9280 times faster than Gem5. \par
+The flexibility of FPGA allow users to build performance counter of various functions, providing rich information and new scopes to design exploration.
+\bibliographystyle{IEEEtran}
+\bibliography{refs.bib}
 \end{document}
+

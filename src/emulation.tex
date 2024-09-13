@@ -1,0 +1,95 @@
+%\documentclass[sigconf,natbib=false, 9pt]{acmart}
+\documentclass[letter, 10pt, conference]{IEEEtran}
+
+\usepackage[T1]{fontenc}
+%\usepackage{lmodern}
+
+
+% Hack to try to make acmart work with biblatex: https://tex.stackexchange.com/questions/37076/is-it-possible-to-load-biblatex-with-a-class-that-has-already-loaded-natbib
+%\let\citename\relax
+%\RequirePackage[abbreviate=true, dateabbrev=true, isbn=false, doi=false, urldate=comp, url=false, maxbibnames=2, backref=false, backend=bibtex, style=ACM-Reference-Format, language=american]{biblatex}
+
+\input{main-config}
+
+
+%\addbibresource{bibliography.bib}
+%\renewcommand{\bibfont}{\Small}
+
+
+\usepackage{booktabs} % For formal tables
+
+%
+%% Copyright
+%%\setcopyright{none}
+%%\setcopyright{acmcopyright}
+%%\setcopyright{acmlicensed}
+%\setcopyright{rightsretained}
+%%\setcopyright{usgov}
+%%\setcopyright{usgovmixed}
+%%\setcopyright{cagov}
+%%\setcopyright{cagovmixed}
+%
+%
+%% DOI
+%\acmDOI{10.475/123_4}
+%
+%% ISBN
+%\acmISBN{123-4567-24-567/08/06}
+%
+%%Conference
+%\acmConference[ICCAD19]{}{}{}
+%\acmYear{2019}
+%\copyrightyear{2019}
+%
+%\acmPrice{15.00}
+%
+%\settopmatter{printacmref=false}
+
+\begin{document}
+\title{System-level optimization of Network-on-Chips for heterogeneous 3D System-on-Chips\vspace{-12pt}}
+
+\author{
+	\IEEEauthorblockN{{Jan Moritz Joseph}\IEEEauthorrefmark{1}, {Dominik Ermel}\IEEEauthorrefmark{1}, {Lennart Bamberg}\IEEEauthorrefmark{2},  {Alberto Garc\'ia-Oritz}\IEEEauthorrefmark{2}, {Thilo Pionteck}\IEEEauthorrefmark{1}}\\\vspace{-12pt}
+	\IEEEauthorblockA{\IEEEauthorrefmark{1}Otto-von-Guericke-Universit\"at Magdeburg,
+		Institut f\"ur Informations- und Kommunikationstechnik, Germany\\\vspace{-12pt}
+		Email: \{jan.joseph, dominik.ermel, thilo.pionteck\}@ovgu.de}\\
+	\IEEEauthorblockA{\IEEEauthorrefmark{2}University of Bremen
+		Institute of Electrodynamics and Microelectronics, Germany\\
+		Email: \{agarcia, bamberg\}@item.uni-bremen.de}}
+
+
+
+% The default list of authors is too long for headers}
+%\renewcommand{\shortauthors}{J. M. Joseph et al.}
+\maketitle
+\begin{abstract}
+	For a system-level design of Networks-on-Chip for 3D heterogeneous System-on-Chip (SoC), the locations of components, routers and vertical links are determined from an application model and technology parameters. In conventional methods, the two inputs are accounted for separately; here, we define an integrated problem that considers both application model and technology parameters. We show that this problem does not allow for exact solution in reasonable time, as common for many design problems. Therefore, we contribute a heuristic by proposing design steps, which are based on separation of intralayer and interlayer communication. The advantage is that this new problem can be solved with well-known methods. We use 3D Vision SoC case studies to quantify the advantages and the practical usability of the proposed optimization approach. We achieve up to 18.8\% reduced white space and up to 12.4\% better network performance in comparison to conventional approaches.
+\end{abstract}
+
+%\keywords{ACM proceedings, \LaTeX, text tagging}
+
+
+
+\maketitle
+
+%\input{samplebody-conf}
+\input{chapters/00_introduction}
+\input{chapters/technologyModel}
+\input{chapters/problem}
+\input{chapters/heursitic}
+\input{chapters/05_results}
+\vspace{-3pt}
+\input{chapters/07_conclusion}
+\vspace{-3pt}
+
+\section*{Acknowledgments}
+\vspace{-3pt}
+\noindent This work is funded by DFG projects PI 447/8 and GA 763/7.
+\vspace{-4pt}
+\bibliographystyle{IEEEtran}
+\bibliography{bibliographyShort}
+
+
+%\input{chapters/06_discussion}
+
+\end{document}
