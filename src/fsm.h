@@ -6,6 +6,8 @@
 #include <memory>
 #include <iostream>
 #include <stack>
+#include <regex>
+#include <algorithm>
 #include "nlohmann/json.hpp"
 #include "ast.h"
 #include "fsm.h"
@@ -29,6 +31,7 @@ private:
 	std::string extractAuthorName(const std::string& authorCommand);
 	std::string extractAffiliation(const std::string& affiliationCommand);
 	std::string extractSectionName(const std::string& sectionCommand);
+	std::vector<std::string> extractMultipleAuthors(const std::string& authorCommand);
 	
 	std::string extractMathContent(const std::shared_ptr<ASTNode>& node);
 

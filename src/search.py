@@ -2,22 +2,30 @@ import os
 import pinecone
 import openai
 import json
-from langchain.embeddings.openai import OpenAIEmbeddings  # Correct Langchain import for embeddings
-from langchain.llms import OpenAI  # Ensure you have installed langchain properly
+from langchain_openai import OpenAIEmbeddings
+from langchain_openai import OpenAI  # Import the OpenAI class
 
-# Set OpenAI and Pinecone API keys from environment variables
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Initialize Pinecone
-pinecone.init(api_key=os.getenv("PINECONE_API_KEY"), environment="us-east1-gcp")  # Replace 'us-east1-gcp' with your Pinecone environment
-index_name = "document"
+pc = pinecone.Pinecone(
+    api_key=os.getenv("PINECONE_API_KEY")
+)
 
-# Check if the index exists, and create it if not
-if index_name not in pinecone.list_indexes():
-    pinecone.create_index(index_name, dimension=1536, metric="euclidean")
+index_name = "document"
+if index_name not in pc.list_indexes().names():
+    pc.create_index(
+        name=index_name, 
+        dimension=1536,  
+        metric='euclidean',
+        spec=pinecone.ServerlessSpec(
+            cloud='aws',
+            region='us-east-1'
+        )
+    )
 
 # Get the index instance
-index = pinecone.Index(index_name)
+index = pc.Index(index_name)
 
 def load_json(filename):
     """Load the full JSON file and return the entire document."""
@@ -38,20 +46,6 @@ def store_embeddings(document):
     """Store each chunk's embeddings and metadata into Pinecone."""
     embeddings_model = OpenAIEmbeddings()
 
-    # Extract document-level metadata such as title and authors
-    doc_title = document.get("title", "Unknown Title")
-    metadata = document.get("metadata", {})
-    authors = metadata.get("authors", [])
-    
-    # Prepare author information for metadata
-    authors_info = [
-        {
-            "name": author.get("name", "Unknown Author"),
-            "affiliations": author.get("affiliations", [])
-        }
-        for author in authors
-    ]
-
     # Loop through each chunk in the document's content
     for i, chunk in enumerate(document.get("content", [])):
         # Prepare the content for embedding
@@ -64,22 +58,21 @@ def store_embeddings(document):
         vector_id = f"chunk-{i+1}"
         
         # Prepare metadata for this chunk
-        chunk_metadata = {
-            "title": doc_title,
-            "section": chunk.get("section", "Unknown Section"),
-            "type": chunk.get("type", "Unknown Type"),
+        metadata = {
+            "content": chunk.get("content", ""),
             "references": chunk.get("references", []),
-            "authors": authors_info
+            "section": chunk.get("section", "Unknown Section"),
+            "type": chunk.get("type", "Unknown Type")
         }
         
-        # Upsert the vector into Pinecone with the content, references, and metadata
-        index.upsert([(vector_id, embedding, chunk_metadata)])
+        # Upsert the vector into Pinecone
+        index.upsert([(vector_id, embedding, metadata)])
 
 def query_pinecone(query):
     embeddings_model = OpenAIEmbeddings()  
     query_embedding = embeddings_model.embed_query(query)  
     
-    result = index.query(queries=[query_embedding], top_k=5, include_metadata=True)
+    result = index.query(vector=query_embedding, top_k=5, include_metadata=True)
     
     return result
 
@@ -93,21 +86,17 @@ def gpt_refined_query(query, pinecone_results):
 
     formatted_prompt = prompt_template.format(context=context, query=query)
 
-    # Use OpenAI for generating the refined response
-    response = openai.Completion.create(
-        engine="text-davinci-003",  # or another GPT-3 engine like `text-davinci-003`
-        prompt=formatted_prompt,
-        max_tokens=150,
-        temperature=0.1
-    )
+    llm = OpenAI(temperature=0.1)  # Corrected import of OpenAI class
 
-    return response.choices[0].text.strip()
+    response = llm(formatted_prompt)
+
+    return response
 
 def main():
     json_filename = "document.json"
     document = load_json(json_filename)
 
-    # Check if the document is valid
+    # Check if document is valid
     if not document:
         print("Error: No valid document to process.")
         return

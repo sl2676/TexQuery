@@ -63,6 +63,7 @@ json FSM::chunkDocumentToJson(const std::shared_ptr<ASTNode>& root) {
     std::string currentSection;
     json currentSectionJson;
     json currentAuthor;
+    bool authorActive = false;  
     std::string currentAffiliation;
 
     bool inAbstract = false;
@@ -81,15 +82,22 @@ json FSM::chunkDocumentToJson(const std::shared_ptr<ASTNode>& root) {
                 documentJson["document"]["title"] = extractSectionName(content);
             }
             else if (content.find("\\author") != std::string::npos) {
-                currentAuthor["name"] = extractAuthorName(content);
-                currentAuthor["affiliations"] = json::array();
+                std::vector<std::string> authors = extractMultipleAuthors(content);
+                for (const auto& author : authors) {
+                    currentAuthor["name"] = author;
+                    currentAuthor["affiliations"] = json::array();
+                    authorActive = true; 
+                }
             }
             else if (content.find("\\affiliation") != std::string::npos) {
-                std::string affiliation = extractAffiliation(content);
-                currentAuthor["affiliations"].push_back(affiliation);
-                if (!currentAuthor["name"].is_null()) {
-                    documentJson["document"]["metadata"]["authors"].push_back(currentAuthor);
-                    currentAuthor.clear();
+                if (authorActive) {
+                    std::string affiliation = extractAffiliation(content);
+                    currentAuthor["affiliations"].push_back(affiliation);
+                    if (!currentAuthor["name"].is_null()) {
+                        documentJson["document"]["metadata"]["authors"].push_back(currentAuthor);
+                        authorActive = false; 
+                        currentAuthor.clear(); 
+                    }
                 }
             }
             else if (content.find("\\begin{abstract}") != std::string::npos) {
@@ -162,11 +170,64 @@ json FSM::chunkDocumentToJson(const std::shared_ptr<ASTNode>& root) {
     return documentJson;
 }
 
-std::string FSM::extractAuthorName(const std::string& authorCommand) {
-    size_t start = authorCommand.find("{") + 1;
-    size_t end = authorCommand.find("}");
-    return authorCommand.substr(start, end - start);
+
+
+std::string removeNewlines(const std::string& input) {
+    std::string output = input;
+    output.erase(std::remove(output.begin(), output.end(), '\n'), output.end());
+    output.erase(std::remove(output.begin(), output.end(), '\r'), output.end());  
+    return output;
 }
+
+std::string FSM::extractAuthorName(const std::string& authorCommand) {
+    std::string cleanedCommand = removeNewlines(authorCommand);
+
+    std::regex authorRegex(R"(\\author\s*{([^}]*)})");
+    std::smatch match;
+
+    if (std::regex_search(cleanedCommand, match, authorRegex)) {
+        std::string authorName = match[1].str();
+        authorName.erase(0, authorName.find_first_not_of(" \t\n\r\f\v"));
+        authorName.erase(authorName.find_last_not_of(" \t\n\r\f\v") + 1);
+        return authorName;
+    }
+
+    return "";
+}
+
+
+
+std::vector<std::string> FSM::extractMultipleAuthors(const std::string& authorCommand) {
+    std::vector<std::string> authors;
+    size_t authorPos = authorCommand.find("\\author");
+    if (authorPos == std::string::npos) {
+        return authors; 
+    	// fix
+	}
+
+    size_t start = authorCommand.find("{", authorPos);
+    size_t end = authorCommand.rfind("}");
+
+    if (start != std::string::npos && end != std::string::npos && start < end) {
+        std::string authorNames = authorCommand.substr(start + 1, end - start - 1);
+        
+        size_t pos = 0;
+        while ((pos = authorNames.find("\\and")) != std::string::npos) {
+            std::string singleAuthor = authorNames.substr(0, pos);
+            singleAuthor.erase(0, singleAuthor.find_first_not_of(" \t\n\r\f\v"));
+            singleAuthor.erase(singleAuthor.find_last_not_of(" \t\n\r\f\v") + 1);
+            authors.push_back(singleAuthor);
+            authorNames.erase(0, pos + 4); 
+        }
+
+        authorNames.erase(0, authorNames.find_first_not_of(" \t\n\r\f\v"));
+        authorNames.erase(authorNames.find_last_not_of(" \t\n\r\f\v") + 1);
+        authors.push_back(authorNames);
+    }
+
+    return authors;
+}
+
 
 std::string FSM::extractAffiliation(const std::string& affiliationCommand) {
     size_t start = affiliationCommand.find("{") + 1;
