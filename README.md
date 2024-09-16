@@ -1,3 +1,5 @@
+# TexQuery
+
 ## Introduction
 
 LaTeX documents, widely used in academia and technical writing, present unique challenges for parsing due to their complex hierarchical structure and extensive cross-referencing. Traditional parsers often fall short in capturing the depth and relationships within these documents. This project was developed to address these limitations by providing a robust, efficient way to process LaTeX files.
