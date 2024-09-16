@@ -1,11 +1,23 @@
-CC = clang++
-CFLAGS = -std=c++17 -I/opt/homebrew/opt/nlohmann-json/include
+CXX = g++
+CXXFLAGS = -std=c++17 -Wall -Wextra -pedantic -g
 
-all: suffix_tree
+INCLUDES = -I. -I/opt/homebrew/opt/nlohmann-json/include
 
-suffix_tree: suffix_tree.cpp
-	$(CC) $(CFLAGS) suffix_tree.cpp -o suffix_tree
+SRCS = main.cpp lexer.cpp parser.cpp ast.cpp  dag_node.cpp fsm.cpp symbol_table.cpp
+
+OBJS = ${SRCS:.cpp=.o}
+
+EXEC = parser
+
+all: $(EXEC)
+
+$(EXEC): $(OBJS)
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -o $@ $(OBJS)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	rm -rf suffix_tree
+	rm -f $(OBJS) $(EXEC)
 
+.PHONY: all clean
