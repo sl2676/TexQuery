@@ -1,4 +1,4 @@
-# TexQuery
+# TexQuery ~ Latex Parser
 
 ## Introduction
 
