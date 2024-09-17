@@ -33,6 +33,7 @@ The combined use of these components ensures robust and context-aware parsing, s
 ```bash
    export PINECONE_API_KEY=""
 ```
+
 ## Usage
 1. **Clone the repository:**
 
