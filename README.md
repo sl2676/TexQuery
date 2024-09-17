@@ -22,6 +22,17 @@ This repository contains a LaTeX document parser designed to generate structured
 
 The combined use of these components ensures robust and context-aware parsing, suitable for generating content with detailed metadata in JSON format.
 
+## Export Environemnt Variables
+
+#### OPENAI_API KEY
+```bash
+   export OPENAI_API_KEY=""
+```
+
+#### PINECONE_API KEY
+```bash
+   export PINECONE_API_KEY=""
+```
 ## Usage
 1. **Clone the repository:**
 
