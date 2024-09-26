@@ -44,7 +44,7 @@ The combined use of these components ensures robust and context-aware parsing, s
    
 2. **Execution:**
    ```bash
-   ./parser <input-file.tex>
+   ./parser ../papers
    ```
 3. **Run Python Script:**
    ```bash
@@ -55,9 +55,22 @@ The combined use of these components ensures robust and context-aware parsing, s
     python search.py
    
     Enter your query (or type 'quit' to exit): What is this paper about?
+
+    Enter the index name to query (or type 'all' to query all indexes): index-gi-disc-rt
    
     Refined GPT Response:
-    GPT Response
+      This paper focuses on investigating the evolution of massive protoplanetary discs with irradiation from the
+   central star using 3D hydrodynamics coupled with live Monte-Carlo radiative transfer. The study explores how
+   different factors such as gravitational instabilities, disc cooling, and stellar irradiation influence the evolution
+   of the disc. The authors emphasize the importance of the star's radiation in regulating the disc thermodynamics and
+    discuss how the disc's temperature and stability are affected by these factors over time. The research findings
+   highlight the role of\n stellar irradiation as the dominant energy source in the disc evolution and its impact on the
+    formation of spiral\n structures and disc stability.
+
+   
+
+
+   
    ```
 ### Example of JSON Output
 ```json
