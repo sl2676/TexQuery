@@ -1,0 +1,69 @@
+\begin{thebibliography}{}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\href{#1}{#1}}
+\providecommand{\dodoi}[1]{doi:~\href{http://doi.org/#1}{\nolinkurl{#1}}}
+\providecommand{\doeprint}[1]{\href{http://ascl.net/#1}{\nolinkurl{http://ascl.net/#1}}}
+\providecommand{\doarXiv}[1]{\href{https://arxiv.org/abs/#1}{\nolinkurl{https://arxiv.org/abs/#1}}}
+
+\bibitem[{{Agol} {et~al.}(2021b){Agol}, {Hernandez}, \& {Langford}}]{Agol2021b}
+{Agol}, E., {Hernandez}, D.~M., \& {Langford}, Z. 2021b, \mnras, 507, 1582, \dodoi{10.1093/mnras/stab2044}
+
+\bibitem[{Agol {et~al.}(2021a)Agol, Dorn, Grimm, Turbet, Ducrot, Delrez, Gillon, Demory, Burdanov, Barkaoui, Benkhaldoun, Bolmont, Burgasser, Carey, de~Wit, Fabrycky, Foreman-Mackey, Haldemann, Hernandez, Ingalls, Jehin, Langford, Leconte, Lederer, Luger, Malhotra, Meadows, Morris, Pozuelos, Queloz, Raymond, Selsis, Sestovic, Triaud, \& Grootel}]{Agol2021a}
+Agol, E., Dorn, C., Grimm, S.~L., {et~al.} 2021a, The Planetary Science Journal, 2, 1, \dodoi{10.3847/psj/abd022}
+
+\bibitem[{Albert {et~al.}(2023)Albert, Lafrenière, Doyon, Artigau, Volk, Goudfrooij, Martel, Radica, Rowe, Espinoza, Roy, Filippazzo, Darveau-Bernier, Talens, Sivaramakrishnan, Willott, Fullerton, LaMassa, Hutchings, Rowlands, Begoña~Vila, Zhou, Aldridge, Maszkiewicz, Beaulieu, Cook, Piaulet, Roy, Lamontagne, Morel, Frost, Salhi, Coulombe, Benneke, MacDonald, Johnstone, Turner, Fournier-Tondreau, Allart, \& Kaltenegger}]{Albert2023}
+Albert, L., Lafrenière, D., Doyon, R., {et~al.} 2023, Publications of the Astronomical Society of the Pacific, 135, 075001, \dodoi{10.1088/1538-3873/acd7a3}
+
+\bibitem[{de~Wit {et~al.}(2024)de~Wit, Doyon, Rackham, Lim, Ducrot, Kreidberg, Benneke, Ribas, Berardo, Niraula, Iyer, Shapiro, Kostogryz, Witzke, Gillon, Agol, Meadows, Burgasser, Owen, Fortney, Selsis, Bello-Arufe, de~Beurs, Bolmont, Cowan, Dong, Drake, Garcia, Greene, Haworth, Hu, Kane, Kervella, Koll, Krissansen-Totton, Lagage, Lichtenberg, Lustig-Yaeger, Lingam, Turbet, Seager, Barkaoui, Bell, Burdanov, Cadieux, Charnay, Cloutier, Cook, Correia, Dang, Daylan, Delrez, Edwards, Fauchez, Flagg, Fraschetti, Haqq-Misra, Huang, Iro, Jayawardhana, Jehin, Jin, Kite, Kitzmann, Kral, Lafrenière, Libert, Liu, Mohanty, Morris, Murray, Piaulet, Pozuelos, Radica, Ranjan, Rathcke, Roy, Schwieterman, Turner, Triaud, \& Way}]{deWit2024}
+de~Wit, J., Doyon, R., Rackham, B.~V., {et~al.} 2024, Nature Astronomy, 8, 810–818, \dodoi{10.1038/s41550-024-02298-5}
+
+\bibitem[{Espinoza(2022)}]{Espinoza_2022}
+Espinoza, N. 2022, \dodoi{10.5281/zenodo.6960924}
+
+\bibitem[{{Espinoza} {et~al.}(2019){Espinoza}, {Kossakowski}, \& {Brahm}}]{Espinoza2019}
+{Espinoza}, N., {Kossakowski}, D., \& {Brahm}, R. 2019, \mnras, 490, 2262, \dodoi{10.1093/mnras/stz2688}
+
+\bibitem[{{Feinstein} {et~al.}(2023){Feinstein}, {Radica}, {Welbanks}, {Murray}, {Ohno}, {Coulombe}, {Espinoza}, {Bean}, {Teske}, {Benneke}, {Line}, {Rustamkulov}, {Saba}, {Tsiaras}, {Barstow}, {Fortney}, {Gao}, {Knutson}, {MacDonald}, {Mikal-Evans}, {Rackham}, {Taylor}, {Parmentier}, {Batalha}, {Berta-Thompson}, {Carter}, {Changeat}, {dos Santos}, {Gibson}, {Goyal}, {Kreidberg}, {L{\'o}pez-Morales}, {Lothringer}, {Miguel}, {Molaverdikhani}, {Moran}, {Morello}, {Mukherjee}, {Sing}, {Stevenson}, {Wakeford}, {Ahrer}, {Alam}, {Alderson}, {Allen}, {Batalha}, {Bell}, {Blecic}, {Brande}, {Caceres}, {Casewell}, {Chubb}, {Crossfield}, {Crouzet}, {Cubillos}, {Decin}, {D{\'e}sert}, {Harrington}, {Heng}, {Henning}, {Iro}, {Kempton}, {Kendrew}, {Kirk}, {Krick}, {Lagage}, {Lendl}, {Mancini}, {Mansfield}, {May}, {Mayne}, {Nikolov}, {Palle}, {Petit dit de la Roche}, {Piaulet}, {Powell}, {Redfield}, {Rogers}, {Roman}, {Roy}, {Nixon}, {Schlawin}, {Tan}, {Tremblin}, {Turner}, {Venot}, {Waalkes}, {Wheatley}, \&
+  {Zhang}}]{Feinstein2023}
+{Feinstein}, A.~D., {Radica}, M., {Welbanks}, L., {et~al.} 2023, \nat, 614, 670, \dodoi{10.1038/s41586-022-05674-1}
+
+\bibitem[{{Gillon} {et~al.}(2010){Gillon}, {Deming}, {Demory}, {Lovis}, {Seager}, {Mayor}, {Pepe}, {Queloz}, {Segransan}, {Udry}, {Delmelle}, \& {Magain}}]{Gillon2010}
+{Gillon}, M., {Deming}, D., {Demory}, B.~O., {et~al.} 2010, A\&A, 518, A25, \dodoi{10.1051/0004-6361/201014144}
+
+\bibitem[{{Gillon} {et~al.}(2012){Gillon}, {Triaud}, {Fortney}, {Demory}, {Jehin}, {Lendl}, {Magain}, {Kabath}, {Queloz}, {Alonso}, {Anderson}, {Collier Cameron}, {Fumel}, {Hebb}, {Hellier}, {Lanotte}, {Maxted}, {Mowlavi}, \& {Smalley}}]{Gillon2012}
+{Gillon}, M., {Triaud}, A.~H.~M.~J., {Fortney}, J.~J., {et~al.} 2012, A\&A, 542, A4, \dodoi{10.1051/0004-6361/201218817}
+
+\bibitem[{Gillon {et~al.}(2017)Gillon, Triaud, Demory, Jehin, Agol, Deck, Lederer, de~Wit, Burdanov, Ingalls, Bolmont, Leconte, Raymond, Selsis, Turbet, Barkaoui, Burgasser, Burleigh, Carey, Chaushev, Copperwheat, Delrez, Fernandes, Holdsworth, Kotze, Van~Grootel, Almleaky, Benkhaldoun, Magain, \& Queloz}]{Gillon2017}
+Gillon, M., Triaud, A. H. M.~J., Demory, B.-O., {et~al.} 2017, Nature, 542, 456–460, \dodoi{10.1038/nature21360}
+
+\bibitem[{{Gillon} {et~al.}(2023){Gillon}, {Ducrot}, {Agol}, {Bell}, {Demory}, {Dong}, {Dyrek}, {Fauchez}, {Greene}, {Iro}, {Koll}, {Kreidberg}, {Lagage}, {Leconte}, {Lincowski}, {Lustig-Yaeger}, {Maurel}, {Meadows}, {Selsis}, {Turbet}, {Zieba}, \& {de Wit}}]{Gillon2023}
+{Gillon}, M., {Ducrot}, E., {Agol}, E., {et~al.} 2023, {TRAPPIST-1 Planets: Atmospheres Or Not?}, JWST Proposal. Cycle 2, ID. \#3077
+
+\bibitem[{Greene {et~al.}(2023)Greene, Bell, Ducrot, Dyrek, Lagage, \& Fortney}]{Greene2023}
+Greene, T.~P., Bell, T.~J., Ducrot, E., {et~al.} 2023, Nature, 618, 39–42, \dodoi{10.1038/s41586-023-05951-7}
+
+\bibitem[{Howard {et~al.}(2023)Howard, Kowalski, Flagg, MacGregor, Lim, Radica, Piaulet, Roy, Lafrenière, Benneke, Brown, Espinoza, Doyon, Coulombe, Johnstone, Cowan, Jayawardhana, Turner, \& Dang}]{Howard2023}
+Howard, W.~S., Kowalski, A.~F., Flagg, L., {et~al.} 2023, The Astrophysical Journal, 959, 64, \dodoi{10.3847/1538-4357/acfe75}
+
+\bibitem[{Jakobsen {et~al.}(2022)Jakobsen, Ferruit, Alves~de Oliveira, Arribas, Bagnasco, Barho, Beck, Birkmann, B\"{o}ker, Bunker, Charlot, de~Jong, de~Marchi, Ehrenwinkler, Falcolini, Fels, Franx, Franz, Funke, Giardino, Gnata, Holota, Honnen, Jensen, Jentsch, Johnson, Jollet, Karl, Kling, K\"{o}hler, Kolm, Kumari, Lander, Lemke, López-Caniego, L\"{u}tzgendorf, Maiolino, Manjavacas, Marston, Maschmann, Maurer, Messerschmidt, Moseley, Mosner, Mott, Muzerolle, Pirzkal, Pittet, Plitzke, Posselt, Rapp, Rauscher, Rawle, Rix, R\"{o}del, Rumler, Sabbi, Salvignol, Schmid, Sirianni, Smith, Strada, te~Plate, Valenti, Wettemann, Wiehe, Wiesmayer, Willott, Wright, Zeidler, \& Zincke}]{Jakobsen2022}
+Jakobsen, P., Ferruit, P., Alves~de Oliveira, C., {et~al.} 2022, Astronomy \& Astrophysics, 661, A80, \dodoi{10.1051/0004-6361/202142663}
+
+\bibitem[{Lim {et~al.}(2023)Lim, Benneke, Doyon, MacDonald, Piaulet, Artigau, Coulombe, Radica, L’Heureux, Albert, Rackham, de~Wit, Salhi, Roy, Flagg, Fournier-Tondreau, Taylor, Cook, Lafrenière, Cowan, Kaltenegger, Rowe, Espinoza, Dang, \& Darveau-Bernier}]{Lim2023}
+Lim, O., Benneke, B., Doyon, R., {et~al.} 2023, The Astrophysical Journal Letters, 955, L22, \dodoi{10.3847/2041-8213/acf7c4}
+
+\bibitem[{Mandel \& Agol(2002)}]{Mandel2002}
+Mandel, K., \& Agol, E. 2002, The Astrophysical Journal, 580, L171–L175, \dodoi{10.1086/345520}
+
+\bibitem[{{Radica}(2024)}]{Radica2024exotedrf}
+{Radica}, M. 2024, arXiv e-prints, arXiv:2407.17541, \dodoi{10.48550/arXiv.2407.17541}
+
+\bibitem[{{Radica} {et~al.}(2023){Radica}, {Welbanks}, {Espinoza}, {Taylor}, {Coulombe}, {Feinstein}, {Goyal}, {Scarsdale}, {Albert}, {Baghel}, {Bean}, {Blecic}, {Lafreni{\`e}re}, {MacDonald}, {Zamyatina}, {Allart1}, {Artigau}, {Batalha}, {Cook}, {Cowan}, {Dang}, {Doyon}, {Fournier-Tondreau}, {Johnstone}, {Line}, {Moran}, {Mukherjee}, {Pelletier}, {Roy}, {Talens}, {Filippazzo}, {Pontoppidan}, \& {Volk}}]{Radica2023}
+{Radica}, M., {Welbanks}, L., {Espinoza}, N., {et~al.} 2023, \mnras, 524, 835, \dodoi{10.1093/mnras/stad1762}
+
+\bibitem[{{Radica} {et~al.}(2024){Radica}, {Coulombe}, {Taylor}, {Albert}, {Allart}, {Benneke}, {Cowan}, {Dang}, {Lafreni{\`e}re}, {Thorngren}, {Artigau}, {Doyon}, {Flagg}, {Johnstone}, {Pelletier}, \& {Roy}}]{Radica2024}
+{Radica}, M., {Coulombe}, L.-P., {Taylor}, J., {et~al.} 2024, \apjl, 962, L20, \dodoi{10.3847/2041-8213/ad20e4}
+
+\bibitem[{Zieba {et~al.}(2023)Zieba, Kreidberg, Ducrot, Gillon, Morley, Schaefer, Tamburo, Koll, Lyu, Acuña, Agol, Iyer, Hu, Lincowski, Meadows, Selsis, Bolmont, Mandell, \& Suissa}]{Zieba2023}
+Zieba, S., Kreidberg, L., Ducrot, E., {et~al.} 2023, Nature, 620, 746–749, \dodoi{10.1038/s41586-023-06232-z}
+
+\end{thebibliography}

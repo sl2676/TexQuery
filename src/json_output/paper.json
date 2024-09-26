@@ -1,0 +1,197 @@
+{
+    "document": {
+        "content": [
+            {
+                "figure_caption": "Radius vs mass for planets with radii R$<$1.8  R$_{\\oplus",
+                "image_file": "Planet_sample.png",
+                "references": [
+                    {
+                        "label": "2014ApJ...783L...6W, 2015ApJ...801...41R, 2017AJ....154..109F",
+                        "link": ""
+                    },
+                    {
+                        "label": "2023A&A...677A..33B",
+                        "link": ""
+                    }
+                ]
+            },
+            {
+                "content": "",
+                "references": [],
+                "section": "Updated Host Star and Planet Properties",
+                "type": "text"
+            },
+            {
+                "content": "For 19 stars hosting 20 rocky planets we obtained individual elemental abundance measurements, composing our sample. The spectra for these stars were taken on the HIRES instrument at the W. M. Keck Observatory without the iodine cell used for deriving radial velocities and all had SNR above 100. Abundances were determined using , a version of the that was designed to be applied to iodine-free spectra from the High Resolution Echelle Spectrograph on Keck I . was trained using a sample of high-quality (SNR > 100) spectra for which $T_, $v, $) and bulk metallicity fall within the parameter space of the training sample. In addition, the retrieved abundances for Mg and Si are all well-within the reliable range of (i.e. the range of abundance values covered by the training sample, Table 3 of ).\n\nThe majority of spectra that comprised the training sample were taken at a resolution of $60,000). While this was done in order to enable sufficient sky-subtraction for fainter stars, an examination of possible impacts on our results is warranted. We selected a sub-sample of high-SNR spectra taken at higher spectral resolution and convolved them with a Gaussian kernel to reduce their resolution to $. Changes in the measured abundance value may be expected for lower spectral resolution as the broadening contribution from the stellar rotation decreases. The 's coefficient vectors for $vdeviates, the abundances also change to compensate. While the increased scatter in abundances is small, typically half of the quoted uncertainty on these measurements, on a per-spectrum basis the degraded resolution affects the elements of interest to this study (Fe, Mg, Si) in similar ways. The result is that relative abundances, e.g. [Fe/Si], remain comparable between native and degraded spectral resolutions. There appears to be a potential offset in [Fe/H] abundances between native and degraded resolutions, so to test the effects of this potential offset on our stellar ``CMF\" values we purturbed all [Fe/H] values by 0.02 dex and found no significant change in our results. Further analysis of these systems and a KeckSpec analysis of $>$5000 additional stars can be found in Polanski et al. .\n\n\nWhile provides measurements for 15 elements, the abundance measurements we primarily consider for planet composition are magnesium, iron, and silicon, and for the analysis of host star populations we consider $& Log(g)  &   Luminosity    & Radius          & Mass            & [Fe/H]  & [Mg/H] & [Si/H]  &[$]   & [R$_]   & [dex]   & [dex]  & [dex]   &  [dex]       &             &               & CMF HD 136352  & 5730      & 4.5        & 0.95 $0.04 & 0.86 $0.2 & 1.5 $0.01 & 0.85 $0.04 & 0.12    & 0.13   & 0.12    & -0.00        & 1.9 $0.7 & 0.30 HD 219134  & 4858      & 4.6        & 0.28 $0.04 & 0.78 $0.2 & 1.6 $0.02 & 0.87 $0.04 & 0.03    & 0.06   & 0.05    &  0.02        & 1.8 $0.6 & 0.29 K2-106     & 5479      & 4.4        & 0.80 $0.04 & 0.91 $0.2 & 1.8 $0.02 & 0.79 $0.04 & 0.02    & 0.01   & 0.02    &  0.01        & 1.9 $0.6 & 0.30 K2-265     & 5395      & 4.4        & 0.65 $0.04 & 0.89 $0.2 & 1.7 $0.02 & 0.90 $0.04 & 0.08    & 0.03   & 0.06    &  -0.02       & 2.2 $0.6 & 0.33 K2-36      & 4841      & 4.6        & 0.25 $0.02 & 0.75 $0.3 & 1.5 $0.05 & 1.15 $0.05 & 0.23    & 0.22   & 0.24    &  -0.01       & 1.9 $0.9 & 0.30 Kepler-10  & 5671      & 4.4        & 1.06 $0.06 & 0.89 $0.2 & 1.5 $0.19 & 0.97 $0.04 &  0.01   & 0.03   & 0.03    &  0.01        & 1.8 $0.6 & 0.29 Kepler-21  & 6174      & 4.3        & 4.87 $0.09 & 1.33 $0.3 & 1.9 $0.04 & 1.07 $0.04 & 0.21    & 0.21   & 0.22    &   0.00      & 1.9 $0.9 & 0.30 Kepler-78  & 5003      & 4.5        & 0.31 $0.02 & 0.78 $0.3 & 1.7 $0.03 & 0.93 $0.05 & -0.16   & -0.1   & -0.13   &  0.04        & 1.8 $0.4 & 0.28 TOI-1444   & 5377      & 4.4        & 0.63 $0.03 & 0.88 $0.2 & 1.7 $0.02 & 0.83 $0.04 & -0.40   &-0.22   & -0.19   &  0.18        & 1.3 $0.2 & 0.21 Wasp-47    & 5482      & 4.3        & 1.05 $0.05 & 1.01 $0.3 & 2.0 $=100 K, $_Log(g)=0.04 dex, $_[Mg/H]=0.04 dex, $_[/H]=0.03. For reference, the Solar values for element mass ratios are Fe/Mg=1.9, Fe/Si=1.77, and CMF=0.30. \nWith these abundance measurements we can also analyze our rocky planet host stars in terms of galactic population. We use $/Fe] and [Fe/H] for each star in our sample as shown in Figure . We find that three stars in our sample (TOI-561, Kepler-10, and HD 136352) have higher $, [M/H], and log($g$) from , along with the Gaia DR3 parallax, 2MASS K-band magnitude, a 3D dust map and bolometric corrections. Typically, uses stellar evolution models that use solar-scaled $/Fe] and [Fe/H] from to compute overall [M/H] using the calibration from :\n= + (0.694 × 10^+ 0.306)\nWe then used these derived luminosities, T$_) along with literature values for radial velocity semi-amplitude (K), orbital period (P), inclination (i), and eccentricity (e) using the relation:\nK=M_(M_)^-2/3(1 )^-1/2.\nWe also calculated planet radius using our homogeneously derived stellar radii and literature values for R$_P. The updated planet masses and radii for the sample are presented in Table , along with the adopted literature values for K and R$_P.\n\n",
+                "figure_caption": "The difference in $v\\sin{(i)",
+                "image_file": "keckspec_resolution_dependence.png",
+                "references": [
+                    {
+                        "label": "1994SPIE.2198..362V",
+                        "link": ""
+                    },
+                    {
+                        "label": "2015ApJ...808...16N",
+                        "link": ""
+                    },
+                    {
+                        "label": "Rice2020",
+                        "link": ""
+                    },
+                    {
+                        "label": "Rice2020",
+                        "link": ""
+                    },
+                    {
+                        "label": "1993ApJ...414..580S",
+                        "link": ""
+                    }
+                ],
+                "section": "Stellar Abundances",
+                "type": "text"
+            },
+            {
+                "content": "",
+                "references": [],
+                "section": "Chemical Abundance Ratios of Planets and Stars",
+                "type": "text"
+            },
+            {
+                "content": "Using the mass and radius of each planet we calculated the core mass fraction (CMF), a measure of the mass fraction of the iron core to the total planet mass []2007ApJ...669.1279S, 2014ApJ...787..173H, 2016ApJ...819..127Z. For reference, the Earth is $32.5We calculated CMF for both the full Metallicity sample of rocky planets (as shown in Figure ), as well as for our sub-sample. We used the best literature values for planet mass and radius (described above) to calculate CMF for the Metallicity sample, and for planets in our sub-sample we used the masses and radii we calculated from homogeneous host star measurements (Table ). We assumed that these planets are rocky and contain only iron and rock for the purpose of this paper, but cannot ensure they have negligible water layer or gaseous envelope. Therefore, the CMF we computed for each planet is a minimum CMF value, as the presence of a low-density layer would require a larger iron core to produce the same planet density we observe. \n\nTo compute CMF uncertainties, we drew 1000 values for the mass and radius of each planet from Gaussian distributions centered on best-fit values with 1$/R$_*]    & [M$_0.0003$^LD0.12$^LD0.04  & 4.7 $0.18   & 0.02 $0.46  HD 15337 b   & 0.0176 $& 3.08 $& 1.64  $1.2     & 0.22  $2.00 & 1.94 $0.001$^S0.08$^S0.06  & 4.7  $0.28  & 0.63 $0.72  HD 219134 c  & 0.0177 $& 1.70 $& 1.51 $0.2     &  0.17 $0.88 & 1.47 $0.0009$^VB0.15$^B0.17 & 5.0 $0.09  & 0.23 $1.10  K2-106 b     & 0.0157 $& 6.5  $& 1.73 $0.8    &  0.41 $1.08 & 2.13 $0.0002$^D0.36$^D0.05  & 2.5  $0.13  & 8.29 $182.77  K2-265 b     & 0.0160 $& 3.34 $& 1.71  $0.8    &  0.39 $2.97 & 0.95 $0.0003$^D0.56$^D0.04  & 6.4   $0.14  & 3.10 $2.10   K2-36 b      & 0.0183 $& 2.85 $& 1.43  $1.1   &  0.38 $19. 2& 2.23 $0.0007$^T0.43$^B0.10  & 7.7  $0.24 & 35.54 $232.36  Kepler-10 b  &0.01268 $& 2.34 $& 1.47  $0.3    &  0.06 $0.73 & 0.65 $0.0005$^LB0.54$^B0.05  & 9.7  $0.43 & 1.06 $1.18   Kepler-21 b  &0.00789$& 2.7 $& 1.64 $1.3    &  0.39  $1.81 & 3.17 $0.0003$^M0.8$^W0.15  & 6.4 $0.18  & 3.47 $1672.32 Kepler-78 b  & 0.0151 $& 1.8 $& 1.20  $0.3    &  0.01  $1.08 & 1.69 $0.00006$^CD0.2$^B0.02  & 4.7  $0.15 & 1.46 $1.18  TOI-1444 b   & 0.0141 $& 3.3 $& 1.40 $0.7    &  0.39  $8.72 & 3.01 $0.0004$^CB0.2$^CB0.04 & 2.2   $0.17 & -0.06$0.51 Wasp-47 e    & 0.0146 $& 4.6 $& 1.81 $0.6    &  -0.01  $0.37 & 0.12 $/R$_*is the number density of an element E relative to hydrogen relative to the Sun. To turn this into an absolute number density for the star (not relative to the Sun), we used the number density for each element in the Sun relative to hydrogen, given as:\nA(E)=12 + _10(n(E)/n(H)_)\nUsing A(Fe)=7.46 $0.03, and A(Si)=7.51 $). We then used these values to solve for n(E)/n(H)$_*0.9 as the planet mineral composition and that of Earth, ). This is done through a function in that uses the inverse process of computing Fe/Mg ratio from CMF for the planets as described in Section . This allows us to compare equivalent quantities for star and planet composition. These equivalent CMFs are listed in Table , along with uncertainties which were calculated by drawing 1000 values of [E/H] from Gaussian distributions centered on our measurements with 1$and refractory abundances can be measured in some M-dwarfs through calibration from synthetic spectra []2017ApJ...851...26V, 2023ApJ...944...41I, and high-resolution Near-IR spectra . \n\nRefractory abundances are the most direct way to compare planet and stellar compositions, however metallicity does give a general idea about how iron rich the proto-planetary environment must have been. Figure shows planet core mass fraction as a function of host star metallicity for our full Metallicity sample. We observe that there are fewer planets around metal poor host stars than metal rich stars, and in particular we observe few metal-rich high density planets around metal-poor host stars. There are no rocky planets with a CMF above 0.5 around stars below a metallicity of -0.1, which coincides with the median value for stars in the solar neighborhood . Meanwhile, above -0.1 dex planets have CMF ranging from $0.7) while the moon is significantly depleted (CMF$1.0 and intercept of $b=-0.05$ $larger than a slope of zero (all planets have the same iron-to-silicate ratio, regardless of the composition of their host star). This suggests only weakly that planets and their host stars have similar compositions.  \n\nTo test the sensitivity of our results to the fitting methodology, we perform an independent analysis using orthogonal distance regression (ODR) with SciPy.odr. ODR has the additional benefit of accounting for uncertainty on data in both $x$ and $y$ without utilizing the bootstrapping technique we applied to our OLS fit. We use the same values for planet CMF and host star equivalent CMF as in our OLS fit, and use the uncertainties listed in Tables and . The choice of ODR instead of OLS produces a slope of $m=5.6$ $0.5. This slope is >3$larger than a slope of 1, indicating a steep relationship between planet and star compositions (discussed more in section ). The OLS and ODR linear fits are shown in Figure . \n\nWe then tested the sensitivity of our results on our choice of Fe/Mg vs Fe/Si. We used to compute the stellar equivalent CMF using Fe/Si instead of Fe/Mg, then we computed the linear relationship between planet and host star CMF using these alternative stellar CMF values. We obtained results that are consistent with with what we get using Fe/Mg derived stellar equivalent CMFs using OLS (m=1.5 $1.9). This shows that our result is robust to the choice of using Mg or Si as the tracer for rock-building abundances. \n\n\nIn the sample, there is a dearth of iron-rich planets orbiting stars with low Fe/Mg, consistent with our findings for the full Metallicity sample. There are only three planets orbiting stars with equivalent stellar CMF $<$ 0.275, but all of these have a CMF $<$0.3. These three planets (TOI-561 b, Kepler-10, and HD 136352) orbit stars identified as thick-disc stars based on their stellar chemical abundances and kinematics as shown in Figure . With such a small sample we cannot infer much about the diversity of rocky planet compositions around metal-poor hosts (in particular thick-disc hosts), but the discovery of more such systems will help us understand rocky planet formation in these environments.\n\n\n ",
+                "figure_caption": "Core Mass Fraction (CMF) of rocky exoplanets vs equivalent CMF (see section \\ref{sec:Star_CMF",
+                "image_file": "New_CMF_All.png",
+                "references": [
+                    {
+                        "label": "",
+                        "link": ""
+                    },
+                    {
+                        "label": "1995ChGeo.120..223M",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    },
+                    {
+                        "label": "2022ApJ...927..123S",
+                        "link": ""
+                    },
+                    {
+                        "label": "2016MNRAS.455..987C",
+                        "link": ""
+                    },
+                    {
+                        "label": "2021AJ....161...56W, 2020AJ....160..129K, 2011ApJ...729...27B",
+                        "link": ""
+                    }
+                ],
+                "section": "Planet Core Mass Fraction",
+                "type": "text"
+            },
+            {
+                "content": "",
+                "references": [],
+                "section": "Discussion",
+                "type": "text"
+            },
+            {
+                "content": "An important result from our study is that the relationship between planet and stellar iron fraction depends sensitively on the fitting algorithm used, which directly affects the interpretation of the star-planet relationship. A slope of unity (m=1) suggests that planets tend to have the same compositions as their host star, while a slope steeper than unity indicates that iron-rich stars not only host more iron-rich planets, but planets enriched far beyond their nebular composition. A steep slope suggests that iron-enriching processes (discussed below) happen disproportionately around metal-rich stars, which suggest could be due to the fact that iron-rich stars form planets at a higher rate than metal-poor stars, leading to increased likelihood of planet collisions and therefore an increased likelihood of iron-enriched planets. Additionally, a slope steeper than unity suggests that metal-poor stars more often host planets depleted in iron well beyond their primordial compositions. \n\nOur OLS fit yielded only weak evidence that planet and host star compositions are correlated, whereas the ODR fit suggests that the slope relating planet iron enrichment to stellar iron enrichment is steeper than unity and statistically significant. Previously, used an ODR fit and found a slope of m=6.3 $larger than the median of the randomly generated samples, giving a $of 0 and not a statistically significant result. \n\n\nThe majority of planets in our sample (75$In our Solar System we do not find any significantly iron depleted planets, but for the Moon a low CMF is likely the result of giant impacts . For exoplanets, lower than expected CMF has been suggested as a result of (1) mantle stripping due to giant impacts during formation (more efficient for low-mass planets, ) (2) sufficiently hot proto-planetary disks (where high-temperature refractory material forms planets depleted of iron ), or (3) gaseous envelopes (potentially dominated by high mean molecular weight species, ). If hot enough (T$_eq>$2000 K), a significant melt fraction in the rocky mantle can also lower the density of a planet , but this requires at least an atmosphere if not a gaseous envelope to sufficiently redistribute heat across the planet surface. \n\nThree of our outliers have low CMFs, and two even have ``Negative'' CMFs, which indicates that the planet is too low density to be fully rocky and likely hosts a gaseous envelope. To explain the low density of TOI-561 b, WASP-47 e, and Kepler-78 b, a gaseous envelope of high mean molecular weight species (and potentially large mantle melt fraction) has been suggested . It is possible that all of three planets are also iron-depleted through mantle stripping or irradiated proto-planetary disks (processes (1) and (2) above). These three planets span a wide range in stellar equivalent CMF (0.2-0.35), and are orbiting both the most iron rich (Kepler-78) and iron poor (TOI-561) host stars, not just around metal-poor stars as would be suggested by a steep slope such as our ODR fit. \n\nWhile we have selected planets that are consistent within 1$=1.5 R$_<1.5 R$_are often consistent with a purely rocky composition. If planets with envelopes are present in our sample, the low density of the envelope would result in an interpretation of a low (and possibly negative) CMF. However, the planets with CMF furthest from that of their host star in our sample mostly have radii below R$_P, at both the lowest and highest density values. Although we cannot rule out the possible bias of unintentionally including some small planets with gaseous envelopes, the choice to include planets with radii up to 1.8 R$_1.4  & 7.7 $0.14 & 1.66 $0.3   & 0.4 $0.03 & 0.30 $0.95 & 8.21 $0.16 & 1.73 $0.3  & 0.31  $0.03 & 0.37 $1.4   & 6.4 $0.03 & 1.56 $0.2  & 0.52 $0.03 & 0.30 $0.43 & 2.49 $0.05 & 1.20 $0.2  & 0.56 $0.03 & 0.30 $and radii in R$_and 1.2$. Kepler-107 c was not included in our sample because we did not have a sufficiently high SNR spectrum to measure host star abundances of non-iron elements. We find no planets with CMFs that are >2$larger than that of their host star. This demonstrates that our lack of super-Mercuries and gap is primarily based on differing planet radius and mass values, not the methodology for computing CMF. The CMF for each of these four Super-Mercuries and their host stars present in our sample, calculated using both our measurements and those from (from center and right panels of figure ), can be found in Table . \n\nThe driving force of the differences in planet CMF between our analysis and previous publications comes from differences in planet radius. Changes in radius affect the density of small planets more drastically than changes in mass, and as such small changes in planet radius---which can come from either the R$_Por R$_*/R$_*0.0002 to 0.0140 $/R$_*/R$_*(HD 136352 b, HD 15337 b, K2-229 b, Kepler-93 b, and Wasp-74 e). do not report R$_Pin addition to planet radius for their sample, but when we compare planet radius we find that our radius for K2-106 b differs from theirs by $>$1$/R$_*, this suggests an underestimation of our uncertainties on these measurements for many planets. This is one reason we compute CMF uncertanties using a conservative Monte Carlo technique that almost certainly overestimates the uncertainties on CMF. We encourage skepticism when interpreting the CMF of these (and any) rocky planets due to the large dependence on planet radius and potentially underestimated uncertainties planet parameters. \n\n\n\n",
+                "references": [
+                    {
+                        "label": "Adibekyan2021",
+                        "link": ""
+                    },
+                    {
+                        "label": "Adibekyan2021",
+                        "link": ""
+                    },
+                    {
+                        "label": "1976LPI.....7..120C, 2014AREPS..42..551A",
+                        "link": ""
+                    },
+                    {
+                        "label": "2020MNRAS.493.4910S, 2022ApJ...940..144S",
+                        "link": ""
+                    },
+                    {
+                        "label": "Dorn2019",
+                        "link": ""
+                    },
+                    {
+                        "label": "2017AJ....154..232A, 2021ApJ...909L..22K",
+                        "link": ""
+                    },
+                    {
+                        "label": "Bower2019",
+                        "link": ""
+                    },
+                    {
+                        "label": "Brinkman2023B, 2022MNRAS.511.4551L, 2023arXiv230808687P, 2022AJ....163..197B",
+                        "link": ""
+                    },
+                    {
+                        "label": "Adibekyan2021",
+                        "link": ""
+                    },
+                    {
+                        "label": "2021PSJ.....2..152A",
+                        "link": ""
+                    },
+                    {
+                        "label": "Adibekyan2021",
+                        "link": ""
+                    }
+                ],
+                "section": "The Star-Planet Relationship (or lack thereof)",
+                "type": "text"
+            },
+            {
+                "content": "For a population of rocky exoplanets with homogeneously measured host star abundances, we calculated the mass and radius of each planet using homogeneously determined stellar parameters. We then calculated the Core Mass Fraction (CMF) for each planet and the equivalent ``Core Mass Fraction'' for each star using their iron and magnesium ratios as determined from homogeneous abundance measurements. Our main conclusions are as follows:\nThere is a lack of iron-rich high CMF planets orbiting around low metallicity stars, while there is a wide range of planet CMFs around stars of high metallicity and high Fe/Mg. \n    Different linear fitting algorithms produce significantly different slopes (m=1.3 $1.6 for ODR) for the relationship between planet and host star CMF. This, along with the large scatter in planet CMFs leads us to see no compelling evidence for a strong relationship between planet and host star abundances. Using host star composition as a proxy for planet composition should be treated with caution. \n    A quarter of the planets in our sample have a CMF that deviates from that of their host stars by $>$1$. \n    The larger CMF planets (K2-229 b and Kepler-406 b) orbit stars of average Fe/Mg, while low CMF planets (TOI-561 b, WASP-47 e, and Kepler-78 b) orbit stars that span a wide range of Fe/Mg. \n    We do not identify a distinct set of high-density super-Mercuries, and find no gap in CMF between super-Mercuries and super-Earths. We find that previously identified super-Mercuries may have smaller CMFs more consistent with their host star abundances, and this is primarily due to updated mass and radius measurements, not methodology. \nOne of the limiting factors for this analysis is the small sample size of rocky planets with radius and mass measurements with fractional uncertainties of <30$",
+                "references": [
+                    {
+                        "label": "SuperEarth \\citep{Plotnykov2020",
+                        "link": ""
+                    }
+                ],
+                "section": "Conclusion",
+                "type": "text"
+            },
+            {
+                "content": "C.L.B. is supported by the National Science Foundation Graduate Research Fellowship under Grant No. 1842402.\n\nC.L.B., L.M.W. and D.H. acknowledge support from National Aeronautics and Space Administration (80NSSC19K0597) issued through the Astrophysics Data Analysis Program. L.M.W. acknowledges support from the NASA Exoplanet Research Program through grant 80NSSC23K0269.\n\nD.H. also acknowledges support from the Alfred P. Sloan Foundation.\n\nC.L.B. and L.M.W. also acknowledge support from NASA Keck Key Stragetic Mission Support Grant No. 80NSSC19K1475.\n\nL.M.W. thanks Bruce Buffett and the CIDER program, funded under the CSEDI Program (EAR-1903727) and the GeoPRISMS Program (OCE-2025195), for useful discussions.\n\n\n",
+                "references": [],
+                "section": "Acknowledgements",
+                "type": "text"
+            }
+        ],
+        "metadata": {
+            "authors": [
+                {
+                    "affiliations": [],
+                    "name": "Casey L. Brinkman"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Alex S. Polanski"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Daniel Huber"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Lauren M. Weiss"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Diana Valencia"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Mykhaylo Plotnykov"
+                }
+            ]
+        },
+        "title": "Revisiting the Relationship Between Rocky Exoplanet and Stellar Compositions: Reduced Evidence for a Super-Mercury Population"
+    }
+}

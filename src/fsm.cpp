@@ -2,7 +2,6 @@
 using json = nlohmann::json;
 
 FSM::FSM() : currentState(FSMState::Start) {}
-
 void FSM::traverseAST(const std::shared_ptr<ASTNode>& node, std::string& currentChunk, std::vector<std::string>& chunks) {
     if (!node) return;
 
@@ -55,6 +54,7 @@ std::vector<std::string> FSM::chunkDocument(const std::shared_ptr<ASTNode>& root
     return chunks;
 }
 
+
 json FSM::chunkDocumentToJson(const std::shared_ptr<ASTNode>& root) {
     json documentJson;
     documentJson["document"]["metadata"]["authors"] = json::array();
@@ -69,6 +69,7 @@ json FSM::chunkDocumentToJson(const std::shared_ptr<ASTNode>& root) {
     bool inAbstract = false;
     bool inEquation = false;
     bool inFigure = false;
+    std::string currentEquationContent;
 
     std::function<void(const std::shared_ptr<ASTNode>&)> traverse;
     traverse = [&](const std::shared_ptr<ASTNode>& node) {
@@ -86,19 +87,13 @@ json FSM::chunkDocumentToJson(const std::shared_ptr<ASTNode>& root) {
                 for (const auto& author : authors) {
                     currentAuthor["name"] = author;
                     currentAuthor["affiliations"] = json::array();
+                    documentJson["document"]["metadata"]["authors"].push_back(currentAuthor);
+                    currentAuthor.clear();
                     authorActive = true; 
                 }
             }
             else if (content.find("\\affiliation") != std::string::npos) {
-                if (authorActive) {
-                    std::string affiliation = extractAffiliation(content);
-                    currentAuthor["affiliations"].push_back(affiliation);
-                    if (!currentAuthor["name"].is_null()) {
-                        documentJson["document"]["metadata"]["authors"].push_back(currentAuthor);
-                        authorActive = false; 
-                        currentAuthor.clear(); 
-                    }
-                }
+                processAffiliations(currentAuthor, content, documentJson, authorActive);
             }
             else if (content.find("\\begin{abstract}") != std::string::npos) {
                 inAbstract = true;
@@ -110,14 +105,19 @@ json FSM::chunkDocumentToJson(const std::shared_ptr<ASTNode>& root) {
                 documentJson["document"]["content"].push_back(currentSectionJson);
                 currentSectionJson.clear();
             }
-            else if (content.find("\\begin{equation}") != std::string::npos || content.find("$") != std::string::npos) {
+            else if (content.find("\\begin{equation}") != std::string::npos) {
                 inEquation = true;
                 currentSectionJson["type"] = "equation";
-                currentSectionJson["content"] = "";
-            } else if (content.find("\\end{equation}") != std::string::npos || content.find("$") != std::string::npos) {
+                currentEquationContent = "";  
+            } else if (content.find("\\label") != std::string::npos && inEquation) {
+                currentSectionJson["label"] = extractCitationLabel(content);
+            } else if (inEquation && (content.find("\\end{equation}") != std::string::npos)) {
                 inEquation = false;
+                currentSectionJson["content"] = currentEquationContent; 
                 documentJson["document"]["content"].push_back(currentSectionJson);
                 currentSectionJson.clear();
+            } else if (inEquation) {
+                currentEquationContent += content + "\n";  
             }
             else if (content.find("\\begin{figure}") != std::string::npos) {
                 inFigure = true;
@@ -171,8 +171,19 @@ json FSM::chunkDocumentToJson(const std::shared_ptr<ASTNode>& root) {
 }
 
 
+std::string FSM::removeInvalidUTF8(const std::string& input) {
+    std::string output;
+    for (unsigned char c : input) {
+        if (c < 0x80) {
+            output += c;
+        } else {
+            output += '?'; 
+        }
+    }
+    return output;
+}
 
-std::string removeNewlines(const std::string& input) {
+std::string FSM::removeNewlines(const std::string& input) {
     std::string output = input;
     output.erase(std::remove(output.begin(), output.end(), '\n'), output.end());
     output.erase(std::remove(output.begin(), output.end(), '\r'), output.end());  
@@ -195,45 +206,150 @@ std::string FSM::extractAuthorName(const std::string& authorCommand) {
     return "";
 }
 
+std::string FSM::extractContentBetweenBraces(const std::string& str, size_t start_pos) {
+    if (start_pos >= str.length() || str[start_pos] != '{') {
+        return "";
+    }
+    int brace_count = 0;
+    size_t pos = start_pos;
+    size_t len = str.length();
+    std::string content = "";
 
-
-std::vector<std::string> FSM::extractMultipleAuthors(const std::string& authorCommand) {
-    std::vector<std::string> authors;
-    size_t authorPos = authorCommand.find("\\author");
-    if (authorPos == std::string::npos) {
-        return authors; 
-    	// fix
-	}
-
-    size_t start = authorCommand.find("{", authorPos);
-    size_t end = authorCommand.rfind("}");
-
-    if (start != std::string::npos && end != std::string::npos && start < end) {
-        std::string authorNames = authorCommand.substr(start + 1, end - start - 1);
-        
-        size_t pos = 0;
-        while ((pos = authorNames.find("\\and")) != std::string::npos) {
-            std::string singleAuthor = authorNames.substr(0, pos);
-            singleAuthor.erase(0, singleAuthor.find_first_not_of(" \t\n\r\f\v"));
-            singleAuthor.erase(singleAuthor.find_last_not_of(" \t\n\r\f\v") + 1);
-            authors.push_back(singleAuthor);
-            authorNames.erase(0, pos + 4); 
+    while (pos < len) {
+        if (str[pos] == '{') {
+            brace_count++;
+            if (brace_count > 1) { 
+                content += str[pos];
+            }
+        } else if (str[pos] == '}') {
+            brace_count--;
+            if (brace_count == 0) {
+                break;
+            } else {
+                if (brace_count >= 1)
+                    content += str[pos];
+            }
+        } else {
+            if (brace_count >= 1)
+                content += str[pos];
         }
+        pos++;
+    }
 
-        authorNames.erase(0, authorNames.find_first_not_of(" \t\n\r\f\v"));
-        authorNames.erase(authorNames.find_last_not_of(" \t\n\r\f\v") + 1);
-        authors.push_back(authorNames);
+    if (brace_count != 0) {
+        std::cerr << "Error: Unmatched braces in the input string." << std::endl;
+        return "";
+    }
+
+    return content;
+}
+
+
+
+std::string removeInvalidUTF8(const std::string& input) {
+    std::string output;
+    for (unsigned char c : input) {
+        if (c < 0x80) {
+            output += c;
+        } else {
+            output += '?';
+        }
+    }
+    return output;
+}
+
+
+std::vector<std::string> FSM::extractMultipleAuthors(const std::string& authorTexCommand) {
+    std::vector<std::string> authors;
+
+    std::string authorCommand = removeInvalidUTF8(authorTexCommand);
+    
+    size_t authorPos = authorCommand.find("\\author");
+    if (authorPos != std::string::npos) {
+        size_t braceStart = authorCommand.find('{', authorPos);
+        if (braceStart != std::string::npos) {
+            std::string authorBlock = extractContentBetweenBraces(authorCommand, braceStart);
+
+            std::cout << "Original Author Block: \n" << authorBlock << "\n";
+
+            std::regex commentRegex(R"(%[^\n]*\n?)");
+            authorBlock = std::regex_replace(authorBlock, commentRegex, "");
+
+            std::regex lineBreakRegex(R"(\\newauthor|\\\\|\n|\r)");
+            authorBlock = std::regex_replace(authorBlock, lineBreakRegex, " ");
+
+            size_t thanksPos = authorBlock.find("\\thanks{");
+            while (thanksPos != std::string::npos) {
+                size_t braceStart = authorBlock.find('{', thanksPos);
+                std::string thanksContent = extractContentBetweenBraces(authorBlock, braceStart);
+                authorBlock.erase(thanksPos, braceStart - thanksPos + thanksContent.length() + 1);
+                thanksPos = authorBlock.find("\\thanks{");
+            }
+
+            std::regex whitespaceRegex(R"(\s+)");
+            authorBlock = std::regex_replace(authorBlock, whitespaceRegex, " ");
+
+            std::regex symbolAndNumberRegex(R"([\$\^\{\}\d])");
+            authorBlock = std::regex_replace(authorBlock, symbolAndNumberRegex, " ");
+
+            std::regex splitRegex(R"(,|\s+and\s+)");
+            std::sregex_token_iterator iter(authorBlock.begin(), authorBlock.end(), splitRegex, -1);
+            std::sregex_token_iterator end;
+
+            for (; iter != end; ++iter) {
+                std::string author = cleanAuthor(iter->str());
+                if (!author.empty()) {
+                    authors.push_back(author);
+                }
+            }
+        } else {
+            std::cerr << "No opening brace found after \\author command." << std::endl;
+        }
+    } else {
+        std::cerr << "No \\author command found." << std::endl;
     }
 
     return authors;
 }
 
 
+
+
+std::string FSM::cleanAuthor(const std::string& author) {
+    std::string cleaned = author;
+
+    cleaned = std::regex_replace(cleaned, std::regex(R"(\\[a-zA-Z]+\{[^}]*\})"), "");
+    cleaned = std::regex_replace(cleaned, std::regex(R"(\$\^\{[^}]*\}\$)"), "");
+
+    cleaned.erase(0, cleaned.find_first_not_of(" \t\n\r\f\v"));
+    cleaned.erase(cleaned.find_last_not_of(" \t\n\r\f\v") + 1);
+
+    return cleaned;
+}
+
+
+
 std::string FSM::extractAffiliation(const std::string& affiliationCommand) {
     size_t start = affiliationCommand.find("{") + 1;
     size_t end = affiliationCommand.find("}");
-    return affiliationCommand.substr(start, end - start);
+    std::string affiliation = affiliationCommand.substr(start, end - start);
+    
+    return cleanAuthor(affiliation); 
 }
+
+void FSM::processAffiliations(json& currentAuthor, const std::string& content, json& documentJson, bool& authorActive) {
+    if (authorActive) {
+        std::string affiliation = extractAffiliation(content);
+        currentAuthor["affiliations"].push_back(affiliation);
+
+        if (!currentAuthor["name"].is_null()) {
+            documentJson["document"]["metadata"]["authors"].push_back(currentAuthor);
+            currentAuthor.clear();
+            authorActive = false;
+        }
+    }
+}
+
 
 std::string FSM::extractSectionName(const std::string& sectionCommand) {
     size_t start = sectionCommand.find("{") + 1;
@@ -246,19 +362,54 @@ void FSM::handleDocument(const std::shared_ptr<ASTNode>& node, std::string& curr
 }
 
 void FSM::handleSection(const std::shared_ptr<ASTNode>& node, std::string& currentChunk, std::vector<std::string>& chunks) {
+
+	currentChunk += "[Section] " + node->getContent() + "\n";
+
     if (!currentChunk.empty()) {
         chunks.push_back(currentChunk);
         currentChunk.clear();
     }
-    currentChunk += "[Section] " + node->getContent() + "\n";
 }
 
 void FSM::handleCommand(const std::shared_ptr<ASTNode>& node, std::string& currentChunk) {
-    currentChunk += "Command: " + node->getContent() + "\n";
+    std::string commandContent = node->getContent();
+    
+    if (commandContent.find("\\begin{equation}") != std::string::npos) {
+        currentChunk += "[Equation Start]\n";
+    }
+    
+    else if (commandContent.find("\\label") != std::string::npos) {
+        std::string label = extractCitationLabel(commandContent);
+        currentChunk += "Equation Label: " + label + "\n";
+    }
+    
+    else if (commandContent.find("\\cite") != std::string::npos) {
+        std::string citationLabel = extractCitationLabel(commandContent);
+        currentChunk += "Citation: " + citationLabel + "\n";
+    }
+    
+    else if (commandContent.find("\\end{equation}") != std::string::npos) {
+        currentChunk += "[Equation End]\n";
+    } 
+    else {
+        currentChunk += "Command: " + commandContent + "\n";
+    }
 }
-
+/*
 void FSM::handleText(const std::shared_ptr<ASTNode>& node, std::string& currentChunk) {
     currentChunk += "Text: " + node->getContent() + "\n";
+}
+*/
+
+void FSM::handleText(const std::shared_ptr<ASTNode>& node, std::string& currentChunk) {
+    std::string textContent = node->getContent();
+
+    if (currentChunk.find("[Equation Start]") != std::string::npos && currentChunk.find("[Equation End]") == std::string::npos) {
+        currentChunk += "Equation Content: " + textContent + "\n";
+    }
+    else {
+        currentChunk += "Text: " + textContent + "\n";
+    }
 }
 
 void FSM::handleEnvironment(const std::shared_ptr<ASTNode>& node, std::string& currentChunk) {
@@ -282,4 +433,3 @@ std::string FSM::extractCitationLabel(const std::string& citationCommand) {
     size_t end = citationCommand.find("}");
     return citationCommand.substr(start, end - start);
 }
-

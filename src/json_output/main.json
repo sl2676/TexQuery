@@ -1,0 +1,431 @@
+{
+    "document": {
+        "content": [
+            {
+                "figure_caption": "\\textit{Top panel:",
+                "image_file": "figures/age_midplane_distribution.eps",
+                "references": [
+                    {
+                        "label": "santos_constraining_2017",
+                        "link": ""
+                    },
+                    {
+                        "label": "winter_planet_2024",
+                        "link": ""
+                    },
+                    {
+                        "label": "zink_scaling_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "Borucki10",
+                        "link": ""
+                    },
+                    {
+                        "label": "wielen_diffusion_1977, rocha-pinto_chemical_2004, almeida-fernandes_method_2018",
+                        "link": ""
+                    },
+                    {
+                        "label": "ford_architectures_2014",
+                        "link": ""
+                    },
+                    {
+                        "label": "winter_stellar_2020",
+                        "link": ""
+                    },
+                    {
+                        "label": "miyazaki_evidence_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "yang_planets_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "Becker20_USP",
+                        "link": ""
+                    },
+                    {
+                        "label": "wright_ten_2009, steffen_kepler_2012, huang_warm_2016, hord_uniform_2021, wang_transiting_2021, ivshina_tess_2022",
+                        "link": ""
+                    },
+                    {
+                        "label": "Becker15, wu_evidence_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "Becker17, hansen_perturbation_2017, granados_contreras_dynamics_2018",
+                        "link": ""
+                    },
+                    {
+                        "label": "Denham19",
+                        "link": ""
+                    },
+                    {
+                        "label": "rasio_dynamical_1996, Chatterjee08, weidenschilling_gravitational_1996, wu_planet_2003, Fabrycky07b",
+                        "link": ""
+                    },
+                    {
+                        "label": "wang_hot_2020, wang_transiting_2021, rodet_correlation_2021",
+                        "link": ""
+                    },
+                    {
+                        "label": "boley_situ_2016",
+                        "link": ""
+                    },
+                    {
+                        "label": "wu_evidence_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "zawadzki_migration_2022",
+                        "link": ""
+                    },
+                    {
+                        "label": "reid_palomarmsu_1995, faherty_brown_2009, kiman_exploring_2019, angus_exploring_2020, popinchalk_evaluating_2021",
+                        "link": ""
+                    },
+                    {
+                        "label": "zink_scaling_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "li_stellar_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "Muirhead15",
+                        "link": ""
+                    },
+                    {
+                        "label": "wielen_diffusion_1977, rocha-pinto_chemical_2004, almeida-fernandes_method_2018",
+                        "link": ""
+                    },
+                    {
+                        "label": "prusti_gaia_2016, vallenari_gaia_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "mackereth_dynamical_2019, vieira_vertical_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "carrillo_relationship_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "ma_structure_2017",
+                        "link": ""
+                    },
+                    {
+                        "label": "casagrande_measuring_2016",
+                        "link": ""
+                    },
+                    {
+                        "label": "casagrande_measuring_2016",
+                        "link": ""
+                    },
+                    {
+                        "label": "zink_scaling_2023",
+                        "link": ""
+                    }
+                ]
+            },
+            {
+                "content": "We generate the set of planet radii and orbital periods from the occurrence rates in , in the same manner as . We employ a fixed resolution in both log(period) and log(radius) (inherited from , and others), with an approximate spacing of 1 dex between adjacent log(period) bins and 0.2 dex between adjacent log(radius) bins.  In practice, the index i spans periods from 0.5 to 200 days in 13 regular log intervals of 1 dex, and the index j spans radii from 0.3 to 4$R_20We assign planetary masses with the relations of for planets $<1.5$ $R_. We assess the stability of the system by ensuring that planets satisfy the mutual Hill separation criterion defined in , redrawing new sets of orbital period and radii until the criteria are satisfied. \n\n To generate a synthetic ``observed\" data set, we randomly assign a midplane to each planetary system. Assuming systems are randomly distributed on the sky, we draw midplanes uniformly in sin$(i)$. While technically planets transit with any impact parameter $b<1$, in practice the sample of detected M dwarf from have impact parameters mostly $<$0.8 rather than uniform in $b$ from 0--1. We therefore assign ``detected\" status in a probabilistic manner with impact parameter $b$, applying the empirical relation from , with probability of detection decreasing sharply after 0.8. We then employ the average sensitivity function in to determine whether a given transiting planet is ``detected\" by drawing a random uniform number from 0 to 1. If the detection probability corresponding to that planet's radius and period is higher than the randomly drawn number, we record its true radius and period in the catalog of synthetic detections. \n\n",
+                "references": [
+                    {
+                        "label": "Dressing15",
+                        "link": ""
+                    },
+                    {
+                        "label": "Sullivan15",
+                        "link": ""
+                    },
+                    {
+                        "label": "youdin_exoplanet_2011, Howard12, Dressing13",
+                        "link": ""
+                    },
+                    {
+                        "label": "zeng_simple_2017",
+                        "link": ""
+                    },
+                    {
+                        "label": "Fabrycky12a",
+                        "link": ""
+                    },
+                    {
+                        "label": "Swift15",
+                        "link": ""
+                    },
+                    {
+                        "label": "Swift15",
+                        "link": ""
+                    },
+                    {
+                        "label": "Dressing15",
+                        "link": ""
+                    }
+                ],
+                "section": "Generating planetary systems",
+                "type": "text"
+            },
+            {
+                "content": "We aim to investigate how a change in the rate of compact planetary systems with time, over the age of the galaxy, can manifest as an apparent trend in decreasing planet occurrence with galactic height $z$. Given the suggestive trend among FGK dwarfs (an apparent increase in planet occurrence close to the midplane), we favor a model in which planetary systems are likelier to reside in a compact multiple configuration. We now consider how to assign planetary systems to each star in our sample.  With a toy model in which stars are likelier to host tightly packed planetary systems, we can expect a pile-up of higher planet occurrence among the more youthful midplane stars. To calibrate the approximate behavior of the model, we consider the observed trend by : a decrease in planet occurrence by a factor of $2$ as $z$ increases from 100 to 1000 pc from the midplane. Given the typical drift in galactic height of 1 kpc per 4 Gyr , we conclude a model trend likely needs to manifest over Gyr timescales. Separately, any reasonable model trend must result in the correct $Gyr timescale, to host compact multiple systems of planets. These two scenarios are depicted in Figure . Within the first framework (top panels), we assume that individual planetary systems change with time. We denote this scenario the ``decay\" model, by which dynamically packed planetary systems are metastable at birth . Over Gyr timescales, the originally densely populated, dynamically cold planetary system is self-disrupted, resulting in less planets, with larger spacings and mutual inclinations. The tendency for younger systems to still be the ``compact multiple\" state drives the seeming increase in planet occurrence toward the galactic midplane. In this sense, the probability of a star hosting a compact system of multiple planets is determined from age. This is a similar physical scenario to the one proposed by , in order to explain an apparent increase in number of planets per star and decrease in mutual inclination among younger stars.  In the top panels of Figure , we show the functional form for this probability, applied to each star separately: an individual STIP rate of $(consistent with a 20",
+                "references": [
+                    {
+                        "label": "zink_scaling_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "casagrande_measuring_2016",
+                        "link": ""
+                    },
+                    {
+                        "label": "Pu15, Volk15, zinzi_anti-correlation_2017",
+                        "link": ""
+                    },
+                    {
+                        "label": "yang_planets_2023",
+                        "link": ""
+                    }
+                ],
+                "section": "Imposing occurrence trends with time",
+                "type": "text"
+            },
+            {
+                "content": "Once we have a sample of ``detected\" planets in hand, we go on to determine a ``measured\" occurrence rate from the detected sample, as in the real occurrence rate studies cited above. We follow in their use of the the inverse detection efficiency method (IDEM) to extract the underlying occurrence (see also , , ). With this metric, within a given cell of radius and period space, each set of planets in that cell is ``upweighted\" by the mission sensitivity and the transit probability to infer the true number of planets. has shown that IDEM underestimates the true planet occurrence rate for real detections, where the signal-to-noise is marginal. This is attributable to the use of the the planet size to compute the completeness correction, rather than the true planet size. In our simplified control experiment, we employ the true planet radius (recorded for each ``detected\" planet) when reverse-engineering the occurrence. Using the true radius, as opposed to the ``measured\" planet radius, we expect to avoid the bias from IDEM studies of real planets. We show in the right panel of Figure our recovered planet occurrence (across the entire stellar sample, inclusive of all galactic heights) in each of the 25 iterations, as compared to the injected planet occurrence; the distributions of true-measured planet occurrence cluster as expected around zero. \n\n",
+                "figure_caption": "\\textit{Left panels",
+                "image_file": "0.5cm 0 0.5cm 0",
+                "references": [
+                    {
+                        "label": "Dressing15",
+                        "link": ""
+                    },
+                    {
+                        "label": "Howard11a",
+                        "link": ""
+                    },
+                    {
+                        "label": "Petigura13a",
+                        "link": ""
+                    },
+                    {
+                        "label": "Foreman_Mackey_2014",
+                        "link": ""
+                    },
+                    {
+                        "label": "Hsu18",
+                        "link": ""
+                    }
+                ],
+                "section": "Recovering Injected Occurrence from Synthetic Observations",
+                "type": "text"
+            },
+            {
+                "content": "In Figures and we show the results of 3 random generations of stellar and planet samples, for  the ``decay\" and then the ``step\" models, respectively. For each generation, we divide the sample into bins of 250 pc. For each bin in galactic height, we identify the sample of transiting planets, from which we reverse-engineer the underlying planet occurrence rate for stars in that bin. We show here both the true occurrence (shown in green) and the measured occurrence (in black points, with corresponding error bars). As expected per Figure , the scatter around the ``true\" occurrence rate (shown in green) is Gaussian in nature, and with typical error bars in each bin of 10-30We find that both of our model scenarios produce trends in which planet occurrence decreases with height from the galactic midplane, though the trend is not a continuous power law. Both models produce a ``knee\" in planet occurrence between 500-1000 pc above the midplane. However, given the size of a typical error bar in planet occurrence for each slice of galactic height, there would be no robust means of distinguishing between a broken and continuous power law over the 100-1000 pc range. \n\n",
+                "figure_caption": "Three simulations of planet occurrence versus galactic height, employing a step function in galactic time for the rate of compact multiple systems. \\textit{Left:",
+                "image_file": "0.5cm 0 0.5cm 0",
+                "references": [],
+                "section": "``Measuring\" the occurrence rate with galactic height",
+                "type": "text"
+            },
+            {
+                "content": "For each of 25 generations of stellar/planetary samples, we repeat the exercise in generating ``measurements\" of planet occurrence with height from the galactic midplane. Following , we elect to fit a line in log(galactic amplitude) versus log(planets/100 stars). They offer the caveat that the true underlying model may not actually resemble only a single power law-- indeed, we observe that our modeled trend exhibits a break at $slope, intercept$per . \n\nWe show the results of our findings in Figure . The leftmost panels show the range of power laws associated with the best fit to the ``observations\" between 100-1000 pc, across 25 iterations. This range can then be compared to the trend for FGK dwarfs in blue. At right, we show a histogram of the best-fit values for $reported in of -0.30$histograms is representative of our ``measurement\" uncertainty in $Gyr timescales, results in a substantially more shallow trend in occurrence with galactic height to match.  A step function model in galactic time mimics the observed slope among FGK dwarfs more closely. That is, if the likelihood of a given star forming a STIP increased in the past several Gyr by a factor of several, the expected trend in planet occurrence with galactic height approximates the trend. \n\n",
+                "figure_caption": "\\textit{Left panels",
+                "image_file": "0.5cm 0 0.5cm 0",
+                "references": [
+                    {
+                        "label": "zink_scaling_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "zink_scaling_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "zink_scaling_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "zink_scaling_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "zink_scaling_2023",
+                        "link": ""
+                    }
+                ],
+                "section": "Comparison of trend between STIP rate models",
+                "type": "text"
+            },
+            {
+                "content": "We investigate the hypothesis that a change in the rate of Systems of Tightly-packed Inner Planets (STIPs), over the course of the galaxy's planet formation history, can mimic a decrease in planet occurrence with galactic height. Focusing upon M dwarfs, we consider two different prescriptions for how the STIP rate varies, described in Section . In this Section, we investigate physical mechanisms that could plausibly produce the modeled trend in STIP rate. We limit here our considerations to mechanisms that have some existing observational link to the occurrence of STIPs: stellar metallicity, Jovian companions, and stellar clustering at birth/binarity (of course, these properties are themselves related and cannot be considered only in isolation). We comment on whether existing relationships between these conditions and STIP occurrence are consistent with an increase in STIP rate over the past few Gyr of galactic history.  \n\n",
+                "references": [],
+                "section": "Results \\& discussion",
+                "type": "text"
+            },
+            {
+                "content": "One of the the intringuing features of the finding is that the increase in planet occurrence toward the galactic midplane cannot be explained by the galactic metallicity gradient. This is consistent with the finding that the number of planets per star increases around younger stars, even controlling for metallicity. The phenomenon by which average stellar metallicity decreases away from the midplane, has been increasingly closely studied with generations of large stellar surveys (see e.g. ). The link between individual stellar metallicity and planet occurrence has been similarly studied in increasing detail. It is typically viewed as a deterministic relationship, in which the relative enrichment of metal content in the primordial disk directly affects both planet sizes and orbital properties (among many others; see also review by ). \n\nIn this study we have considered specifically the STIP rate, which some studies have found to increase around metal-poor host stars (for FGK dwarfs, for M dwarfs), while others have found no significant difference in metal content between hosts to systems of multiple transiting planets and hosts to singly-transiting planets . In any case, a relative metal-poorness of compact multiples would produce the opposite effect with increasing galactic height: we hypothesize here that the STIP rate toward the galactic plane, and metallicity is increasing, rather than decreasing, in this direction on average. This metallicity preference around metal-poor stars for STIPs, if it exists, cannot explain a strong increase in STIPs over the past several Gyr. On the other hand, found that the small-planet occurrence–host star metallicity relation is even stronger for M dwarfs than for solar-type stars: in this sense, metallicity trends may trace trends with galactic height more closely among M dwarfs.  \n\n",
+                "references": [
+                    {
+                        "label": "zink_scaling_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "yang_planets_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "mayor_chemical_1976, andrievsky_using_2002, magrini_evolution_2009, luck_distribution_2011, bergemann_gaia-eso_2014, xiang_evolution_2015,yan_chemical_2019, hawkins_chemical_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "santos_metal-rich_2001, Fischer_2005, schlaufman_kepler_2011,Johnson10, Buchave12, Dawson13, wang_planet_2015, Brewer18, Petigura18, anderson_higher_2021, boley_first_2024, Lu20",
+                        "link": ""
+                    },
+                    {
+                        "label": "adibekyan_star-planet_2014",
+                        "link": ""
+                    },
+                    {
+                        "label": "Brewer18",
+                        "link": ""
+                    },
+                    {
+                        "label": "Anderson21",
+                        "link": ""
+                    },
+                    {
+                        "label": "romero_no_2018, weiss_california-kepler_2018, zhu_influence_2019",
+                        "link": ""
+                    },
+                    {
+                        "label": "Lu20",
+                        "link": ""
+                    }
+                ],
+                "section": "Metallicity considerations",
+                "type": "text"
+            },
+            {
+                "content": "We also consider the possibility of a link between the STIP likelihood and the existence of companion Jovian planets. While once thought to be extremely rare around small stars , more recent studies of early-type M dwarfs observed with found that they host Hot Jupiters at rates only a factor of a few less often than Sunlike stars (, see also ). With respect to further-out giant companions, they are less common around M dwarfs (particularly late-type M dwarfs, per ), but still occur at $5 within the past 2 Gyr. If indeed the STIP rate is rising, and a common fraction of these STIPs result in Hot Jupiters (via the proposed in-situ formation scenario) then these quantities would tend in a common direction. \n\nGiven that cold Jupiters are associated with increased likelihood of small inner planets (at least for metal-rich stars, per ), a recent increase in cold Jupiters would be an appealing story toward a recent higher STIP rate. Indeed, predict that as long as colder Jupiters exist, their correlation with the inner super-Earths remains and potentially enhances even around M dwarfs. However, the fact that cold Jupiters (with periods of 1–10 yr) do not show such an increase over the past few Gyr , at least around FGK dwarfs, suggests they are not an obvious candidate to explain a recent steep STIP increase.   \n\n",
+                "references": [
+                    {
+                        "label": "Johnson12",
+                        "link": ""
+                    },
+                    {
+                        "label": "gan_occurrence_2022",
+                        "link": ""
+                    },
+                    {
+                        "label": "bryant_occurrence_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "pass_mid--late_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "bryan_friends_2024",
+                        "link": ""
+                    },
+                    {
+                        "label": "chachan_small_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "miyazaki_evidence_2023",
+                        "link": ""
+                    }
+                ],
+                "section": "Varying rate of companion Jupiters",
+                "type": "text"
+            },
+            {
+                "content": "The traditional picture of star-planet formation occurs in relative isolation . Under isolated conditions, the stellar and disk properties alone are presumably responsible for the planetary outcome. This is why the metallicity of the host star, presumably reflective of the composition of the protoplanetary disk, has historically been assume to have a deterministic relationship to planet formation (see Section above). However, recent findings present the case that the stellar-metallicity-to-planet relationship may be partly or wholly a proxy for other properties (such as age), which themselves trace metallicity  . A strongly deterministic component of planet formation, within this framework, may be the stellar density of the nearby environment and the host star's dynamical history . If these properties are changing over galactic time, they may simply covary with metallicity, without the metallicity being causally linked to planet formation. More probably, planetary outcomes are determined by a mixture of properties of the host star and its environment, with that mixture potentially varying with galactic environment. In this sense, planet occurrence may vary across ``chemo-kinematic\" space, in a way newly traceable by . \n\nIn plausibly linking stellar birth environment with STIP rate, it is useful to consider the result: they found that the planet multiplicity distribution varies, dependent upon whether the host star resides in a high or low stellar phase space density environment. There is a greater fraction of multiplanet systems around field stars than in overdensities. A recently higher STIP rate might therefore plausibly emerge from planet formation in lower density stellar environments. An investigation of this possible link would require careful consideration of the relationship between the stellar density of the formation environment, and the rate of binarity, itself related to the architectures of planetary systems . Recent findings from illustrate that such environmental trends can be traced over galactic time. For example, found that the binary fraction of G&K dwarfs is lower in the thin disk than the thick disk. If M dwarf binary fraction is similarly lower in recent galactic history, it could indicate a difference in stellar natal environment that might also imprint upon planetary systems.  \n\n",
+                "references": [
+                    {
+                        "label": "armitage_dynamics_2011, williams_protoplanetary_2011, winn_occurrence_2015",
+                        "link": ""
+                    },
+                    {
+                        "label": "winter_prevalent_2020, kruijssen_bridging_2020, miyazaki_evidence_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "adibekyan_stellar_2021, dai_planet_2021, winter_planet_2024, cai_signatures_2018, kruijssen_bridging_2020",
+                        "link": ""
+                    },
+                    {
+                        "label": "veyette_chemo-kinematic_2018, carrillo_know_2020",
+                        "link": ""
+                    },
+                    {
+                        "label": "longmore_impact_2021",
+                        "link": ""
+                    },
+                    {
+                        "label": "sullivan_revising_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "niu_binary_2021",
+                        "link": ""
+                    }
+                ],
+                "section": "Varying stellar birth environment",
+                "type": "text"
+            },
+            {
+                "content": "We have assumed a single fiducial model for both the ``step\" and ``decay\" trends with STIP occurrence. Tuning these models will correspondingly shift the resulting trend in galactic height. In particular, it is useful to consider whether there exists an alternate ``decay\" function that could be tuned to produce a steeper slope; as discussed in Section , the given decay law presents a slope barely distinguishable from 0 with the given sample size. However, considered various forms of this functional decay law: the one we employed here (by which sculpting potentially continues over 10 Gyr) is considered the ``most\" sculpting that is consistent with the yield. Selecting an even steeper ``decay\" over longer timescales results in a fraction of STIPs too low to match the transit multiplicity yield from . We conclude that if we made the decay law ``stronger\" in service of matching the (that is, if close to 100Similarly, the shape of the ``step\" function by which STIP occurrence increased in recent galactic history could be tuned, with changes to the resulting slope in planet occurrence with galactic height. Here we are again constrained by the need to reproduce the present-day STIP rate of $2 Gyr ago) increase in the STIP rate by a factor of several produces a similar slope to the trend observed by .  This ``step\" model that we set forth in Section , involves an increase in the rate of STIPs formed at birth, from a baseline of 10We intend the investigation here to serve as a proof-of-concept, but we have made many simplifying assumptions. A more complex modeling endeavor might include other functional forms for a proposed increase in STIP occurrence, and investigate the effect of varying the age distribution of the stellar sample. We have approached the problem employing a sample of M dwarfs, which allows us to make the simplifying assumption that no stars leave the Main Sequence during Milky Way history; a sample employing FGK dwarfs could be compared more directly to the study. We have forward-modeled, as our synthetic observable, the number of planets per star; this is also the metric employed by . We have not varied as part of this study the ; this is a separate quantity and scales differently with metallicity . Future studies varying that fraction, perhaps jointing with the number of stars per planet, could identify how those quantities would need to combine to mimic the observed occurrence trend. \n\n\nExamples of those that correlate with the \n = 0 morphology, but less strongly than those we present above, include properties associated with the star formation history,\n\nThe LATTE simulations \n\nemploy a fiducial star formation rate in the Milky Way from . \n\n, assuming that star formation peaked at a galactic age of 500 Myr and following off to 14N-body, chemo-dynamical models of Milky Way-like galaxies include a variety of prescriptions, given both uncertainties of the physical processes involved, as well as computational limitations on the number of particles. Such simulations implicitly rely on the assumption that one particle in the N-body simulation can constitute a good approximation of an entire stellar population: whether and how these basic building blocks assemble to recreate the recognizable features of the Milky Way is the subject of an entire branch of astrophysical science and exceeds the scope of this manuscript. The LATTE simulations, for example, employ the FIRE-2 galaxy formation machinery to produce a suite of synthetic Milky Ways. Such simulations aim self-consistently model the dark-matter and gaseous halo, the stellar and gaseous disk, bulge, giant molecular clouds (GMCs), star clusters, stellar halo, and satellites/dwarf galaxies of Milky Way-like systems across their full 13.8 billion-year formation. The exoplanet community is only beginning to contextualize planet formation and evolution within a galactic framework. \n\n\n\n",
+                "references": [
+                    {
+                        "label": "lam_ages_2024",
+                        "link": ""
+                    },
+                    {
+                        "label": "zink_scaling_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "zink_scaling_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "zink_scaling_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "zink_scaling_2023",
+                        "link": ""
+                    },
+                    {
+                        "label": "zhu_influence_2019",
+                        "link": ""
+                    },
+                    {
+                        "label": "revaz_computational_2016",
+                        "link": ""
+                    },
+                    {
+                        "label": "hopkins_fire-2_2018",
+                        "link": ""
+                    }
+                ],
+                "section": "Sensitivity to model parameters",
+                "type": "text"
+            }
+        ],
+        "metadata": {
+            "authors": [
+                {
+                    "affiliations": [],
+                    "name": "Sarah Ballard"
+                }
+            ]
+        },
+        "title": "Tuning the Rate of Tightly Packed Systems To Produce Planet Occurrence\\\\ Trends with Galactic Height"
+    }
+}

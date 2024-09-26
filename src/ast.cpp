@@ -108,7 +108,6 @@ void ASTNode::printHelper(int indent, std::unordered_set<const ASTNode*>& visite
     visitedNodes.erase(this);
 }
 
-// Define the AST class constructor and member functions
 AST::AST() {
     root = std::make_shared<ASTNode>(ASTNode::NodeType::Document, "Document Root", 0, ParserState::DefaultState);
 }

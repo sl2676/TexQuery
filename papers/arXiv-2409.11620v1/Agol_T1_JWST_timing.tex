@@ -1,0 +1,508 @@
+%% Beginning of file 'sample631.tex'
+%%
+%% Modified 2022 May  
+%%
+%% This is a sample manuscript marked up using the
+%% AASTeX v6.31 LaTeX 2e macros.
+%%
+%% AASTeX is now based on Alexey Vikhlinin's emulateapj.cls 
+%% (Copyright 2000-2015).  See the classfile for details.
+
+%% AASTeX requires revtex4-1.cls and other external packages such as
+%% latexsym, graphicx, amssymb, longtable, and epsf.  Note that as of 
+%% Oct 2020, APS now uses revtex4.2e for its journals but remember that 
+%% AASTeX v6+ still uses v4.1. All of these external packages should 
+%% already be present in the modern TeX distributions but not always.
+%% For example, revtex4.1 seems to be missing in the linux version of
+%% TexLive 2020. One should be able to get all packages from www.ctan.org.
+%% In particular, revtex v4.1 can be found at 
+%% https://www.ctan.org/pkg/revtex4-1.
+
+%% The first piece of markup in an AASTeX v6.x document is the \documentclass
+%% command. LaTeX will ignore any data that comes before this command. The 
+%% documentclass can take an optional argument to modify the output style.
+%% The command below calls the preprint style which will produce a tightly 
+%% typeset, one-column, single-spaced document.  It is the default and thus
+%% does not need to be explicitly stated.
+%%
+%% using aastex version 6.3
+\documentclass[modern]{aastex631}
+
+%% The default is a single spaced, 10 point font, single spaced article.
+%% There are 5 other style options available via an optional argument. They
+%% can be invoked like this:
+%%
+%% \documentclass[arguments]{aastex631}
+%% 
+%% where the layout options are:
+%%
+%%  twocolumn   : two text columns, 10 point font, single spaced article.
+%%                This is the most compact and represent the final published
+%%                derived PDF copy of the accepted manuscript from the publisher
+%%  manuscript  : one text column, 12 point font, double spaced article.
+%%  preprint    : one text column, 12 point font, single spaced article.  
+%%  preprint2   : two text columns, 12 point font, single spaced article.
+%%  modern      : a stylish, single text column, 12 point font, article with
+%% 		  wider left and right margins. This uses the Daniel
+%% 		  Foreman-Mackey and David Hogg design.
+%%  RNAAS       : Supresses an abstract. Originally for RNAAS manuscripts 
+%%                but now that abstracts are required this is obsolete for
+%%                AAS Journals. Authors might need it for other reasons. DO NOT
+%%                use \begin{abstract} and \end{abstract} with this style.
+%%
+%% Note that you can submit to the AAS Journals in any of these 6 styles.
+%%
+%% There are other optional arguments one can invoke to allow other stylistic
+%% actions. The available options are:
+%%
+%%   astrosymb    : Loads Astrosymb font and define \astrocommands. 
+%%   tighten      : Makes baselineskip slightly smaller, only works with 
+%%                  the twocolumn substyle.
+%%   times        : uses times font instead of the default
+%%   linenumbers  : turn on lineno package.
+%%   trackchanges : required to see the revision mark up and print its output
+%%   longauthor   : Do not use the more compressed footnote style (default) for 
+%%                  the author/collaboration/affiliations. Instead print all
+%%                  affiliation information after each name. Creates a much 
+%%                  longer author list but may be desirable for short 
+%%                  author papers.
+%% twocolappendix : make 2 column appendix.
+%%   anonymous    : Do not show the authors, affiliations and acknowledgments 
+%%                  for dual anonymous review.
+%%
+%% these can be used in any combination, e.g.
+%%
+%% \documentclass[twocolumn,linenumbers,trackchanges]{aastex631}
+%%
+%% AASTeX v6.* now includes \hyperref support. While we have built in specific
+%% defaults into the classfile you can manually override them with the
+%% \hypersetup command. For example,
+%%
+%% \hypersetup{linkcolor=red,citecolor=green,filecolor=cyan,urlcolor=magenta}
+%%
+%% will change the color of the internal links to red, the links to the
+%% bibliography to green, the file links to cyan, and the external links to
+%% magenta. Additional information on \hyperref options can be found here:
+%% https://www.tug.org/applications/hyperref/manual.html#x1-40003
+%%
+%% Note that in v6.3 "bookmarks" has been changed to "true" in hyperref
+%% to improve the accessibility of the compiled pdf file.
+%%
+%% If you want to create your own macros, you can do so
+%% using \newcommand. Your macros should appear before
+%% the \begin{document} command.
+%%
+\newcommand{\vdag}{(v)^\dagger}
+\newcommand\aastex{AAS\TeX}
+\newcommand\latex{La\TeX}
+
+%% Reintroduced the \received and \accepted commands from AASTeX v5.2
+%\received{March 1, 2021}
+%\revised{April 1, 2021}
+%\accepted{\today}
+
+%% Command to document which AAS Journal the manuscript was submitted to.
+%% Adds "Submitted to " the argument.
+%\submitjournal{PSJ}
+
+%% For manuscript that include authors in collaborations, AASTeX v6.31
+%% builds on the \collaboration command to allow greater freedom to 
+%% keep the traditional author+affiliation information but only show
+%% subsets. The \collaboration command now must appear AFTER the group
+%% of authors in the collaboration and it takes TWO arguments. The last
+%% is still the collaboration identifier. The text given in this
+%% argument is what will be shown in the manuscript. The first argument
+%% is the number of author above the \collaboration command to show with
+%% the collaboration text. If there are authors that are not part of any
+%% collaboration the \nocollaboration command is used. This command takes
+%% one argument which is also the number of authors above to show. A
+%% dashed line is shown to indicate no collaboration. This example manuscript
+%% shows how these commands work to display specific set of authors 
+%% on the front page.
+%%
+%% For manuscript without any need to use \collaboration the 
+%% \AuthorCollaborationLimit command from v6.2 can still be used to 
+%% show a subset of authors.
+%
+%\AuthorCollaborationLimit=2
+%
+%% will only show Schwarz & Muench on the front page of the manuscript
+%% (assuming the \collaboration and \nocollaboration commands are
+%% commented out).
+%%
+%% Note that all of the author will be shown in the published article.
+%% This feature is meant to be used prior to acceptance to make the
+%% front end of a long author article more manageable. Please do not use
+%% this functionality for manuscripts with less than 20 authors. Conversely,
+%% please do use this when the number of authors exceeds 40.
+%%
+%% Use \allauthors at the manuscript end to show the full author list.
+%% This command should only be used with \AuthorCollaborationLimit is used.
+
+%% The following command can be used to set the latex table counters.  It
+%% is needed in this document because it uses a mix of latex tabular and
+%% AASTeX deluxetables.  In general it should not be needed.
+%\setcounter{table}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% The following section outlines numerous optional output that
+%% can be displayed in the front matter or as running meta-data.
+%%
+%% If you wish, you may supply running head information, although
+%% this information may be modified by the editorial offices.
+%\shorttitle{AASTeX v6.3.1 Sample article}
+%\shortauthors{Schwarz et al.}
+%%
+%% You can add a light gray and diagonal water-mark to the first page 
+%% with this command:
+%% \watermark{text}
+%% where "text", e.g. DRAFT, is the text to appear.  If the text is 
+%% long you can control the water-mark size with:
+%% \setwatermarkfontsize{dimension}
+%% where dimension is any recognized LaTeX dimension, e.g. pt, in, etc.
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\graphicspath{{./}{figures/}}
+%% This is the end of the preamble.  Indicate the beginning of the
+%% manuscript itself with \begin{document}.
+
+\begin{document}
+
+\title{Updated forecast for TRAPPIST-1 times of transit for all seven exoplanets incorporating JWST data}
+
+%% LaTeX will automatically break titles if they run longer than
+%% one line. However, you may use \\ to force a line break if
+%% you desire. In v6.31 you can include a footnote in the title.
+
+%% A significant change from earlier AASTEX versions is in the structure for 
+%% calling author and affiliations. The change was necessary to implement 
+%% auto-indexing of affiliations which prior was a manual process that could 
+%% easily be tedious in large author manuscripts.
+%%
+%% The \author command is the same as before except it now takes an optional
+%% argument which is the 16 digit ORCID. The syntax is:
+%% \author[xxxx-xxxx-xxxx-xxxx]{Author Name}
+%%
+%% This will hyperlink the author name to the author's ORCID page. Note that
+%% during compilation, LaTeX will do some limited checking of the format of
+%% the ID to make sure it is valid. If the "orcid-ID.png" image file is 
+%% present or in the LaTeX pathway, the OrcID icon will appear next to
+%% the authors name.
+%%
+%% Use \affiliation for affiliation information. The old \affil is now aliased
+%% to \affiliation. AASTeX v6.31 will automatically index these in the header.
+%% When a duplicate is found its index will be the same as its previous entry.
+%%
+%% Note that \altaffilmark and \altaffiltext have been removed and thus 
+%% can not be used to document secondary affiliations. If they are used latex
+%% will issue a specific error message and quit. Please use multiple 
+%% \affiliation calls for to document more than one affiliation.
+%%
+%% The new \altaffiliation can be used to indicate some secondary information
+%% such as fellowships. This command produces a non-numeric footnote that is
+%% set away from the numeric \affiliation footnotes.  NOTE that if an
+%% \altaffiliation command is used it must come BEFORE the \affiliation call,
+%% right after the \author command, in order to place the footnotes in
+%% the proper location.
+%%
+%% Use \email to set provide email addresses. Each \email will appear on its
+%% own line so you can put multiple email address in one \email call. A new
+%% \correspondingauthor command is available in V6.31 to identify the
+%% corresponding author of the manuscript. It is the author's responsibility
+%% to make sure this name is also in the author list.
+%%
+%% While authors can be grouped inside the same \author and \affiliation
+%% commands it is better to have a single author for each. This allows for
+%% one to exploit all the new benefits and should make book-keeping easier.
+%%
+%% If done correctly the peer review system will be able to
+%% automatically put the author and affiliation information from the manuscript
+%% and save the corresponding author the trouble of entering it by hand.
+
+%\correspondingauthor{August Muench}
+%\email{greg.schwarz@aas.org, gus.muench@aas.org}
+
+\author[0000-0002-0802-9145]{Eric Agol}
+\affiliation{Department of Astronomy,
+University of Washington,
+Seattle, WA 98195, USA}
+\correspondingauthor{Eric Agol}
+\email{agol@uw.edu}
+
+\author[0000-0002-0832-710X]{Natalie H. Allen}\altaffiliation{NSF Graduate Research Fellow}
+\affiliation{Department of Physics and Astronomy, Johns Hopkins University, 3400 N. Charles Street, Baltimore, MD 21218, USA}
+
+\author[0000-0001-5578-1498]{Björn Benneke}
+\affiliation{Trottier Institute for Research on Exoplanets and Department of Physics, Universit\'{e} de Montr\'{e}al, Montreal, QC, Canada}
+
+\author[0000-0001-6108-4808]{Laetitia Delrez}
+\affil{{Astrobiology Research Unit}, {Universit\'e de Li\`ege}, {{All\'ee du 6 ao\^ut 19}, {Li\`ege}, {4000}, {Belgium}}} 
+
+\author[0000-0001-5485-4675]{Ren\'{e} Doyon}
+\affiliation{Trottier Institute for Research on Exoplanets and Department of Physics, Universit\'{e} de Montr\'{e}al, Montreal, QC, Canada}
+
+\author[0000-0002-7008-6888]{Elsa Ducrot}
+\affil{LESIA, Observatoire de Paris, CNRS, Universit\'e Paris Diderot, Universit\'e Pierre et Marie Curie, 5 place Jules Janssen, 92190 Meudon, France}
+\affil{AIM, CEA, CNRS, Universit\'e Paris-Saclay, Universit\'e de Paris, F-91191 Gif-sur-Yvette, France}
+
+\author[0000-0001-9513-1449]{N\'estor Espinoza}
+\affiliation{Space Telescope Science Institute, 3700 San Martin Drive, Baltimore, MD 21218, USA}
+\affiliation{Department of Physics and Astronomy, Johns Hopkins University, 3400 N. Charles Street, Baltimore, MD 21218, USA}
+
+\author[0000-0003-0854-3002]{Am\'{e}lie Gressier}
+\affiliation{Space Telescope Science Institute, 3700 San Martin Drive, Baltimore, MD 21218, USA}
+
+\author[0000-0002-6780-4252]{David Lafrenière}
+\affiliation{Trottier Institute for Research on Exoplanets and Department of Physics, Universit\'{e} de Montr\'{e}al, Montreal, QC, Canada}
+
+\author[0000-0003-4676-0622]{Olivia Lim}
+\affiliation{Trottier Institute for Research on Exoplanets and Department of Physics, Universit\'{e} de Montr\'{e}al, Montreal, QC, Canada}
+
+\author[0000-0002-0746-1980]{Jacob Lustig-Yaeger}
+\affiliation{JHU Applied Physics Laboratory, 11100 Johns Hopkins Rd, Laurel, MD 20723, USA}
+
+\author[0000-0002-2875-917X]{Caroline Piaulet-Ghorayeb}
+\affiliation{Trottier Institute for Research on Exoplanets and Department of Physics, Universit\'{e} de Montr\'{e}al, Montreal, QC, Canada}
+
+\author[0000-0002-3328-1203]{Michael Radica}
+\affiliation{Trottier Institute for Research on Exoplanets and Department of Physics, Universit\'{e} de Montr\'{e}al, Montreal, QC, Canada}
+
+\author[0000-0003-4408-0463]{Zafar Rustamkulov}
+\affiliation{Department of Earth \& Planetary Sciences, Johns Hopkins University, Baltimore, MD, USA}
+
+\author[0000-0001-7393-2368]{Kristin S. Sotzen}
+\affiliation{JHU Applied Physics Laboratory, 11100 Johns Hopkins Rd, Laurel, MD 20723, USA}
+
+
+
+%\author[]{}
+
+
+%% Note that the \and command from previous versions of AASTeX is now
+%% depreciated in this version as it is no longer necessary. AASTeX 
+%% automatically takes care of all commas and "and"s between authors names.
+
+%% AASTeX 6.31 has the new \collaboration and \nocollaboration commands to
+%% provide the collaboration status of a group of authors. These commands 
+%% can be used either before or after the list of corresponding authors. The
+%% argument for \collaboration is the collaboration identifier. Authors are
+%% encouraged to surround collaboration identifiers with ()s. The 
+%% \nocollaboration command takes no argument and exists to indicate that
+%% the nearby authors are not part of surrounding collaborations.
+
+%% Mark off the abstract in the ``abstract'' environment. 
+\begin{abstract}
+The TRAPPIST-1 system has been extensively observed with JWST in the near-infrared with the goal of measuring atmospheric transit transmission spectra of these temperate, Earth-sized exoplanets.   A byproduct of these observations has been
+much more precise times of transit compared with prior available data from Spitzer,
+HST, or ground-based telescopes.  In this note we use 23 new timing measurements
+of all seven planets in the near-infrared from five JWST observing programs 
+to better forecast and constrain the future times
+of transit in this system.  In particular, we note that the transit times
+of TRAPPIST-1h have drifted significantly from a prior published analysis by up to tens of minutes.  Our newer forecast has a higher precision, with median statistical uncertainties ranging from 7-105 seconds during JWST Cycles 4 and 5.
+Our expectation is that this forecast will help to improve planning of future
+observations of the TRAPPIST-1 planets, whereas we postpone a full dynamical
+analysis to future work. 
+\end{abstract}
+
+%% Keywords should appear after the \end{abstract} command. 
+%% The AAS Journals now uses Unified Astronomy Thesaurus concepts:
+%% https://astrothesaurus.org
+%% You will be asked to selected these concepts during the submission process
+%% but this old "keyword" functionality is maintained in case authors want
+%% to include these concepts in their preprints.
+\keywords{Exoplanet systems (484) --- Exoplanet dynamics (490) --- 
+Transit timing variation method (1710) --- James Webb Space Telescope (2291)}
+
+%% From the front matter, we move on to the body of the paper.
+%% Sections are demarcated by \section and \subsection, respectively.
+%% Observe the use of the LaTeX \label
+%% command after the \subsection to give a symbolic KEY to the
+%% subsection for cross-referencing in a \ref command.
+%% You can use LaTeX's \ref and \label commands to keep track of
+%% cross-references to sections, equations, tables, and figures.
+%% That way, if you change the order of any elements, LaTeX will
+%% automatically renumber them.
+%%
+%% We recommend that authors also use the natbib \citep
+%% and \citet commands to identify citations.  The citations are
+%% tied to the reference list via symbolic KEYs. The KEY corresponds
+%% to the KEY in the \bibitem in the reference list below. 
+
+\section{Introduction} \label{sec:intro}
+
+During Cycles 1-3 of JWST, transits of all seven planets in the TRAPPIST-1 system \citep{Gillon2017} have been observed in
+the near-infrared with NIRISS-SOSS \citep{Albert2023} and NIRSPEC-BOTS \citep{Jakobsen2022}, as well as four additional transits observed with MIRI F1500W during a phase-curve observation of the system \citep{Gillon2023}.  In this
+note we focus on touching-up the timing forecast for this system; hence,
+we only utilize near-IR transits thanks to their higher precision. % compared with the 
+% mid-infrared observations of secondary eclipses with MIRI \citep{Greene2023,Zieba2023}.  
+From July 2022 - December 2023, using JWST NIRISS
+or NIRSPEC, there have been three transits observed of planet b (NIRISS-SOSS, JWST GO-2589, PI: \citealt{Lim2023}; JWST GO-1981, PI: Stevenson/Lustig-Yaeger), 
+five of planet c (NIRISS-SOSS, JWST GO-2589, PI: Lim; NIRspec-BOTS, JWST GO-2420, PI: Rathcke), two of planet d (NIRSpec-BOTS, JWST GO-1201, PI: Lafreni\`ere),
+four of planet e (NIRSpec-BOTS, JWST GTO-1331, PI: Lewis), five of planet f (NIRISS-SOSS, JWST GO-1201, PI: Lafreni\`ere),
+two of planet g (NIRSpec-BOTS, JWST GO-2589, PI: Lim), and two of planet h (NIRSpec-BOTS, JWST GO-1981, PI: Steveson/Lustig-Yaeger).
+%[I haven't included the b+e program in this count.  Also, one observation
+%of planet h included a transit of planet b.]
+ 
+For the unpublished times of transit, the light curves were analyzed using standard pipelines with quadratic limb-darkened transit models \citep{Mandel2002}. %[Very brief description here, with references.] 
+The first two transit times of planet b were published in \citet{Lim2023}, while the third was simultaneous with a transit of planet h, described below.  For planet c, NIRISS/SOSS light curves were produced using the \texttt{exoTEDRF} code \citep{Feinstein2023, Radica2023, Radica2024exotedrf}, and fitted using \texttt{juliet} \citep{Espinoza2019}, following the same procedure as \citet{Radica2024} for each of the two visits. Planet c NIRSpec PRISM light curves were generated using the \texttt{transitspectroscopy} pipeline \citep{Espinoza_2022} and fitted with the \texttt{juliet} python package \citep{Espinoza2019} to provide best-fit transit timings and their uncertainties.
+%Where the timing uncertainties were asymmetric, we used the greater of the two. 
+For planets d, f and g, the light curves were fitted with the same framework as in \citet{Lim2023}. For planet h (and one simultaneous transit of planet b) the transit timings were derived using %two different data reduction and analysis approaches. For the first one,
+the Eureka pipeline, which was run to produce the light curves, and then the \texttt{trafit} \citep{Gillon2010, Gillon2012} code was used to fit the transits and provide the best fit timings and their uncertainties.  When timing uncertainties are two-sided, we used the greater of the uncertainties to provide a symmetric
+error bar for utilizing a chi-square statistic.  When multiple timing analyses were carried out, we checked that the measured times were consistent across analyses, and we used the larger of the timing uncertainties for each transit to make our forecast conservative.
+
+The measured times are for planet b: $9779.210475\pm0.000025$, $9780.72134581\pm 0.000025$, $10289.8849446\pm 0.0000098$;
+planet c: $9772.420388\pm 0.000012$, $9881.401521\pm 0.000032$,
+$10247.0939505\pm 0.0000125$, $10249.515096\pm 0.000034$, 
+$10256.7810661\pm 0.0000185$; planet d: $9889.264477\pm 0.000024$,
+$9893.313946\pm 0.000060$;
+planet e: $10118.459836\pm 0.000032$, $10124.558969\pm 0.000022$,     
+$10148.956261\pm 0.000043$, $10246.539286\pm 0.000030$;
+planet f: $9881.035336\pm 0.000064$,
+$10111.185753\pm 0.000043$,
+$10120.387970\pm 0.000045$,
+$10129.593868\pm 0.000096$,
+$10148.005153\pm 0.000042$;
+planet g:
+$9777.8353589\pm 0.0000105$,
+$9926.053178\pm 0.000017$; and
+planet h: $10139.74928085\pm 0.0000809$ and
+$10289.88762392\pm 0.000299$.  Each time is given as $BJD_{TDB}-2,450,000$ in days.
+
+\section{Timing analysis} 
+
+We carried out a transit-timing analysis using the timing data published in
+\citet{Agol2021a} as well as the 23 new JWST times listed above. 
+The \texttt{NbodyGradient.jl} \citep{Agol2021b} code was used to compute the transit
+times and their derivatives with respect to the initial conditions,
+using the same integrator, initial conditions, time step, and parameter set described in \citet{Agol2021a}.  The computation
+is Newtonian and plane-parallel.  We
+minimized the chi-square of the fit using the \texttt{LsqFit.jl} 
+package which implements a Levenberg-Marquardt optimization algorithm.
+
+With the optimization completed, we integrated the model to July 2027
+to cover the end of JWST Cycle 5.  Using the Laplace approximation, we
+propagated the uncertainties using the covariance matrix of the
+optimum model parameters dotted with the Jacobian of the transit times
+with respect to the initial model parameters, yielding the uncertainties on the forecast times.  Yet, these forecast uncertainties almost certainly underestimate the true uncertainty.
+
+Notably, some of the JWST transits were affected by flares, and they may also be impacted by instrumental and/or stellar variability noise.  Moreover, using the Laplace approximation may not fully represent the probability distribution.  To address these issues we did the following: 1).\ we successively dropped a single transit of the 23 new JWST times, and re-optimized the timing model using the remaining data; 2).\ we used each optimized model to forecast the dropped time and its uncertainty; 3).\ we computed the normalized residuals of these 23 JWST times with respect to the forecast time and uncertainty based on the remaining data.  We found that the cumulative distribution of the normalized residuals is consistent with a Gaussian distribution, but with the uncertainties inflated by a factor of 3.14.  Consequently, for our forecast times based on the entire dataset, we inflate the forecast uncertainties by a factor of 3.14; this approach is analogous to leave-one-out cross-validation.
+We leave a more detailed
+analysis, including a markov-chain monte carlo analysis with a more
+robust likelihood function, to future work.
+
+Figure \ref{fig:T1_JWST} shows the resulting transit-timing variations
+as a function of time.  %The mean ephemeris for the figure is XXX.
+The deviation of the new timing solution relative to the best-fit timing solution
+presented in \citet{Agol2021a} is shown with dashed lines in each panel.
+In all cases the agreement is excellent through the end of 2019, while
+the timing solutions diverge slightly over the next few years.  The
+most extreme case of divergence is for planet h, which is already
+arriving $\ga$0.5 hr later than the forecast from \citet{Agol2021a}.  The
+other planets have forecasts accurate to $\approx$minutes through July 2027.
+
+The values of the forecast times can be found in the data behind the figure.
+A Jupyter notebook used to produce this code is available from the first author.  As a check on the forecast times, we compared with five unpublished transit times from July 2024 for planets b, d and e under JWST program GO-6456 (PI: Natalie Allen and Néstor Espinoza), and all five lie within 1-$\sigma$ of our forecast.
+
+Several questions arise: Can we better constrain the masses and
+orbital parameters when including the JWST data?  Is there evidence
+for an 8th planet, a moon, or other non-Keplerian effects?  How
+much better can we constrain the bulk densities of these planets using JWST data?
+To address these questions in detail may require more data for redundancy,
+as well as a careful analysis of the JWST data in light of the
+impact of frequent flares found in TRAPPIST-1 with JWST \citep{Howard2023}
+and the possible presence of correlated noise.  Hundreds
+of unpublished transit measurements from ground-based telescopes (Ducrot, private
+communication), as well as observations of the secondary eclipses
+of planets b and c with MIRI \citep{Greene2023,Zieba2023}, could be included to further improve a dynamical analysis.  For now, though, our forecast transit
+times may be used for future planning purposes to attempt spectroscopic
+measurements with JWST in the presence of stellar inhomogeneities \citep{Lim2023,deWit2024},
+while in turn these measurements will help to further constrain the
+dynamics of this system.  For planning purposes for secondary
+eclipses, it should suffice to take the half-way point between
+adjacent transits (this ignores the light travel time and
+eccentricity offset, but both should be insignificant).
+
+
+%% The "ht!" tells LaTeX to put the figure "here" first, at the "top" next
+%% and to override the normal way of calculating a float position
+\begin{figure}[ht!]
+% \plotone{T1_TTV_JWST_update_v02.png}
+\plotone{T1_timing_forecast_precision_chisquare_v04.png}
+
+\caption{Transit-timing variations of the seven TRAPPIST-1 planets.  Error bars are measurements from Agol et al. (2021), and the JWST times from this paper.  Dashed curves show the difference between the new timing solution minus that from Agol et al. (2021).  The data behind the figure are available for quantitative forecasting purposes.
+\label{fig:T1_JWST}}
+\end{figure}
+
+
+
+%% IMPORTANT! The old "\acknowledgment" command has be depreciated. It was
+%% not robust enough to handle our new dual anonymous review requirements and
+%% thus been replaced with the acknowledgment environment. If you try to 
+%% compile with \acknowledgment you will get an error print to the screen
+%% and in the compiled pdf.
+%% 
+%% Also note that the akcnowlodgment environment does not support long amounts of text. If you have a lot of people and institutions to acknowledge, do not use this command. Instead, create a new \section{Acknowledgments}.
+\begin{acknowledgments}
+E.A. acknowledges support from NSF grant AST-1907342, NASA NExSS grant No.\ 80NSSC18K0829, and NASA XRP grant 80NSSC21K1111.
+O.L. acknowledges support from the Fonds de recherche du Qu\'{e}bec --- Nature et technologies (FRQNT). N.H.A. acknowledges support by the National Science Foundation Graduate Research Fellowship under Grant No. DGE1746891. M.R.\ acknowledges financial support from the Natural Sciences and Engineering Research Council of Canada (NSERC) and FRQNT. C.P.-G. acknowledges support from the NSERC Vanier scholarship, and the Trottier Family Foundation. This work was funded by the Institut Trottier de Recherche sur les Exoplan\`{e}tes (iREx).
+E.D. acknowledge support from the Paris Observatory-PSL fellowship. 
+\end{acknowledgments}
+
+%% To help institutions obtain information on the effectiveness of their 
+%% telescopes the AAS Journals has created a group of keywords for telescope 
+%% facilities.
+%
+%% Following the acknowledgments section, use the following syntax and the
+%% \facility{} or \facilities{} macros to list the keywords of facilities used 
+%% in the research for the paper.  Each keyword is check against the master 
+%% list during copy editing.  Individual instruments can be provided in 
+%% parentheses, after the keyword, but they are not verified.
+
+\vspace{5mm}
+\facilities{JWST (NIRISS, NIRSpec).}
+
+%% Similar to \facility{}, there is the optional \software command to allow 
+%% authors a place to specify which programs were used during the creation of 
+%% the manuscript. Authors should list each code and include either a
+%% citation or url to the code inside ()s when available.
+
+\software{\texttt{NbodyGradient.jl} \citep{Agol2021b},  
+          %, exoplanet \citep{10.5281/zenodo.1998447}   
+          \texttt{juliet} \citep{Espinoza2019}, \texttt{exoTEDRF} \citep{Feinstein2023,Radica2023,Radica2024}, \texttt{transitspectroscopy} \citep{Espinoza_2022}, \texttt{trafit} \citep{Gillon2010,Gillon2012}, \texttt{LsqFit.jl} (\url{https://github.com/JuliaNLSolvers/LsqFit.jl}}
+
+%% Appendix material should be preceded with a single \appendix command.
+%% There should be a \section command for each appendix. Mark appendix
+%% subsections with the same markup you use in the main body of the paper.
+
+%% Each Appendix (indicated with \section) will be lettered A, B, C, etc.
+%% The equation counter will reset when it encounters the \appendix
+%% command and will number appendix equations (A1), (A2), etc. The
+%% Figure and Table counter will not reset.
+
+
+
+%% For this sample we use BibTeX plus aasjournals.bst to generate the
+%% the bibliography. The sample631.bib file was populated from ADS. To
+%% get the citations to show in the compiled file do the following:
+%%
+%% pdflatex sample631.tex
+%% bibtext sample631
+%% pdflatex sample631.tex
+%% pdflatex sample631.tex
+
+\bibliography{Agol_T1_JWST_forecast}{}
+\bibliographystyle{aasjournal}
+
+%% This command is needed to show the entire author+affiliation list when
+%% the collaboration and author truncation commands are used.  It has to
+%% go at the end of the manuscript.
+%\allauthors
+
+%% Include this line if you are using the \added, \replaced, \deleted
+%% commands to see a summary list of all changes at the end of the article.
+%\listofchanges
+
+\end{document}
+
+% End of file `sample631.tex'.

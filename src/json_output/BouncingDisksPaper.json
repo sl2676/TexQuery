@@ -1,0 +1,386 @@
+{
+    "document": {
+        "content": [
+            {
+                "content": "The classical picture of accretion discs assumes they are circular, flat (not warped), and not tilted or misaligned with respect to the rotation axis of their central object (or binary orbital plane in the case of discs in binaries). In fact, many accretion discs in nature have been observed or deduced to be distorted from this simple form, in that they are warped, eccentric or tidally deformed. ALMA and VLTI observations of discs around young stars have inferred warps from the shadows cast by a misaligned inner disc on the outer part of the disc . Other examples include the misaligned (with the binary orbit) discs in the young binary HK Tau , the triple star system GW Ori , the tilted circumbinary disc of KH 15D and the warped disc around the young star IRAS 04368+2557 ; the X-ray binaries Her X-1, SS 433, SMC MAXI J1820+070 (among others) are believed to have precessing tilted discs , and warped discs have also been observed in the active galactic nuclei NGC 4258, NGC 1068, and the Circinus galaxy . Precessing eccentric discs have been deduced, for example, from observations of superhumps in close binary stars and from variable asymmetric emission lines from discs around Be stars and white dwarfs ; eccentric discs have also been inferred from emission lines from some tidal disruption events []2022A&A...666A...6W. Non-axisymmetric structure in tidally distorted discs in close binary stars has been measured using Doppler tomography . \n\n\nDistorted discs exhibit a variety of dynamics not found in their idealized circular and planar counterparts. In particular, they are not in hydrostatic equilibrium in the direction perpendicular to the (local) orbital plane, resulting in periodic vertical contraction and expansion of the disc. This type of vertical oscillation, which we will refer to as , can result in heating of the gas through adiabatic or dissipative effects, leading to non-axisymmetric emission .\n\n",
+                "references": [
+                    {
+                        "label": "kluska2020family, bohn2022probing",
+                        "link": ""
+                    },
+                    {
+                        "label": "jensen2014misaligned,manara2019observational",
+                        "link": ""
+                    },
+                    {
+                        "label": "kraus2020triple, bi2020gw",
+                        "link": ""
+                    },
+                    {
+                        "label": "chiang2004circumbinary,poon2021constraining",
+                        "link": ""
+                    },
+                    {
+                        "label": "sakai2019warped,villenave2024jwst",
+                        "link": ""
+                    },
+                    {
+                        "label": "katz1973thirty, gerend1976optical, clarkson2003long, begelman2006nature, kotze2012characterizing, thomas2022large",
+                        "link": ""
+                    },
+                    {
+                        "label": "miyoshi1995evidence, herrnstein1996warp, greenhill2003warped",
+                        "link": ""
+                    },
+                    {
+                        "label": "2005PASP..117.1204P",
+                        "link": ""
+                    },
+                    {
+                        "label": "2016ASPC..506....3O",
+                        "link": ""
+                    },
+                    {
+                        "label": "2021MNRAS.508.5657M",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    },
+                    {
+                        "label": "2005Ap&SS.296..403M",
+                        "link": ""
+                    },
+                    {
+                        "label": "ogilvie2002tidally, liska2021disc, kaaz2023nozzle",
+                        "link": ""
+                    }
+                ],
+                "section": "Introduction",
+                "type": "text"
+            },
+            {
+                "content": "In addition to the aforementioned vertical oscillations (bouncing), distorted accretion discs can also exhibit behaviour such as nodal and/or apsidal precession of the disc , disc breaking/tearing when the disc is strongly tilted or warped , and hydrodynamic instability (known as ). In this paper we will isolate the dynamics of vertical oscillations, though a new and interesting result is that these oscillations are parametrically unstable. We review both in turn below.\n\n\nRadial resonances (usually known as resonances) -- and, more generally, radial oscillations and waves -- in tidally forced discs have been studied in great detail . However, oscillations and resonances, involving symmetric motionperpendicular to the plane of the disc, are also of interest, although they have been more sparsely studied in the literature . We will refer to the latter interchangeably as , , or , though some care is needed with the terminology, which we detail below.\n\nThe specific vertical oscillations we are interested in here involves uniform expansion and contraction of the disc in the $z$-direction perpendicular to the local orbital plane, i.e.the displacement and velocity of the gas are proportional to $z$. See Fig.~for an illustrative example in a tidally distorted circumstellar disc in a circular binary. These oscillations can range from mild vertical breathing motion to a more extreme bouncing motion in which pressure support is unimportant most of the time and the disc expands and contracts in a ballistic manner in the vertical direction, with pressure acting impulsively to prevent the disc from collapsing .It is worth emphasizing that these vertical oscillations of the gas occur around an orbit, in the sense that the disc (as viewed from a global reference frame) will appear `pinched' at certain locations. This can occur even in very thin discs and does not, in general, involve coupling between vertical and radial motion. It is therefore distinct from the homogeneous contraction and expansion of the entire disc in the radial and vertical directions. The latter oscillations can arise in slim or thick discs (tori), and are sometimes referred to as $+$- and breathing-modes .\n\nBouncing can be excited in all types of distorted disc. It has been studied in the context of warped discs , eccentric discs , and also in tidally distorted discs , though mechanisms driving the bouncing differ in each case. In an eccentric disc the vertical component of gravity due to the central star varies along each eccentric orbit , thus the vertical oscillation frequency is equal to the local orbital frequency. In a tidally distorted disc, the frequency at which the non-axisymmetric potential of the binary drives vertical oscillations range from about once to twice per orbit (in the frame of the fluid) depending on radial location in the disc (see Fig.~), and vertical resonances can occur at specific locations . In a warped disc the mechanism driving vertical oscillations is more subtle: an observer moving along a fixed orbit sees neighbouring orbits tilt downwards and upwards along the trajectory. The combination of vertical motion (due to the tilting) and radial motion (due to radial pressure imbalances between neighboring vertical columns of fluid) induces vertical compression and rarefaction of the disc along an orbit at a frequency of twice per orbit, which can be enhanced by a nonlinear resonance .\n\n\nDistorted discs are unstable to a hydrodynamic instability involving the resonant amplification of inertial waves known as .It was first discovered (theoretically) in the context of tidally distorted discs , and later also in warped discs and eccentric discs .\n\n",
+                "figure_caption": "Schematic of vertical oscillations in a tidally distorted single disc in a binary. Top: a tidally distorted disc viewed from above in the binary frame. Red boxes indicate locations along a relative orbit. Bottom: view perpendicular to the plane of the disc in the fluid frame. The disc is periodically compressed and stretched along a streamline due to the variation in the vertical component of gravity.",
+                "image_file": "Figures/VerticalOscillationsSchematic2.png",
+                "references": [
+                    {
+                        "label": "tremaine2023dynamics, bardeen1975lense, deng2022non, lubow1991model, ogilvie2001",
+                        "link": ""
+                    },
+                    {
+                        "label": "lodato2010diffusive, nixon2012broken, tremaine2014dynamics, raj2021disk, drewes2021dynamics, liska2021disc, kaaz2023nozzle, young2023conditions, nealon2022bardeen",
+                        "link": ""
+                    },
+                    {
+                        "label": "goldreich1979excitation, 1987Icar...69..157M, artymowicz1994dynamics, nixon2015resonances, lubow2015tidal, armitage2022lecture, ju2016global",
+                        "link": ""
+                    },
+                    {
+                        "label": "lubow1981vertically, stehle1999hydrodynamics, stehle1999CVsimulations, ogilvie2002non, fairbairn2021non",
+                        "link": ""
+                    },
+                    {
+                        "label": "ogilvie2002non, ogilvie20083d, ryu2021impact",
+                        "link": ""
+                    },
+                    {
+                        "label": "lynch2021importance, fairbairn2021non",
+                        "link": ""
+                    },
+                    {
+                        "label": "blaes2006oscillation",
+                        "link": ""
+                    },
+                    {
+                        "label": "ogilvie2013local, fairbairn2021non",
+                        "link": ""
+                    },
+                    {
+                        "label": "ogilvie2014local,ryu2021impact,chan2023magnetorotational",
+                        "link": ""
+                    },
+                    {
+                        "label": "stehle1999hydrodynamics, ogilvie2002tidally",
+                        "link": ""
+                    },
+                    {
+                        "label": "ogilvie2001,barker2014hydrodynamic",
+                        "link": ""
+                    },
+                    {
+                        "label": "lubow1981vertically",
+                        "link": ""
+                    },
+                    {
+                        "label": "ogilvie2013local,fairbairn2021non",
+                        "link": ""
+                    },
+                    {
+                        "label": "A classic example is the \\textit{modulated pendulum",
+                        "link": ""
+                    },
+                    {
+                        "label": "goodman1993local,1993ApJ...419..758L,ryu1994nonlinear",
+                        "link": ""
+                    },
+                    {
+                        "label": "papaloizou1995dynamics, gammie2000linear,ogilvie2013local",
+                        "link": ""
+                    },
+                    {
+                        "label": "papaloizou2005local, papaloizou2005global, barker2014hydrodynamic,ogilvie2014local,wienkers2018non",
+                        "link": ""
+                    }
+                ],
+                "section": "Phenomena in distorted discs",
+                "type": "text"
+            },
+            {
+                "content": "Distorted discs have been modelled in global simulations using Lagrangian (smoothed-particle hydrodynamics [SPH]) , Eulerian (grid-based) , and meshless approaches . However, global simulations struggle to capture some of the key physics of distorted discs, in particular the parametric instability, although this has been achieved with grid-based and meshless codes. For example, SPH simulations employ a smoothing length (typically some fraction of the disc thickness), which dampens the instability and also artificially damps the bouncing motion (confusing it with a shock-forming flow), while grid-based simulations introduce an advection error when the flow is not aligned with the grid.\n\nThese difficulties have motivated local (shearing-box) studies of distorted discs, which have led to warped , as well as eccentric extensions to the standard shearing-box formalism. Perhaps surprisingly, much of the physics of distorted discs can actually also be captured in a shearing box , which is the approach we take in this work. There are limitations to this approach, however. First, the standard shearing box follows streamlines in a disc. Thus we do not take into account any geometrical effects due to eccentric or tidally distorted orbits, in order to focus solely on the dynamics of the vertical oscillations. Second, the standard shearing box cannot pick up a large-scale warp, only a radially periodic warp (also known as a or wave/mode), although a non-periodic ring or torus with a large-scale warp can be studied in the local model .\n\n\n",
+                "references": [
+                    {
+                        "label": "lodato2010diffusive,nealon2022bardeen,deng2022non",
+                        "link": ""
+                    },
+                    {
+                        "label": "kimmig2024warped",
+                        "link": ""
+                    },
+                    {
+                        "label": "deng2021parametric,deng2022non",
+                        "link": ""
+                    },
+                    {
+                        "label": "2020MNRAS.496.2849P",
+                        "link": ""
+                    },
+                    {
+                        "label": "deng2021parametric",
+                        "link": ""
+                    },
+                    {
+                        "label": "ogilvie2013local, paardekooper2019local",
+                        "link": ""
+                    },
+                    {
+                        "label": "ogilvie2014local, wienkers2018non",
+                        "link": ""
+                    },
+                    {
+                        "label": "ogilvie2022hydrodynamics",
+                        "link": ""
+                    },
+                    {
+                        "label": "fairbairn2021non",
+                        "link": ""
+                    }
+                ],
+                "section": "Modelling distorted discs using local models",
+                "type": "text"
+            },
+            {
+                "content": "Our main aim is to isolate the dynamics of vertical (i.e. perpendicular to the local plane of the disc) oscillations or bouncing expected to occur in tidally distorted, eccentric, and warped accretion discs. We do so by means of quasi-2D and fully 3D hydrodynamic shearing box simulations. For simplicity we employ an isothermal equation of state. Note that in astrophysical contexts we expect the oscillations to be forced (driven). However, to determine the main mechanisms damping the oscillations we first consider free (unforced) oscillations.\n\nThe structure of the paper is as follows. In Section we discuss our set-up, initial conditions, parameters, and key diagnostics. In Section we present a 1D theory (including a stability analysis) of vertical disc oscillations. We present simulations of free oscillations in Section . In Section we discuss forced oscillations (including astrophysically relevant forcing frequencies and amplitudes). We conclude in Section .\n\n",
+                "references": [],
+                "section": "Motivation and aims of paper",
+                "type": "text"
+            },
+            {
+                "content": "",
+                "references": [],
+                "section": "Methods",
+                "type": "text"
+            },
+            {
+                "content": "We work in the shearing-box approximation\n,\nwhich treats a local region of a disc as a Cartesian box located at some fiducial radius $r = r_0$ and orbiting with the angular frequency of the disc at that radius, $_0 (r_0)$. A point in the box has\nCartesian coordinates $(x, y, z)$ along the radial, azimuthal, and vertical directions, respectively. In this rotating frame, the equations of gas dynamics are:\n&_t + () = 0, &_t + = -P - 2_0 _z + +, with the symbols taking their usual meanings. We close the system with the equation of state for an isothermal gas, $P = c_^2 is the constant sound speed.\n\nAll our simulations are stratified in the vertical direction. In our simulations of a freely vertically oscillating disc, the effective gravitational potential is embodied in the usual (constant-in-time) tidal acceleration $=2q_0^2x,_x-_0^2 z,_z$ (third term on the right-hand side of Equation ), where $q$ is the dimensionless shear parameter $q -.d/d_r=r_0the forcing frequency.\nWith these two parameters we can mimic the driving of the vertical component of gravity found, e.g.in a binary system in which a companion external to the disc modulates the vertical gravity experienced by gas in the disc. We determine realistic values of these parameters to use in our forced bounce simulations in Section~.\n\nFinally, the viscous stress tensor is given by $2is the kinematic viscosity, and $(1/2)[+ ()^] - (1/3)()is included, we further reduce the computational time via the Super-Time-Stepping (STS) scheme . Ghost zones are used to implement the boundary conditions.\n\nWe use the built-in shearing box module in . Rather than solving Equations --(primitive\nform), solves the governing equations in conservative form.\n\nNote that from this point onwards, all quantities are given in terms of dimensionless (code) units. Time units are selected so that $_0 = 1$. The length unit is chosen so that the initial sound speed $c_0= 1$, which in turn defines a reference scale-height $H_0c_0/ _0=1$, which can be thought of as the disc thickness in vertical hydrostatic equilibrium. Finally the mass unit is set by the initial mid-plane density $_0 = 1$. Pressure, stresses, and energy densities are expressed in units of $c_0^2 _0$. From here onwards we will drop the subscripts on $_0$ and $c_0have maximum amplitude of about $510^-2,c_, we vary the radial box size at different forcing frequencies to ensure we always capture the fastest growing mode, from $L_x = 4H_0$ (at $/= 1$) to $L_x = 30H_0$ (at $/= 2$). To investigate the dependence on the vertical box size we have also repeated select unforced runs in boxes of size $[4,4,8]H_0$ and $[4,4,16]H_0$ (keeping the resolution per scale-height fixed at $32$ cells per $H_0$). Finally, we have also run a series of quasi-2D simulations in boxes of size $[8,0.008, 12]H_0$. These enable us to reach resolutions up to $512/H_0$. All the simulations described in this paper are listed in Tables --in Appendix .\n\nWe use standard shear-periodic boundary conditions (BCs) in the $x$-direction []hawley1995, and periodic boundary conditions in the $y$-direction. In the vertical direction we mostly employ reflective boundary conditions ($, and $u_z -u_z$). However, we have also checked our fiducial 3D simulation with boundary conditions, for which we set $_z u_i = 0$ ($i x,y,zand is defined as \nX (t) V_V X(x, y, z, t) , V,\nwhere $V=L_x L_y L_z$ is the volume of the box.\n\nWe denote the horizontal average of a quantity $X$ as $_xyand simply refer to the perturbed velocity as $H(t)$ which measures the time-variability of the disc thickness as it oscillates in the vertical direction. We define the square of this quantity as follows:\nH^2(t) = _-L_z/2^L_z/2_xyz^2 , z,\nwhere $_-L_z/2^L_z/2_xydz$ is the surface density of the disc. Thus $H$ is related to the second moment of the density and can be interpreted as the standard deviation of $z$ (assuming zero mean) of the mass elements of the disc. \n\nFinally, we define the of the bounce as\nH_n=H_,n-H_,n,\nwhere $H_,ncorrespond to the maximum and minimum scale-heights, respectively, in the $n$th oscillation cycle (we define a cycle as starting when the disc is at maximum thickness, so $H_,nand gravitational potential energy density, respectively.  The term $c_^2 , where the material derivative is given by $D/Dt _t + u_z _z$.\nAs for the horizontal components of the momentum equation, the orbital shear flow is unaffected by the vertical motion.\nIn hydrostatic equilibrium we take $u_z = 0$, $= (z)$ and $p=p(z)$ and the governing equations reduce to the structural equation\nz= - ^2 z.\n    Together with the isothermal condition $p=c_^2.\nTo study the bouncing motion, we now aim to derive an equation governing the time-evolution of the disc thickness, or scale-height. We look for non-hydrostatic solutions in which the scale-height $H(t)$ used in the non-dimensionalization above depends on time. The solutions we are interested in have the same dimensionless density (and pressure) profile as the hydrostatic solution; they are achieved by a uniform, time-dependent expansion or contraction of the model. The dimensionless variable $is independent of time. Substituting the density~(), with a time-dependent scale-height, into the momentum equation , we find that all terms are proportional to $.\n\nIn the units defined in Section~, we have\nH = -H + H,\n    where a dot denotes a time-derivative.\n\nWe note the derivation above can be extended to allow for adiabatic thermodynamics and different vertical structure profiles, in which case the dimensionless scale-height satisfies\n, where $,\nwhich describes small-amplitude oscillations of angular frequency $when adiabatic thermodynamics is taken into account).\nTo consider large-amplitude oscillations we first rewrite the right-hand side of Equation in terms of the gradient of a potential $V$,\nt^2= -H,\n    where $V(H) = (1/2)H^2 - H$. Integrating, we obtain\n2(t)^2 + V E,\nwhere the sum of kinetic and potential energies $E$ is a constant. Rearranging this equation and integrating between the minimum and maximum disc thickness over half an oscillation, we obtain an expression for the period of the oscillation for arbitrary oscillation amplitude:\nT = 2_H_^H_.\n    In the limit of large amplitude we find $2/ T 2$ .\n\nThe angular frequency increases from $increases from $0$ to $, where $k$ is the radial wavenumber. The linearized equations for small perturbations can be formulated in terms of the Lagrangian displacement $, and using the Gaussian dimensionless density profile (Equation ) to evaluate $(1/)_z given by the dispersion relation\n(^2-^2)(^2-n^2)=^2^2k^2H^2,\nin agreement with . For a bouncing disc, we have instead a fourth-order system of ordinary differential equations with time-periodic coefficients [because $H(t)$ is periodic] and there is the possibility of instability. Floquet's method can be used to analyse the solutions and their growth rates. \nWe solve the dimensionless version of equations ()--(), in which the factors of $drop out and $H(t)$ satisfies $H=-H+H^-1, and convert these into exponential growth rates $s$ via $(sT)=||$. \n\nThe linearized equations in the form written above are also valid when the bouncing motion is forced, provided that $H(t)$ now satisfies the appropriate forced equation such as $H=-(1+at)H+H^-1is the angular frequency of the bouncing motion (whether free or forced), then for vertical mode $n$ the resonance is centred at\nk=2and has a maximum growth rate of\n16n-^4(H_-1),\nwhich is proportional to the semi-amplitude $H_-1$. The fastest-growing mode is $n=1$, with growth rate\n4+^2(H_-1).\nIn the case of free bouncing ($=, corresponding to a wavelength of nearly~$9$ scale-heights.\n\nIt is interesting to compare these results with the case of eccentric discs. first analysed the parametric instability of inertial waves in eccentric discs, using a model that neglects vertical gravity. In this case the instability is due to the oscillatory horizontal geometry of the disc associated with the non-circular orbital motion. revisited the problem and found that the growth rate was significantly enhanced by the vertical bouncing of the disc driven by the variation of vertical gravity around an elliptical orbit. In the present work we are finding a related instability that derives solely from the bouncing motion and not from any non-circular orbital motion.\n\n",
+                "figure_caption": "Density snapshots ($xz$-plane) in the fiducial simulation of free (unforced) vertical oscillations. Top left: initial condition at orbit 0 (the initial disc thickness is $H(0)\\sim 1.97_0$). Top-middle: The disc oscillates 1.5 times per orbit (orbit 0.32). Top-right: after several orbits a warp/bending wave develops in the disc due to the parametric instability (orbit 9). Bottom-left: the radial pressure mismatch in the warped disc drives counter-propagating radial flows that result in the disc becoming highly compressed where these waves meet, shown here shortly after nonlinear saturation (orbit 11). After nonlinear saturation, waves and shocks dampen the oscillation (bottom-middle and bottom-right panels at orbit 12 and orbit 19, respectively).",
+                "image_file": "Figures/FlowField6.png",
+                "references": [
+                    {
+                        "label": "goldreich1965,hawley1995,latter2017local",
+                        "link": ""
+                    },
+                    {
+                        "label": "alexiades1996super",
+                        "link": ""
+                    },
+                    {
+                        "label": "mignone2012",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    },
+                    {
+                        "label": "fairbairn2021non",
+                        "link": ""
+                    },
+                    {
+                        "label": "okazaki1987gloval",
+                        "link": ""
+                    },
+                    {
+                        "label": "papaloizou2005local",
+                        "link": ""
+                    },
+                    {
+                        "label": "barker2014hydrodynamic",
+                        "link": ""
+                    }
+                ],
+                "section": "Governing equations",
+                "type": "text"
+            },
+            {
+                "content": "Having presented our theoretical model in the previous section, we now carry out simulations of free (unforced) vertical oscillations. We initialize each simulation with an initial condition in which the Gaussian disc profile (see Equation ) has been stretched in the vertical direction. We perturb each velocity component at initialization with random perturbations. We begin with a description of our fiducial simulation in Section , and identify the main dissipative mechanisms at work during a bounce by means of an energy analysis. We then discuss a series of quasi-2D simulations, which enable us to check the key results at much higher resolutions (Section ). Finally, in Section we systematically investigate the effects of changing various physical and numerical parameters such as the initial oscillation amplitude, vertical box size, vertical boundary conditions, and explicit versus numerical viscosity. \n\n",
+                "references": [],
+                "section": "Simulations of unforced oscillations",
+                "type": "text"
+            },
+            {
+                "content": "In this section we describe our fiducial simulation. The disc has been stretched in the vertical direction at initialization, so that the initial density profile is $(z,t=0) = _0 (-z^2/2H(0)^2)$ where we take $H(0) = 2H_0$.At initialization we perturb all three velocity components with (different) random noise of amplitude about $0.05 c_). Note that we repeated this fiducial simulation at double the resolution ($64/H_0$) and obtained very similar results. We also carried out a much more comprehensive resolution study, but in 2D, which we will discuss in Section . \n\nIn Fig.~we plot the density in the $xz$-plane from snapshots at different times to illustrate the evolution of our initially out-of-equilibrium disc. After initialization (top-left panel of Fig.~) the disc rapidly collapses towards the mid-plane, reaching a thickness of around $0.3H_0$ after around 0.33 orbits (top-middle panel), before expanding again due to pressure support. For the first six orbits the disc continues oscillating in this manner. We observe two shocks propagating towards the disc mid-plane from the reflective vertical boundaries shortly after the disc reaches its maximum thickness (we check the effects of more realistic outflow boundary conditions below). The bounce amplitude decreases over the course of each bounce, with the dissipation dominated by shocks as discussed below. \n\nHowever, around orbit 7 the disc begins to exhibit a noticeable warp or bending wave (top-right panel), which develops into a standing wave as the disc continues to bounce. This wave grows as a result of the parametric instability described in Section~, where it corresponds to the $n=1$ mode. As the amplitude of the warp grows we see that the counter-propagating radial fluid motions, which are a component of the bending wave, eventually become so strong that they compress the disc in the radial direction by a factor of nearly 3.5 around orbit 10 (bottom left-hand panel), corresponding to nonlinear saturation of the parametric instability (see below). After nonlinear saturation the disc continues to oscillate in the vertical direction (albeit with reduced amplitude) while maintaining a time-dependent warped structure in the form of a standing wave. The mid-plane and atmosphere of the disc during this period are characterized by shocks and waves (bottom-middle and bottom-right panels in Fig.~).\n\nTo investigate the structures we observe in the 2D flow field in greater detail, in Fig.~we show radial slices through $z = 2H_0$ and $z = 4H_0$ taken from a snapshot shortly after nonlinear saturation (bottom-middle panel of Fig.~). At $z = 2H_0$ (bottom two panels) we find four discontinuities in the density at $x/H_0 = -2.64, 0.23, 2.03$ and $3.51$, respectively. These coincide with discontinuities in the radial velocity. The profiles resemble N-waves resulting from wave steepening and are likely shocks.In the disc atmosphere (top two panels), we find clear evidence of strong shocks at the radial locations $x = -3.68H_0$ and $x=1.46H_0$, respectively. Here the motion is supersonic with the radial velocity at the discontinuities reaching around $2 c_(in units of $c_^2 _0$). Note that by the time the parametric instability starts to grow, the maximum thickness has been damped from the initial value of $H(0) = 1.97H_0$ to $H_1.8H_0$. The growth rate of the amplitude (i.e.half the growth rate of the radial kinetic energy) during the linear phase is around $0.169^-1for an oscillation with $H _= 1.8H_0$ (see right-hand panel of Figure ). After nonlinear saturation, the radial kinetic energy density also exhibits phases of decay and re-invigoration, similar to (but out of phase with) the dynamical scale-height. This predator--prey type behaviour can be understood as follows. First, the vertical oscillation (bouncing) excites a warp/bending mode by means of parametric instability, leading to a decrease in the oscillation amplitude, but an increase in radial kinetic energy. The warp/bending mode then excites vertical oscillations due to the combination of tilt and shear, as explained in the last paragraph of Section . This cyclic behaviour is damped, however, because of the dissipation associated with shocks.\n\nFinally, we have also looked at the time-evolution of the various Reynolds stress tensor components (not shown). During most of the linear phase the Reynolds stress is zero. Before and after nonlinear saturation, however, the stress becomes highly oscillatory, peaking in amplitude at 0.04 (in units of $c_^2 _0$) around nonlinear saturation of the instability at orbit 10. Overall, the stress oscillates around zero indicating that the instability does not lead to a net transport of angular momentum; averaged from orbit 5 to orbit 20 we find $R_xy_t (-510^-5) (710^-3)$. The $xy$-component of the stress dominates, but we also observe oscillations of non-negligible amplitude in the $xz$- and $yz$-components of the stress.\n\n\nTo determine the mechanisms damping the oscillations before the parametric instability sets in, we conduct an energy analysis of the first few bounces (an oscillation or bounce being defined as the interval between successive peaks in the dynamical scale-height $H$). During this interval the disc undergoes six full oscillations. The bounce amplitude decreases by $6.8to $1.559$, while the total energy decreases by around $12.5. The main energy terms of interest at this stage are the vertical kinetic energy density $E_,z(which takes into account losses/gains in total energy due to compression/expansion), and the total energy itself $E_. This probably results from the transient amplification of non-axisymmetric perturbations present in the initial noise. The stress then drops rapidly, reaching around $510^-7. Therefore the stress plays a negligible role in the energy budget during this interval, so we will restrict our subsequent energy budget analysis to the second and third oscillations, in order to avoid the transient behaviour immediately after initialization.\n\nThe second oscillation/bounce (orbit 0.66--1.33) begins with the disc at a maximum thickness of $H 1.95H_0$ at orbit~0.66 and ends with the disc at maximum thickness of $H 1.93H_0$ one cycle later. (Subsequent oscillations exhibit similar behaviour.) We plot the total energy over the course of this oscillation in the top panel of Fig.~. Other energy components are plotted in the bottom panel. The overall behaviour of the key energy terms over the course of the bounce is as follows: (i) the total energy decreases monotonically by around $2.5(ii) the vertical kinetic energy density (red curve, bottom panel) increases from zero to a maximum value and decreases back to zero again during each half cycle; (iii) the Helmholtz free energy (dashed orange curve, bottom panel) increases as the disc collapses, peaks when the disc is most compressed, and decreases again as the disc expands.\n\nAlthough the total energy decreases monotonically during the course of the bounce, it does not do so at a constant rate: in the top panel of Fig.~we have identified four different stages. These four stages can be understood by combining information about the flow field (density $(dashed red line), which peaks at around orbit 9.68. At this point in the oscillation cycle, the disc has actually reached its minimum thickness and has not begun to expand yet, so there is no vertical motion associated with expansion/contraction of the disc itself. Instead vertical motion during this phase is driven by the corrugation as the disc evolves from planar (at orbit 9.60) to warped (easily visible at orbit 9.68). Finally, we also show the (perturbed) azimuthal kinetic energy (green dashed curve). This is out of phase with the radial kinetic energy (solid red curve) due to epicyclic motions (conservation of angular momentum).\n\n\n",
+                "figure_caption": "Time-evolution of various energy components (in units of $c_\\text{s",
+                "image_file": "Figures/figure00PRODUCTION_VSTRHYDRORes32Re4687H6BounceHigherCadenceOrb0toOrb4_energydensities_2ndbounce",
+                "references": [],
+                "section": "Fiducial simulation",
+                "type": "text"
+            },
+            {
+                "content": "To determine whether non-axisymmetry is important to the problem, we have run a series of quasi-2D simulations. The reduced dimensionality also enabled us to probe much higher resolutions, from $32/H_0$ (the same resolution used in our fiducial 3D simulation described in the previous section) up to $512/H_0$. The box size across all simulations was fixed at $[L_x, L_y, L_z] = [8,0.008,12]H_0$. Furthermore, we employed reflective boundary conditions in the vertical direction, and included a small explicit viscosity ($= 4687$), as in our fiducial 3D simulation.\n\nIn Fig.~we show the time-evolution of the dynamical scale-height $H(t)$ (top) and volume-averaged radial kinetic energy density $E_,x(in units of $c_^2 _0$), about 10 times smaller than the saturation amplitude in the large-amplitude oscillation simulation ($H(0) 1.97H_0$).\n\nSince we employ reflective boundary conditions, the periodic expansion of the disc results in reflection of material at the vertical boundaries. Ideally we want the box to be as tall as possible to avoid significant boundary effects such as this from interfering with the dynamics closer to the bulk of the disc, which lies within $|z|< 2H_0$. Thus we have repeated our fiducial simulation in shorter ($L_z = 8H_0$) and taller ($L_z = 16H_0$) boxes (keeping the resolution the same). In Fig.~we show the results of this study with the radial kinetic energy density in the top panel and the dynamical scale-height $H(t)$ in the lower panel. Note that in the shortest box a significant fraction of the disc atmosphere is cut off by the vertical boundaries and the initial dynamical scale-height is therefore $H(0) 1.67H_0$, compared to $H(0) 1.97$ and $1.99$ in the $L_z=12H_0$ and $16H_0$ boxes, respectively. We see that the results are converged for boxes of size $L_z > 8H_0$, with the growth rate of the parametric instability and evolution of the bounce amplitude nearly identical in the $L_z = 12 H_0$ (fiducial run) and $L_z = 16H_0$ boxes. In the shortest box $L_z = 8H_0$ (Fig. , black curve), however, first the oscillation amplitude is smaller to begin with because a significant fraction of the initial disc profile is cut-off by the boundaries, and second the oscillation amplitude is strongly damped even before the parametric instability starts to grow because the boundaries are lower. Thus the growth rate of the instability is significantly reduced in the shortest box.\n\n\nTo compare vertical boundary condition effects (zBCs), we have repeated our fiducial simulation (Section ) using outflow rather than reflective boundary conditions in the vertical direction. The dynamical scale-height and radial kinetic energy density are shown in Fig.~. \n\n\nOverall the solution in the simulation with outflow boundary conditions is very similar to that with reflective boundary conditions (see Fig.~), although we do find small qualitative differences between the two. The oscillation is damped somewhat faster in the outflow case during the linear phase, although by the end of the simulation the oscillation amplitude is very similar in the two cases. The linear growth rate is somewhat larger in the reflective case ($0.169in the outflow case), which means the reflective zBC simulation reaches nonlinear saturation earlier. This results in a slight phase difference (of a few orbits) in the oscillation of the disc between the two simulations by orbit 20.\n\nAlthough the overall result over 20 orbits is very similar in the two cases, we find more marked differences between the two runs when we focus on the first few bounces (before parametric instability sets in). We have carried out an energy budget analysis of the outflow simulation during the first four orbits (during which the disc bounces around 6 times), similar to the one we presented for the fiducial simulation with reflective zBC (see Section~). This interval is before the onset of parametric instability, so the disc is undergoing only vertical oscillations. The total energy in the outflow run drops by around $25In the outflow zBC simulation we did not use a mass source term (to avoid interfering with the vertically oscillating flow), and thus mass and energy were able to leave the box through the vertical boundaries. Indeed, over the entire duration of the simulation (50 orbits) around $2.2The behaviour of the total energy over the second bounce (orbit 0.66 to orbit 1.33) in the outflow simulation is shown in Fig.~. The total energy is constant during the initial stages of disc contraction since there are no shocks from the boundaries to dissipate the energy. A shock eventually does form as the disc contracts supersonically, which results in a rapid drop in the total energy during the final moments of contraction and the subsequent initial moments of expansion (orbits 0.907--1.05). When this shock (moving at Mach number $8$) hits the outer boundary, there is another sharp drop in the total energy, this time because mass and energy are advected across the vertical boundary. Overall, the total energy density decreases by around $5In our fiducial 3D run and in most of our quasi-2D runs we included a small explicit viscosity, corresponding to a Reynolds number of $= 4687$. To ensure the resolution we used is large enough to capture the viscous length-scale in our non-ideal simulations, and if so, to determine the effect of the explicit viscosity on the dissipation of oscillations, we have tested the effects of explicit and numerical viscosity. We do so primarily using quasi-2D simulations since these enable us to achieve much higher resolutions.At $32/H_0$ we find that the oscillation amplitude and growth rates are nearly identical whether we include explicit viscosity or not. However, the viscous scale [which is given by $l_2/in both cases), or any of the dynamics during the nonlinear phase between the ideal and non-ideal runs. Thus we conclude that the explicit viscosity we have included in our simulations plays a negligible role in dissipating the vertical oscillations.\n\n",
+                "figure_caption": "Comparison of dynamical scale-height (top panel) and radial kinetic energy density (bottom panel) from 3D simulations of free vertical oscillations with different vertical boundary conditions. Yellow curves: reflective boundary conditions. Black curves: outflow boundary conditions. Both simulations were run in a box of size $[L_x,L_y,L_z]=[8,4,12]H_0$ at a resolution of $32/H_0$.",
+                "image_file": "Figures/figure00PRODUCTION_VSTRHYDRORes32Re4687H6BouncezBCOutflowComparison_timeevolution_dynamicalH.pdf",
+                "references": [],
+                "section": "Quasi-2D simulations",
+                "type": "text"
+            },
+            {
+                "content": "In the previous section we analysed the behaviour of a disc undergoing free oscillations in the vertical direction in order to isolate the physical and numerical mechanisms that dissipate the oscillation. We now turn to the case in which the vertical motion is forced. This can occur when the vertical component of gravity varies along a streamline, for example in an eccentric disc, or in a disc that is tidally distorted by a binary companion.\nIn a warped disc, the forcing arises due to the combination of tilt and shear even in the absence of an external perturber .\n\nIn order to drive vertical oscillations, we introduce a time-dependent gravitational acceleration in the vertical direction of the form $g_,z= -^2 z (1+a)$ (see Section~). This allows us to set the forcing frequency $) and the forcing amplitude $a$ (in units of $^2 H_0$). Thus we have two parameters which we can use to control the forcing. We first discuss astrophysically relevant forcing frequencies and forcing amplitudes in Section . Then, in Section , we extend our 1D model for vertical disc oscillations to include forcing, and calculate the expected parametric growth rates for six select forcing frequencies. We also calculate the amplitude of oscillations of the disc scale-height $H(t)$ for each forcing frequency (see Fig.~), which we subsequently use to determine the appropriate initial condition for each simulation. Finally we discuss fully 3D simulations with forcing in Section~.\n\n",
+                "references": [
+                    {
+                        "label": "ogilvie2013local,fairbairn2021non",
+                        "link": ""
+                    }
+                ],
+                "section": "Simulations of forced oscillations",
+                "type": "text"
+            },
+            {
+                "content": "Let us first consider which forcing frequencies are relevant for each type of distorted disc (eccentric, tidally distorted, and warped). \n\nIn an eccentric disc, the distance to the central star varies along each eccentric streamline. The vertical component of gravity due to a central point source is strongest at pericentre and weakest at apocentre, so the forcing frequency experienced by the gas in an eccentric disc is simply equal to the orbital frequency ($= , the disc can have a stationary, non-circular shape as a result of the tidal force due to the companion (see Fig.~). We can decompose the non-axisymmetric part of the gravitational potential into Fourier modes with azimuthal mode number $m$ . At any given cylindrical radius $r$ in the disc, the angular frequency of the disc relative to the tidal deformation is $(r) - _is the Keplerian angular frequency of the disc (ignoring effects due to the companion). The forcing frequency (in units of the disc angular frequency) associated with mode number $m$ is given by $/= m(1-_/)$. showed that vertical resonances occur where $m(1-_/) = (since $_and so $), if we neglect any precession of the warp.\n\nIn the case of an eccentric disc, the forcing amplitude $a$ can be directly related to the eccentricity $e$ through $a=3e$. The factor of $3$ comes from the fact that the vertical gravity scales with $r^-3is given by (r,',z) = & _1(r,z) + _2(r,',z) = & - (r^2 + z^2)^1/2- (r^2-2 r r_+ r_^2 + z^2)^1/2& + M_^2 r_r ,\nwhere $_= (GM/r_^3)^1/2(at $z=0$), we obtain $_2 -(3/4)G M_2 (r^2/r_^3) .\nSince the vertical gravity due to $M_1$ is $GM_1z/r^3r^-3between $0.2$ and $0.3$, $a$ is approximately between $0.04$ and $0.2$, so $a 0.1$ (in units of $^2 H_0$) is a plausible forcing amplitude.\n\n",
+                "references": [
+                    {
+                        "label": "lubow1981vertically, ogilvie2002tidally, ogilvie2002non",
+                        "link": ""
+                    },
+                    {
+                        "label": "lubow1981vertically",
+                        "link": ""
+                    },
+                    {
+                        "label": "lubow1981vertically",
+                        "link": ""
+                    }
+                ],
+                "section": "Astrophysical applications: forcing frequencies and amplitudes",
+                "type": "text"
+            },
+            {
+                "content": "In Section we presented a 1D theory of vertical oscillations, resulting in an evolution equation for the disc thickness or dimensionless scale-height $H(t)$ (Equation ). We now modify this equation to include the forcing term $a . The response curve for the scale-height $H(0)$ ($t=0$ being the time when forcing is maximal) is shown in Fig.~for forcing frequencies between $/= 1.0$ and $/= 2.0$. We plot the response curve for two cases: small-amplitude forcing ($a=0.01$, blue curve) and large-amplitude forcing ($a=0.1$, red curve). Linear resonance occurs at $= 1.41$ (indicated by the dashed vertical line). Below the resonant frequency, only one (stable) solution branch exists. At frequencies higher than the resonant one, multiple solutions may exist: there is a weakly oscillating upper branch, and a strongly oscillating lower branch, and hysteresis may be possible. (There are also unstable solutions denoted by the dashed lines.) The nonlinearity of the resonance can be seen in the fact that the endpoint of the upper branch (which in fact folds over and becomes unstable at this point) moves to the right as the forcing amplitude is increased.\n\nNext we analyse the stability of the forced bouncing solutions to radially dependent perturbations, in the same manner as we did for the freely bouncing case (see Section ). In Fig.~we plot the growth rates for six different forcing frequencies (at a constant forcing amplitude of $a=0.1 H_0^2$). We show the growth rate as a function of radial wavenumber for the first ten modes (highlighting $n=1$ [blue], $n=2$ [green] and $n=3$ [red]). At forcing frequencies below resonance ($/= ).\n\nThe lowest forcing frequency we investigated is the case where the forcing frequency is equal to the local orbital frequency, i.e. $/= 1$, which is far from resonance. This could be the case for an eccentric disc around a single star []wienkers2018non. The growth rates of the parametric instability for this forcing frequency and amplitude are shown in the top-left panel of Fig.~. After initialization the disc oscillates once per orbit, and its thickness varies between $H 1.1H_0$ and $0.9H_0$. We observe very little change in the amplitude of the bounce over the first 100 orbits. The radial kinetic energy density grows exponentially after a few orbits, but with a relatively weak growth rate of $s/= 0.012$ (the predicted value from theory for a wavelength equal to the radial box size $L_x=4H_0$ is $s/= 0.014$). Nonlinear saturation of the parametric instability does not occur until around orbit 110 at $E_710^-4).The oscillating disc undergoes parametric instability with a measured growth rate of $0.041 at $kH = 2/8 0.78$, and nonlinear saturation occurs around orbit~35. Around this time, the oscillation is considerably damped by shocks resulting from radially converging flows around $x = 2H_0$ due to the pressure misalignment between neighbouring fluid columns in the corrugated disc. Note that after nonlinear saturation the dynamical scale-height oscillates around a slightly larger value ($1.06H_0$) than before nonlinear saturation, which is due to this diagnostic picking up the standing-wave corrugation of the disc. During the nonlinear phase we observe many of the features that we observed in our fiducial unforced simulation (Section ): the disc continues to expand and contract in the vertical direction (due to the forcing) and simultaneously oscillates as a standing wave. On top of these large-scale motions we observe many radially propagating waves and shocks.\n\nNext we consider a disc oscillating at the resonant frequency $/ = 1.41$. The resonant forcing causes the disc to oscillate with a large amplitude $H 1.3H_0$, most closely resembling that in our fiducial unforced simulation (Section ). Between initialization and around orbit 5 the time-averaged disc thickness appears to increase, possibly due to a very long beat phenomenon in this case (as the natural frequency of nonlinear oscillations differs from the forcing frequency by an amount that depends on the amplitude). The linear phase growth rate measured between orbit 5 and orbit 10 is $0.15 predicted from theory at $k H_0 = 2/8 0.78$. Around orbit~7 we see a corrugation begin to develop in the disc, and nonlinear saturation sets in around orbit~10, significantly earlier than at other forcing frequencies, owing to the larger growth rate of the instability at resonance. After nonlinear saturation, the disc exhibits strong shocks and radial compression, which significantly damp the oscillation amplitude (orbit~10 to orbit~15). \n\nNevertheless, we observe at least five phases during which the oscillation is re-invigorated after nonlinear saturation, most noticeably between orbits 15 and 18, similar to what we observed in our fiducial freely bouncing simulation (Section ). During each of these phases we see the disc become increasingly corrugated until the resultant radial shocks in the disc atmosphere are so strong that the subsequent bouncing is damped; this can be clearly seen from a snapshot (not shown) taken at orbit~19.257 which is taken half a cycle after the bounce amplitude peaks during the first of these re-invigoration phases. The disc is highly corrugated, and two intersecting waves near the mid-plane of the disc at $x -1H_0$ and $+3H_0$ have steepened into shocks (with Mach number $M 4$ in the disc atmosphere). The peak amplitude in the vertical oscillation during successive phases of re-invigoration is always weaker than the last. From orbit 50 onwards, the disc settles down into a quasi-steady equilibrium consisting of a complicated flow field with many intersecting waves and shocks.\n\nNext we turn to a simulation with a forcing frequency of $/= 1.6$, i.e. a forcing frequency that is than the resonant frequency. In a tidally distorted single disc in a binary this is expected to occur at a radius the resonant radius. The disc undergoes parametric instability with a measured growth rate in the linear phase of $0.033 for the $n = 1$ mode at this wavelength. Like at forcing frequencies less than the resonant frequency ($/= (the theoretical growth rate at this box size / radial wavenumber is $s_0.01sufficiently close to $2between $2(a/2)$. The maximum growth rate of $a/4$ is expected at $=2, corresponding to the spike near $k=0$ in Fig.~, and in good agreement with the value of $0.022is identified with the forcing of vertical oscillations in a warped disc, then to say that such oscillations can parametrically excite a large-scale warp illustrates the fact that there are nonlinear couplings between such a warp and vertical oscillations that can exchange energy is either direction. This is consistent with the picture derived in the oscillating torus model of .\n\n",
+                "figure_caption": "Time-evolution of dynamical scale-height $H$ (see Equation \\ref{EQUN_DynamicalScaleheight",
+                "image_file": "Figures/figure00PRODUCTION_VSTRHYDRORes32Re4687H6ForcedBouncezBCReflectiveLx30Hw2pt0a0pt1_timeevolution_dynamicalH.pdf",
+                "references": [
+                    {
+                        "label": "lubow1981vertically",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    },
+                    {
+                        "label": "fairbairn2021non",
+                        "link": ""
+                    }
+                ],
+                "section": "Solutions from theory",
+                "type": "text"
+            },
+            {
+                "content": "We have studied vertical oscillations in accretion discs, involving periodic expansion and contraction of the gas perpendicular to the plane of the disc. These breathing or bouncing motions are expected to occur in all types of distorted accretion discs (warped, tidally distorted and eccentric discs) on account of the lack of vertical hydrostatic equilibrium in those objects. \nIn theory, periodic nonlinear oscillations are exact solutions of the equations of ideal gas dynamics in a local model of the disc. To investigate the dynamics of these oscillations we carried out both quasi-2D and fully 3D local (shearing-box) hydrodynamic simulations with an isothermal equation of state. To complement our numerical simulations, we have also presented a one-dimensional model of vertical oscillations and analysed their stability.\n\nTo isolate the mechanisms damping these vertical oscillations, we first considered the case of a freely oscillating disc (i.e.in the absence of any forcing). When the oscillation amplitude is sufficiently large, the disc collapses and expands supersonically, with pressure providing an impulsive restoring force. The resultant shocks dominate the damping of the vertical oscillations, at least in the very early stages of the simulation when the disc is undergoing only vertical oscillations, but their existence and properties are dependent on the artificial boundary conditions at the top and bottom of the box.\n\nA significant new result is that the vertical oscillations can excite a corrugation or bending mode by means of the parametric instability. This instability, which is an example of the parametric instability of inertial waves in distorted discs, further dampens the vertical oscillations as their kinetic energy is converted into that of the bending mode. The disc develops a radially periodic corrugation or warp that oscillates like a standing wave. The resultant radial pressure gradients in the corrugated disc lead to radially converging flows. After nonlinear saturation the mid-plane of the corrugated disc consists of many intersecting waves which steepen into shocks in the atmosphere ($z 2H_0$). The dissipation due to these shocks ultimately dampens the vertical oscillations in the absence of forcing. However, on short time-intervals ($2-5$ orbits) the oscillations can actually be re-invigorated by means of a three-mode coupling between the vertical oscillation and the oppositely directed traveling waves that form the warp or standing wave. These results are robust to changes in resolution, vertical box size, vertical boundary conditions, and numerical and physical (explicit) viscosity.\n\nWe then investigated the case in which the oscillations were driven by means of periodic variation in the vertical component of gravity for various forcing frequencies $(relevant to an eccentric disc) to $= 2) we observe, in addition to the bending mode, vertical oscillations in the centre of mass of the disc. Viewed in the plane perpendicular to the disc in a local (shearing-box) frame this is manifested as uniform vertical oscillation of the entire disc, which becomes more extreme as the forcing frequency approaches twice the orbital frequency. These oscillations are related to the tilt instability expected to occur at the 3:1 resonance in tidally distorted binary discs .\n\n\n",
+                "references": [
+                    {
+                        "label": "lubow1992tidally",
+                        "link": ""
+                    }
+                ],
+                "section": "Conclusions",
+                "type": "text"
+            },
+            {
+                "content": "",
+                "references": [],
+                "section": "",
+                "type": "text"
+            },
+            {
+                "content": "",
+                "references": [],
+                "section": "",
+                "type": "text"
+            },
+            {
+                "content": "To try to explain the behaviour seen in several of the simulations, in which there are phases of re-invigoration of the bouncing motion, we consider the following model:\n&H=-gH+H-H^2,(Y^*Z)-_1|H|^_1H,&Y=-(1+k^2)Y+H-_2|Y|^_2Y,&Z=-gZ+H-_3|Z|^_3Z,where $g=1+at$ is the strength of vertical gravity. This model is based on equations ()--() in the case $n=1$, with $Y=X$, but also includes the conservative nonlinear feedback of the daughter modes on the parent oscillation; the term involving $Y^*Z$ in the first equation can be derived from a Lagrangian formulation of the three-mode system. It also includes nonlinear damping terms (the final term in each equation) to model the dissipative effects of shocks. We have not made an extensive exploration of the model parameters $_i$ and $_i$, but in Fig.~present an illustrative solution for $H(t)$ in a setup corresponding to the fiducial model of Section~; this can be compared with Fig.~and shows phases in which the vertical oscillation alternately loses and gains energy from the daughter modes, combined with an overall damping.\n\n",
+                "figure_caption": "Evolution of the dynamical scale-height according to the model of coupled and damped oscillators (\\ref{coupling1",
+                "image_file": "Figures/figure_coupling_model.pdf",
+                "references": [],
+                "section": "Model of coupled and damped oscillators",
+                "type": "text"
+            },
+            {
+                "content": "lcccccccrRun\t& Box Size & Resolution & Re & zBC & $H(0)/H_0$ & $T$ /orb & $s/FreeBounceRes32Lz12H0-SmallBounce & [9,4,12] & $32/H_0$ & $4687$ & reflective & 1.10 & 0.708 &  0.024 & 0.023FreeBounceRes32Lz12H0-IntBounce & [8,4,12] & $32/H_0$ & $4687$ & reflective & 1.22 & 0.701 &  0.044 & 0.045FreeBounceRes32Lz12H0-LargeBounce & [8,4,12] & $32/H_0$ & $4687$ & reflective & 1.97 & 0.66 & 0.169 & 0.17lcccccccrRun\t& Box Size & Resolution & Re & zBC & $H(0)/H_0$ & $T$/orb &$s/FreeBounceRes32Lz8H0 & [8,4,8] & $32/H_0$ & $4687$ & reflective & 1.76 & 0.68 & 0.075 & 0.086 FreeBounceRes32Lz12H0 & [8,4,12] & $32/H_0$ & $4687$ & reflective & 1.97 & 0.66 & 0.169 & 0.17FreeBounceRes32Lz16H0 & [8,4,16] & $32/H_0$ & $4687$ & reflective & 1.99 & 0.66 & 0.168 & 0.17FreeBounceRes64Lz12H0 & [8,4,12] & $64/H_0$ & $4687$ & reflective & 1.97 & 0.66 & 0.157 & 0.17 lcccccccrRun\t& Box Size & Resolution & Re & zBC & $H(0)/H_0$ & $T$/orb & $s/FreeBounceRes32Lz12H0-zBCRef & [8,4,12] & $32/H_0$ & $4687$ & reflective & 1.97 & 0.66 & 0.169 & 0.17FreeBounceRes32Lz12H0-zBCOut & [8,4,12] & $32/H_0$ & $4687$ & outflow & 1.97 & 0.66 & 0.154 & 0.17 lcccccccrRun\t& Box Size & Resolution & Re  & $H(0)/H_0$ & $T$/orb & $s/FreeBounce2DRes32  & [8,0.008,12] & $32/H_0$ & $4687$ & 1.97 & 0.66 & 0.177 & 0.17FreeBounce2DRes64  & [8,0.008,12] & $64/H_0$ & $4687$ & 1.97 & 0.66 & 0.170 & 0.17FreeBounce2DRes128  & [8,0.008,12] & $128/H_0$ & $4687$ & 1.97 & 0.66 & 0.165 & 0.17 &FreeBounce2DRes256  & [8,0.008,12] & $256/H_0$ & $4687$ & 1.97 & 0.66 & 0.178 & 0.17 &FreeBounce2DRes512  & [8,0.008,12] & $512/H_0$ & $4687$ & 1.97 & 0.66 & 0.175 & 0.17 &FreeBounce2DRes256Ideal  & [8,0.008,12] & $256/H_0$ & ideal & 1.97  & 0.66 & 0.171 & 0.17 &lcccccccrRun\t& Box Size & Resolution & $H(0)/H_0$ & $/& $s_/& 0.1 & 0.708 & 0.150 &0.162 ForcedBounce1.6   & [15,4,12] & $32/H_0$ & $1.2$ & $1.6$ & 0.1 & 0.622 & 0.033 & 0.041ForcedBounce1.8   & [30,4,12] & $32/H_0$ & $1.1$ & $1.8$ & 0.1 & 0.554 & 0.019 & 0.020ForcedBounce2.0  & [30,4,12] & $32/H_0$ & 1.05 & 2.0 & 0.1 & 0.5 & 0.007 & 0.011",
+                "figure_caption": "3D forced bounce simulations, in which bouncing motion was driven using a time-dependent vertical gravitational acceleration of the form $g_{\\text{eff,z",
+                "references": [],
+                "section": "Tables of Simulations",
+                "type": "text"
+            }
+        ],
+        "metadata": {
+            "authors": [
+                {
+                    "affiliations": [],
+                    "name": "Loren E. Held"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Gordon I. Ogilvie             Department of Applied Mathematics"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Theoretical Physics"
+                },
+                {
+                    "affiliations": [],
+                    "name": "University of Cambridge"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Centre for Mathematical Sciences"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Wilberforce Road"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Cambridge CB   WA"
+                },
+                {
+                    "affiliations": [],
+                    "name": "United Kingdom"
+                }
+            ]
+        },
+        "title": "Instability and warping in vertically oscillating accretion discs"
+    }
+}

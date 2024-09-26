@@ -1,0 +1,199 @@
+{
+    "document": {
+        "content": [
+            {
+                "content": "There are several options which can be added to the document class line like this:\n\nThe available options are:\n'letters' -- used for papers in the journal's Letters section.\n'onecolumn' -- single column, instead of the default two columns. This should be used onlyif necessary for the display of numerous very long equations.\n'doublespacing' -- text has double line spacing. Please don't submit papers in this format.\n'referee' -- single column, double spaced, larger text, bigger margins. Please don't submit papers in this format.\n'galley' -- no running headers, no attempt to align the bottom of columns.\n'landscape' -- sets the whole document on landscape paper.\n\"usenatbib\" -- this uses Patrick Daly's \"natbib.sty\" package for citations.\n\"usegraphicx\" -- includes the 'graphicx' package, for inclusion of figures and images.\n'useAMS' -- adds support for upright Greek characters '', '' and '' ($and $.\n\nImmediately following the abstract, a set of keywords is entered in a 'keywords' environment:\nkeyword 1 -- keyword 2 -- keyword 3\nThere is a list of permitted keywords, which is agreed between all the major astronomy journals and revised every few years.\nDo make up new keywords!\nFor the current list of allowed keywords, see the journal's instructions to authors$^& upright pi[2pt] '' & $& upright partial derivative[2pt]\n  '' & $& greater than or equal to[2pt]\n  '' & $& greater than of order[2pt]\n  '' & $& greater than approximately[2pt]\n  '' & $& similar to or less than[2pt]\n  '' & $& less than or homotopic to [2pt]\n  '' & $& from over to[2pt]\n  '' & $& less over greaterSome additional symbols of common use in astronomy have been added in the MNRAS class. These are shown in tables~--. The command names are -- as far as possible -- the same as those used in other major astronomy journals.\n\nMany other mathematical symbols are also available, either built into or via additional packages. If you want to insert a specific symbol but don't know the command, we recommend using the Detexify website.\n\nSometimes font or coding limitations mean a symbol may not get smaller when used in sub- or superscripts, and will therefore be displayed at the wrong size. There is no need to worry about this as it will be corrected by the typesetter during production.\n\nTo produce bold symbols in mathematics, use '' for simple variables, and the 'bm' package for more complex symbols (see section~). Vectors are set in bold italic, using ''.\n\nFor matrices, use '' to produce a bold sans-serif font e.g. ; this works even outside maths mode, but not all symbols are available (e.g. Greek). For $'.\n\n",
+                "references": [],
+                "section": "Class options",
+                "type": "text"
+            },
+            {
+                "content": "A new '' command has been added to the class file, for the correct typesetting of ionisation states.\nFor example, to typeset singly ionised calcium use 'ii', which produces ii.\n\n",
+                "references": [],
+                "section": "Ions",
+                "type": "text"
+            },
+            {
+                "content": "Figures and tables (collectively called `floats') are mostly the same as built into .\n\n",
+                "references": [],
+                "section": "Figures and tables",
+                "type": "text"
+            },
+            {
+                "content": "Figures are inserted in the usual way using a 'figure' environment and ''. The example Figure~was generated using the code:\nlccStar & Mass & Luminosity& $M_Sun & 1.00 & 1.00~Cen~A & 1.10 & 1.52~Eri & 0.82 & 0.34The example Table~was generated using the code:\nlccStar & Mass & Luminosity& $M_Sun & 1.00 & 1.00~Cen~A & 1.10 & 1.52~Eri & 0.82 & 0.34",
+                "figure_caption": "An example table.",
+                "image_file": "example",
+                "references": [],
+                "section": "Basic examples",
+                "type": "text"
+            },
+            {
+                "content": "Captions go tables but figures, as in the examples above.\n\nThe float placement commands '[htbp]' are intentionally disabled.\nLayout of figures and tables will be adjusted by the publisher during the production process, so authors should not concern themselves with placement to avoid disappointment and wasted effort.\nSimply place the code close to where the figure or table is first mentioned in the text and leave exact placement to the publishers.\n\nBy default a figure or table will occupy one column of the page.\nTo produce a wider version which covers both columns, use the 'figure*' or 'table*'  environment.\n\nIf a figure or table is too long to fit on a single page it can be split it into several parts.\nCreate an additional figure or table which uses '' instead of ''.\nThis will automatically correct the numbering and add `' at the start of the caption.\nlccStar & Mass & Luminosity& $M_~Cet & 0.78 & 0.52~Pav & 0.99 & 1.22~Dra & 0.87 & 0.43Table~was generated using the code:\n\nlccStar & Mass & Luminosity& $M_~Cet & 0.78 & 0.52~Pav & 0.99 & 1.22~Dra & 0.87 & 0.43To produce a landscape figure or table, use the 'pdflscape' package and the 'landscape' environment.\nThe landscape Table~was produced using the code:\nccccccccccHeader & Header & ...Unit & Unit & ...Data & Data & ...Data & Data & ......Unfortunately this method will force a page break before the table appears.\nMore complicated solutions are possible, but authors shouldn't worry about this.\n\nccccccccccHeader & Header & Header & Header & Header & Header & Header & Header & Header & HeaderUnit & Unit & Unit & Unit & Unit & Unit & Unit & Unit & Unit & Unit Data & Data & Data & Data & Data & Data & Data & Data & Data & DataData & Data & Data & Data & Data & Data & Data & Data & Data & DataData & Data & Data & Data & Data & Data & Data & Data & Data & DataData & Data & Data & Data & Data & Data & Data & Data & Data & DataData & Data & Data & Data & Data & Data & Data & Data & Data & DataData & Data & Data & Data & Data & Data & Data & Data & Data & DataData & Data & Data & Data & Data & Data & Data & Data & Data & DataData & Data & Data & Data & Data & Data & Data & Data & Data & Data",
+                "figure_caption": "An example landscape table.",
+                "references": [],
+                "section": "Captions and placement",
+                "type": "text"
+            },
+            {
+                "content": "",
+                "references": [],
+                "section": "References and citations",
+                "type": "text"
+            },
+            {
+                "content": "The usual commands '' and '' can be used for cross-referencing within the same paper.\nWe recommend that you use these whenever relevant, rather than writing out the section or figure numbers explicitly.\nThis ensures that cross-references are updated whenever the numbering changes (e.g. during revision) and provides clickable links (if available in your compiler).\n\nIt is best to give each section, figure and table a logical label.\nFor example, Table~has the label 'tab:mathssymbols', whilst section~has the label 'sec:packages'.\nAdd the label the section or caption command, as in the examples in sections~and .\nEnter the cross-reference with a non-breaking space between the type of object and the number, like this: 'see Figure~'.\n\nThe '' command can be used to automatically fill out the type of object, saving on typing.\nIt also causes the link to cover the whole phrase rather than just the number, but for that reason is only suitable for single cross-references rather than ranges.\nFor example, '' produces .\n\n",
+                "references": [],
+                "section": "Cross-referencing",
+                "type": "text"
+            },
+            {
+                "content": "MNRAS uses the Harvard -- author (year) -- citation style, e.g. .\nThis is implemented in via the 'natbib' package, which in turn is included via the 'usenatbib' package option (see section~), which should be used in all papers.\n\nEach entry in the reference list has a `key' (see section~) which is used to generate citations.\nThere are two basic 'natbib' commands:\n'' produces an in-text citation: '' produces a bracketed (parenthetical) citation: Citations will include clickable links to the relevant entry in the reference list, if supported by your compiler.\n\nPaper~IlllCommand & Ouput & Note'' & & '' & & '' & & Multiple papers'' & & '[figure 7]key' & [figure 7]smith2014& '' & & For use with manual brackets'' & & If already cited in close proximity'Paper~I' &  & Define an alias (doesn't work in floats)'' & & '' & & There are a number of other 'natbib' commands which can be used for more complicated citations.\nThe most commonly used ones are listed in Table~.\nFor full guidance on their use, consult the 'natbib' documentation.\n\nIf a reference has several authors, 'natbib' will automatically use `et al.' if there are more than two authors. However, if a paper has exactly three authors, MNRAS style is to list all three on the first citation and use `et al.' thereafter. If you are using (see section~) then this is handled automatically. If not, the '*' and '*' commands can be used at the first citation to include all of the authors.\n\n",
+                "figure_caption": "Common citation commands, provided by the \\texttt{natbib",
+                "references": [
+                    {
+                        "label": "author2013",
+                        "link": ""
+                    },
+                    {
+                        "label": "key",
+                        "link": ""
+                    },
+                    {
+                        "label": "author2013",
+                        "link": ""
+                    },
+                    {
+                        "label": "key",
+                        "link": ""
+                    },
+                    {
+                        "label": "author2013",
+                        "link": ""
+                    },
+                    {
+                        "label": "key",
+                        "link": ""
+                    },
+                    {
+                        "label": "smith2014",
+                        "link": ""
+                    },
+                    {
+                        "label": "key",
+                        "link": ""
+                    },
+                    {
+                        "label": "smith2014",
+                        "link": ""
+                    },
+                    {
+                        "label": "key,key2",
+                        "link": ""
+                    },
+                    {
+                        "label": "smith2014,jones2015",
+                        "link": ""
+                    },
+                    {
+                        "label": "key",
+                        "link": ""
+                    },
+                    {
+                        "label": "smith2014",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    },
+                    {
+                        "label": "key",
+                        "link": ""
+                    },
+                    {
+                        "label": "smith2014",
+                        "link": ""
+                    },
+                    {
+                        "label": "key",
+                        "link": ""
+                    },
+                    {
+                        "label": "smith2014",
+                        "link": ""
+                    },
+                    {
+                        "label": "key",
+                        "link": ""
+                    },
+                    {
+                        "label": "smith2014",
+                        "link": ""
+                    },
+                    {
+                        "label": "key",
+                        "link": ""
+                    },
+                    {
+                        "label": "smith2014",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    }
+                ],
+                "section": "Citations",
+                "type": "text"
+            },
+            {
+                "content": "It is possible to enter references manually using the usual commands, but we strongly encourage authors to use instead.\nensures that the reference list is updated automatically as references are added or removed from the paper, puts them in the correct format, saves on typing, and the same reference file can be used for many different papers -- saving time hunting down reference details.\nAn MNRAS style file, 'mnras.bst', is distributed as part of this package.\nThe rest of this section will assume you are using .\n\nReferences are entered into a separate '.bib' file in standard formatting.\nThis can be done manually, or there are several software packages which make editing the '.bib' file much easier.\nWe particularly recommend , which works on all major operating systems.\nentries can be obtained from the NASA Astrophysics Data System(ADS) by clicking on `Bibtex entry for this abstract' on any entry.\nSimply copy this into your '.bib' file or into the `BibTeX source' tab in .\n\nEach entry in the '.bib' file must specify a unique `key' to identify the paper, the format of which is up to the author.\nSimply cite it in the usual way, as described in section~, using the specified key.\nCompile the paper as usual, but add an extra step to run the command.\nConsult the documentation for your compiler or latex distribution.\n\nCorrect formatting of the reference list will be handled by in almost all cases, provided that the correct information was entered into the '.bib' file.\nNote that ADS entries are not always correct, particularly for older papers and conference proceedings, so may need to be edited.\nIf in doubt, or if you are producing the reference list manually, see the MNRAS instructions to authors$^for guidance.\n\n",
+                "references": [],
+                "section": "The list of references",
+                "type": "text"
+            },
+            {
+                "content": "",
+                "references": [],
+                "section": "Packages and custom commands",
+                "type": "text"
+            },
+            {
+                "content": "Sometimes authors need to include additional packages, which provide extra features.\nFor example, the 'bm' package provides extra bold maths symbols, whilst the 'pdflscape' package adds support for landscape pages.\nPackages can be included by adding the '' command to the preamble of the document (not the main body).\n\nPlease , and include a comment to explain what each one does.\nThis will assist the typesetters.\nIf you are using , it includes a specific section for this purpose, near the start of the file with the header 'authors - place your own packages here'.\n\nFor example, to include 'pdflscape', use:\nConsult the documentation for that package for instructions on how to use the additional features.\n\n\n",
+                "references": [],
+                "section": "Additional packages",
+                "type": "text"
+            },
+            {
+                "content": "Authors should avoid duplicating or redefining commands which are already available in or 'mnras.cls'.\nHowever it may sometimes be necessary to introduce a custom command e.g. as a shortcut while writing the paper.\n\nPlease , and include a comment to explain what each one does.\nThis will assist the typesetters.\nUse '', '', as this will avoid accidentally overwriting existing commands.\nPlace custom commands in the preamble of the document (not the main body).\nIf you are using , it includes a specific section for this purpose, near the start of the file with the header 'authors - place your own commands here'.\n\nAs an example, a shortcut for the unit can be defined like this:\n,km,s$^-1, commands used by other astronomy journals, and with additional entries for journals with non-standard abbreviations in MNRAS.\nFor journals which are not on this list, see our instructions to authors$^^a$ Letters are designated by an L at the start of the page number, not in the journal namel^c$ Including the English translation Astronomy Letters",
+                "references": [],
+                "section": "Custom commands",
+                "type": "text"
+            },
+            {
+                "content": "Sometimes formatting doesn't behave exactly as expected when used in titles or section headings, and must be modified to obtain the correct appearance.\nGenerally the publishers can fix these problems during the typesetting process after a paper is accepted, but authors may wish to adjust these themselves to minimise the possibility of errors and/or for the benefit of the refereeing process.\nBelow are some examples of output, followed by the code which produces them.\n\nMost mathematics and text formatting works as expected, but some commands might not be the correct size, bold or italic.\nIf so they can be finessed by hand, as in the bold mathematics here:\nMost fonts do not provide bold and italic versions of small capitals, so the '' command doesn't produce the expected output in headings.\nThe effect has to be `faked' using font size commands, remembering that the running head is a different style:\n[Abundances in H,regions]\nAbundances in H,regionsComplex mathematics can cause problems with links, so might require adding a less formatted short version of the heading:\n",
+                "references": [],
+                "section": "Advanced formatting examples",
+                "type": "text"
+            },
+            {
+                "content": "",
+                "references": [],
+                "section": "",
+                "type": "text"
+            }
+        ],
+        "metadata": {
+            "authors": []
+        },
+        "title": ""
+    }
+}

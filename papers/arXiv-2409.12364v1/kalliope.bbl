@@ -1,0 +1,404 @@
+\begin{thebibliography}{}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\href{#1}{#1}}
+\providecommand{\dodoi}[1]{doi:~\href{http://doi.org/#1}{\nolinkurl{#1}}}
+\providecommand{\doeprint}[1]{\href{http://ascl.net/#1}{\nolinkurl{http://ascl.net/#1}}}
+\providecommand{\doarXiv}[1]{\href{https://arxiv.org/abs/#1}{\nolinkurl{https://arxiv.org/abs/#1}}}
+
+\bibitem[{{ALMA Partnership} {et~al.}(2015){ALMA Partnership}, {Hunter},
+  {Kneissl}, {Moullet}, {Brogan}, {Fomalont}, {Vlahakis}, {Asaki}, {Barkats},
+  {Dent}, {Hills}, {Hirota}, {Hodge}, {Impellizzeri}, {Liuzzo}, {Lucas},
+  {Marcelino}, {Matsushita}, {Nakanishi}, {P{\'e}rez}, {Phillips}, {Richards},
+  {Toledo}, {Aladro}, {Broguiere}, {Cortes}, {Cortes}, {Espada}, {Galarza},
+  {Garcia-Appadoo}, {Guzman-Ramirez}, {Hales}, {Humphreys}, {Jung}, {Kameno},
+  {Laing}, {Leon}, {Marconi}, {Mignano}, {Nikolic}, {Nyman}, {Radiszcz},
+  {Remijan}, {Rod{\'o}n}, {Sawada}, {Takahashi}, {Tilanus}, {Vila Vilaro},
+  {Watson}, {Wiklind}, {De Gregorio-Monsalvo}, {Di Francesco}, {Mangum},
+  {Francke}, {Gallardo}, {Garcia}, {Gonzalez}, {Hill}, {Kaminski}, {Kurono},
+  {Lopez}, {Morales}, {Plarre}, {Randall}, {van kempen}, {Videla}, {Villard},
+  {Andreani}, {Hibbard}, \& {Tatematsu}}]{junoalma}
+{ALMA Partnership}, {Hunter}, T.~R., {Kneissl}, R., {et~al.} 2015, The
+  Astrophysical Journal Letters, 808, L2, \dodoi{10.1088/2041-8205/808/1/L2}
+
+\bibitem[{{Bro{\v{z}}} {et~al.}(2022){Bro{\v{z}}}, {Ferrais}, {Vernazza},
+  {{\v{S}}eve{\v{c}}ek}, \& {Jutzi}}]{broz2022}
+{Bro{\v{z}}}, M., {Ferrais}, M., {Vernazza}, P., {{\v{S}}eve{\v{c}}ek}, P., \&
+  {Jutzi}, M. 2022, \aap, 664, A69, \dodoi{10.1051/0004-6361/202243628}
+
+\bibitem[{{Bro{\v{z}}} {et~al.}(2023){Bro{\v{z}}}, {{\v{D}}urech}, {Ferrais},
+  {Lee}, {Kim}, {Roh}, {Yim}, {Jehin}, {Burdanov}, {de Wit}, {Fatka},
+  {Hanu{\v{s}}}, \& {Carry}}]{broz2023}
+{Bro{\v{z}}}, M., {{\v{D}}urech}, J., {Ferrais}, M., {et~al.} 2023, \aap, 676,
+  A60, \dodoi{10.1051/0004-6361/202346326}
+
+\bibitem[{{Bus}(1999)}]{bus1999}
+{Bus}, S.~J. 1999, PhD thesis, Massachusetts Institute of Technology
+
+\bibitem[{{Butler} \& {Bastian}(1999)}]{butler1999}
+{Butler}, B.~J., \& {Bastian}, T.~S. 1999, in ASP Conference Series, Vol. 180,
+  Synthesis Imaging in Radio Astronomy II, ed. G.~B. {Taylor}, C.~L. {Carilli},
+  \& R.~A. {Perley}, 625--656
+
+\bibitem[{{Cambioni} {et~al.}(2022){Cambioni}, {de Kleer}, \&
+  {Shepard}}]{cambioni2022}
+{Cambioni}, S., {de Kleer}, K., \& {Shepard}, M. 2022, Journal of Geophysical
+  Research (Planets), 127, e07091, \dodoi{10.1029/2021JE007091}
+
+\bibitem[{{Campbell} \& {Ulrichs}(1969)}]{campbell1969}
+{Campbell}, M.~J., \& {Ulrichs}, J. 1969, \jgr, 74, 5867,
+  \dodoi{10.1029/JB074i025p05867}
+
+\bibitem[{Carilli \& Holdaway(1999)}]{carilli1999}
+Carilli, C.~L., \& Holdaway, M.~A. 1999, Radio Science, 34, 817,
+  \dodoi{10.1029/1999RS900048}
+
+\bibitem[{{Cellino} {et~al.}(2002){Cellino}, {Bus}, {Doressoundiram}, \&
+  {Lazzaro}}]{cellino2002}
+{Cellino}, A., {Bus}, S.~J., {Doressoundiram}, A., \& {Lazzaro}, D. 2002, in
+  Asteroids III, 633--643
+
+\bibitem[{{Chichura} {et~al.}(2022){Chichura}, {Foster}, {Patel}, {Ossa-Jaen},
+  {Ade}, {Ahmed}, {Anderson}, {Archipley}, {Austermann}, {Avva}, {Balkenhol},
+  {Barry}, {Thakur}, {Beall}, {Benabed}, {Bender}, {Benson}, {Bianchini},
+  {Bleem}, {Bouchet}, {Bryant}, {Byrum}, {Carlstrom}, {Carter}, {Cecil},
+  {Chang}, {Chaubal}, {Chen}, {Chiang}, {Cho}, {Chou}, {Citron}, {Cliche},
+  {Crawford}, {Crites}, {Cukierman}, {Daley}, {Denison}, {Dibert}, {Ding},
+  {Dobbs}, {Dutcher}, {Everett}, {Feng}, {Ferguson}, {Fu}, {Galli},
+  {Gallicchio}, {Gambrel}, {Gardner}, {George}, {Goeckner-Wald}, {Gualtieri},
+  {Guns}, {Gupta}, {Guyser}, {de Haan}, {Halverson}, {Harke-Hosemann},
+  {Harrington}, {Henning}, {Hilton}, {Hivon}, {Holder}, {Holzapfel}, {Hood},
+  {Howe}, {Hrubes}, {Huang}, {Hubmayr}, {Irwin}, {Jeong}, {Jonas}, {Jones},
+  {Khaire}, {Knox}, {Kofman}, {Korman}, {Kubik}, {Kuhlmann}, {Kuo}, {Lee},
+  {Leitch}, {Li}, {Lowitz}, {Lu}, {Marrone}, {McMahon}, {Meyer}, {Michalik},
+  {Millea}, {Mocanu}, {Montgomery}, {Moran}, {Nadolski}, {Natoli}, {Nguyen},
+  {Nibarger}, {Noble}, {Novosad}, {Omori}, {Padin}, {Pan}, {Paschos}, {Patil},
+  {Pearson}, {Phadke}, {Posada}, {Prabhu}, {Pryke}, {Quan}, {Rahlin},
+  {Reichardt}, {Riebel}, {Riedel}, {Rouble}, {Ruhl}, {Saliwanchik}, {Sayre},
+  {Schaffer}, {Schiappucci}, {Shirokoff}, {Sievers}, {Smecher}, {Sobrin},
+  {Springmann}, {Stark}, {Stephen}, {Story}, {Suzuki}, {Tandoi}, {Thompson},
+  {Thorne}, {Tucker}, {Umilta}, {Vale}, {Veach}, {Vieira}, {Wang}, {Whitehorn},
+  {Wu}, {Yefremenko}, {Yoon}, \& {Young}}]{chichura2022}
+{Chichura}, P.~M., {Foster}, A., {Patel}, C., {et~al.} 2022, \apj, 936, 173,
+  \dodoi{10.3847/1538-4357/ac89ec}
+
+\bibitem[{{Clark} {et~al.}(2004){Clark}, {Bus}, {Rivkin}, {Shepard}, \&
+  {Shah}}]{2004AJClark}
+{Clark}, B.~E., {Bus}, S.~J., {Rivkin}, A.~S., {Shepard}, M.~K., \& {Shah}, S.
+  2004, Astronomical Journal, 128, 3070, \dodoi{10.1086/424856}
+
+\bibitem[{{Cloutis} {et~al.}(1990){Cloutis}, {Gaffey}, {Smith}, \&
+  {Lambert}}]{cloutis1990}
+{Cloutis}, E.~A., {Gaffey}, M.~J., {Smith}, D.~G.~W., \& {Lambert}, R. S.~J.
+  1990, Journal of Geophysical Research, 95, 281,
+  \dodoi{10.1029/JB095iB01p00281}
+
+\bibitem[{{Cornwell} \& {Fomalont}(1999)}]{cornwell1999}
+{Cornwell}, T., \& {Fomalont}, E.~B. 1999, in Astronomical Society of the
+  Pacific Conference Series, Vol. 180, Synthesis Imaging in Radio Astronomy II,
+  ed. G.~B. {Taylor}, C.~L. {Carilli}, \& R.~A. {Perley}, 187
+
+\bibitem[{{de Kleer} {et~al.}(2021{\natexlab{a}}){de Kleer}, {Butler}, {de
+  Pater}, {Gurwell}, {Moullet}, {Trumbo}, \& {Spencer}}]{dekleer2021_Ganymede}
+{de Kleer}, K., {Butler}, B., {de Pater}, I., {et~al.} 2021{\natexlab{a}},
+  \psj, 2, 5, \dodoi{10.3847/PSJ/abcbf4}
+
+\bibitem[{{de Kleer} {et~al.}(2021{\natexlab{b}}){de Kleer}, {Cambioni}, \&
+  {Shepard}}]{dekleer2021}
+{de Kleer}, K., {Cambioni}, S., \& {Shepard}, M. 2021{\natexlab{b}}, \psj, 2,
+  149, \dodoi{10.3847/PSJ/ac01ec}
+
+\bibitem[{{Delbo'} {et~al.}(2007){Delbo'}, {dell'Oro}, {Harris}, {Mottola}, \&
+  {Mueller}}]{delbo2007}
+{Delbo'}, M., {dell'Oro}, A., {Harris}, A.~W., {Mottola}, S., \& {Mueller}, M.
+  2007, \icarus, 190, 236, \dodoi{10.1016/j.icarus.2007.03.007}
+
+\bibitem[{{Delbo} {et~al.}(2015){Delbo}, {Mueller}, {Emery}, {Rozitis}, \&
+  {Capria}}]{delbo2015}
+{Delbo}, M., {Mueller}, M., {Emery}, J.~P., {Rozitis}, B., \& {Capria}, M.~T.
+  2015, {Asteroid Thermophysical Modeling}, 107--128,
+  \dodoi{10.2458/azu_uapress_9780816532131-ch006}
+
+\bibitem[{{DeMeo} {et~al.}(2009){DeMeo}, {Binzel}, {Slivan}, \&
+  {Bus}}]{demeo2009}
+{DeMeo}, F.~E., {Binzel}, R.~P., {Slivan}, S.~M., \& {Bus}, S.~J. 2009,
+  \icarus, 202, 160, \dodoi{10.1016/j.icarus.2009.02.005}
+
+\bibitem[{{DeMeo} {et~al.}(2019){DeMeo}, {Polishook}, {Carry}, {Burt}, {Hsieh},
+  {Binzel}, {Moskovitz}, \& {Burbine}}]{demeo2019}
+{DeMeo}, F.~E., {Polishook}, D., {Carry}, B., {et~al.} 2019, \icarus, 322, 13,
+  \dodoi{10.1016/j.icarus.2018.12.016}
+
+\bibitem[{{Descamps} {et~al.}(2008){Descamps}, {Marchis}, {Pollock},
+  {Berthier}, {Birlan}, {Vachier}, \& {Colas}}]{descamps2008}
+{Descamps}, P., {Marchis}, F., {Pollock}, J., {et~al.} 2008, \planss, 56, 1851,
+  \dodoi{10.1016/j.pss.2008.02.037}
+
+\bibitem[{{Drummond} {et~al.}(2021){Drummond}, {Merline}, {Carry}, {Conrad},
+  {Tamblyn}, {Enke}, {Christou}, {Dumas}, {Chapman}, {Durda}, {Owen}, {Grundy},
+  {Reynolds}, \& {Buckman}}]{drummond2021}
+{Drummond}, J.~D., {Merline}, W.~J., {Carry}, B., {et~al.} 2021, \icarus, 358,
+  114275, \dodoi{10.1016/j.icarus.2020.114275}
+
+\bibitem[{{Elkins-Tanton} {et~al.}(2022){Elkins-Tanton}, {Asphaug}, {Bell},
+  {Bierson}, {Bills}, {Bottke}, {Courville}, {Dibb}, {Jun}, {Lawrence},
+  {Marchi}, {McCoy}, {Merayo}, {Oran}, {O'Rourke}, {Park}, {Peplowski},
+  {Prettyman}, {Raymond}, {Weiss}, {Wieczorek}, \&
+  {Zuber}}]{2022SSRvElkinsTanton}
+{Elkins-Tanton}, L.~T., {Asphaug}, E., {Bell}, J.~F., {et~al.} 2022, Space
+  Science Reviews, 218, 17, \dodoi{10.1007/s11214-022-00880-9}
+
+\bibitem[{{Ferrais} {et~al.}(2022){Ferrais}, {Jorda}, {Vernazza}, {Carry},
+  {Bro{\v{z}}}, {Rambaux}, {Hanu{\v{s}}}, {Dudzi{\'n}ski}, {Bartczak},
+  {Vachier}, {Aristidi}, {Beck}, {Marchis}, {Marsset}, {Viikinkoski}, {Fetick},
+  {Drouard}, {Fusco}, {Birlan}, {Podlewska-Gaca}, {Burbine}, {Dyar},
+  {Bendjoya}, {Benkhaldoun}, {Berthier}, {Castillo-Rogez}, {Cipriani}, {Colas},
+  {Dumas}, {{\v{D}}urech}, {Fauvaud}, {Grice}, {Jehin}, {Kaasalainen},
+  {Kryszczynska}, {Lamy}, {Le Coroller}, {Marciniak}, {Michalowski}, {Michel},
+  {Prieur}, {Reddy}, {Rivet}, {Santana-Ros}, {Scardia}, {Tanga}, {Vigan},
+  {Witasse}, \& {Yang}}]{ferrais2022}
+{Ferrais}, M., {Jorda}, L., {Vernazza}, P., {et~al.} 2022, \aap, 662, A71,
+  \dodoi{10.1051/0004-6361/202243200}
+
+\bibitem[{{Fornasier} {et~al.}(2010){Fornasier}, {Clark}, {Dotto},
+  {Migliorini}, {Ockert-Bell}, \& {Barucci}}]{2010IcarFornasier}
+{Fornasier}, S., {Clark}, B.~E., {Dotto}, E., {et~al.} 2010, Icarus, 210, 655,
+  \dodoi{10.1016/j.icarus.2010.07.001}
+
+\bibitem[{{Gaffey} {et~al.}(1993){Gaffey}, {Bell}, {Brown}, {Burbine},
+  {Piatek}, {Reed}, \& {Chaky}}]{gaffey1993}
+{Gaffey}, M.~J., {Bell}, J.~F., {Brown}, R.~H., {et~al.} 1993, \icarus, 106,
+  573, \dodoi{10.1006/icar.1993.1194}
+
+\bibitem[{{Gaffey} \& {McCord}(1978)}]{gaffey1978}
+{Gaffey}, M.~J., \& {McCord}, T.~B. 1978, \ssr, 21, 555,
+  \dodoi{10.1007/BF00240908}
+
+\bibitem[{Gouraud(1971)}]{gouraud1971continuous}
+Gouraud, H. 1971, IEEE transactions on computers, 100, 623
+
+\bibitem[{{Greisen}(2003)}]{greisen2003}
+{Greisen}, E.~W. 2003, in Information Handling in Astronomy - Historical
+  Vistas, ed. A.~{Heck}, Astrophysics and Space Science Library, 109--125
+
+\bibitem[{{Gulkis} {et~al.}(2010){Gulkis}, {Keihm}, {Kamp}, {Backus},
+  {Janssen}, {Lee}, {Davidsson}, {Beaudin}, {Biver}, {Bockel{\'e}e-Morvan},
+  {Crovisier}, {Encrenaz}, {Encrenaz}, {Hartogh}, {Hofstadter}, {Ip},
+  {Lellouch}, {Mann}, {Schloerb}, {Spilker}, \& {Frerking}}]{gulkis2010}
+{Gulkis}, S., {Keihm}, S., {Kamp}, L., {et~al.} 2010, Planetary and Space
+  Science, 58, 1077, \dodoi{10.1016/j.pss.2010.02.008}
+
+\bibitem[{{Gulkis} {et~al.}(2012){Gulkis}, {Keihm}, {Kamp}, {Lee}, {Hartogh},
+  {Crovisier}, {Lellouch}, {Encrenaz}, {Bockelee-Morvan}, {Hofstadter},
+  {Beaudin}, {Janssen}, {Weissman}, {von Allmen}, {Encrenaz}, {Backus}, {Ip},
+  {Schloerb}, {Biver}, {Spilker}, \& {Mann}}]{gulkis2012}
+---. 2012, Planetary and Space Science, 66, 31,
+  \dodoi{10.1016/j.pss.2011.12.004}
+
+\bibitem[{{Hardersen} {et~al.}(2011){Hardersen}, {Cloutis}, {Reddy},
+  {Moth{\'e}-Diniz}, \& {Emery}}]{hardersen2011}
+{Hardersen}, P.~S., {Cloutis}, E.~A., {Reddy}, V., {Moth{\'e}-Diniz}, T., \&
+  {Emery}, J.~P. 2011, \maps, 46, 1910,
+  \dodoi{10.1111/j.1945-5100.2011.01304.x}
+
+\bibitem[{{Hardersen} {et~al.}(2005){Hardersen}, {Gaffey}, \&
+  {Abell}}]{hardersen2005}
+{Hardersen}, P.~S., {Gaffey}, M.~J., \& {Abell}, P.~A. 2005, Icarus, 175, 141,
+  \dodoi{10.1016/j.icarus.2004.10.017}
+
+\bibitem[{{Hevey} \& {Sanders}(2006)}]{hevey2006}
+{Hevey}, P.~J., \& {Sanders}, I.~S. 2006, \maps, 41, 95,
+  \dodoi{10.1111/j.1945-5100.2006.tb00195.x}
+
+\bibitem[{{Hung} {et~al.}(2022){Hung}, {Hanu{\v{s}}}, {Masiero}, \&
+  {Tholen}}]{hung2022}
+{Hung}, D., {Hanu{\v{s}}}, J., {Masiero}, J.~R., \& {Tholen}, D.~J. 2022, \psj,
+  3, 56, \dodoi{10.3847/PSJ/ac4d1f}
+
+\bibitem[{{Jackson}(1975)}]{jackson1975}
+{Jackson}, J.~D. 1975, {Classical electrodynamics} (New York, N.Y.: Wiley)
+
+\bibitem[{{Keihm} {et~al.}(2013){Keihm}, {Kamp}, {Gulkis}, {Hofstadter}, {Lee},
+  {Janssen}, \& {Choukroun}}]{keihm2013}
+{Keihm}, S., {Kamp}, L., {Gulkis}, S., {et~al.} 2013, Icarus, 226, 1086,
+  \dodoi{10.1016/j.icarus.2013.07.005}
+
+\bibitem[{{Kent} {et~al.}(2019){Kent}, {Masters}, {Chandler}, {Tobin},
+  {Marvil}, {Ott}, {Myers}, {Medlin}, {Kimball}, {Schinzel}, {Lacy}, {Kern},
+  {Butler}, {Sugimoto}, {Muders}, {Williams}, \& {Geers}}]{kent2019}
+{Kent}, B.~R., {Masters}, J.~S., {Chandler}, C.~J., {et~al.} 2019, in ASP
+  Conference Series, Vol. 527, Astronomical Data Analysis Software and Systems
+  XXIX, ed. R.~{Pizzo}, E.~R. {Deul}, J.~D. {Mol}, J.~{de Plaa}, \&
+  H.~{Verkouter}, 571--574
+
+\bibitem[{{Kruijer} {et~al.}(2017){Kruijer}, {Burkhardt}, {Budde}, \&
+  {Kleine}}]{kruijer2017}
+{Kruijer}, T.~S., {Burkhardt}, C., {Budde}, G., \& {Kleine}, T. 2017,
+  Proceedings of the National Academy of Science, 114, 6712,
+  \dodoi{10.1073/pnas.1704461114}
+
+\bibitem[{{Lamy} {et~al.}(2008){Lamy}, {Jorda}, {Fornasier}, {Groussin},
+  {Barucci}, {Carvano}, {Dotto}, {Fulchignoni}, \& {Toth}}]{lamy2008}
+{Lamy}, P.~L., {Jorda}, L., {Fornasier}, S., {et~al.} 2008, Astronomy and
+  Astrophysics, 487, 1187, \dodoi{10.1051/0004-6361:20078996}
+
+\bibitem[{{Laver} {et~al.}(2009){Laver}, {de Pater}, {Marchis},
+  {{\'A}d{\'a}mkovics}, \& {Wong}}]{laver2009}
+{Laver}, C., {de Pater}, I., {Marchis}, F., {{\'A}d{\'a}mkovics}, M., \&
+  {Wong}, M.~H. 2009, \icarus, 204, 574, \dodoi{10.1016/j.icarus.2009.07.002}
+
+\bibitem[{{Lebofsky} \& {Spencer}(1989)}]{lebofsky1989}
+{Lebofsky}, L.~A., \& {Spencer}, J.~R. 1989, in Asteroids II, ed. R.~P.
+  {Binzel}, T.~{Gehrels}, \& M.~S. {Matthews}, 128--147
+
+\bibitem[{{Lebofsky} {et~al.}(1986){Lebofsky}, {Sykes}, {Tedesco}, {Veeder},
+  {Matson}, {Brown}, {Gradie}, {Feierberg}, \& {Rudy}}]{lebofsky1986}
+{Lebofsky}, L.~A., {Sykes}, M.~V., {Tedesco}, E.~F., {et~al.} 1986, Icarus, 68,
+  239, \dodoi{10.1016/0019-1035(86)90021-7}
+
+\bibitem[{{Magri} {et~al.}(2007){Magri}, {Nolan}, {Ostro}, \&
+  {Giorgini}}]{2007IcarMagri}
+{Magri}, C., {Nolan}, M.~C., {Ostro}, S.~J., \& {Giorgini}, J.~D. 2007, Icarus,
+  186, 126, \dodoi{10.1016/j.icarus.2006.08.018}
+
+\bibitem[{{Mainzer} {et~al.}(2019){Mainzer}, {Bauer}, {Cutri}, {Grav},
+  {Kramer}, {Masiero}, {Sonnett}, \& {Wright}}]{2019PDSSMainzer}
+{Mainzer}, A.~K., {Bauer}, J.~M., {Cutri}, R.~M., {et~al.} 2019, NASA Planetary
+  Data System, \dodoi{10.26033/18S3-2Z54}
+
+\bibitem[{{Marchis} {et~al.}(2012){Marchis}, {Enriquez}, {Emery}, {Mueller},
+  {Baek}, {Pollock}, {Assafin}, {Vieira Martins}, {Berthier}, {Vachier},
+  {Cruikshank}, {Lim}, {Reichart}, {Ivarsen}, {Haislip}, \&
+  {LaCluyze}}]{marchis2012}
+{Marchis}, F., {Enriquez}, J.~E., {Emery}, J.~P., {et~al.} 2012, \icarus, 221,
+  1130, \dodoi{10.1016/j.icarus.2012.09.013}
+
+\bibitem[{{Margot} \& {Brown}(2001)}]{margot2001}
+{Margot}, J.~L., \& {Brown}, M.~E. 2001, \iaucirc, 7703, 3
+
+\bibitem[{{Margot} \& {Brown}(2003)}]{margot2003}
+---. 2003, Science, 300, 1939, \dodoi{10.1126/science.1085844}
+
+\bibitem[{{Mart{\'\i}-Vidal} {et~al.}(2014){Mart{\'\i}-Vidal}, {Vlemmings},
+  {Muller}, \& {Casey}}]{uvmultifit}
+{Mart{\'\i}-Vidal}, I., {Vlemmings}, W.~H.~T., {Muller}, S., \& {Casey}, S.
+  2014, \aap, 563, A136, \dodoi{10.1051/0004-6361/201322633}
+
+\bibitem[{{McMullin} {et~al.}(2007){McMullin}, {Waters}, {Schiebel}, {Young},
+  \& {Golap}}]{mcmullin2007}
+{McMullin}, J.~P., {Waters}, B., {Schiebel}, D., {Young}, W., \& {Golap}, K.
+  2007, in Astronomical Society of the Pacific Conference Series, Vol. 376,
+  Astronomical Data Analysis Software and Systems XVI, ed. R.~A. {Shaw},
+  F.~{Hill}, \& D.~J. {Bell}, 127
+
+\bibitem[{{Merk} {et~al.}(2002){Merk}, {Breuer}, \& {Spohn}}]{merk2002}
+{Merk}, R., {Breuer}, D., \& {Spohn}, T. 2002, \icarus, 159, 183,
+  \dodoi{10.1006/icar.2002.6872}
+
+\bibitem[{{Merline} {et~al.}(2001){Merline}, {Menard}, {Close}, {Dumas},
+  {Chapman}, \& {Slater}}]{merline2001}
+{Merline}, W.~J., {Menard}, F., {Close}, L., {et~al.} 2001, \iaucirc, 7703, 2
+
+\bibitem[{{Neeley} {et~al.}(2014){Neeley}, {Clark}, {Ockert-Bell}, {Shepard},
+  {Conklin}, {Cloutis}, {Fornasier}, \& {Bus}}]{neeley2014}
+{Neeley}, J.~R., {Clark}, B.~E., {Ockert-Bell}, M.~E., {et~al.} 2014, \icarus,
+  238, 37, \dodoi{10.1016/j.icarus.2014.05.008}
+
+\bibitem[{{Ockert-Bell} {et~al.}(2010){Ockert-Bell}, {Clark}, {Shepard},
+  {Isaacs}, {Cloutis}, {Fornasier}, \& {Bus}}]{ockert-bell2010}
+{Ockert-Bell}, M.~E., {Clark}, B.~E., {Shepard}, M.~K., {et~al.} 2010, \icarus,
+  210, 674, \dodoi{10.1016/j.icarus.2010.08.002}
+
+\bibitem[{{Orlowski-Scherer} {et~al.}(2024){Orlowski-Scherer}, {Venterea},
+  {Battaglia}, {Naess}, {Bhandarkar}, {Biermann}, {Calabrese}, {Devlin},
+  {Dunkley}, {Herv{\'\i}as-Caimapo}, {Gallardo}, {Hilton}, {Hincks}, {Knowles},
+  {Li}, {McMahon}, {Niemack}, {Page}, {Partridge}, {Salatino}, {Sievers},
+  {Sif{\'o}n}, {Staggs}, {van Engelen}, {Vargas}, {Vavagiakis}, \&
+  {Wollack}}]{orlowski2024}
+{Orlowski-Scherer}, J., {Venterea}, R.~C., {Battaglia}, N., {et~al.} 2024,
+  \apj, 964, 138, \dodoi{10.3847/1538-4357/ad21fe}
+
+\bibitem[{{Ostro} {et~al.}(1985){Ostro}, {Campbell}, \& {Shapiro}}]{ostro1985}
+{Ostro}, S.~J., {Campbell}, D.~B., \& {Shapiro}, I.~I. 1985, Science, 229, 442,
+  \dodoi{10.1126/science.229.4712.442}
+
+\bibitem[{{Perley} \& {Butler}(2013)}]{perley2013}
+{Perley}, R.~A., \& {Butler}, B.~J. 2013, The Astrophysical Journal Supplement
+  Series, 204, 1
+
+\bibitem[{{Perley} \& {Butler}(2017)}]{perley2017}
+---. 2017, The Astrophysical Journal Supplement Series, 230, 1
+
+\bibitem[{{Piqueux} {et~al.}(2021){Piqueux}, {Vu}, {Bapst}, {Garvie},
+  {Choukroun}, \& {Edwards}}]{2021JGREPiqueux}
+{Piqueux}, S., {Vu}, T.~H., {Bapst}, J., {et~al.} 2021, Journal of Geophysical
+  Research (Planets), 126, e07003, \dodoi{10.1029/2021JE007003}
+
+\bibitem[{{Rau} \& {Cornwell}(2011)}]{rau2011}
+{Rau}, U., \& {Cornwell}, T.~J. 2011, \aap, 532, A71,
+  \dodoi{10.1051/0004-6361/201117104}
+
+\bibitem[{{Redman} {et~al.}(1998){Redman}, {Feldman}, \&
+  {Matthews}}]{redman1998}
+{Redman}, R.~O., {Feldman}, P.~A., \& {Matthews}, H.~E. 1998, Astronomical
+  Journal, 116, 1478, \dodoi{10.1086/300495}
+
+\bibitem[{{Redman} {et~al.}(1992){Redman}, {Feldman}, {Matthews}, {Halliday},
+  \& {Creutzberg}}]{redman1992}
+{Redman}, R.~O., {Feldman}, P.~A., {Matthews}, H.~E., {Halliday}, I., \&
+  {Creutzberg}, F. 1992, Astronomical Journal, 104, 405, \dodoi{10.1086/116248}
+
+\bibitem[{{Richards} {et~al.}(2011){Richards}, {Max-Moerbeck}, {Pavlidou},
+  {King}, {Pearson}, {Readhead}, {Reeves}, {Shepherd}, {Stevenson},
+  {Weintraub}, {Fuhrmann}, {Angelakis}, {Zensus}, {Healey}, {Romani}, {Shaw},
+  {Grainge}, {Birkinshaw}, {Lancaster}, {Worrall}, {Taylor}, {Cotter}, \&
+  {Bustos}}]{richards2011}
+{Richards}, J.~L., {Max-Moerbeck}, W., {Pavlidou}, V., {et~al.} 2011, The
+  Astrophysical Journal Supplement Series, 194, 1
+
+\bibitem[{{Rivkin} {et~al.}(2000){Rivkin}, {Howell}, {Lebofsky}, {Clark}, \&
+  {Britt}}]{rivkin2000}
+{Rivkin}, A.~S., {Howell}, E.~S., {Lebofsky}, L.~A., {Clark}, B.~E., \&
+  {Britt}, D.~T. 2000, \icarus, 145, 351, \dodoi{10.1006/icar.2000.6354}
+
+\bibitem[{{Sahijpal} {et~al.}(2007){Sahijpal}, {Soni}, \&
+  {Gupta}}]{sahijpal2007}
+{Sahijpal}, S., {Soni}, P., \& {Gupta}, G. 2007, \maps, 42, 1529,
+  \dodoi{10.1111/j.1945-5100.2007.tb00589.x}
+
+\bibitem[{{Shepard} {et~al.}(2015){Shepard}, {Taylor}, {Nolan}, {Howell},
+  {Springmann}, {Giorgini}, {Warner}, {Harris}, {Stephens}, {Merline},
+  {Rivkin}, {Benner}, {Coley}, {Clark}, {Ockert-Bell}, \&
+  {Magri}}]{shepard2015}
+{Shepard}, M.~K., {Taylor}, P.~A., {Nolan}, M.~C., {et~al.} 2015, \icarus, 245,
+  38, \dodoi{10.1016/j.icarus.2014.09.016}
+
+\bibitem[{Shepard {et~al.}(2021)Shepard, de~Kleer, Cambioni, Taylor, Virkki,
+  R{\'\i}vera-Valentin, Sanchez-Vahamonde, Zambrano-Marin, Magri, Dunham,
+  {et~al.}}]{shepard2021}
+Shepard, M.~K., de~Kleer, K., Cambioni, S., {et~al.} 2021, The Planetary
+  Science Journal, 2, 125, \dodoi{10.3847/PSJ/abfdba}
+
+\bibitem[{{Shevchenko} {et~al.}(2019){Shevchenko}, {Belskaya}, {Mikhalchenko},
+  {Muinonen}, {Penttil{\"a}}, {Gritsevich}, {Shkuratov}, {Slyusarev}, \&
+  {Videen}}]{shevchenko2019}
+{Shevchenko}, V.~G., {Belskaya}, I.~N., {Mikhalchenko}, O.~I., {et~al.} 2019,
+  \aap, 626, A87, \dodoi{10.1051/0004-6361/201935588}
+
+\bibitem[{{Tholen}(1984)}]{tholen1984}
+{Tholen}, D.~J. 1984, PhD thesis, University of Arizona, Tucson
+
+\bibitem[{{Urey}(1955)}]{urey1955}
+{Urey}, H.~C. 1955, Proceedings of the National Academy of Science, 41, 127,
+  \dodoi{10.1073/pnas.41.3.127}
+
+\bibitem[{{Usui} {et~al.}(2019){Usui}, {Hasegawa}, {Ootsubo}, \&
+  {Onaka}}]{usui2019}
+{Usui}, F., {Hasegawa}, S., {Ootsubo}, T., \& {Onaka}, T. 2019, \pasj, 71, 1,
+  \dodoi{10.1093/pasj/psy125}
+
+\bibitem[{{Vachier} {et~al.}(2012){Vachier}, {Berthier}, \&
+  {Marchis}}]{vachier2012}
+{Vachier}, F., {Berthier}, J., \& {Marchis}, F. 2012, \aap, 543, A68,
+  \dodoi{10.1051/0004-6361/201118408}
+
+\end{thebibliography}

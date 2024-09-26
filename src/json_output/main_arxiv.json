@@ -1,0 +1,531 @@
+{
+    "document": {
+        "content": [
+            {
+                "content": "Betelgeuse, $Orionis was included in the Lick Observatory's Second Catalog of Spectroscopic Binary Stars  -- or it was intended to be, and was included a year later in an erratum . \n\nThis longer-period variability is among the many known ``Long Secondary Periods\" (LSPs) of unknown origin in other red supergiants []1963AJ.....68..253H,1999IAUS..191..151W,2003ApJ...584.1035O,2004ApJ...604..800W,2006ApJ...650L..55D,2006MNRAS.372.1721K,2007ApJ...660.1486S,2009JRASC.103...11P,2009MNRAS.399.2063N,2009ApJ...707..573W,2010AJ....139.1909N,2010ApJ...725.1170S,2014ApJ...788...13S,2015MNRAS.448..464T,2015MNRAS.452.3863S,2016JAVSO..44...94P,2020MNRAS.492.1348T,2021ApJ...911L..22S,2021A&A...649A.110P,2023JAVSO..51..237P,2023StGal...6....6T,2024A&A...682A..88P. The mechanism behind the LSPs has been a source of debate because their periods, being longer than that of the fundamental mode of oscillation, appear to rule out pulsation. Other suggestions have included the overturn of convective cells []2010ApJ...725.1170S, a pulsation in the outermost radiative layers or binary companions , with some discussion over whether the LSP could be a mistaken fundamental mode . Particularly compelling evidence has been offered by a recent multi-wavelength survey of many red supergiants by using a combination of optical data from OGLE with infrared data from WISE. show that many red supergiants exhibiting LSPs in the optical show evidence of secondary eclipses in the infrared, demonstrating that the optical variability is driven by the presence of a close companion -- perhaps through its concentration of the star's dusty wind. \n\nIn this paper, we analyze historic radial velocity and visual magnitude measurements to trace Betelgeuse's LSP. We demonstrate that the LSP is also observed as on-sky motion in astrometric data. \nTaken together, these lines of evidence reveal a close, and much lower mass, binary companion to Betelgeuse. The companion orbits with a period of $2100$~d, affecting Betelgeuse's radial velocity, position on the sky, visual magnitude, and -- through tidal interaction -- spin. \n\nThis companion is revealed by the past century of monitoring of Betelgeuse; appreciating its presence moves us a step closer to unwrapping the enigmatic behavior of our nearest red supergiant. Indeed, the hypothesis that Betelgeuse is a spectroscopic binary is not new , but fell out of favor because of the complexity of the star's stochastic variability []1984PASP...96..366G.  As we were preparing this manuscript independently reached the conclusion that Betelgeuse hosts a low-mass companion. Our complimentary analyses take different approaches yet reach the same result: review Betelgeuse's LSP in the more general context of LSPs in optical and radial velocity data, and rule out other possible LSP mechanisms. Our paper focuses on reanalyzing Betelgeuse's long observational history to test the hypothesis that a companion object exists.\n\nIn Section we describe the radial velocity and visual magnitude datasets, and describe modeling these data to determine possible properties of an unseen companion object. In Section we describe the astrometric data available for Betelgeuse and conduct a parallel analysis. In Section we describe the possible properties of a companion star, and how this star might be currently affecting Betelgeuse through tidal interaction. In Section we discuss possible next steps and in Section we conclude. \n\n\n\n\n",
+                "references": [
+                    {
+                        "label": "1910LicOB...6...17C,1911LicOB...6..154C",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    },
+                    {
+                        "label": "2015MNRAS.452.3863S,2020MNRAS.492.1348T",
+                        "link": ""
+                    },
+                    {
+                        "label": "1999IAUS..191..151W,2004ApJ...604..800W,2007ApJ...660.1486S,2014ApJ...788...13S,2021ApJ...911L..22S",
+                        "link": ""
+                    },
+                    {
+                        "label": "2023MNRAS.526.2765S,2023RNAAS...7..119M",
+                        "link": ""
+                    },
+                    {
+                        "label": "2021ApJ...911L..22S",
+                        "link": ""
+                    },
+                    {
+                        "label": "2021ApJ...911L..22S",
+                        "link": ""
+                    },
+                    {
+                        "label": "1908PASP...20..227P,1911LicOB...6..154C,1916ApJ....44..250L,1928MNRAS..88..660S,1933ApJ....77..110S",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    },
+                    {
+                        "label": "2024arXiv240809089G",
+                        "link": ""
+                    },
+                    {
+                        "label": "2024arXiv240809089G",
+                        "link": ""
+                    }
+                ],
+                "section": "Introduction",
+                "type": "text"
+            },
+            {
+                "content": "",
+                "references": [],
+                "section": "LSP in Photometry and Radial Velocity",
+                "type": "text"
+            },
+            {
+                "content": "Visual magnitudes of Betelgeuse are recorded in the American Association of Variable Star Observers (AAVSO) database reaching back one hundred years to approximately 1920. Photoelectric photometry in the V-band from a variety of sources is also available spanning a similar period []2024arXiv240809089G. Though earlier observers certainly noted Betelgeuse's changing brightness []1869ABSBo...7..315A,1913AN....194...81O,1913PA.....21....5S, we restrict ourselves to the AAVSO database for the current analysis. We bin individual reports into two-week averages. In general, visual magnitudes come with a large $1$~mag observer-to-observer dispersion, but can be quite precise when averaged in large numbers.\n\nIn more recent decades, multicolor photometry of Betelgeuse has been collected []2022OEJV..233....1O,2022NatAs...6..930T. Analyzing possible color changes and or IR-Vis correlations will be an intriguing path for follow up study, but is not considered at present, favoring the longer-span of the visual magnitudes. \n\nWe have collected published radial velocity (RV) measurements derived from metallic absorption lines in Betelgeuse’s spectrum. These records span 1896 – 2024, representing a remarkable 128 year baseline, and the work of many observers. With this baseline we are able separate stochastic variability caused, for example, by Betelgeuse's convection, from a periodic signal associated with the LSP.   The raw spacings between nearest observations vary hugely -- from a few minutes in the STELLA dataset to nearly 7 years around 1950. In order to mitigate some differences in reporting (for example, whether several spectrograms were averaged into a single reported RV or not), we employ 10-day bins of RV points, which leaves us with a total of 795 RV samples.  We performed parallel analyses with 30 and 365 day bins of data and found that these choices didn't substantively affect our conclusions. An annotated list of our data sources is given in Appendix . RV points include either reported or estimated errors as detailed in  Appendix .\n\n\n\n",
+                "references": [
+                    {
+                        "label": "",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    }
+                ],
+                "section": "Datasets",
+                "type": "text"
+            },
+            {
+                "content": "Figure shows the history of RV and visual magnitude estimates accumulated for our analysis. The RV measurements are colored according to their source, from the earliest measurement in 1986 reported in volume 16 of the Annals of the Lick observatory, to the most recent, and extensive, monitoring from STELLA . \n\n\nThese RVs show several overlapping effects, all with similar amplitude on the order of 1--few~km~s$^-1, but without a consistent periodicity or timescale. Similarly, the visual magnitude changes by a few tenths over similar, but not completely correlated, timescales. This lack of periodicity is consistent with what is expected from the random motions of turbulent convection []2006MNRAS.372.1721K.  \n    \n    The $2100$~d LSP variation. The LSP is visible as a 5-6 year sine-wave cycle of  radial velocity, most obvious in periods of denser sampling like 1900-1930 and 2000-present. The LSP is also present in the AAVSO visual magnitudes, though it is important to point out that its appearance changes significantly from cycle to cycle. \n    \n    The $400$~d (and shorter) pulsation variations.  These are best seen in the most recent data, from roughly 1985 onward, where the sampling frequency is high []2022csss.confE.185G.  Analysis by several authors indicates the presence of multiple modes, including the presumed radial fundamental mode at $416$~d, and overtones at shorter periods .  \nThe sum of these signals in Figure implies that Betelgeuse is varying -- both in apparent RV and magnitude -- at a wide range of timescales and in both periodic and aperiodic ways. Though we have a particular richness of data for this star, this sort of behavior is broadly typical of red supergiants []2006MNRAS.372.1721K,2017ars..book.....L,2024A&A...682A..88P,2024arXiv240809089G.  \n\nWe analyze the variability further by examining periodograms and power spectra of the data in Figure . The upper panel of Figure compares the Lomb-Scargle periodogram of all of the RV measurements to all of the visual magnitude estimates, with a focus around the $2100$~d approximate period of the LSP. The lower panel shows the power spectrum of RV measurements. \n\nThe periodogram exhibits a broad peak of power in RV around $2100$~d. There is a similar, broad peak with several aliasing features in the visual magnitudes.  The window functions of these data -- computed by taking the periodograms of a constant at the same sampling as the datasets -- do not show equivalent peaks, implying that the signal seen is due to intrinsic variability rather than sampling. The periodograms do show a range of aliases at timescales both related to integer years and to multiples of the $416$~d fundamental mode pulsation. For example, the highest peak in the visual magnitude periodogram is at 2080~d$5416$~d. Perhaps because of these confusion in the signal from these aliases, some previous works have identified slightly different LSP periods, for example 2190~d~$6.00$~yr for photometric variation and 2510~d~$6.87$~yr for RV, as estimated by . \n\nThe power spectrum shown in the lower panel of Figure shows the amplitude of Betelgeuse's RV variability at a wide range of frequencies. The overall shape is a flat spectrum (characteristic of white noise) at low frequencies, coupled with a turnover to a $1/f$, pink noise scaling at higher frequencies. The $1/f$ slope is characteristic of variability associated with turbulently convective motions at a range of scales all contributing to the star's RV variability, and is similar to what is observed in visual magnitude power spectra , though we note that in high-cadence TESS data, found a variety of power spectra. \n\nWe see some features in the power spectrum associated with the LSP (a broad, shallow peak) and with the range of fundamental mode and overtone pulsations of the star (near $f310^-3). The dip in the power spectrum at $10^-2, steeper than the observed $1/f$ slope.  At frequencies lower than the pulsations, we don't expect a dramatic increase in power due to convection, because variation would represent milder, subsonic motions across the star. \n\n\n",
+                "figure_caption": "Periodogram (top) and power spectrum (bottom) of Betelgeuse's RV variability. The periodogram and power spectrum both show features of Betelgeuse's multiple forms of variability, with peaks near the LSP and at aliases of the fundamental mode of pulsation period. The power spectrum favors a $f^{-1",
+                "image_file": "figures/power_spec.pdf",
+                "references": [
+                    {
+                        "label": "2022csss.confE.185G",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    },
+                    {
+                        "label": "2020ApJ...902...63J,2022csss.confE.185G,2023NewA...9901962J,2023ApJ...956...27M",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    },
+                    {
+                        "label": "2023NewA...9901962J",
+                        "link": ""
+                    },
+                    {
+                        "label": "2006MNRAS.372.1721K,2020ApJ...902...63J",
+                        "link": ""
+                    },
+                    {
+                        "label": "2019ApJ...878..155D",
+                        "link": ""
+                    }
+                ],
+                "section": "The Long Secondary Period",
+                "type": "text"
+            },
+            {
+                "content": "In this section, we describe modeling of Betelgeuse's LSP RV variability in conjunction with a possible companion driving the LSP. \n\nBetelgeuse's LSP is intermediate in timescale between the rapid pulsations and long-timescale convective drift, thus our model must include flexibility to capture these other variability sources, along with the periodic signal of Betelgeuse's LSP. \n\nWe make use of the RadVelradial velocity fitting toolkit. Our model includes a single unseen companion object, an Exponential Gaussian Process (GP) kernel, and an RV ``jitter\" to encompass otherwise unmodeled white noise. The GP Kernel is used to model both the long-term convective drift and the shorter-period pulsations and stochastic convective variability []2023AJ....166...62B. The Exponential kernel is sometimes known as a damped random walk or Ornstein–Uhlenbeck kernel and has functional form \nC_ij= _1^2 (_2 ),\nwhere $C$ is the covariance between elements $i$ and $j$ . We implement this kernel in RadVel.\nWe base our kernel on comparison to the star's variability power spectrum as shown in the lower panel of Figure . We found that the Quasi Periodic kernel often adopted to model stellar RV variation in exoplanet searches does not adapt well to this application because it has a  characteristic timescale, where Betelgeuse varies at a range of timescales. We adopt a fixed inflection timescale $_2 = 300$~d, and allow the amplitude $_1$ to be a free parameter, with units of velocity. Figure shows the power spectrum of this GP kernel with the fitted amplitude (Table ) of $_1=2.26$~km~s$^-1and $_2=4000$~d, which we apply in the Appendix as an alternative model, where the GP only captures the long-term RV drift, not short-term jitter. \n\nWe experimented with fitting the RV time series with both models including free eccentricity and ones restricted to circular. We find that when adequately fitting the pulsation variability with the inclusion of the GP, it is difficult to derive meaningful constraints on the system eccentricity. When we adopted models that underfit the pulsation variation ($_2 = 4000$~d), eccentricities $e0.3$ were favored. Because of the model dependence of this inference, we cannot make any firm claims at present.  Despite the uncertain eccentricity, we found that the period and semi-amplitude inference were quite robust with regard to any constraint or lack thereof on $e$. Therefore, in what follows, we will  present the results of  circular-restricted RV fits. \n\nIn the $e=0$ model, there are six free parameters, listed in Table . \nAfter specifying priors on each of the  parameters, we find a maximum likelihood fit and then explore the parameter space of model fits using RadVel's Markov Chain Monte Carlo (MCMC) sampler, which is based on emcee. The following section presents results from this MCMC fitting. \n\n\ncccc& & & & year & $[2018.9,2027.1]$ & $2023.12^+0.34_-0.35( K / km~s^-1)$  & -- & $[-2.30,2.30]$ &  $0.39^+0.20_-0.26& Gaussian, $jitter & km~s$^-1& $[0.01,20]$ & $2.22^+0.07_-0.06K$ &  km~s$^-1& $[10,25]$ & $17.55.1$ & & $7.1^+5.8_-3.910^-4, similar to the result of ,  is also favored in the most-recent $15$~yr of data, which includes the high-cadence STELLA monitoring. For example, mention a preferred semi-amplitude of 2.68~km~s$^-1in the derived parameters of Table . In this section, we report the scaling of derived parameters with $M_a$.  We adopt $K=1.48^+0.33_-0.34to solve for the properties of an unseen companion object causing Betelgeuse's RV motion. The system mass function is \nf = 2 G7.1^+5.8_-3.910^-4M_,\nand the mass ratio -- modified by the inclination factor of $(i)$ -- is \nq (i) = M_a0.034 0.008  (M_a 17.5 M_)^-1/3which scales linearly with $K$ at fixed $M_a$, because $K=(2G / P M_a)^1/3q(i)$. Thus, were $K= 2.68$ []2022csss.confE.185Gwe would have $q (i) = 0.062$ . The relationship between $K$, $q(i)$, and $f$ is shown in Figure . \n\nGiven the this low mass ratio, the implied companion mass is\nM_b (i) 0.60 0.14  (M_a 17.5 M_)^2/3M_.\nThe companion orbits at a semi-major axis of \na 1818 6 (M_a 17.5 M_)^1/3R_,\nFinally, the velocity semiamplitude of the secondary, $K_b$, is not a sensitive function of $K$, but depends on $M_a$ as\nK_b 43.10.1  (M_a 17.5 M_)^1/3km~s^-1,\nand the instantaneous value of the secondary RV can be found from \nRV_b =   K_b ( 2P),\nwhere the model parameters are identical to those of equation . \n\n\n\n",
+                "references": [
+                    {
+                        "label": "2018PASP..130d4504F",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    },
+                    {
+                        "label": "2023ARA&A..61..329A",
+                        "link": ""
+                    },
+                    {
+                        "label": "2013PASP..125..306F",
+                        "link": ""
+                    },
+                    {
+                        "label": "1928MNRAS..88..660S",
+                        "link": ""
+                    },
+                    {
+                        "label": "2022csss.confE.185G",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    },
+                    {
+                        "label": "2024arXiv240809089G",
+                        "link": ""
+                    }
+                ],
+                "section": "Modeling and Analysis",
+                "type": "text"
+            },
+            {
+                "content": "The RV fit described in the previous section, if observed at an inclination of 90 degrees, implies an astrometric motion with semi-amplitude of  $a_a 1.6 ( K / 1.5~km~s^-1)~mas^2_Hip_Hipd$ & distance between astrometric model prediction and Hipparcos scan measurement (Eq 6)& Hipparcos scan observational uncertainty& ``cosmic error''-- fixed white noise jitter term added in quadrature to Hipparcos scans model prediction_H 0^*$ & fitted parameter: $R.A._H 0X$ & ICRS Barycenteric position of Earth (Cartesian X component)Z$ & ICRS Barycenteric position of Earth (Cartesian Z component) _0$ & published Hipparcos dec position for Betelgeuse& fractional time of periastron passage (Eq 1)e$ & eccentricity & secondary mass & primary (Betelgeuse) mass is edge-on& proper motion in dec. direction & proper motion in $R.A.dec_decR.A._R.A.K_K_^*component) ",
+                "references": [
+                    {
+                        "label": "Nielsen:2020a",
+                        "link": ""
+                    },
+                    {
+                        "label": "Blunt:2020a",
+                        "link": ""
+                    }
+                ],
+                "section": "LSP in Astrometry",
+                "type": "text"
+            },
+            {
+                "content": "We use the astrometric orbit modeling software orbitize!to model Betelgeuse's astrometric measurements . Our modeling does not introduce significant new methodology relative to and . However, we describe our method below for completeness, defining all variables identically to .\n\nBriefly, first reconstruct the raw Hipparcos 1D scans from the available data format, residuals to the best-fit Hipparcos solution. We follow 's equations 1-4 to reconstruct the raw Hipparcos scans, and their equation 6 to calculate a distance metric between a scan and model prediction, with the addition of removing the cosmic noise added to each point. Therefore, our $^2$ is given by\n^2_Hip= _t (t)^2 - _ast^2.\nwhere $d(t)$ is the distance between the model prediction and the tangent point on the Hipparcos scan (Eq 6 of ), $is the constant cosmic variance term defined by the Hipparcos team (for Betelgeuse, 2.25 mas). The other extension we made to the framework was to jointly fit Hipparcos data along with 2D absolute astrometric points obtained from radio observations following the approach defined by . \n\nA Hipparcos-only astrometric model has 5 parameters: , $_^*, and $are defined as offsets from the published Hipparcos position at J1991.25, $_^*are the proper motions, and $& mas yr$^-1& mas yr$^-1& mas & $[-7.10,7.10]$ & $0.05_H0& & & $1652^+46_-48M_a$ & M$_& log$[0.1,10]$ & $2.2e$ &  & =0 & & deg & $[0, 2]$ & $60& $98M_b(i)$ & M$_q &  & & $0.12a_a$ & mas & &$5.70.7$ . The period and fractional phase, $, is also consistent with measurements of the position angle of the star's rotation axis , implying that the putative companion's orbit is aligned with the star's measured rotation axis. \n\nFinally, and importantly, we discuss the signal amplitude. The recovered companion  from  astrometry alone is considerably more massive than inferred from RVs. The astrometric  measurement is in tension at a several-sigma level with the RV-derived companion mass (see Table as compared to Table ), even when accounting for the fact that the RVs only constrain $M_b (i)$, because $i90 , which is ruled out by the RV data.  We discuss possible origins of this difference  in Section , but more data are likely needed to draw concrete conclusions.\n\n\n\n\n",
+                "references": [
+                    {
+                        "label": "Blunt:2020a",
+                        "link": ""
+                    },
+                    {
+                        "label": "2017AJ....154...11H",
+                        "link": ""
+                    },
+                    {
+                        "label": "Nielsen:2020a",
+                        "link": ""
+                    },
+                    {
+                        "label": "Nielsen:2020a",
+                        "link": ""
+                    },
+                    {
+                        "label": "Nielsen:2020a",
+                        "link": ""
+                    },
+                    {
+                        "label": "Nielsen:2020a",
+                        "link": ""
+                    },
+                    {
+                        "label": "Nielsen:2020a",
+                        "link": ""
+                    },
+                    {
+                        "label": "Nielsen:2020a",
+                        "link": ""
+                    },
+                    {
+                        "label": "Harper:2008a,2017AJ....154...11H",
+                        "link": ""
+                    },
+                    {
+                        "label": "2018A&A...609A..67K",
+                        "link": ""
+                    }
+                ],
+                "section": "Astrometric Model",
+                "type": "text"
+            },
+            {
+                "content": "In presenting a possible identification of the LSP in Betelgeuse's astrometric data we note that there are concerns that may influence future analyses. Some of these points have already been raised and examined by , but it is important to mention them in the context of our re-analysis. \n\nOne potential source of correlated error in our fits is astrometric calibration errors between the Hipparcos realization of the ICRS frame and the radio instruments' realization of the ICRS frame. This is a theme in the field of analyzing absolute astrometry from different instruments. For example, empirically correct for sky-position-dependent calibration errors between Gaia and Hipparcos. We note that Betelgeuse is so bright that it saturates Gaia, which means we cannot take advantage of these efforts (or the latest Gaia measurements themselves). However, find, through a similar analysis of the residual distribution of Hipparcos IAD errors, that adding a 0.15 mas offset to all Hipparcos residuals improves their statistical properties. To investigate whether the addition of this offset affected our standard fit, we reran it with the addition of this offset, finding no change in the derived parameters greater than 1$demonstrates that the periodic model is favored when $_ast3.5$~mas (because there are preferred periods), and at higher $_ast. Thus a small value of $_ast, to explain the full variation in the data, but a moderate $_astfew~mas. More likely, a realistic signal might comprise contributions from all of these terms. More monitoring, particularly monitoring that probes a range of timescales from short to long, is needed to firmly trace the origin of the possible astrometric LSP. \n\nAs we have shown, the current radio and Hipparcos dataset favors either a significant stochastic term or contains signatures of the LSP. If the LSP has been detected, it would be present in astrometry, RV, and photometry. The consistency of the inferred time of conjunction and period with RV determinations, as well as the consistency of the position angle with rotational measurements are suggestive that our detection favors the LSP. Though we have found that our analysis is generally robust with respect to our modeling choices, its sensitivity to the small number of radio positions (each painstakingly collected) is clear. Future monitoring is the most likely path to either confirming or ruling out the astrometric LSP. \n\n\n\n\n",
+                "figure_caption": " Corner plot for a model including astrometric jitter. Here we focus on astrometric jitter versus companion mass. Although our fit prefers to treat the signal as white noise (which we expect given number of data points), the anticorrelation between jitter and mass is evidence for the reality of the signal. The inclusion of some degree of astrometric jitter alleviates the tension between companion mass in astrometry and RV. The most likely ``true'' model is a combination of astrometric jitter and a Keplerian signal. More data, collected at a range of sampling intervals, can delineate these possibilities. ",
+                "image_file": "figures/jitter_mass.pdf",
+                "references": [
+                    {
+                        "label": "2017AJ....154...11H",
+                        "link": ""
+                    },
+                    {
+                        "label": "Brandt:2021a",
+                        "link": ""
+                    },
+                    {
+                        "label": "Brandt:2023a",
+                        "link": ""
+                    }
+                ],
+                "section": "Interpretation and Caveats",
+                "type": "text"
+            },
+            {
+                "content": "In this section we derive the physical properties of a companion implied by Betelgeuse's LSP.\n\n",
+                "references": [],
+                "section": "Betelguese And Its Companion",
+                "type": "text"
+            },
+            {
+                "content": "We begin with constraints on the physical properties of Betelgeuse itself. Because neither the distance, nor the mass, of Betelgeuse are known with any degree of precision, we must consider these properties free parameters in our analysis. However, as and have pointed out, the mass, radius, distance, and luminosity of the star are not independent. Several invariant measures are available: the presence of a fundamental-mode oscillation with a characteristic period of $400$~d, and the spectroscopic measurement of a characteristic effective temperature of $T_eff3600$~K . and additionally consider surface abundances []2023A&G....64.3.11W. The fundamental mode period scales with the properties of the star with $(R^3 / GM)$, with a dimensionless coefficient determined by the interior structure. Given Betelgeuse's nearly-completely convective envelope, this dimensionless coefficient is not particularly sensitive to the precise mass or radius of the star []2020ApJ...902...63J,2023ApJ...956...27M. \n\nMeanwhile, the astrometric fitting of Section has updated the parallax and proper motion estimates for Betelgeuse, based on the latest Hipparcos IAD reductions. These new  inferences, shown in Figure  , alleviate the previously-reported tension between the original Hipparcos team solutions for Betelgeuse's parallax and proper motion and the fits based on radio data by .  Our updated  estimate of the distance to Betelgeuse for the standard astrometric model fit that includes a companion is $172^+13_-11~pc based on asteroseismology. Based on the observed $42.280.43$~mas apparent photospheric radius of , the estimated stellar radius is \nR_a 796 R_( d 175~pc),\nwith similar $1$L_a = 9.6 10^4 L_( d 175~pc)^2\nThe implied mass can be computed based on the fundamental mode period , and its dimensionless frequency $_fm= (2/ P_fm) / (GM / R^3)^1/2, offering a parallel constraint based in equation []2023arXiv230614232C. For example, a star that satisfies equation at a distance of 220~pc has a mass of $34.5M_, which is significantly more than the $1.510^5 L_, implying a radius $780R_[]2020ApJ...902...63J. We emphasize that because these constraints involve stellar modeling, they  are not completely empirical. \n\n\nFrom the position, radial velocity, and proper motion, we derive Betelgeuse's velocity relative to the Local Standard of Rest (LSR) to be $(U_LSR,V_LSR,W_LSR) = (-10.96^+0.41_-0.47, 0.69^+0.68_-0.87, 27.01^+4.19_-3.22)$~km~s$^-1~km~s$^-1velocities of many young stars and is likely indicative of some dynamical kick in the evolutionary history of Betelgeuse. That this velocity is a large fraction of the orbital velocity of the potential companion indicates that the putative binary could have easily  bound, but that this kick this would have been an important episode in the system's orbital and evolutionary history. \n\n\n\n\n",
+                "references": [
+                    {
+                        "label": "2016ApJ...819....7D",
+                        "link": ""
+                    },
+                    {
+                        "label": "2020ApJ...902...63J",
+                        "link": ""
+                    },
+                    {
+                        "label": "2020ApJ...902...63J,2020ApJ...891L..37L,2020ApJ...905...34H",
+                        "link": ""
+                    },
+                    {
+                        "label": "2016ApJ...819....7D",
+                        "link": ""
+                    },
+                    {
+                        "label": "2022ApJ...927..115L",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    },
+                    {
+                        "label": "2017AJ....154...11H",
+                        "link": ""
+                    },
+                    {
+                        "label": "2014A&A...572A..17M",
+                        "link": ""
+                    },
+                    {
+                        "label": "2020ApJ...902...63J",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    }
+                ],
+                "section": "Betelgeuse's Properties",
+                "type": "text"
+            },
+            {
+                "content": "We have approached fitting a binary model to Betelgeuse's LSP data in RV and astrometry in the previous sections. The LSP has been long-identified in RV and photometry . The signal identified in astrometry in Section is novel. As we synthesize potential system parameters from these binary models, we are able to combine constraints from each method. Where they overlap, the RV fit comprises many more measurements over a longer time baseline and is generally more tightly constraining. \n\nThere are some key agreements between the datasets. In particular, both the period peaks identified and their phase -- as measured by the time of conjunction (Figure ) are consistent. This agreement is indicative that the same motion is being probed by the line-of-sight and on-sky motions. The inclination constraint from the astrometric data suggests $i90, and strongly disfavors a velocity semi-amplitude of larger than a few km~s$^-1. The implied mass ratios thus differ, from $q(i) 0.035 0.01$ in the RV case to $q 0.12 0.02$ in the astrometric solution. It is important to point out that the RV mass ratio for $(i)=1$ is consistent within roughly $3, the companion mass is thus $M_b 1.25 M_. The companion semi-major axis would then be $a1818 R_8.45 $~au. The orbital velocity of the companion is $43.1$~km~s$^-1, overlaps closely with the measured orientation of Betelgeuse's spin by . This suggests the possibility of a spin-orbit interaction, which we explore more fully in Section . \n\n\nGiven its mass and the approximate age of Betelgeuse system, the companion object would most likely be a G, K, or early M dwarf in spectral type. At $0.6 M_implies that a companion would be effectively hidden in plain sight -- outshone by Betelgeuse at all wavelengths.  Figure highlights this issue. We show UV and optical spectra of  Betelgeuse along with an 3750~K, $g=4$ model spectrum (normalized to $0.2L_, implying $L_X 10^-3L_~cm$^-2for $L_bol, companionL_) might be on the cusp of detection, making X-ray wavelengths the space where the putative companion would be similar in brightness to Betelgeuse. At lower energies in the UV-NIR, the companion is hidden at orders of magnitude lower flux than Betelgeuse. \n\nTable summarizes our findings with respect to the possible Betelgeuse binary system. \n\n\ncccc& pc & 1,3 &  3 & 3 & 3 & 2,4 T_c& year & 2  & $606$ & deg & 1 --$10^-6M_. The radial  velocity is relatively low and inhomogenous []2017A&A...600A.137Fin the chromosphere region where the companion orbits, typically $10$~km~s$^-1. The cross section of captured gas is $R_acc^2$, thus the mass capture rate compared to Betelgeuse's mass loss rate, $-M_a$, is \nM_b - 4a^2M_a  10^-9(-10^-6M_^-1)   M_^-1.\nThe accretion of this material releases a luminosity of \nL_accR_b,\nwhere $, and that if the emitting surface is $4R_b^2$, then the effective temperature of the accretion flow is $1900$~K. Since both this luminosity and temperature are small compared to that of the companion star, this low mass capture rate would likely be unobservable. If, instead, we imagined a white dwarf companion with $R_b0.015R_. \n\nWere the companion a black hole or neutron star, the accretion luminosity would be $L_accM_b c^2$, or $10^3 L_10^-2L_bol, adopting a nominal radial velocity of $v_wind10$~km~s$^-1, the Mach number of the orbital motion is $10$. The opening angle of the mach cone is $_cone^-1c_s / v_orb6 . Given the cross section of $R_acc^2$, we can estimate a surface density of $_tailm_tail/ R_acc^2$. \n\nThe minimum in optical brightness arrives approximately half an orbit after the companion conjunction. A possible secondary eclipse of the companion would have far to small of an amplitude to explain the light curve. \nIf, instead, we attribute the LSP's photometric amplitude to varying obscuration from this tail as hypothesized by , we can estimate its extinction based on the captured mass in the tail.\n In the half-orbit following conjunction, the spiral wake trails radially outward by $0.5 _tail2a$, or about $0.8a$, therefore reaching $16$~au, or $4R_a$. If the tail material cools as it expands, it may reach the $1500$~K temperatures where dust condensation is efficient at this location. \n \nIf a fraction $f_dust, then the dust optical depth is $A_V = 1.086 , with $_flux13/5$ , implying $F/F 0.007$. Detecting fluctuations of this amplitude in Betelgeuse's tumultuous light curve is, at the very least, challenging.  Indeed, the photometric variation associated with the LSP is an order of magnitude larger, and the phase is such that minimum light does not align with conjunction, suggesting that another mechanism must be at play. \n\nEven if the tide is not immediately evident in Betelgeuse's light curve, dissipation of the tide should couple the system's angular momentum evolution. In particular the spin angular momentum of Betelgeuse's envelope will exchange with the orbital angular momentum of the tide. Betelgeuse's envelope has a moment of inertia that can be estimated as $I_a M_a R_a^2$, where the coefficient depends on the stellar density distribution, because \nI_a = 83_0^R_a(r) r^4 dr, \nwhere $(r)$ is the density profile as a function of radius. For models of Betelgeuse, the dimensionless coefficient is $= I_a/(M_a R_a^2) 0.11$. Comparatively, the moment of inertia of the orbit of the secondary about the center of mass is $I_orb= a^2$, where $= M_a M_b/(M_a+M_b) M_b$. Given the properties derived earlier, we can estimate that $I_orb0.15 M_a R_a^2$. Thus, the total moments of inertia of the orbiting companion and envelope are similar. \n\nIn 1879, George Darwin derived what has become known as the Darwin tidal instability, showing that when $I_orb< 3 I_1$, tidal dissipation cannot bring the system into spin-orbit synchronization because there is not enough angular momentum in the orbit to spin up the envelope to synchronization . This is because the effective moment of inertia of the spin-orbit synchronized system is $I_a -a^2 / 3$, thus when $I_a > a^2 /3$, the total angular momentum would need to increase to for the orbit to tighten and remain synchronous.  Instead, in these cases of insufficient total angular momentum for synchronization, tidal dissipation leads to runaway orbital decay . Given the parameters derived, Betelgeuse clearly lies in this regime, indicating that a stable,  synchronous spin-orbit configuration is out of reach for such a close, unequal pairing. \n\n\n\n\n\nThus the orbit of the Betelgeuse system decays as tidal spin-orbit exchange of angular momentum drains angular momentum from the orbit while adding it to the spin. To understand the rate that tidal dissipation drives changes in the Betelgeuse system's orbit, we consider the dissipation of the equilibrium tide by the star's vigorous convective motions. In dissipation driven by turbulent convection, the characteristic overturn timescale of the largest eddies is also the time over which coherence is erased -- implying that this is the characteristic timescale over which energy in, for example, the tidal bulge is dissipated. Based on this idea, the convective dissipation timescale is estimated to be \n^-1( M_a R_a^2)^-1/3where we derive $^-1809$~d. \nThe tidal torque is ,\n- (_orb- _a)q^2 M_a R_a^2 ( a)^6,\nwhere $q=M_b/M_a$, $_orb, is $_decay=   L_orb/||$ []1996ApJ...470.1187R. Or, in the limit that $_a 0$, \n_decay^-1q (1+q) ( R_a)^8 . \nBecause of the similarity of the tidal forcing period to the overturn timescale, $^-1P/2$, the decay rate may be longer by a factor related to the inability of the tide to couple to these largest-scale eddies .\nCalculating the instantaneous decay rate of the orbit given Betelgeuse's nominal current configuration (Table ), we find $_decay4.310^4$~yr. \n\nThe immediate conclusion from this calculation is that Betelgeuse's orbit is changing, and relatively rapidly because the tidal decay timescale is much less than the system age of $8-10$~Myr . However, on comparable timescales, Betelgeuse itself is evolving -- changing in radius and internal structure in ways that influence the tidal evolution. In particular, for most of its evolution, Betelgeuse was much smaller than its current radius, allowing the system to persist to the current epoch. \n\n",
+                "figure_caption": "UV and optical spectra of Betelgeuse and its possible companion. For Betelgeuse we show data from the MAST archive, while for the companion we show a model spectrum for $T_{\\rm eff",
+                "image_file": "figures/spectra_acc.pdf",
+                "references": [
+                    {
+                        "label": "1908PASP...20..227P,1910LicOB...6...17C,1911LicOB...6..154C,1928MNRAS..88..660S,1984PASP...96..366G",
+                        "link": ""
+                    },
+                    {
+                        "label": "1869ABSBo...7..315A,1911MNRAS..71..701B,1913PA.....21....5S,1913AN....194...81O,1928PWasO..15..177S",
+                        "link": ""
+                    },
+                    {
+                        "label": "2018A&A...609A..67K",
+                        "link": ""
+                    },
+                    {
+                        "label": "1986ARA&A..24..377D,1994ApJ...424L.127H,2022AJ....163..103H,2023ApJ...942...69M",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    },
+                    {
+                        "label": "2021ApJ...911L..22S",
+                        "link": ""
+                    },
+                    {
+                        "label": "2022MNRAS.516.5021A",
+                        "link": ""
+                    },
+                    {
+                        "label": "1879RSPS...29..168D,1880RSPT..171..713D,2014ARA&A..52..171O",
+                        "link": ""
+                    },
+                    {
+                        "label": "1879RSPS...29..168D,1980A&A....92..167H,2001ApJ...562.1012E,2006MNRAS.373..733S,2014ARA&A..52..171O",
+                        "link": ""
+                    },
+                    {
+                        "label": "1977A&A....57..383Z,1995A&A...296..709V,2020MNRAS.496.3767V,2023ApJ...956...27M",
+                        "link": ""
+                    },
+                    {
+                        "label": "2008EAS....29...67Z",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    },
+                    {
+                        "label": "1996ApJ...470.1187R,2008EAS....29...67Z,2014ARA&A..52..171O",
+                        "link": ""
+                    },
+                    {
+                        "label": "2020ApJ...902...63J",
+                        "link": ""
+                    }
+                ],
+                "section": "Binary System Properties",
+                "type": "text"
+            },
+            {
+                "content": "To capture the joint evolution of Betelgeuse and its companion's orbit we compute a binary evolution model in the stellar evolution code MESA. Our calculation treats the coupled spin-orbit evolution of the pair, following from the tidal torques. To illustrate a possible history of a Betelgeuse-like binary system, we initialize a calculation with a Betelgeuse analog of $18.8M_, both with solar metalicity. The orbit is circular, and initially has a period of 2650~d. The initial spin of the primary star is synchronized with the orbit. The companion is initialized as a pre-main sequence star with core-temperature below the H-burning limit. We adopt a ``Dutch\" wind for the primary star and a mixing length coefficient of 2.1 [ for a more detailed discussion of Betelgeuse-like models in MESA]2020ApJ...902...63J. \n\nWe evolve the system until the orbital period decreases to the observed 2110~d. At this point, the primary star has a radius of $799R_due to mass loss by stellar winds. At this point, the star has a $4.6M_instead of $0.6R_decade time spans would be especially useful in unwrapping possible color shifts with orbital phase due to possible changes in the CSM. \n\n\nFuture, high cadence astrometric monitoring could firm up or rule out our possible detection of an astrometric LSP corresponding to a binary-star model. Higher cadence data would enable more-complex modeling of the various sources of variability -- like we are able to perform in the RV case. These models could, for example, jointly fit an orbital signal with quasi-periodic and stochastic noise due to pulsations and turbulent convection. At present, such a model is far to complex in terms of free parameters for the quantity of data we have. \n\nWith our current astrometric data, as Figure shows, a Keplerian model is not preferred in a Bayesian model selection sense over a simple addition of astrometric jitter in quadrature. However, the coincidence of the periodic signals recovered from astrometry alone with the fundamental mode frequency and the RV-derived LSP parameters hint that these signals are present in the current astrometry. We predict that if additional higher-cadence astrometry is collected over the next few LSP cycles, a more complex model consisting of a quasi-periodic component at the fundamental mode plus a Keplerian signal at the LSP will be preferred over the white-noise-only model. We specifically recommend an astrometric monitoring cadence designed to sample both the 416 d fundamental mode, the 365 d parallactic signal, and the 2100 d LSP: $. The speckle was measured to be only 3~mag fainter than Betelgeuse, much brighter than the putative companion.  Unfortunately subsequent observations did not confirm this detection, making it most likely an instrumental effect, and highlighting the challenge of this sort of direct imaging near a bright target. \n\n\nFrom space, HSThas been used to directly image Betelgeuse's disk . From the ground, adaptive optics have allowed some systems to approach the diffraction limit. The VLT's SPHERE/ZIMPOL has already been applied to successfully resolve and image the disk of Betelgeuse []2016A&A...585A..28K,2021Natur.594..365M. At face value the contrast ratio of the companion to primary seems far too large, but with similar effective temperatures, Betelgeuse and its possible companion have similar surface brightness. Unfortunately with a PSF FWHM of $20$~mas the companion light is diluted to a surface brightness contrast similar to the original contrast of $10^-6(Table and Figure ). We predict the RV and photometric ephemeris in equations and . \n    \n    We search for traces of periodicity in astrometric measurements of Betelgeuse's on-sky position from Hipparcos and radio data. We update the astrometric solution to Betelgeuse on the basis of the latest Hipparcos data release (Table and Figure ). The astrometry favors similar periodicity and time of conjunction as observed in the RV modeling (Figure ), suggesting that the LSP is detected in Betelgeuse's on-sky motion. However, the astrometric data could also be modeled with a large-amplitude white noise (Figure ), and more data is needed to confirm our preliminary detection. \n    \n    Astrometric constraints orient a possible companion edge-on and align the plane of a presumed orbit with the star's spin as reported by (Figure ). \n    \n    We suggest a model where a low-mass, $1 M_between observatories were still typical at this point. Our sources include:\nLick Observatory Publications, Vol 16, page 81 . The University of Chicago copy is online at google books at .  This publication includes plates from Mt. Hamilton, California, and Santiago, Chile. \n    \n    Annals of The Cape Observatory, Vol 10, page 54 . The University of California, Santa Cruz copy is online at google books . This publication reports on measurements from the Cape of Good Hope Observatory, South Africa.\n\n    reports on velocities collected in Bonn in 1905 and 1906. \n\n    reports on velocities from Potsdam from 1901 to 1907. \n\n    includes an update to the Lick Observatory velocities after 1926 and also reports on Mt Wilson velocities taken 1923-1931. \n\n    analyze the photospheric and atmospheric lines in spectrograms obtained at Mt. Wilson between 1937 and 1947. \n\n    reports on plates obtained at Mt Wilson primarily in 1960 and 1961. In addition several plates were analyzed that span between the Adams report and this one. In table 7 of the plates are listed by their plate number and photospheric RV. We obtained dates through communication with the The Carnegie Science Plate Archive, and an example is shown in Figure .\n\n    and report on spectrograms from the Mauna Kea observatory from 1960 into the 1970s. \n\n    includes measurements from the Kitt Peak National Observatory. These were digitized from the figures, and include measurements reported by . \n\n\n    reports measurements from the National Solar Observatory at Kitt Peak. More measurements were reported in . We use a table of measurements from 1984 up to 1995 that were communicated  with Andrea Dupree in May, 1995. \n\n\n    Radial velocity observations were made at the Oak Ridge observatory of Betelgeuse from 1996-2005, communicated to Andrea Dupree in April 2005. \n\n    report velocities averaged over several lines in their Figure 6. These are not calibrated with respect to an absolute offset. We have added a velocity of $+22.5$~km~s$^-1and there might or might not be multiple measurements within a 10-day period. \n\n",
+                "references": [
+                    {
+                        "label": "2011ApJS..192....3P,2013ApJS..208....4P,2015ApJS..220...15P,2018ApJS..234...34P,2019ApJS..243...10P,2023ApJS..265...15J",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    },
+                    {
+                        "label": "1996ApJ...463L..29G",
+                        "link": ""
+                    },
+                    {
+                        "label": "",
+                        "link": ""
+                    },
+                    {
+                        "label": "2016A&A...585A..28K",
+                        "link": ""
+                    },
+                    {
+                        "label": "2018A&A...609A..67K",
+                        "link": ""
+                    },
+                    {
+                        "label": "1928PLicO..16....1C",
+                        "link": ""
+                    },
+                    {
+                        "label": "1911AnCap..10....1H",
+                        "link": ""
+                    },
+                    {
+                        "label": "1908ApJ....27..301K",
+                        "link": ""
+                    },
+                    {
+                        "label": "1911AN....187...33B",
+                        "link": ""
+                    },
+                    {
+                        "label": "1933ApJ....77..110S",
+                        "link": ""
+                    },
+                    {
+                        "label": "1956ApJ...123..189A",
+                        "link": ""
+                    },
+                    {
+                        "label": "1962ApJ...136..844W",
+                        "link": ""
+                    },
+                    {
+                        "label": "1962ApJ...136..844W",
+                        "link": ""
+                    },
+                    {
+                        "label": "1975ApJ...198..369B",
+                        "link": ""
+                    },
+                    {
+                        "label": "1979ApJ...232..485B",
+                        "link": ""
+                    },
+                    {
+                        "label": "1984PASP...96..366G",
+                        "link": ""
+                    },
+                    {
+                        "label": "1979QJRAS..20..361G",
+                        "link": ""
+                    },
+                    {
+                        "label": "1989AJ.....98.2233S",
+                        "link": ""
+                    },
+                    {
+                        "label": "1998ASPC..154..393U",
+                        "link": ""
+                    },
+                    {
+                        "label": "2008AJ....135.1450G",
+                        "link": ""
+                    }
+                ],
+                "section": "Evolutionary Model",
+                "type": "text"
+            },
+            {
+                "content": "In Figure we present the full corner plot of the RV model fit. Of the parameters, the only significant correlations are between $P$ and $T_c$ and between $P$ and $K$. At very low $K$ the amplitude is smaller so a wider range of periods are allowed. \n\n\n[p]\n    We modified our use of GP models versus white noise ``jitter\" in a model variation shown in Figure . In this case, we treat the long-timescale variation with a Exponential GP as before, but with the timescale fixed to $_2 = 4000$~d and the amplitude fixed to $_1 = 0.62$~km~s$^-1, and models the pulsations along with any other higher-frequency stellar activity. The GP only models long-term drift in the baseline RV due to wandering convective cells. Our derived model parameters are similar, but with smaller error margins because the jitter model has less flexibility than the shorter-period GP model. This model finds a slightly larger semi-amplitude, $K = 1.700.11$~km~s$^-1of the results shown in Table ). \n\nFigure shows an experiment to test the predictiveness of the RV model. We fit the the dataset up to 2014, dropping the last 249 datapoints that span just over a decade. In Figure , the fitted points are shown in black while the left-out points are shown in pink. We note that we also experimented with random drop-sampling (eg of 20The time series shown in Figure is identical to Figure in format, except that it now includes a model without an orbital component, but with a GP prediction only. We can therefore compare the predictiveness of a model including a GP only to a GP and an orbital component. The histograms of residual in Figure make this model comparison quantitative. As discussed in the main text, a GP model conditioned on the data, tends to overfit because of the sparse sampling relative to the variability time series. We see that $^2/N = 0.2$ for the points that the model is fit to. We also fit a Gaussian to this distribution and find it has a width $= 0.26$.  Examining the held-out data, we find that the null prediction (constant RV) has $^2 / N 4900$, while a GP only model is much better, with $^2/N 1.0$. The GP + Orbit full model performs best of all, with $^2 / N = 0.63$ over a decade of extrapolation (this can be fit by a gaussian with width 0.56). We find that 82Figure performs the identical drop-sampling model validation applying the long-timescale GP plus white noise model applied in Figure . In this case, the predicted error on each datapoint is inflated by the fitted jitter. Our fit has $^2/N = 0.96$ for the data points it is conditioned on. The full model still performs best on the predicted decade, with $^2/N = 0.86$, while the GP-only prediction has $^2/N = 1.57$, which marginally outperforms the null hypothesis with $^2/N = 1.63$. The reason the null hypothesis performance in this metric is better is because of the larger vaue of $_RV/$, and $for declination. \n    Middle panel: for a given IAD epoch, compute the tangent point with respect to every model in the posterior. Next, compute the proper motion model prediction for each model in the posterior, and subtract them (i.e. for a single posterior orbit, compute the proper motion model prediction, and subtract that from the tangent point for that model. Repeat for every posterior sample). The plotted point is the median of those tangent points, and the thick error bar is their standard deviation. Thin error bars show the same projected observational uncertainties as shown in the top panel.\n    Bottom panel: for a given IAD epoch, compute the tangent point with respect to every model in the posterior. Next, compute the summed prediction from proper motion and parallax for each model in the posterior, and subtract them. The plotted point is the median of those tangent points, and the thick error bar is their standard deviation. Thin error bars show the same projected observational uncertainties as shown in the top panel.\nThe algorithm for overplotting the radio astrometry is as follows:\n\nTop panel: plot data and error bars as usual.\n    Middle panel: the plotted points show the median of the data minus the proper motion model prediction. Thick error bars show the standard deviation of this difference. Thin error bars show observational uncertainties. \n    Bottom panel: the plotted points show the median of the data minus the model prediction from proper motion and parallax motion.Thick error bars show the std of this difference. Thin error bars show observational uncertainties. \nnatexlab#1#1[1]#1[1]doi:~[1][1]Adams, W.~S. 1956, , 123, 189, Ahmad, A., Freytag, B., & H\"ofner, S. 2023, , 669, A49,\n  Aigrain, S., & Foreman-Mackey, D. 2023, , 61, 329,\n  Anugu, N., Baron, F., Gies, D.~R., et~al.2023, , 166, 78,\n  Anugu, N., Gies, D.~R., Roettenbacher, R.~M., et~al.2024, arXiv\n  e-prints, arXiv:2408.11906, Argelander, F.~W.~A. 1869, Astronomische Beobachtungen auf der Sternwarte zu\n  Bonn, 7, 315\n\nAronson, H., Baumgarte, T.~W., & Shapiro, S.~L. 2022, , 516, 5021,\n  Astropy Collaboration, Robitaille, T.~P., Tollerud, E.~J., et~al.2013,\n  , 558, A33, Astropy Collaboration, Price-Whelan, A.~M., Sipcz, B.~M., et~al.2018, , 156, 123, Astropy Collaboration, Price-Whelan, A.~M., Lim, P.~L., et~al.2022,\n  , 935, 167, Baxendell, J., & Plummer, H.~C. 1911, , 71, 701,\n  Blunt, S., Wang, J.~J., Angelo, I., et~al.2020, , 159, 89,\n  Blunt, S., Carvalho, A., David, T.~J., et~al.2023, , 166, 62,\n  Boesgaard, A.~M. 1979, , 232, 485, Boesgaard, A.~M., & Magnan, C. 1975, , 198, 369,\n  Bottlinger, C.~F. 1911, Astronomische Nachrichten, 187, 33,\n  Brandt, G.~M., Michalik, D., & Brandt, T.~D. 2023, RAS Techniques and\n  Instruments.\nBrandt, T.~D. 2021, , 254, 42, Campbell, J.~A. 1911, Lick Observatory Bulletin, 6, 154,\n  Campbell, W.~W. 1910, Lick Observatory Bulletin, 181, 17,\n  ---. 1928, Publications of Lick Observatory, 16, 1\n\nCannon, E., Montarg`es, M., de Koter, A., et~al.2023, , 675,\n  A46, Capuli, G.~H., & Sapalaran, W. A.~D. 2023, arXiv e-prints,\n  arXiv:2306.14232, Castelli, F., Gratton, R.~G., & Kurucz, R.~L. 1997, , 318, 841\n\nChatys, F.~W., Bedding, T.~R., Murphy, S.~J., et~al.2019, , 487,\n  4832, Chen, Z., Ivanova, N., & Carroll-Nellenback, J. 2020, , 892, 110,\n  Chiavassa, A., Haubois, X., Young, J.~S., et~al.2010, , 515, A12,\n  Chiavassa, A., Kudritzki, R., Davies, B., Freytag, B., & de Mink,\n  S.~E. 2022, , 661, L1, Chiavassa, A., Plez, B., Josselin, E., & Freytag, B. 2009, , 506,\n  1351, Chiavassa, A., Pasquato, E., Jorissen, A., et~al.2011, , 528,\n  A120, Chiavassa, A., Kravchenko, K., Millour, F., et~al.2020, , 640,\n  A23, Choi, J., Dotter, A., Conroy, C., et~al.2016, , 823, 102,\n  Darwin, G.~H. 1879, Proceedings of the Royal Society of London Series I, 29,\n  168\n\n---. 1880, Philosophical Transactions of the Royal Society of London Series I,\n  171, 713\n\nde Kool, M., van den Heuvel, E.~P.~J., & Pylyser, E. 1987, , 183, 47\n\nDecin, L., Montarg`es, M., Richards, A.~M.~S., et~al.2020, Science,\n  369, 1497, Dent, W.~R.~F., Harper, G.~M., Richards, A.~M.~S., Kervella, P., &\n  Matthews, L.~D. 2024, , 966, L13, Derekas, A., Kiss, L.~L., Bedding, T.~R., et~al.2006, , 650, L55,\n  Dolan, M.~M., Mathews, G.~J., Lam, D.~D., et~al.2016, , 819, 7,\n  Dorn-Wallenstein, T.~Z., Levesque, E.~M., & Davenport, J. R.~A. 2019,\n  , 878, 155, Drevon, J., Millour, F., Cruzal`ebes, P., et~al.2024, , 527,\n  L88, Dupree, A.~K. 1986, , 24, 377,\n  Dupree, A.~K., Baliunas, S.~L., Guinan, E.~F., et~al.1987, , 317,\n  L85, Dupree, A.~K., Strassmeier, K.~G., Matthews, L.~D., et~al.2020, ,\n  899, 68, Dupree, A.~K., Strassmeier, K.~G., Calderwood, T., et~al.2022, ,\n  936, 18, Eggleton, P.~P., & Kiseleva-Eggleton, L. 2001, , 562, 1012,\n  Foreman-Mackey, D., Hogg, D.~W., Lang, D., & Goodman, J. 2013, ,\n  125, 306, Freytag, B., Liljegren, S., & H\"ofner, S. 2017, , 600, A137,\n  Freytag, B., Steffen, M., Ludwig, H.~G., et~al.2012, Journal of\n  Computational Physics, 231, 919, Fulton, B.~J., Petigura, E.~A., Blunt, S., & Sinukoff, E. 2018, ,\n  130, 044504, Gilliland, R.~L., & Dupree, A.~K. 1996, , 463, L29,\n  Goldberg, J.~A., Bildsten, L., & Paxton, B. 2020, , 891, 15,\n  Goldberg, J.~A., Jiang, Y.-F., & Bildsten, L. 2022, ,\n  929, 156, ---. 2022, , 933, 164, Goldberg, J.~A., Joyce, M., & Moln'ar, L. 2024, arXiv e-prints,\n  arXiv:2408.09089, Goldberg, L. 1979, , 20, 361\n\n---. 1984, , 96, 366, Granzer, T., Weber, M., Strassmeier, K.~G., & Dupree, A. 2022, in The\n  21st Cambridge Workshop on Cool Stars, Stellar Systems, and the Sun,\n  Cambridge Workshop on Cool Stars, Stellar Systems, and the Sun, 185,\n  Gray, D.~F. 2008, , 135, 1450, Hamacher, D.~W. 2018, The Australian Journal of Anthropology, 29, 89,\n  Harper, G.~M., Brown, A., & Guinan, E.~F. 2008, , 135, 1430,\n  Harper, G.~M., Brown, A., Guinan, E.~F., et~al.2017, , 154, 11,\n  Harper, G.~M., Brown, A., & Lim, J. 2001, , 551, 1073,\n  Harper, G.~M., Guinan, E.~F., Wasatonic, R., & Ryde, N. 2020, ,\n  905, 34, Hartmann, L., & Avrett, E.~H. 1984, , 284, 238, Haubois, X., Perrin, G., Lacour, S., et~al.2009, , 508, 923,\n  Hebden, J.~C., Eckart, A., & Hege, E.~K. 1987, , 314, 690,\n  Hough, S.~S. 1911, Annals of the Cape Observatory, 10, 1.1\n\nHouk, N. 1963, , 68, 253, Hoyle, F., & Lyttleton, R.~A. 1939, Proceedings of the Cambridge\n  Philosophical Society, 35, 405, Huggins, P.~J., Bachiller, R., Cox, P., & Forveille, T. 1994, ,\n  424, L127, Huggins, W. 1868, Philosophical Transactions of the Royal Society of London\n  Series I, 158, 529\n\nHumphreys, R.~M., Davidson, K., Richards, A.~M.~S., et~al.2021, ,\n  161, 98, Humphreys, R.~M., & Jones, T.~J. 2022, , 163, 103,\n  Hut, P. 1980, , 92, 167\n\nJadlovsk'y, D., Krtika, J., Paunzen, E., & tefl, V.\n  2023, , 99, 101962, Jadlovsk'y, D., Granzer, T., Weber, M., et~al.2024, , 685,\n  A124, Jermyn, A.~S., Bauer, E.~B., Schwab, J., et~al.2023, , 265, 15,\n  Joyce, M., Leung, S.-C., Moln'ar, L., et~al.2020, , 902, 63,\n  Kalogera, V. 1999, , 521, 723, Karovska, M., Nisenson, P., & Noyes, R. 1986, , 308, 260,\n  Kashyap, V.~L., Drake, J.~J., & Patnaude, D. 2020, The Astronomer's\n  Telegram, 13501, 1\n\nKervella, P., Perrin, G., Chiavassa, A., et~al.2011, , 531, A117,\n  Kervella, P., Verhoelst, T., Ridgway, S.~T., et~al.2009, , 504,\n  115, Kervella, P., Lagadec, E., Montarg`es, M., et~al.2016, , 585,\n  A28, Kervella, P., Decin, L., Richards, A. M.~S., et~al.2018, , 609,\n  A67, Kiss, L.~L., Szab'o, G.~M., & Bedding, T.~R. 2006, , 372, 1721,\n  Kiss, L.~L., Szatm'ary, K., Szab'o, G., & Mattei, J.~A. 2000,\n  , 145, 283, Kravchenko, K., Jorissen, A., Van Eck, S., et~al.2021, , 650, L17,\n  Kustner, F. 1908, , 27, 301, Leaman, T.~M., & Hamacher, D.~W. 2014, Journal of Astronomical History and\n  Heritage, 17, 180, Levesque, E.~M. 2017, Astrophysics of Red Supergiants,\n  Levesque, E.~M., & Massey, P. 2020, , 891, L37,\n  Lim, J., Carilli, C.~L., White, S.~M., Beasley, A.~J., & Marson,\n  R.~G. 1998, , 392, 575, Lobel, A., & Dupree, A.~K. 2000, , 545, 454, ---. 2001, , 558, 815, Lunt, J. 1916, , 44, 250, Luo, T., Umeda, H., Yoshida, T., & Takahashi, K. 2022, , 927, 115,\n  MacLeod, M., Antoni, A., Huang, C.~D., Dupree, A., & Loeb, A. 2023,\n  , 956, 27, MacLeod, M., & Grindlay, J. 2023, arXiv e-prints, arXiv:2304.09368,\n  MacLeod, M., & Loeb, A. 2020, , 893, 106,\n  MacLeod, M., Ostriker, E.~C., & Stone, J.~M. 2018, , 863, 5,\n  Massey, P., Neugent, K.~F., Ekstr\"om, S., Georgy, C., & Meynet,\n  G. 2023, , 942, 69, Maunder, E.~W. 1892, The Observatory, 15, 393\n\nMichelson, A.~A., & Pease, F.~G. 1921, , 53, 249,\n  Moln'ar, L., Joyce, M., & Leung, S.-C. 2023, Research Notes of the\n  American Astronomical Society, 7, 119, Montarg`es, M., Kervella, P., Perrin, G., et~al.2014, , 572,\n  A17, ---. 2016, , 588, A130, Montarg`es, M., Cannon, E., Lagadec, E., et~al.2021, , 594,\n  365, Neugent, K.~F., Levesque, E.~M., Massey, P., Morrell, N.~I., &\n  Drout, M.~R. 2020, , 900, 118, Neuh\"auser, D.~L., & Neuh\"auser, R. 2023, Astronomy and Geophysics,\n  64, 1.38, Neuh\"auser, R., Torres, G., Mugrauer, M., et~al.2022, , 516,\n  693, Nicholls, C.~P., Wood, P.~R., Cioni, M. R.~L., & Soszy'nski, I.\n  2009, , 399, 2063, Nie, J.~D., Zhang, X.~B., & Jiang, B.~W. 2010, , 139, 1909,\n  Nielsen, E.~L., De Rosa, R.~J., Wang, J.~J., et~al.2020, , 159, 71,\n  Offner, S.~S.~R., Moe, M., Kratter, K.~M., et~al.2023, in Astronomical\n  Society of the Pacific Conference Series, Vol. 534, Protostars and Planets\n  VII, ed. S.~Inutsuka, Y.~Aikawa, T.~Muto, K.~Tomida, & M.~Tamura,\n  275, Ogane, Y., Ohshima, O., Taniguchi, D., & Takanashi, N. 2022, Open\n  European Journal on Variable Stars, 233, 1, Ogilvie, G.~I. 2014, , 52, 171,\n  O'Gorman, E., Kervella, P., Harper, G.~M., et~al.2017, , 602, L10,\n  O'Gorman, E., Harper, G.~M., Ohnaka, K., et~al.2020, , 638, A65,\n  Olivier, C.~P. 1913, Astronomische Nachrichten, 194, 81,\n  Olivier, E.~A., & Wood, P.~R. 2003, , 584, 1035,\n  Paczynski, B. 1976, in IAU Symposium, Vol.~73, Structure and Evolution of\n  Close Binary Systems, ed. P.~Eggleton, S.~Mitton, & J.~Whelan, 75\n\nPawlak, M. 2021, , 649, A110, Pawlak, M., Trabucchi, M., Eyer, L., & Mowlavi, N. 2024, , 682,\n  A88, Paxton, B., Bildsten, L., Dotter, A., et~al.2011, , 192, 3,\n  Paxton, B., Cantiello, M., Arras, P., et~al.2013, , 208, 4,\n  Paxton, B., Marchant, P., Schwab, J., et~al.2015, , 220, 15,\n  Paxton, B., Schwab, J., Bauer, E.~B., et~al.2018, , 234, 34,\n  Paxton, B., Smolec, R., Schwab, J., et~al.2019, , 243, 10,\n  Percy, J.~R., & Deibert, E. 2016, , 44, 94,\n  Percy, J.~R., & Sato, H. 2009, , 103, 11\n\nPercy, J.~R., & Shenoy, M.~H. 2023, , 51, 237,\n  Plummer, H.~C. 1908, , 20, 227, Posson-Brown, J., Kashyap, V.~L., Pease, D.~O., & Drake, J.~J. 2006,\n  arXiv e-prints, astro, Price-Whelan, A.~M., Hogg, D.~W., Foreman-Mackey, D., & Rix, H.-W.\n  2017, , 837, 20, Pugh, T., & Gray, D.~F. 2013, , 145, 38,\n  Rasio, F.~A., Tout, C.~A., Lubow, S.~H., & Livio, M. 1996, , 470,\n  1187, Rinehart, S.~A., Hajian, A.~R., Houck, J.~R., & Terzian, Y. 2000,\n  , 112, 977, Saio, H., Nandal, D., Meynet, G., & Ekstr\"om, S. 2023, , 526,\n  2765, Saio, H., Wood, P.~R., Takayama, M., & Ita, Y. 2015, , 452,\n  3863, Sanders, J.~L. 2023, , 523, 2369, Sanford, R.~F. 1933, , 77, 110, Schaefer, B.~E. 2018, Journal of Astronomical History and Heritage, 21, 7,\n  Schrder, S.~L., MacLeod, M., Loeb, A., Vigna-G'omez, A., &\n  Mandel, I. 2020, , 892, 13, Shiber, S., Chatzopoulos, E., Munson, B., & Frank, J. 2024, , 962,\n  168, Sigismondi, C. 2023, in The Sixteenth Marcel Grossmann Meeting. On Recent\n  Developments in Theoretical and Experimental General Relativity,\n  Astrophysics, and Relativistic Field Theories, ed. R.~Ruffino&\n  G.~Vereshchagin, 3519--3535, Smith, M.~A., Patten, B.~M., & Goldberg, L. 1989, , 98, 2233,\n  Soker, N., & Tylenda, R. 2006, , 373, 733,\n  Soszy'nski, I. 2007, , 660, 1486, Soszy'nski, I., & Udalski, A. 2014, , 788, 13,\n  Soszy'nski, I., Olechowska, A., Ratajczak, M., et~al.2021, ,\n  911, L22, Spencer Jones, H. 1928, , 88, 660, Stebbins, J. 1913, Popular Astronomy, 21, 5\n\n---. 1928, Publications of the Washburn Observatory, 15, 177\n\nStothers, R.~B. 2010, , 725, 1170, Sullivan, J.~M., Nance, S., & Wheeler, J.~C. 2020, , 905, 128,\n  Takayama, M. 2023, Stars and Galaxies, 6, 6,\n  Takayama, M., & Ita, Y. 2020, , 492, 1348,\n  Takayama, M., Wood, P.~R., & Ita, Y. 2015, , 448, 464,\n  Taniguchi, D., Yamazaki, K., & Uno, S. 2022, Nature Astronomy, 6, 930,\n  Townsend, R.~H.~D., & Teitler, S.~A. 2013, , 435, 3406,\n  Uitenbroek, H., Dupree, A.~K., & Gilliland, R.~L. 1998, in Astronomical\n  Society of the Pacific Conference Series, Vol. 154, Cool Stars, Stellar\n  Systems, and the Sun, ed. R.~A. Donahue& J.~A. Bookbinder, 393\n\nvan den Heuvel, E.~P.~J., & Habets, G.~M.~H.~J. 1984, , 309, 598,\n  van Leeuwen, F. 2007, Hipparcos, the New Reduction of the Raw\n  Data, Vol. 350, ---. 2007, , 474, 653, Verbunt, F., & Phinney, E.~S. 1995, , 296, 709\n\nVick, M., & Lai, D. 2020, , 496, 3767,\n  Wasatonic, R. 2022, , 50, 205\n\nWeymann, R. 1962, , 136, 844, Wheeler, J.~C., & Chatzopoulos, E. 2023, Astronomy and Geophysics, 64,\n  3.11, Wheeler, J.~C., Nance, S., Diaz, M., et~al.2017, , 465, 2654,\n  Wood, P.~R., & Nicholls, C.~P. 2009, , 707, 573,\n  Wood, P.~R., Olivier, E.~A., & Kawaler, S.~D. 2004, , 604, 800,\n  Wood, P.~R., Alcock, C., Allsman, R.~A., et~al.1999, in IAU Symposium,\n  Vol. 191, Asymptotic Giant Branch Stars, ed. T.~Le Bertre, A.~Lebre, &\n  C.~Waelkens, 151\n\nWright, N.~J., Drake, J.~J., Mamajek, E.~E., & Henry, G.~W. 2011,\n  , 743, 48, Xiao, M., Perez, K.~M., Giannotti, M., et~al.2021, , 126, 031101,\n  Zahn, J.~P. 1977, , 57, 383\n\nZahn, J.~P. 2008, in EAS Publications Series, Vol.~29, EAS Publications\n  Series, ed. M.~J. Goupil& J.~P. Zahn, 67--90,\n  ",
+                "figure_caption": "RV model time series and posterior parameters for a fit including a $\\eta_2=4000$~d GP fixed to 0.62~km~s$^{-1",
+                "image_file": "figures/corner_mcmc_synth_jit.pdf",
+                "references": [],
+                "section": "Modeling",
+                "type": "text"
+            }
+        ],
+        "metadata": {
+            "authors": [
+                {
+                    "affiliations": [],
+                    "name": "Morgan MacLeod"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Sarah Blunt"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Robert J. De Rosa"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Andrea K. Dupree"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Thomas Granzer"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Graham M. Harper"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Caroline D. Huang"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Emily M. Leiner"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Abraham Loeb"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Eric L. Nielsen"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Klaus G. Strassmeier"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Jason J. Wang"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Michael Weber"
+                }
+            ]
+        },
+        "title": "Radial Velocity and Astrometric Evidence for a Close Companion to Betelgeuse"
+    }
+}

@@ -1,0 +1,220 @@
+{
+    "document": {
+        "content": [
+            {
+                "references": [
+                    {
+                        "label": "Kite2016",
+                        "link": ""
+                    },
+                    {
+                        "label": "Barragan2018, Malavolta2018",
+                        "link": ""
+                    },
+                    {
+                        "label": "Dang2021, Espinoza2021",
+                        "link": ""
+                    },
+                    {
+                        "label": "Hugh2008",
+                        "link": ""
+                    }
+                ]
+            },
+            {
+                "content": "Because of the proximity of lava planets to their host stats, it is likely that they experience strong tidal forces assuming they are not tidally locked . To include the effect of tidal heating $Q_T. Converting the energy units from Wm$^-2Watts within Io. Dividing the total energy dissipation by the mass of Io and then scaling that value by the mass of mush in our model planets, we find $Q_Tcan be increased or decreased by the scaling factor $f$. We add $Q_T.\n\n\ndt= V_MOC To investigate if the quantities of tidal heating needed to keep a molten night-side are possible, we calculated the relationship between orbital eccentricity ($e$) and tidal dissipation ($Q_tidal, $a$ and $R_pfor an Earth-like composition. We used this value of $Im(k2)$ despite it being for a more viscous medium than mush, to investigate what quantities of $Q_Tand $Q_Tin Equation was fixed at 3000 K for the day-side, but given a value of zero for the night-side since there is no incoming stellar flux. The parameter $T_cand 1.5$R_Watts for a 1.0$R_ms$^-1on account of their mush growth rates being lower. It never reached a level within two orders of magnitude of the energy lost by radiation or the energy contribution via day-night heating and tidal dissipation. Therefore we will not take the effect of Latent heat into account in the rest of this study.     \n\n",
+                "references": [
+                    {
+                        "label": "Leger2011",
+                        "link": ""
+                    }
+                ],
+                "section": "Tidal heating",
+                "type": "text"
+            },
+            {
+                "content": "Figure shows the thermal and internal evolution of the day-side and night-side of a 1.0$R_. Panels (a) and (b) show the evolution at a magma viscosity of $= 1$ Pa s, (c) and (d) for $= 10^-3Pa s. In (a) and (b) we can see the night-side fully solidifying while (c) and (d) show a scenario where the night-side surface remains mushy. Panels (e) and (f) show that the night-side surface can be kept molten for both Earth-sized and Super-Earth lava planets if the magma viscosity is sufficiently low.\nWe re-ran the simulations with the inclusion of horizontal heat transport $Q_H. The value of $Pa s and we recorded the values of $T_sPa s is an extreme scenario that we tested in order to explore the conditions under which a molten night-side surface could be maintained. In Figure we see how the state of the surface changes with $Q_Hof $2.3 10^20. If the viscosity is between 1 and $10^-2Watts), the night-side completely solidifies after 2 Gyrs. The surface temperature fluctuates between 1000 K and 1500 K at these values. Reducing the viscosity to values between $10^-2Pa s ($8 10^19< Q_H< 2.3 10^20Pa s we start to see a very thin (about 40 km) sustained magma ocean on the night-side. Theoretically there is enough energy at this particular viscosity to keep the night-side surface melted, which is consistent with the model result. However, the viscosity is expected to increase when temperature decreases and crystal fraction increases. Hence the sustenance of a magma ocean could be impeded if we include a temperature-dependant viscosity. This means the existence of a magma ocean at $= 10^-4Pa s, $Q_H($3.5 10^20Pa s is an extreme scenario, it is unlikely that horizontal day-night convection alone could sustain a fully molten night-side magma ocean.   \n\n\nWe increased the CMF of the 1.0$R_required to sustain a night-side magma ocean was the same as it was in the earlier models. \n\n\n",
+                "figure_caption": "Night-side surface end-state as a function of day-night heat transport ($Q_{H",
+                "image_file": "5d.jpg",
+                "references": [],
+                "section": "Earth-size planets",
+                "type": "text"
+            },
+            {
+                "content": "For the next set of models, the radius of the planet was increased to 1.5$R_model for the day-side and night-side. Compared to Earth-sized planets, there is no observable difference in the evolution of the night-side between them and 1.5$R_model. The day-side magma ocean of the 1.5$R_model ($560$ km). This is because of the higher mass of the 1.5$R_planet with a CMF of 32 per cent, the mass was found to be $, which contributes to a higher gravitational potential than in the 1.0$R_model, we investigated the variation in $T_sby varying the magma viscosity. The model showed that the night-side surface solidifies in about 1.2 Gyrs in the absence of $Q_H. Once we activated $Q_Hat the same viscosities used for the 1.0$R_model. The reason for this feature can be found in Equation 24. The magnitude of $T_s. When we apply the difference in $g$ and $R_pfor a Super-Earth is approximately 1.05 times the value of $T_splanet is around $5.4 10^20. The panels in Figure demonstrate how the night-side internal structure varies for different magma viscosities. More time is needed for cooling and as a result we see the night-side take approximately 4.8 billion years to fully solidify at $= 1$ Pa s compared to the time taken for the 1.0$R_until we get to $= 10^-2Pa s. Between viscosities of $10^-2Pa s we can see night-side surfaces of mush, until we get to $= 10^-5planet. This is once again due to the larger gravitational potential of a Super-Earth. It is possible that if $Q_Hmodel, increasing the CMF to 70 per cent did not show a difference from the results with a CMF of 32 per cent. Hence we conclude based on our current findings that the CMF does not affect the thermal evolution, with the parameters we are currently using in our model. \n\n\n\n",
+                "figure_caption": "A comparison of the tidal heating energy generated in Earth (blue), Io (orange) and K2-141 b (red) as a function of orbital eccentricity. For K2-141b, the solid line is for the planet's actual 1.5$R_{\\oplus",
+                "image_file": "6a.jpg",
+                "references": [],
+                "section": "Super-Earth's",
+                "type": "text"
+            },
+            {
+                "content": "We added tidal heating $Q_Tand 1.5$R_with $Q_Hand $Q_H, $Q_Tand 1.5$R_W/kg of tidal heating energy is required to keep the night-side melted if the model relies only on tidal heating without $Q_Htimes the amount of tidal heating observed in Io. Otherwise tidal heating alone is not enough to keep the night-side molten. This is because $Q_Tplanets, even with the inclusion of $Q_Hrequired for either melting or creating a sea of mush on the night-side remains at or above $7 10^-4Pa s. At $= 10^-3Pa s and $10^-5as low as $8 10^-5planets the minimum wattage per unit mass at which melting occurs on the night-side surface is lower than what was observed for 1.0$R_is proportional to the mass of mush, a higher mush mass means more tidal heating for a given amount of $q_TW/kg at a magma viscosity of $10^-1W/kg at $= 10^-3W/kg at $> 10^-3Pa s, which is comparable to the viscosity of heated water, could have a magma ocean or an ocean of mush if both tidal heating and horizontal heating is happening together. \n\nApplying the equations from to K2-141 b we found what sort of eccentricity would enable the planet to generate the amount of tidal heating needed to have a molten night-side. If the eccentricity is between 0.007 and 0.01, it is possible to have the $Q_Tor 1.5$R_, $Q_H. If the growth rate is fast enough it could potentially have a slight effect on early evolution but not at billion year timescales. \n\nThe solidus and liquidus curves used in this study were extrapolated to pressures beyond 150 GPa. We conducted a sensitivity analysis of the extrapolations of these melt curves by generating synthetic data points above 150 GPa, and refitting for the melt curves including the new data. We adjusted the solidus-liquidus equations with the new fitted parameters and re-ran the models. We found that the refitted melt curves do not alter timescales for the thermal evolution of Super-Earths. This study does however motivate the acquisition of new experimental data for silicate melts at extreme pressures.   \n\nFor 1.0$R_Watts of heat must be transferred from the day-side to the night-side to keep it molten. This is approximately 20 per cent of the incident stellar flux being transported across hemispheres. The viscosity of magma needed for this quantity of heat to flow in our model is $10^-4Pa s and $10^-3Pa s the energy transmitted horizontally is insufficient to to keep the night-side from solidifying. To put these numbers in context, magma at thousands of K has a viscosity of $10^-3Super-Earth, the steady-state energy requirement for a night-side magma ocean is $Q_H= 5.2 10^20Pa s) to sustain a night-side magma ocean in our models, it is likely that horizontal day-night convection alone is insufficient to maintain a molten night-side. \n\nFor a tidally heated lava planet, the energy requirement for night-side melting is the same as for day-night heat transfer (see Figure a and 5b). A 1.0$R_W/kg of tidal heating while a 1.5$R_W/kg of energy. But because tidal heating depends on the mush mass, the simulated quantities deviate from the idealized steady-state values. The tidal energy required for a molten night-side is much higher because the mass of mush decreases as the interior cools down. Specific tidal heating of $q_T= 8 10^-4down to $q_T= 5 10^-4. But their magma oceans and mush oceans will be shallower due to the higher gravity of the Super-Earth. It should be noted however that a sustained partially molten interior due to tidal heating is only possible if the eccentricity required to do so is maintained over billions of years. Studying the orbital evolution and the concurrent interior thermal evolution would shed light on this aspect. \n\nBy the same token, the day-side of 1.5$R_planet for eccentricity of approximately 0.004, within the uncertainty of current orbital constraints . Precise night-side measurements of K2-141b, and ideally lava planets of different ages, could provide sensitive constraints on the thermal evolution of their deep interior. \n\n\n",
+                "references": [
+                    {
+                        "label": "Dris2015",
+                        "link": ""
+                    },
+                    {
+                        "label": "Fiq2010, zhang1994",
+                        "link": ""
+                    },
+                    {
+                        "label": "Malavolta2018, Barragan2018, Zie2022",
+                        "link": ""
+                    }
+                ],
+                "section": "The inclusion of tidal heating",
+                "type": "text"
+            },
+            {
+                "content": "",
+                "references": [],
+                "section": "",
+                "type": "text"
+            },
+            {
+                "content": "",
+                "references": [],
+                "section": "",
+                "type": "text"
+            },
+            {
+                "content": "c c c c cParameter & Description & Value & Units & Reference  & specific heat capacity of silicates & 1200 & J $^-1^-1& & Stefan-Boltzmann constant & $5.67 10^-8& thermal conductivity of magma & 13 & W $^-1^-1& $^-1_d& $^2^-1_m",
+                "references": [
+                    {
+                        "label": "Leb2013",
+                        "link": ""
+                    }
+                ],
+                "section": "Table of data",
+                "type": "text"
+            }
+        ],
+        "metadata": {
+            "authors": [
+                {
+                    "affiliations": [],
+                    "name": "Mahesh Herath"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Charles-\\'Edouard Boukar\\'e"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Nicolas B. Cowan"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Department of Earth \\& Planetary Science"
+                },
+                {
+                    "affiliations": [],
+                    "name": "McGill University"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Rue University"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Montreal"
+                },
+                {
+                    "affiliations": [],
+                    "name": "QC"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Canada"
+                },
+                {
+                    "affiliations": [],
+                    "name": "H A  E        Trottier Space Institute"
+                },
+                {
+                    "affiliations": [],
+                    "name": "McGill University"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Rue University"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Montreal"
+                },
+                {
+                    "affiliations": [],
+                    "name": "QC"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Canada"
+                },
+                {
+                    "affiliations": [],
+                    "name": "H A  A        Institut de Physique du Globe de Paris"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Rue Jussieu"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Paris"
+                },
+                {
+                    "affiliations": [],
+                    "name": "France       Department of Physics \\& Astronomy"
+                },
+                {
+                    "affiliations": [],
+                    "name": "York University"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Campus Walk Room"
+                },
+                {
+                    "affiliations": [],
+                    "name": "North York"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Toronto"
+                },
+                {
+                    "affiliations": [],
+                    "name": "ON"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Canada       Department of Physics"
+                },
+                {
+                    "affiliations": [],
+                    "name": "McGill University"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Rue University"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Montreal"
+                },
+                {
+                    "affiliations": [],
+                    "name": "QC"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Canada"
+                }
+            ]
+        },
+        "title": "Thermal evolution of lava planets"
+    }
+}

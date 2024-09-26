@@ -1,0 +1,909 @@
+%% Beginning of file 'sample631.tex'
+%%
+%% Modified 2021 March
+%%
+%% This is a sample manuscript marked up using the
+%% AASTeX v6.31 LaTeX 2e macros.
+%%
+%% AASTeX is now based on Alexey Vikhlinin's emulateapj.cls 
+%% (Copyright 2000-2015).  See the classfile for details.
+
+%% AASTeX requires revtex4-1.cls and other external packages such as
+%% latexsym, graphicx, amssymb, longtable, and epsf.  Note that as of 
+%% Oct 2020, APS now uses revtex4.2e for its journals but remember that 
+%% AASTeX v6+ still uses v4.1. All of these external packages should 
+%% already be present in the modern TeX distributions but not always.
+%% For example, revtex4.1 seems to be missing in the linux version of
+%% TexLive 2020. One should be able to get all packages from www.ctan.org.
+%% In particular, revtex v4.1 can be found at 
+%% https://www.ctan.org/pkg/revtex4-1.
+
+%% The first piece of markup in an AASTeX v6.x document is the \documentclass
+%% command. LaTeX will ignore any data that comes before this command. The 
+%% documentclass can take an optional argument to modify the output style.
+%% The command below calls the preprint style which will produce a tightly 
+%% typeset, one-column, single-spaced document.  It is the default and thus
+%% does not need to be explicitly stated.
+%%
+%% using aastex version 6.3
+
+%%\documentclass[linenumbers]{aastex631}
+%\usepackage{CJK}
+%%\documentclass[manuscript]{aastex631}
+
+\documentclass[twocolumn]{aastex631}
+\usepackage{CJK}
+\usepackage{tabularx}
+
+%% The default is a single spaced, 10 point font, single spaced article.
+%% There are 5 other style options available via an optional argument. They
+%% can be invoked like this:
+%%
+%% \documentclass[arguments]{aastex631}
+%% 
+%% where the layout options are:
+%%
+%%  twocolumn   : two text columns, 10 point font, single spaced article.
+%%                This is the most compact and represent the final published
+%%                derived PDF copy of the accepted manuscript from the publisher
+%%  manuscript  : one text column, 12 point font, double spaced article.
+%%  preprint    : one text column, 12 point font, single spaced article.  
+%%  preprint2   : two text columns, 12 point font, single spaced article.
+%%  modern      : a stylish, single text column, 12 point font, article with
+%% 		  wider left and right margins. This uses the Daniel
+%% 		  Foreman-Mackey and David Hogg design.
+%%  RNAAS       : Supresses an abstract. Originally for RNAAS manuscripts 
+%%                but now that abstracts are required this is obsolete for
+%%                AAS Journals. Authors might need it for other reasons. DO NOT
+%%                use \begin{abstract} and \end{abstract} with this style.
+%%
+%% Note that you can submit to the AAS Journals in any of these 6 styles.
+%%
+%% There are other optional arguments one can invoke to allow other stylistic
+%% actions. The available options are:
+%%
+%%   astrosymb    : Loads Astrosymb font and define \astrocommands. 
+%%   tighten      : Makes baselineskip slightly smaller, only works with 
+%%                  the twocolumn substyle.
+%%   times        : uses times font instead of the default
+%%   linenumbers  : turn on lineno package.
+%%   trackchanges : required to see the revision mark up and print its output
+%%   longauthor   : Do not use the more compressed footnote style (default) for 
+%%                  the author/collaboration/affiliations. Instead print all
+%%                  affiliation information after each name. Creates a much 
+%%                  longer author list but may be desirable for short 
+%%                  author papers.
+%% twocolappendix : make 2 column appendix.
+%%   anonymous    : Do not show the authors, affiliations and acknowledgments 
+%%                  for dual anonymous review.
+%%
+%% these can be used in any combination, e.g.
+%%
+%% \documentclass[twocolumn,linenumbers,trackchanges]{aastex631}
+%%
+%% AASTeX v6.* now includes \hyperref support. While we have built in specific
+%% defaults into the classfile you can manually override them with the
+%% \hypersetup command. For example,
+%%
+%% \hypersetup{linkcolor=red,citecolor=green,filecolor=cyan,urlcolor=magenta}
+%%
+%% will change the color of the internal links to red, the links to the
+%% bibliography to green, the file links to cyan, and the external links to
+%% magenta. Additional information on \hyperref options can be found here:
+%% https://www.tug.org/applications/hyperref/manual.html#x1-40003
+%%
+%% Note that in v6.3 "bookmarks" has been changed to "true" in hyperref
+%% to improve the accessibility of the compiled pdf file.
+%%
+%% If you want to create your own macros, you can do so
+%% using \newcommand. Your macros should appear before
+%% the \begin{document} command.
+%%
+\newcommand{\vdag}{(v)^\dagger}
+\newcommand\aastex{AAS\TeX}
+\newcommand\latex{La\TeX}
+
+%% Reintroduced the \received and \accepted commands from AASTeX v5.2
+%\received{March 1, 2021}
+%\revised{April 1, 2021}
+%\accepted{\today}
+
+%% Command to document which AAS Journal the manuscript was submitted to.
+%% Adds "Submitted to " the argument.
+%\submitjournal{PSJ}
+
+%% For manuscript that include authors in collaborations, AASTeX v6.31
+%% builds on the \collaboration command to allow greater freedom to 
+%% keep the traditional author+affiliation information but only show
+%% subsets. The \collaboration command now must appear AFTER the group
+%% of authors in the collaboration and it takes TWO arguments. The last
+%% is still the collaboration identifier. The text given in this
+%% argument is what will be shown in the manuscript. The first argument
+%% is the number of author above the \collaboration command to show with
+%% the collaboration text. If there are authors that are not part of any
+%% collaboration the \nocollaboration command is used. This command takes
+%% one argument which is also the number of authors above to show. A
+%% dashed line is shown to indicate no collaboration. This example manuscript
+%% shows how these commands work to display specific set of authors 
+%% on the front page.
+%%
+%% For manuscript without any need to use \collaboration the 
+%% \AuthorCollaborationLimit command from v6.2 can still be used to 
+%% show a subset of authors.
+%
+%\AuthorCollaborationLimit=2
+%
+%% will only show Schwarz & Muench on the front page of the manuscript
+%% (assuming the \collaboration and \nocollaboration commands are
+%% commented out).
+%%
+%% Note that all of the author will be shown in the published article.
+%% This feature is meant to be used prior to acceptance to make the
+%% front end of a long author article more manageable. Please do not use
+%% this functionality for manuscripts with less than 20 authors. Conversely,
+%% please do use this when the number of authors exceeds 40.
+%%
+%% Use \allauthors at the manuscript end to show the full author list.
+%% This command should only be used with \AuthorCollaborationLimit is used.
+
+%% The following command can be used to set the latex table counters.  It
+%% is needed in this document because it uses a mix of latex tabular and
+%% AASTeX deluxetables.  In general it should not be needed.
+%\setcounter{table}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% The following section outlines numerous optional output that
+%% can be displayed in the front matter or as running meta-data.
+%%
+%% If you wish, you may supply running head information, although
+%% this information may be modified by the editorial offices.
+\shorttitle{4U 1820-30}
+\shortauthors{Chou et al.}
+%%
+%% You can add a light gray and diagonal water-mark to the first page 
+%% with this command:
+%% \watermark{text}
+%% where "text", e.g. DRAFT, is the text to appear.  If the text is 
+%% long you can control the water-mark size with:
+%% \setwatermarkfontsize{dimension}
+%% where dimension is any recognized LaTeX dimension, e.g. pt, in, etc.
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\graphicspath{{./}{figures/}}
+%% This is the end of the preamble.  Indicate the beginning of the
+%% manuscript itself with \begin{document}.
+
+\begin{document}
+\begin{CJK*}{Bg5}{bsmi}
+\title{The Puzzling Superorbital Period Variation of the Low-mass X-ray Binary 4U 1820-30}
+
+%% LaTeX will automatically break titles if they run longer than
+%% one line. However, you may use \\ to force a line break if
+%% you desire. In v6.31 you can include a footnote in the title.
+
+%% A significant change from earlier AASTEX versions is in the structure for 
+%% calling author and affiliations. The change was necessary to implement 
+%% auto-indexing of affiliations which prior was a manual process that could 
+%% easily be tedious in large author manuscripts.
+%%
+%% The \author command is the same as before except it now takes an optional
+%% argument which is the 16 digit ORCID. The syntax is:
+%% \author[xxxx-xxxx-xxxx-xxxx]{Author Name}
+%%
+%% This will hyperlink the author name to the author's ORCID page. Note that
+%% during compilation, LaTeX will do some limited checking of the format of
+%% the ID to make sure it is valid. If the "orcid-ID.png" image file is 
+%% present or in the LaTeX pathway, the OrcID icon will appear next to
+%% the authors name.
+%%
+%% Use \affiliation for affiliation information. The old \affil is now aliased
+%% to \affiliation. AASTeX v6.31 will automatically index these in the header.
+%% When a duplicate is found its index will be the same as its previous entry.
+%%
+%% Note that \altaffilmark and \altaffiltext have been removed and thus 
+%% can not be used to document secondary affiliations. If they are used latex
+%% will issue a specific error message and quit. Please use multiple 
+%% \affiliation calls for to document more than one affiliation.
+%%
+%% The new \altaffiliation can be used to indicate some secondary information
+%% such as fellowships. This command produces a non-numeric footnote that is
+%% set away from the numeric \affiliation footnotes.  NOTE that if an
+%% \altaffiliation command is used it must come BEFORE the \affiliation call,
+%% right after the \author command, in order to place the footnotes in
+%% the proper location.
+%%
+%% Use \email to set provide email addresses. Each \email will appear on its
+%% own line so you can put multiple email address in one \email call. A new
+%% \correspondingauthor command is available in V6.31 to identify the
+%% corresponding author of the manuscript. It is the author's responsibility
+%% to make sure this name is also in the author list.
+%%
+%% While authors can be grouped inside the same \author and \affiliation
+%% commands it is better to have a single author for each. This allows for
+%% one to exploit all the new benefits and should make book-keeping easier.
+%%
+%% If done correctly the peer review system will be able to
+%% automatically put the author and affiliation information from the manuscript
+%% and save the corresponding author the trouble of entering it by hand.
+
+%\correspondingauthor{August Muench}
+%\email{greg.schwarz@aas.org, gus.muench@aas.org}
+
+\correspondingauthor{Yi Chou}
+\email{yichou@astro.ncu.edu.tw}
+
+
+
+
+\author[0000-0002-8584-2092]{Yi Chou (©PÖö)}
+\affiliation{Graduate Institute of Astronomy, National Central University \\
+  300 Jhongda Rd. Jhongli Dist. Tauyuan, 32001, Taiwan}
+\author{Jun-Lei Wu (§d§g½U)}
+\affiliation{Graduate Institute of Astronomy, National Central University \\
+  300 Jhongda Rd. Jhongli Dist. Tauyuan, 32001, Taiwan}
+\author{Bo-Chun Chen (³¯ªyëÞ)}
+\affiliation{Graduate Institute of Astronomy, National Central University \\
+  300 Jhongda Rd. Jhongli Dist. Tauyuan, 32001, Taiwan}
+\author{Wei-Yun Chang (±iÞ³ªå)}
+\affiliation{Graduate Institute of Astronomy, National Central University \\
+  300 Jhongda Rd. Jhongli Dist. Tauyuan, 32001, Taiwan}
+
+%% Note that the \and command from previous versions of AASTeX is now
+%% depreciated in this version as it is no longer necessary. AASTeX 
+%% automatically takes care of all commas and "and"s between authors names.
+
+%% AASTeX 6.31 has the new \collaboration and \nocollaboration commands to
+%% provide the collaboration status of a group of authors. These commands 
+%% can be used either before or after the list of corresponding authors. The
+%% argument for \collaboration is the collaboration identifier. Authors are
+%% encouraged to surround collaboration identifiers with ()s. The 
+%% \nocollaboration command takes no argument and exists to indicate that
+%% the nearby authors are not part of surrounding collaborations.
+
+%% Mark off the abstract in the ``abstract'' environment. 
+\begin{abstract}
+
+Because of the previously observed stability of the 171-day period, the superorbital modulation of the low-mass X-ray binary 4U 1820-30 was considered a consequence of a third star orbiting around the binary. This study aims to further verify this triple model by testing the stability of superorbital period using the light curves collected by X-ray sky monitoring/scanning telescopes from 1987 to 2023. Both power spectral and phase analysis results indicate a significant change in the superorbital period from 171 days to 167 days over this 36-year span. The evolution of the superorbital phase suggests that the superorbital period may have experienced an abrupt change between late 2000 and early 2023 or changed gradually with a period derivative of $\dot P_{sup}=(-3.58 \pm 0.72) \times 10^{-4}$ day/day. We conclude that the superorbital period of 4U 1820-30 was not as stable as anticipated by the triple model, which strongly challenges this hypothesis. Instead, we propose an irradiation-induced mass transfer instability scenario to explain the superorbital modulation of 4U 1820-30.
+
+
+
+
+\end{abstract}
+
+%% Keywords should appear after the \end{abstract} command. 
+%% The AAS Journals now uses Unified Astronomy Thesaurus concepts:
+%% https://astrothesaurus.org
+%% You will be asked to selected these concepts during the submission process
+%% but this old "keyword" functionality is maintained in case authors want
+%% to include these concepts in their preprints.
+%%\keywords{TBD}
+
+%% From the front matter, we move on to the body of the paper.
+%% Sections are demarcated by \section and \subsection, respectively.
+%% Observe the use of the LaTeX \label
+%% command after the \subsection to give a symbolic KEY to the
+%% subsection for cross-referencing in a \ref command.
+%% You can use LaTeX's \ref and \label commands to keep track of
+%% cross-references to sections, equations, tables, and figures.
+%% That way, if you change the order of any elements, LaTeX will
+%% automatically renumber them.
+%%
+%% We recommend that authors also use the natbib \citep
+%% and \citet commands to identify citations.  The citations are
+%% tied to the reference list via symbolic KEYs. The KEY corresponds
+%% to the KEY in the \bibitem in the reference list below. 
+
+\section{Introduction} \label{intro}
+
+4U 1820-30, discovered by~\citet{gia74}, is an ultra-compact low mass X-ray binary (LMXB) located near the center of globular cluster NGC 6624. It was the first X-ray source known to exhibit Type-I X-ray burst~\citet{gri76}, indicating that the accretor in this binary system is a neutron star. Its 685 s orbital period, discovered by~\citet{ste87} from its sinusoidal-like orbital modulation in the X-ray light curve, makes 4U 1820-30 being the most compact LMXB. The mass-losing companion is a Roche-lobe filling helium white dwarf with a mass of 0.06-0.08 $M_{\sun}$~\citep{rap87}. Mass transfer in the system is induced by the orbital angular momentum loss through gravitational radiation which should result in a positive orbital period derivative with a lower limit of $\dot P_{orb}/P_{orb} > 8.8 \times 10^{-8}$ $yr^{-1}$~\citep{rap87}. However, observed orbital period derivatives reported by~\citet{tan91,van93a,van93b},~\citet{chou01} (hereafter CG01), and~\citet{peu14} were negative with the latest value of  $\dot P_{orb}/P_{orb} = (-5.21 \pm 0.13) \times 10^{-8}$ $yr^{-1}$ updated by ~\citet{chou23}, evaluated from $\sim$46 years of orbital phase evolution. This contradiction is believed due to the binary system accelerating by the gravitational potential in NGC 6624~\citep{tan91,chou01,peu14,chou23}. Additionally, superhump modulation with a period of $691.6\pm 0.7$ s, $\sim$1\% significantly longer than the orbital period, was observed in the both FUV~\citep{wan10} and X-ray~\citep{chou23} bands. From the superhump period, the mass of companion of 4U 1820-30 is estimated as 0.07$M_{\sun}$~\citep{wan10,chou23}. 
+
+In addition to orbital and superhump variations, 4U 1820-30 exhibits superorbital modulation with a period much longer than the orbital period.~\citet{pri84} discovered the X-ray flux modulation by a factor of 2 with a period of $176.4 \pm 1.3$ days using the light curve detected by Vela 5B from 1969 to 1976. This periodicity was further confirmed by~\citet{sm92}. However, by analyzing the light curve collected between 1996 and 2000 by All Sky Monitor on-board Rossi X-ray Timing Explorer (RXTE ASM), CG01 revised the superorbital period to  $171.39 \pm 1.93$ days. Combining the times of flux minima of the superorbital modulation (hereafter superorbital minima) detected by Vela 5B and All Sky Monitor onboard Ginga (Ginga ASM), CG01 further constrained the period to be $171.033 \pm 0.326$ days and claimed that the superorbital period was stable over $\sim$30 years with $|\dot P_{sup} / P_{sup} | < 2.2 \times 10^{-4}$ $yr^{-1}$. Based on the stability of the superorbital period, GC01 proposed that this long-term variability is due to a hierarchical third star orbiting around the binary system~\citep{gri86,gri88} (hereafter the triple model). The hierarchical third component can cause the eccentricity of inner binary system to vary with a period ($P_{ecc}$) as
+
+\begin{equation}\label{msp}
+ P_{ecc}= K {{P_3}^2 \over P_{orb}}
+\end{equation}
+
+\noindent where $P_3$ is the orbital period of third star, $P_{orb}$ is the binary orbital period and $K$ is a constant of unity~\citep{ma79}. Because the mass transfer rate is highly sensitive to the Roche lobe radius, which is proportional to the binary separation, the variation of binary eccentricity can cause the mass loss rate and the accretion rate to change with a period of $P_{ecc}$ and thus $P_{sup}=P_{ecc}$. For the 4U 1820-30 system, the orbital period of the third companion is estimated to be $\sim$1.1 days for $K \sim 1$, and beat sidebands resulting from coupling binary modulation and $\sim$1.1 day periodicity may be observable in the power spectrum. Although these beat sidebands were not detected in RXTE observations (CG01),~\citet{chou23} suggested that the $691.6\pm 0.7$ s periodicity observed in the X-ray band might be caused by a hierarchical triple orbiting around the binary system with an orbital period of 0.8 days. Moreover, CG01 found that the active times of Type-I X-ray bursts were clustered within $\pm$23 days of expected superorbital minima, which aligns with the observation that the bursts can be seen only in low state~\citep{cla77,ste84}. This fact implies that the superorbital modulation of 4U 1820-30 is due to changes in the accretion rate rather than external occultation or absorption effects, which is consistent with the triple model. 
+
+The periodicity of 171 days was further confirmed by~\citet{sim03,wen06,zdz07a,kot12} using additional RXTE ASM data and by~\citet{far09} using the data collected by Burst Alert Telescope onboard the Neil Gehrels Swift Observatory (Swift BAT). Applying the triple model,~\citet{zdz07a} demonstrated that the factor of 2 superorbital modulation in X-ray light curve can be explained by the eccentricity of inner binary oscillating between 0 and 0.004. The discovery of the dependence of orbital modulation profile on the accretion rate~\citet{zdz07b} also supports the triple model. The hard X-ray light curve collected from Swift BAT showed that the superorbital modulation can be observable only for the energy bands less than 24 keV~\citep{far09}. Conversely, by comparing the peak widths of the power spectra made from light curves detected by RXTE ASM and Swift BAT with the corresponding simulated light curves,~\citet{far09} found that the peak widths from real data are marginally wider than the ones from simulated data, concluding that this may be caused by the superorbital period change.~\citet{kot12} adopted the dynamic power spectrum technique to analyze the superorbital variability of several X-ray binaries, and found no significant superorbital period change for 4U 1820-30 except for a weakening of power during MJD $\sim$51200-52200.
+
+Owing to the monitoring/scanning X-ray telescopes, 4U 1820-30 has been observed for decades and is still being monitored by the Swift BAT and the Monitor of All-sky X-ray Image (MAXI). In this work, we aim to further verify the stability of the superorbital period, which is the crucial evidence for the triple model of 4U 1820-30 system, and to establish an updated ephemeris for superorbital modulation. In this paper, we introduce the instruments used to obtain the light curves for this research, including Ginga ASM, RXTE ASM, Swift BAT and MAXI, as well as the light curve collected by RXTE Proportional Counter Array (RXTE PCA) while it processed the monitoring observations of the galactic center and plane~\citep{mar06}, in Section~\ref{obs}. A preliminary test of superorbital period stability test was performed using the power spectrum made by the entire light curve of each instrument (Section~\ref{ps}). A more detail measurement of superorbital period variation was obtained by analyzing the superorbital phase evolution and updating the ephemerides (Section~\ref{pha}). The new ephemerides allows us to verify whether the Type-I X-ray bursts occur clustered around the expected superorbital minima. In Section~\ref{dis}, we discuss the instability of superorbital period, which poses a serious challenge of the triple model, and explore the possible interpretations for the superorbital period variation of 4U 1820-30.
+
+%%the implications of our analysis and comment on the possible scenarios for the negative measured orbital period derivative. 
+
+\section{Observations} \label{obs}
+The Ginga ASM consists of two identical gas proportional counters with six fan-beam collimators to restrict field of view (FOV) of $1^{\circ} \times 45^{\circ}$. It is sensitive to the X-ray photons with energies between 1 and 20 keV, and has a total effective area of 420 cm$^2$. It provided real-time alerts of X-ray transient phenomena and long-term historical records of X-ray sources. The Ginga ASM monitored the sky from 1987 February to 1991 October. Further details of the Ginga ASM are described by~\citet{tsu89}. The Ginga ASM light curve of 4U 1820-30 collected from MJD 46861 to 48532 was analyzed in this study.
+
+The RXTE ASM~\citep{lev96} is an instrument mounted on RXTE to monitor the variable and the transient X-ray sources. It consists of three scanning shadow cameras, each containing a position-sensitive proportional counter, to observe the sky through a one-dimensional coded mask with an FOV of $6^{\circ} \times 90^{\circ}$. It is designed to detect the cosmic X-rays in the photon energy range of 1.5-12 keV, which can be further divided into 1.5-3, 3-5 and 5-12 keV energy bands. In addition to these energy bands, the light curves with two different time resolutions, dwell (a 90 sec exposure) and one-day binned, were also archived. During its mission, from the beginning of 1996 to early 2012, the RXTE ASM scanned the entire sky every 90 minutes. In this research, the 1.5-12 keV RXTE ASM light curve collected between MJD 50088 and 55831 was selected to analyze the superorbital modulation of 4U 1820-30.
+
+In addition to the regular pointing observations, the RXTE PCA also conducted the monitoring observations of the galactic center and plane starting from 1999~\citep{mar06}. The PCA is an instrument with an effective area of 6500 cm$^2$ designed to detected the X-ray photons in the energy range of 2-60 keV~\citep{jah96}. Despite being a non-imaging instrument, its $1^{\circ}$ FOV, constrained by collimators, allowed for identification and detection of X-ray sources. It scanned over galactic bulge and plane approximately twice per week~\citep{mar06}, providing sufficient time resolution to resolve the superorbital modulation of 4U 1820-30. The light curve of 4U 1820-30 collected by PCA in this program from February 5, 1999 (MJD 51214) to October 30 2011 (MJD 55846) is available on the program website\footnote{https://asd.gsfc.nasa.gov/Craig.Markwardt//galscan/html/4U\_1820-30.html}.
+
+The BAT, an instrument on Swift, is a coded-mask telescope with a large FOV (1.4 steradian) to monitor the hard X-ray sky in the energy range 15-150 keV since 2004~\citep{bar05}. Apart from triggering alerts for gamma-ray bursts, its angular resolution ($\sim$20') and large photon collecting area (5200 cm$^2$) enable monitoring of the known cosmic X-ray sources as the Swift satellite orbits around the Earth every $\sim$96 minutes. This capability allows for the study of long-term variability these sources.  In this work, we analyzed the daily binned light curve of 4U 1820-30 observed from February 14, 2005 (MJD 53415) through August 1, 2023 (MJD 60157). 
+
+The MAXI, installed on the Japanese Experiment Module of International Space Station (ISS), is designed to alert the transient X-ray sources and monitor the long-term variations of the X-ray sources~\citep{mat09}. It contains two types of slit cameras with two different detectors: a gas proportional counter with an effective area of 5250 cm$^2$ for detecting the X-ray photons in the energy range of 2-30 keV, and a solid state camera of an effective area of 200 cm$^2$ sensitive to the X-ray photons in the energy range of 0.5-12 keV. MAXI can scan almost the entire sky twice during each ISS orbit ($\sim$90 minutes).  In this study, we analyzed the daily binned light curve of the energy range of 2-20 keV collected between 2009 August 12 (MJD 55055) and 2023 August 1 (MJD 60157), available on the MAXI website\footnote{http://maxi.riken.jp/pubdata/v7.7l/J1823-303/index.html}, to study the superorbital modulation of 4U 1820-30.  
+
+The light curves of 4U 1820-30 collected by these five instruments are shown in Figure~\ref{lcurves}. 
+
+\begin{figure}
+   \epsscale{1.25}
+\plotone{lc_plots.eps}
+\caption{Light curves collected by five instruments for analysis in this work. The bin size of these light curves is 10 days.  \label{lcurves}}
+\end{figure}
+
+\section{Data Analysis} \label{da}
+\subsection{Power Spectral Analysis} \label{ps}
+In the power spectral analysis, all the light curves were rebinned into daily averages for consistency. All the data points with a signal-to-noise ratio less than 2$\sigma$ were filtered out for further analysis. To probe the superorbital periods of various observations, the Lomb-Scargle (LS) periodogram~\citep{sca82} was applied to generate the power spectra. The errors of signal frequencies were estimated by the method proposed by~\citet{hor86}:
+
+
+\begin{equation}\label{perr}
+ \delta f={{3 \sigma_{N}} \over {4 N_0^{1/2} TA}}
+\end{equation}
+\noindent where $A$ is the amplitude of the signal, $\sigma_N^2$ is the variance of the noise after the signal being removed, $T$ is the time span of the light curve and $N_0$ is the number of data points. $A$ was evaluated by fitting a single sinusoidal function to the light curve with the frequency fixed at the signal frequency obtained from the power spectrum and $\sigma_N^2$ was estimated by the root-mean-square (rms) of the noise after the best fitted sinusoidal function was removed from the light curve.
+
+The power spectra are depicted in Figure~\ref{powspec}, and the detected superorbital periods are outlined in Table~\ref{supper}. It is apparent that the superorbital period deviates from the expected stability suggested by triple model, showingt a tendency to decrease over time. By incorporating the superorbital period reported by~\citep{pri84} from the Vela5B light curve, we estimated the timescale of the superorbital change by fitting a linear function to the detected superorbital periods over time (see Figure~\ref{lfsupper}). This result in a period derivative of $\dot P_{sup}/P_{sup}=(-7.37 \pm 0.33) \times 10^{-4}$ $yr^{-1}$, corresponding to an evolution timescale of 1,357 years. This period derivative exceeds the upper limit proposed by CG10 ($|\dot P_{sup} / P_{sup}| < 2.2 \times 10^{-4}$ $yr^{-1}$). However, the linear fitting yielded a reduced $\chi^2$ of 10.2, suggesting that the superorbital evolution of 4U 1820-30 is likely more complex than the constant period derivative model suggests. Further variations in the superorbital period from phase analysis will be demonstrated in Section~\ref{pha}.
+
+\begin{figure}
+  \epsscale{1.25}
+\plotone{powspec_plots.eps}
+\caption{Power spectra derived from the light curves collected five instruments in this work. The vertical dashed line indicates the superorbital frequency of the CG01 ephemeris (f=2.136 cycle/year).  \label{powspec}}
+\end{figure}
+
+
+\begin{table*}[ht]
+  \centering
+    \caption{The Superorbital Period and RMS Amplitude Measured from the Light Curves Collected by Different Instruments \label{supper}}
+    \begin{tabularx}{\textwidth}{lccccc}
+\tableline\tableline
+Instrument  & Energy Rang & Duration & Superorbital Period & RMS AMP & RMS AMP\\
+            &(keV)        & (MJD)    & (Days)              & (\%, CG01 ephemeris)& (\%, local ephemeris)\\
+\tableline
+Ginga ASM & 1-20 &46861-48532 & 171.12$\pm$1.19 & 33 & 36\\
+RXTE ASM  &2-12 &50083-55927 & 169.09$\pm$0.06 & 12 & 18\\
+RXTE PCA  & 2-60 &51215-55864 & 168.07$\pm$0.14 & 12 & 21\\
+Swift BAT & 15-50 &53415-60157 & 167.34$\pm$0.18 & 18 & 23\\
+MAXI      &2-20 &55055-60157 & 167.43$\pm$0.10 & 10 & 20\\
+\tableline
+\end{tabularx}
+%\end{center}
+\end{table*}
+
+
+
+
+\begin{figure}
+  \epsscale{1.2}
+\plotone{period_time.eps}
+\caption{Superorbital periods measured from 6 different instruments, including the one from Vela5B observation reported by~\citet{pri84}. The horizontal lines indicate the durations of the corresponding light curves, and the dashed line represents the best fit of a linear model to estimate the period change rate, which yields a period derivative of $\dot P/P=(-7.37 \pm 0.33) \times 10^{-4}$ $yr^{-1}$ \label{lfsupper}}
+\end{figure}
+
+Additionally, to compare the amplitudes of superorbital modulation, we folded these five light curves using two kinds of linear ephemerides. The first one is the optimal ephemeris proposed by CG01 (hereafter CG01 ephemeris),
+
+\begin{eqnarray}\label{cg01eph}
+ \nonumber T_N &=& JD 2,450,909.9 + 171.033 \times N \\
+               &=& MJD 50909.4+171.033 \times N
+\end{eqnarray}
+
+\noindent  The other one is the local ephemeris, with a folding period corresponding to the best period obtained by the power spectrum (see Table~\ref{supper}),along with an arbitrary phase zero epoch for each light curve. The rms amplitudes folded by both types of ephemerides are listed in Table~\ref{supper}. The rms amplitudes of the profiles folded by the corresponding local ephemerides are  larger than the those folded by CG01 ephemeris, indicating that the CG01 ephemeris is no longer suitable. This shows that the superorbital period of 4U 1820-30 has undergone significant changes during 1987 to 2023.  
+
+
+
+
+\subsection{Superorbital Phase Evolution}\label{pha}
+
+In this research, we aimed to trace the long-term evolution of the superorbital phase of 4U 1820-30, necessitating the analysis of superorbital phases measured from different instruments. However, time lags between different energy bands are often observed in astronomical time series. For instance, soft phase lags of pulsed emissions are commonly noted in accreting millisecond X-ray pulsars~\citep{cui98,pat21}. Hence,a coherence test was conducted to verify if there was a significant time lag between any of two light curves from different instruments. However, this test could be only performed on the light curves with overlapping observation times. Among the five light curves we analyzed in this study, except for Ginga ASM, other 4 light curves had overlapping observation times for each other, resulting in 6 pairs of light curves for the coherence test. For each pair of light curves, only overlapping parts were selected for coherence test. The power spectra were obtained the superorbital periods for the corresponding light curves. The superorbital modulation profiles of both light curves were conducted by folding the mean period measured from the power spectra with an arbitrary but fixed phase zero epoch. We discovered that all the profiles could be well fitted with a four-component sinusoidal function, that is, $r(\phi)=a_0 + \sum_{k=1}^{4} [a_k cos(2\pi k \phi)+b_k sin(2\pi k \phi)]$. To measure the possible time delay between the two instruments, we applied the cross-correlation between the best-fitted modulation profiles. The test results are shown in Table~\ref{delay}. The phase difference is generally no more than 0.026 cycle, which is much smaller the phase jitters ($\sim$0.1 cycle, see CG01). We conclude that there is no significant time delay is observable among these 4 instruments for the superorbital modulation of 4U 1820-30.  
+
+\begin{table}
+\begin{center}
+  \caption{Coherence Test for RXTE ASM, RXTE PCA, Swift BAT and MAXI Light Curves \label{delay}}
+
+\begin{tabular}{llcr}
+  \tableline\tableline
+Instrument 1 & Instrument 2 & Overlapping  Time   & Phase lag \\
+           &     & (MJD)    & ($\phi_1 - \phi_2$)   \\
+\tableline
+RXTE ASM & RXTE PCA  & 51215-55864      & -0.009 \\
+RXTE ASM & Swift BAT &  53415-55927      & 0.022  \\
+RXTE ASM & MAXI &  55055-55927      &  -0.026 \\
+RXTE PCA & SWIFT BAT & 53415-55864      &  0.022 \\
+RXTE PCA & MAXI & 55055-55864      &  -0.007 \\
+Swift BAT & MAXI&  55055-60157   & -0.013\\
+\tableline
+\end{tabular}
+\end{center}
+\end{table}
+
+To trace the evolution of superorbital phase, we segmented the light curves and folded them to derive the modulation profiles. For instruments highly sensitive to superorbital modulation, like RXTE ASM and MAXI light curves, two cycles ($2 \times 171$ days) per segment sufficed to yield clear profiles. In the case of Swift BAT observations, where no superorbital modulation was detected for the photon energy larger than 24 keV~\citep{far09},  we selected four cycles as a data segment to ensure significant profile detection. As for the RXTE PCA light curve, due to the observation gaps, we adopted four cycles per segment to create the profiles. However, only three data segments provided sufficient phase coverage for further analysis. Given the very low sensitivity of Ginga ASM, a clear profile could only be obtained by folding the entire light curve.
+
+Following the approach of  CG01, we selected the superorbital minimum as the fiducial point of the superorbital phase. Ideally , we would fold a light curve segment using a fix ephemeris, such as CG01 ephemeris (Eq.~\ref{cg01eph}) to determine the phase (i.e. $\phi_{CG01}$). However, as indicated in Section~\ref{ps}, the CG01 ephemeris is unlikely to be an optimal ephemeris for the all observations, particularly for recent ones (e.g. Swift BAT and MAXI observations), which could lead to profile deformation. To precisely determine the $\phi_{CG01}$, we folded the light curve segments using the optimal linear ephemeris specific to each instrument (local ephemeris). This involved folding the data by the period obtained from power spectral analysis (see Table 1) and an arbitrary but fixed phase zero epoch. A typical modulation profile is depicted in Figure~\ref{typprof}. The phase ($\phi_{local}$) of a data segment was determined by fitting a four-component sinusoidal function and identifying the phase corresponding to the intensity minimum (fiducial point). This phase value, along with the local ephemeris, facilitated the evaluation the superorbital minimum time ($t_m$) closest to the mid of observation time of the data segment. Subsequently, $t_m$ was then folded by CG01 ephemeris (Eq.~\ref{cg01eph}) to obtain the phase $\phi_{CG01}$.
+
+\begin{figure}
+      \epsscale{1.2}
+\plotone{asm_efold_typ.eps}
+\caption{A typical superorbital modulation profile of a data segment created by folding the light curve collected by RXTE ASM from MJD 54158.64 to 54497.86 ($\sim$2 cycles) with a folding period of 169.09 days from power spectral analysis (Section~\ref{ps}) and an arbitrary phase zero epoch. The solid line represents the optimal fit of a 4-component sinusoidal function to locate the superorbital minimum phase $\phi_{local}$. A BLS feature found by~\citet{sim03} can be also observed. \label{typprof}}
+\end{figure}
+
+The superorbital orbital phases ($\phi_{CG01}$) are listed in Table~\ref{phase}, and their  evolution is illustrated in Figure~\ref{phevol}. It is noteworthy that while the superorbital modulation displays strong periodicity in the power spectra, the modulation profile varies from cycle to cycle, exhibiting the quasi-periodic nature as described in ~\citet{zdz07a}. This variability induces phase jitters of $\sim$0.1 cycle, evident in Figure~\ref{phevol} and CG01. These phase jitters are considerably larger than the error estimated from photon statistics ($\sim$0.005 cycle). Despite the presence of phase jitters, a discernible phase evolution trend can be discerned in Figure~\ref{phevol}. However, independently evaluating errors from phase jitters is difficult, which depend on the evolution model. In the subsequent analysis, we utilized the unweighted fitting method outlined by~\citet{pre02} to update the ephemeris for the superorbital modulation of 4U 1820-30.
+
+
+\begin{table}
+\begin{center}
+  \caption{Superorbital Phase ($\phi_{CG01}$) of 4U 1820-30\label{phase}}
+
+  \begin{tabular}{cccl}
+    \\
+  \tableline\tableline
+Superorbital minimum  & Phase      &      & Instrument \\
+Time (MJD) & ($\phi_{CG01}$) &  &    \\
+\tableline
+47677.560 &	0.1040  &   & Ginga ASM \\
+50240.528 & 	0.0892  &   & RXTE ASM \\
+50567.180 &	-0.0009 &   & RXTE ASM \\
+50886.301 &	-0.1351 &   & RXTE ASM \\
+51248.266 &	-0.0187 &   & RXTE ASM \\
+51617.490 &	0.1401  &   & RXTE ASM \\
+51943.259 &	0.0448  &   & RXTE ASM \\
+52272.795 &	-0.0285 &   & RXTE ASM \\
+52290.171 &	0.0755  &   & RXTE PCA \\
+52628.569 &	0.0517  &   & RXTE ASM \\
+52935.953 &	-0.1511 &   & RXTE ASM \\
+53278.853 &	-0.1462 &   & RXTE ASM \\
+53600.247 &	-0.2671 &   & RXTE ASM \\
+53789.674 &	-0.1595 &   & Swift BAT \\
+53967.300 &	-0.1210 &   & RXTE ASM \\
+54117.222 &	-0.2421 &   & RXTE PCA \\
+54299.651 &	-0.1778 &  & RXTE ASM \\
+54465.782 &	-0.2065 &  & Swift BAT \\
+54627.524 &	-0.2608 &  & RXTE ASM \\
+54974.529 &	-0.2319 &  & RXTE ASM \\
+55109.387 &	-0.4434 &  & Swift BAT \\
+55296.737 &	-0.3480 &  & RXTE ASM \\
+55462.783 &	-0.3748 &  & MAXI \\
+55467.179 &	-0.3491 &  & RXTE PCA \\
+55617.470 &	-0.4727 &  & RXTE ASM \\
+55792.250 &	-0.4485 &  & MAXI \\
+55802.064 &	-0.3934 &  & Swift BAT \\
+55981.288 &	-0.3432 &  & MAXI \\
+56472.080 &	-0.4760 &  & Swift BAT \\
+56478.189 &	-0.4379 &  & MAXI \\
+56823.859 &	-0.4169 &  & MAXI \\
+57147.925 &	-0.5221 &  & MAXI \\
+57162.582 &	-0.4387 &  & Swift BAT \\
+57650.227 &	-0.5852 &  & MAXI \\
+57817.333 &	-0.6105 &  & Swift BAT \\
+57985.095 &	-0.6273 &  & MAXI \\
+58450.326 &	-0.9095 &  & Swift BAT \\
+58649.430 &	-0.7431 &  & MAXI \\
+59142.251 &	-0.8640 &  & Swift BAT \\
+59151.732 &	-0.8062 &  & MAXI \\
+59340.770 &	-0.7009 &  & MAXI \\
+59805.990 &	-0.9832 &  & Swift BAT \\
+59826.869 &	-0.8588 &  & MAXI \\
+  \tableline\tableline
+
+\end{tabular}
+\end{center}
+\end{table}  
+
+\begin{figure}
+      \epsscale{1.2}
+\plotone{ph_evol_all.eps}
+\caption{Evolution of superorbital phases folded by the CG01 ephemeris from 1987 to 2023. The dotted, solid and dashed lines represent the best fits for linear, glitch and quadratic models, respectively. The shaded area indicates the low power state between MJD 50773 and 52627, and the vertical dash-dot line represents the glitch time MJD 52264 evaluated by the glitch model, with the horizontal error bar indicating the 1$\sigma$ uncertainty of glitch time. \label{phevol}}
+\end{figure}
+
+
+\subsubsection{Linear Model}\label{linear}
+According to the triple model, The period should be remain stable from long-term perspective because the superorbital modulation is induced by a hierarchical third component orbiting around the binary system. Therefore, our initial approach involved fitting a linear function to the phase evolution as depicted in Figure~\ref{phevol}. The parameters of the optimal linear function are listed in Table~\ref{para} yielding a period of $168.21 \pm 0.15$ days with a phase zero epoch of MJD $50920 \pm 4.56$. We assessed the root-mean deviation (RMSD), defined as:
+\begin{equation}\label{mdev}
+ RMSD \equiv \sqrt{{1 \over \nu}{  \sum_{i=1}^N \bigl[{\phi_i - \phi(t_i)}\bigr]^2} }
+\end{equation}
+
+\noindent where $\phi_i$ is the detected phase, $\phi(t_i)$ is the expected phase value at $t_i$ evaluated from best fit model, and $\nu$ is the degree of freedom. The RMSD is 0.1 for the linear model. However best-fitted period in this model significantly differs from the reported superorbital periods that detected in early RXTE ASM observations, as listed in Table~\ref{prep}, as well as the superorbital period of $176.4 \pm 1.3$ days reported by~\cite{pri84} from Vela5B observation. Furthermore, the expected phase at the midpoint of Ginga ASM observation time (MJD 47677.56) is $0.382\pm0.033$, about 7.3 $\sigma$ deviated from the detected value of 0.14 (see Figure~\ref{phevol}). Therefore, the linear model is unlikely to describe the superorbital phase evolution of 4U 1820-30.
+
+\begin{table}
+\begin{center}
+  \caption{Parameters of Superorbital Modulation of 4U 1820-30\label{para}}
+
+  \begin{tabular}{lll}
+    \\
+  \tableline\tableline
+  \tableline\tableline
+\multicolumn{3}{l}{Linear model} \\
+\multicolumn{3}{l}{$\phi=a_0 + a_1  (t-T_0$)} \\
+\multicolumn{3}{l}{$a_0= {{(T_0-T_{0,CG01})} / P_{CG01}}$\tablenotemark{a}} \\
+\multicolumn{3}{l}{$a_1 = {{(P_0-P_{CG01})} / {(P P_{CG01})}}$} \\
+\tableline
+Parameter& & Value \\
+$a_0$ &  &$0.065 \pm 0.027$\\ 
+$a_1 $ (cycle/day) & &$(-9.83 \pm 0.54) \times 10^{-5}$ \\ 
+$cov(a_0 , a_1$) (cycle/day)& &$-1.21 \times 10^{-7}$\\
+$T_0$ (MJD) & &$50920.48 \pm 4.65$\\
+$P$ (days)& &$168.21 \pm 0.15$\\
+
+\tableline\tableline
+\tableline\tableline
+\multicolumn{3}{l}{Glitch model} \\
+\multicolumn{3}{l}{$ \phi= \cases{a_0 + a_1  (t-T_0) & if $t \le T_g$; \cr a'_0 + a'_1  (t-T_0) & if $t > T_g$. \cr}$} \\
+\multicolumn{3}{l}{$a_0= {{(T_0-T_{0,CG01})} / P_{CG01}}$} \\
+\multicolumn{3}{l}{$a_1 = {{(P_1-P_{CG01})} / {(P_1 P_{CG01})}}$}\\
+\multicolumn{3}{l}{$a'_0= {{(T_0-T_{0,CG01})} / P_{CG01}}+n_g (P_1 - P_2)/P_2$} \\
+\multicolumn{3}{l}{$a'_1 = {{(P_2-P_{CG01})} / {(P_2 P_{CG01})}}$}\\
+\multicolumn{3}{l}{$T_g = T_0 + n_g P_1 $}\\
+\tableline
+Parameter& & Value \\
+$a_0$ &  &$0.031 \pm 0.029$\\ 
+$a_1 $ (cycle/day) & &$(-1.25 \pm 2.18) \times 10^{-5}$ \\ 
+$cov(a_0 , a_1$) (cycle/day)& &$-2.96 \times 10^{-8}$\\
+$a'_0$ &  &$0.172 \pm 0.035$\\ 
+$a'_1 $ (cycle/day) & &$(-1.175 \pm 0.063) \times 10^{-4}$ \\ 
+$cov(a'_0 , a'_1$) (cycle/day)& &$-2.07 \times 10^{-7}$\\
+$T_0$ (MJD) & &$50914.63 \pm 5.05$\\
+$P_1$ (days)& &$170.67 \pm 0.64$\\
+$P_2$ (days)& &$167.66 \pm 0.18$\\
+$n_g$ & &$7.90 \pm 3.34$\\
+$T_g$ (MJD) & &$52264 \pm 466$\\
+\tableline\tableline
+\tableline\tableline
+\multicolumn{3}{l}{Quadratic model} \\
+\multicolumn{3}{l}{$\phi=a_0 + a_1(t-T_0)+a_2(t-T_0)^2$} \\
+\multicolumn{3}{l}{$a_0= {{(T_0-T_{0,CG01})} / P_{CG01}}$} \\
+\multicolumn{3}{l}{$a_1 = {{(P_0-P_{CG01})} / {(P_0 P_{CG01})}}$} \\
+\multicolumn{3}{l}{$a_2 = 1/2$ $\dot P  / (P_0 P_{CG01})$} \\
+\tableline
+Parameter&  & Value \\
+$a_0$ &  & $0.029 \pm 0.023$\\ 
+$a_1 $ (cycle/day) & &$(-5.20 \pm 1.02) \times 10^{-5}$ \\ 
+$a_2 $ (cycle/day$^2$) & &$(-6.17 \pm 1.23) \times 10^{-9}$ \\ 
+$cov(a_0 , a_1$) (cycle/day)& &$-1.42 \times 10^{-7}$\\
+$cov(a_0 , a_2$) (cycle/day$^2$) & &$8.78 \times 10^{-12}$\\
+$cov(a_1 , a_2$) (cycle$^2$/day$^3)$& &$-1.14 \times 10^{-14}$\\
+$T_0$ (MJD) & &$50914.41 \pm 3.89$\\
+$P_0$ (days) & &$169.53 \pm 0.29$ days\\
+$\dot P$ (day/day) & &$(-3.58 \pm 0.72) \times 10^{-4}$\\
+$\dot P / P_0$ (yr$^{-1}$) & & $(-7.71 \pm 1.54) \times 10^{-4}$\\ 
+\tableline\tableline\tableline
+
+
+\end{tabular}
+\tablenotetext{a}{$T_{0,CG01}$=JD 2,450,909.9=MJD50909.4 and $P_{CG01}$=171.033 days from Eq.9 of GC01.}
+\end{center}
+\end{table}
+
+
+\subsubsection{Glitch Model}\label{glitch}
+Table~\ref{prep} presents the reported superorbital periods detected by early RXTE ASM observations, which are roughly consistent with the period in the CG01 ephemeris (171 days). However, for later observations, particularly those from Swift BAT and MAXI, the period is approximately 167.4 days. One the possibility is that the superorbital period underwent an abrupt change (glitch), likely between years 2000 and 2005 (see Figure~\ref{phevol}).
+%Furthermore, \citet{pri84} reported a superorbital period detected by Vela5B of  $176.4 \pm 1.3$ days, which is significant differs from the periods detected early RXTE ASM observations. It is likely that the superorbital periodicity of 4U 1820-30 experienced glitches twice between 1969 to middle of 2023.
+
+\begin{table}
+\begin{center}
+  \caption{Superorbital periods of 4U 1820-30 from Early RXTE ASM Observations \tablenotemark{a} \label{prep}}
+  \begin{tabular}{cll}
+    \\
+\tableline\tableline
+Observation Time & Period   & Reference \\
+    (MJD)       &  (days)   &    \\
+\tableline
+50088-51606 & $171.39\pm 1.93$ \tablenotemark{b} & CG01\\
+50088-52350 & 172.78  & \citet{sim03}\\
+50088-53243 & $172 \pm 1$ & \citet{wen06}\\
+50088-54151 & $170.6 \pm 0.3$ &\citet{zdz07a}\\
+\tableline
+\end{tabular}
+\tablenotetext{a}{RXTE ASM was operated from MJD 50088 to 55831}
+\tablenotetext{b}{The period of local ephemeris from Eq.8 in CG01.}
+\end{center}
+\end{table}
+
+On the other hand,~\citet{kot12} conducted a dynamic power spectrum analysis and observed weaker superorbital modulation power during the period MJD 51200-52200, hereafter, referred to as the low power state. Additionally, signals with shorter periods, $\sim$85 days (first harmonic) and $\sim$65 days emerged in the dynamic power spectrum, indicating a change in the modulation profile during that time interval. However, considering the window size used to generate the dynamic power spectrum of 4U 1820-30 in~\citet{kot12} (5 cycles), this low power state time interval should be extended to approximately MJD 50773 to 52627. 
+
+Compared with the the phase evolution (i.e. Figure~\ref{phevol}), it appears likely that the glitch occurred around MJD 52500, near end of low power state. Marginal evidence supports this assumption. As listed in Table~\ref{prep}, the reported superorbital period by \citet{zdz07a} was $170.6 \pm 0.3$ days, slightly smaller than those reported by CG01, \citet{sim03}, and \citet{wen06}. This discrepancy may be due to that significant portion of data ($\sim 37 \%$) analyzed by~\citet{zdz07a} were collected after MJD 52500. Similarly, the power spectral analysis of the entire RXTE ASM light curve yielded a superorbital period of 169.09 days (see Table~\ref{supper}), falling between 171 and 167.4 days, because about half ($\sim 56 \%$) of the data were collected after MJD 52500. Conversely, the periods detected form the power spectra of Swift BAT and MAXI were nearly identical at approximately 167.4 days, because both observations were made after MJD 52500 (see Table~\ref{supper}). 
+
+We therefore fitted the phase evolution with the glitch model using the ephemeris described by Eq.5 in~\citep{wol09}
+
+
+\begin{equation}\label{gm}
+  T_N = \cases{T_0 +P_1 N & if $N \le n_g$; \cr T_0 + P_1 n_g + P_2 (N-n_g)& if $N > n_g$. \cr}
+\end{equation} 
+
+\noindent where $T_0$ is the phase zero epoch, $P_1$ and $P_2$ are the periods before and after glitch, respectively, $n_g$ is the glitch cycle count, and the glitch time $T_g \equiv T_0 + P_1 n_g$. The fitting results are shown in Figure~\ref{phevol}, and the parameters are listed in Table~\ref{para}. We obtained significantly different superorbital periods of $170.67 \pm 0.64$ days and $167.66 \pm 0.18$ days before and after the glitch time MJD 52264, respectively, and $\Delta P_{sup} /P_{sup}=-0.018 \pm 0.007$. The RMSD for this glitch model is 0.078. Comparing this with the RMSD of 0.1 from the linear model, the F-test yielded a p-value of 0.04, indicating that the glitch model is better than the linear model. Figure~\ref{mpglitch} shows the modulation profiles folded by the glitch ephemeris. All the superorbital minima (fiducial points) are close phase zero, implying that this ephemeris effectively describes the superorbital phase evolution of 4U 1820-30 from 1987 to 2023.
+
+
+\begin{figure}
+      \epsscale{1.3}
+\plotone{profile_comb_glitch.eps}
+\caption{Superorbital modulation profiles folded by glitch ephemeris listed in Table~\ref{para} for the light curves collected by (a) Ginga ASM, (b) RXTE ASM, before glitch, (c) RXTE PCA, before glitch, (d) RXTE ASM, after glitch, (e) RXTE PCA, after glitch, (f) Swift BAT, and (g) MAXI. \label{mpglitch}}
+\end{figure}
+
+\subsubsection{Quadratic Model}\label{qua}
+While the glitch model effectively describes the superorbital phase evolution, we cannot rule out the possibility that period difference between early RXTE ASM  observations and recent ones stems from a smooth change in the superorbital period.~\citet{far09} observed that the peak width of the superorbital signal in the power spectrum made from Swift BAT light curve was marginally wider than that from simulation, suggesting that a change in superorbital period. Hence, we apply a simple model assuming a constant period derivative ($\dot P_{sup}$) to fit a quadratic function to the superorbital phase evolution.The fitting results are depicted in Figure~\ref{phevol}, and the parameters are listed in Table~\ref{para}. A period derivative of $\dot P_{sup}=(-3.58 \pm 0.72) \times 10^{-4}$ day/day, or $\dot P_{sup} / P_{sup}=(-7.71 \pm 1.54) \times 10^{-4}$ yr$^{-1}$ was obtained from the fitting, and a quadratic ephemeris
+
+\begin{eqnarray}\label{qeph}
+\nonumber  T_N =& &(MJD50914.41 \pm 3.89) +(169.53 \pm 0.29) \times N\\
+                & &+(-3.03 \pm 0.61) \times 10^{-2} \times N^2
+\end{eqnarray} 
+
+\noindent was established. This period derivative value is consistent with the one evaluated from power spectra in Section~\ref{ps}.  The RMSD for the quadratic  model is 0.083. Compared to this with the RMSD of 0.078 from glitch model, the F-test yielded a p-value of 0.34, which indicating that these two models are about equally adept at describing the superorbital phase evolution. Figure~\ref{mpqua} illustrates the modulation profiles folded by the quadratic model. Similar to the glitch model, all the superorbital minima (fiducial points) are located around phase zero. It provides an evidence that the quadratic model is suitable for describing the superorbital phase evolution of 4U 1820-30.
+
+\begin{figure}
+      \epsscale{1.3}
+\plotone{profile_comb_qua.eps}
+\caption{Superorbital modulation profiles folded by quadratic ephemeris listed in Table~\ref{para} for the light curves collected by (a) Ginga ASM, (b) RXTE ASM, (c) RXTE PCA, (d), Swift BAT, and (e) MAXI.   \label{mpqua}}
+\end{figure}
+
+
+\subsection{X-ray Burst Active Times}\label{xbat}
+
+As previously mentioned in Section~\ref{intro}, Type-I X-ray bursts of 4U 1820-30 are exclusively observable during the low state~\citep{cla77,ste84}. Further confirmed by CG01, indicated the Type-I X-ray bursts were detected only within $\pm$23 days around superorbital minima for bursts reported before 1985. This supports the notation that the superorbital modulation stems from changes in the accretion rate changes rather than occultation effects. However, CG01's statistics only included four burst active dates. Subsequently, more X-ray bursts of 4U 1820-30 were detected. With the updated superorbital ephemerides, this evidence can be further substantiated. Although the possibility exists that the X-ray bursts occur in another low state, which may deviate significantly from the superorbital minima (e.g.the brief low state found by ~\citet{sim03}), it is likely that most of X-ray burst active times would cluster around the superorbital minima. 
+
+%%In this work, we collected the reported burst active dates of 4U 1820-30 from~\citet{gri76,vac86,hab87,zdz07b,gar13,int11,ser21a,ser21b,yu23}, as well as a superburst discovered by~\citet{str02}. The deviations of burst active dates relative to the nearest superorbital minima predicted by CG01 and updated ephemerides are shown in Figure~\ref{bph}. It is clear that the large deviations can be seen after the end low power state by using the superorbital minima predicted by the CG01 ephemeris and only 47\% burst active dates are within $\pm$23 days of the minima. On the other hand, most of X-ray burst active dates (72\%) were concentrated with in $\pm$23 days of the superorbital minima predicted by the updates ephemeris, including the ones after low power state. We noted that the X-ray bursts that occurred between MJD50399 and MJD50343 had still large deviations for both ephemerides. By checking the RXTE ASM light curve, we found that these X-ray bursts occurred aroune a BLS whose count rates were only ?? cts/s in comparison of the mean count rate of ?? cts/s.  This fact again confirms that the superorbital modulation is caused by the accretion variations instead of occultation effects.  
+
+In this study, we collected the reported burst active dates of 4U 1820-30 from~\citet{gri76,vac86,hab87,zdz07b,gar13}, and~\citep{yu24}, as well as four superbursts discovered by~\citet{str02,int11,ser21a}, and~\citep{ser21b}. The deviations in burst active dates relative to the nearest superorbital minima predicted by CG01 and three ephemerides derived in this study are shown in Figure~\ref{bph}. It is evident that large deviations can be observed after the low power state (MJD 52630) when using the superorbital minima predicted by the CG01 ephemeris. The root-mean-square deviations are 41.2, 32.7 27.4 and 27.0 days for CG01, linear, glitch and quadratic ephemerides, respectively. This provides supportive evidence that glitch and quadratic ephemerides are better than CG01 and linear ephemerides in describing the superorbital phase evolution of 4U 1820-30.  Notably, X-ray bursts occurring between MJD 50399 and MJD 50343 exhibited large deviations ($\sim 60$ days) for all ephemerides. Upon examining the RXTE ASM light curve, we observed that these X-ray bursts occurred around a BLS with a count rate of only 12.0 cts/s compared to the mean count rate of 21.0 cts/s. This observation reaffirms that superorbital modulation is primarily caused by accretion variations rather than occultation effects.
+
+
+\subsection{X-ray Burst Active Times}\label{xbat}
+
+As previously mentioned in Section~\ref{intro}, Type-I X-ray bursts of 4U 1820-30 are exclusively observable during the low state~\citep{cla77,ste84}. Further confirmed by CG01, indicated the Type-I X-ray bursts were detected only within $\pm$23 days around superorbital minima for bursts reported before 1985. This supports the notation that the superorbital modulation stems from changes in the accretion rate changes rather than occultation effects. However, CG01's statistics only included four burst active dates. Subsequently, more X-ray bursts of 4U 1820-30 were detected. With the updated superorbital ephemerides, this evidence can be further substantiated. Although the possibility exists that the X-ray bursts occur in another low state, which may deviate significantly from the superorbital minima (e.g.the brief low state found by ~\citet{sim03}), it is likely that most of X-ray burst active times would cluster around the superorbital minima. 
+
+%%In this work, we collected the reported burst active dates of 4U 1820-30 from~\citet{gri76,vac86,hab87,zdz07b,gar13,int11,ser21a,ser21b,yu23}, as well as a superburst discovered by~\citet{str02}. The deviations of burst active dates relative to the nearest superorbital minima predicted by CG01 and updated ephemerides are shown in Figure~\ref{bph}. It is clear that the large deviations can be seen after the end low power state by using the superorbital minima predicted by the CG01 ephemeris and only 47\% burst active dates are within $\pm$23 days of the minima. On the other hand, most of X-ray burst active dates (72\%) were concentrated with in $\pm$23 days of the superorbital minima predicted by the updates ephemeris, including the ones after low power state. We noted that the X-ray bursts that occurred between MJD50399 and MJD50343 had still large deviations for both ephemerides. By checking the RXTE ASM light curve, we found that these X-ray bursts occurred aroune a BLS whose count rates were only ?? cts/s in comparison of the mean count rate of ?? cts/s.  This fact again confirms that the superorbital modulation is caused by the accretion variations instead of occultation effects.  
+
+In this study, we collected the reported burst active dates of 4U 1820-30 from~\citet{gri76,vac86,hab87,zdz07b,gar13}, and~\citep{yu24}, as well as four superbursts discovered by~\citet{str02,int11,ser21a}, and~\citep{ser21b}. The deviations in burst active dates relative to the nearest superorbital minima predicted by CG01 and three ephemerides derived in this study are shown in Figure~\ref{bph}. It is evident that large deviations can be observed after the low power state (MJD 52630) when using the superorbital minima predicted by the CG01 ephemeris. The root-mean-square deviations are 41.2, 32.7 27.4 and 27.0 days for CG01, linear, glitch and quadratic ephemerides, respectively. This provides supportive evidence that glitch and quadratic ephemerides are better than CG01 and linear ephemerides in describing the superorbital phase evolution of 4U 1820-30.  Notably, X-ray bursts occurring between MJD 50399 and MJD 50343 exhibited large deviations ($\sim 60$ days) for all ephemerides. Upon examining the RXTE ASM light curve, we observed that these X-ray bursts occurred around a BLS with a count rate of only 12.0 cts/s compared to the mean count rate of 21.0 cts/s. This observation reaffirms that superorbital modulation is primarily caused by accretion variations rather than occultation effects.
+
+\begin{figure}
+    \epsscale{1.2}
+\plotone{burst_phase_cg01_4eph.eps}
+\caption{The deviations of Type-I X-ray burst active dates relative to the nearest expected superorbital minima evaluated by CG01, linear, glitch and quadratic ephemerides.  The circles are the superbursts reported by~\citet{str02,int11,ser21a,ser21b}. The region between two horizontal dashed lines is the $\pm23$ days burst active interval suggested by CG01, and the vertical dash-dot line in the plot of glitch ephemeris is the glitch time evaluated by the glitch model (Section~\ref{glitch}).\label{bph}}
+\end{figure}
+
+
+
+
+%Only 47\% burst active dates are within $\pm$23 days of the minima. Large deviation can be observed for the ones after low power state. In contrast, 62\% and 66\% of burst active dates were concentrated with in $\pm$23 days of the superorbital minima predicted by the glitch and quadratic ephemerides, respctively, especially the ones after low power state. It is noteworthy that X-ray bursts occurring between MJD 50399 and MJD 50343 still exhibited large deviations ($\sim 60$ days) for both ephemerides. Upon examining the RXTE ASM light curve, we observed that these X-ray bursts occurred around a BLS with a count rate of only 12.0 cts/s in comparison to the mean count rate of 21.0 cts/s. This observation reaffirms that superorbital modulation is primarily caused by accretion variations rather than occultation effects.
+
+On the contrary, out of the four superbursts detected, only the one on MJD 51430~\citep{str02} fell within  $\pm$23 days region, whereas the other three occurred outside of this timeframe for both glitch and quadratic ephemerdes (see Figure~\ref{bph}). Upon examining the RXTE ASM and MAXI light curves, we observed that the count rates on the dates of superbursts were 57\%, 150\%, 121\% and 138\% of the corresponding mean count rates of the light curves for the superbursts detected on MJD 51430~\citep{str02}, MJD 55272~\citep{int11}, MJD 59449~\citep{ser21a} and MJD 59543~\citep{ser21b}, respectively. It is likely that the low state constraint for the regular X-ray bursts of 4U 1820-30~\citep{cla77,ste84} does not apply to the superbursts. More observations are required for further confirmation.  
+
+
+
+
+
+
+
+
+
+
+
+\section{Discussion} \label{dis}
+\subsection{Challenge of the Triple Model}\label{ctm}
+The initial aim of this study was to further validate the stability of superorbital period of 4U 1820-30, a crucial piece of evidence for the triple model as described in Section~\ref{intro}, which explains its  superorbital modulation with a period of $\sim$170 days. Given that 4U 1820-30 resides in NGC 6624, a star-crowded region, previous studies suggested a high likelihood of the binary capturing a third star and forming a stable hierarchical triple system~\citep{gri88}.~\citet{bla82} proposed a stability criteria for such a triple system as
+
+\begin{equation}\label{blc}
+ \mu \leq \mu_{crit} ={ 0.175 {{\Delta^3} \over {(2-\Delta)^{3/2}}}}
+\end{equation}
+
+\noindent where $\mu=(m_2+m_3)/2m_1$, $\Delta=2(R-1)/(R+1)$, $R=R_3/R_1$, $m_1$, $m_2$ and $m_3$ are the masses of binary primary, secondary and tertiary companion, respectively, $R_1$ is the binary separation and $R_3$ is the maximum separation of the binary primary and the  tertiary companion. Applying Eq.~\ref{blc} to 4U 1820-30 system with the assumption that $m_1 = 1.4 M_{\sun}$, $m_2 = 0.07 M_{\sun}$~\citep{chou23}, $m_3 = 0.5 M_{\sun}$ (CG01), binary period of 685 s and third star orbital period of 1.1 days~\ref{intro}, according to the Kepler's third law, we found that $\mu = 0.204$ and $\mu_{crit} = 24.18$, which satisfies the  stability criteria proposed by~\citet{bla82}. Additionally, CG01, based on their analysis of the RXTE ASM light curve collected between 1996 and early 2000 and in conjunction with fidicial points detected by Vela5B and Ginga, found no significant  superorbital period derivative, setting an upper limit of $|\dot P / P | < 2.2 \times 10^{-4}$ $yr^{-1}$, thereby confirming its stability and lending support to the triple model. Therefore, for the 4U 1820-30 system, with additional subsequent observations after 2000, one would expect that the observed superorbital period would closely match the value found by CG01 (171 days) and that the period derivative could be further constrained.
+
+However, upon analyzing X-ray light curves collected by the sky monitoring/scanning instruments from 1987 to 2023, we discovered a significant change in the superorbital period from 171 days to 167 days, identified through both power spectral analysis (Section~\ref{ps}) and phase analysis (Section~\ref{pha}) over a time span of $\sim$36 years. This suggests that the ephemeris proposed by CG01 is no longer suitable for describing the superorbital modulation of 4U 1820-30, and the period is not as stable as anticipated by triple model. By analyzing the superorbital phase evolution, we suggested that the superorbital period may have experienced an abrupt change during late 2000 to early 2003 ($T_g =$ MJD $52264 \pm 466 $) or may be constantly changing with a period derivative of $\dot P = (-3.58 \pm 0.72) \times 10^{-4}$ day/day.
+
+The significant difference between the period detected from Vela5B observation, $176.4\pm 1.3$ days~\citep{pri84}, and Ginga observation, $171.12 \pm 1.99$ days (see Table~\ref{supper}) suggests that the superorbital period may have experienced another glitch between 1976 and 1987. If 4U 1820-30 is a hierarchical triple system, from Eq.~\ref{msp}, a glitch in superorbital period may be induced by changes in either the binary orbital period or the third star orbital period as
+
+\begin{equation}\label{glip}
+ {{\Delta P_{sup}} \over {P_{sup}}} = 2{{\Delta P_3} \over {P_{3}}} - {{\Delta P_{orb}} \over {P_{orb}}}
+\end{equation}
+
+
+\noindent Glitches in orbital periods have been observed in some of total eclipsing LMXBs, like EXO 0748-676~\citep{wol09}, XTE J1710-281~\citep{jai11,jai22} and AX J1745.6-2901~\citep{pon17}. These glitches likely result from  by magnetic, solar-type cycles of the companion star, affecting the mass distribution of companion and leading to variations in its quadruple moment~\citep{wol09}. However, the magnitudes of these glitches are typically in the order of milliseconds, with $\Delta P_{orb} / P_{orb} \sim 10^{-7}-10^{-6}$. For 4U 1820-30 system, the superorbital period glitch was measured as $\Delta P_{sup} / P_{sup}=1.8 \times 10^{-2}$. No glitch has ever been  observed in the binary orbital phase evolution~\citep[see Figure 4 in][]{chou23}, implying that the orbital period glitch of the third companion was as high as  $\Delta P_3 / P_3 =9 \times 10^{-3}$, about 4 orders of magnitude larger than those from eclipsing LMXBs. However, the superorbital period change may not occur abruptly but within a finite short time interval. Suppose the timescale to be 900 days, estimated from the uncertainty of $T_g$, the mean orbital period derivative of the third star would be as high as $\dot P_3 \approx 2 \times 10^{-3}$ day/day. Thus, the triple model is unlikely to explain this large superorbital period change in such a short time.
+
+The low power state is a particular phase during the superorbital modulation evolution of 4U 1820-30. The dynamic power spectrum demonstrated in Figure 24 of~\citet{kot12} indicates that in addition to the weaker power detected in the superorbital period, the powers of its first harmonics and a signal of period $\sim$65 days became significant. This suggests that the modulation were more complicate than usual. Our phase analysis results also show that the superorbital phases had larger fluctuation during the low power state (see Figure~\ref{phevol}) with an RMSD of 0.11, evaluated by the best glitch model fitting, compared to 0.075 for the phases outside low power state. It is probable that the superorbital period was 171 days before the low power state, became unstable during the low power state, and stabilized at 167 days later. However, it is unclear what the cause of this phenomenon is.
+
+Conversely, the superorbital phase evolution is also well-fitted by a quadratic model, although there is a significant difference (2.2$\sigma$) between the period  evaluated as ephemeris extrapolated to the midpoint of Vela5B observation time ($172.84 \pm 0.94$ days) and the observed period ($176.4 \pm 1.3$ days) as reported by~\citet{pri84}. If 4U 1820-30 is a hierarchical triple system, from Eq.~\ref{msp}, the relation of period derivatives can be written as
+
+\begin{equation}\label{quap}
+ {{\dot P_{sup}} \over {P_{sup}}} = 2{{\dot P_3} \over {P_{3}}} - {{\dot P_{orb}} \over {P_{orb}}}
+\end{equation}
+
+\noindent Although the exact binary orbital period derivative being unknown, it is believed it is $\dot P_{orb} / P_{orb} \sim +10^{-7}$ yr$^{-1}$~\citep{chou23}. Therefore, the observed superorbital period derivative $\dot P_{sup} / P_{sup}= (-7.71 \pm 1.54)  \times 10^{-4}$ yr$^{-1}$ is contributed by the tertiary companion, with a value of $\dot P_{3} / P_{3}= -3.9 \times 10^{-4}$ yr$^{-1}$, corresponding to a variation timescale of only $\sim$2,600 years. From Eq.~\ref{blc}, we infer that the triple system should be stable; therefore, such a fast period change is unlikely to occur. Furthermore, the acceleration from the gravitational potential in NGC 6624, estimated as $a_c /c \sim -10^{-7}$ yr$^{-1}$~\citep{peu14}, is insufficient for the orbital period derivative of the third companion derived from Eq.~\ref{quap}. Thus, the triple model can hardly explain the observed superorbital period derivative.     
+
+
+%It is unclear that if any unknown external effect (e.g. a flyby object) may result in this large period change. Such an effect did not affect the binary because the binary orbital phase evulution has processed smoothly over $\sim$46 years~\citep{chou23}.   
+
+
+If 4U 1820-30 is not a triple system, the constraints regarding the observed value of the binary orbital period derivative may be relaxed. To explain the discrepancy between the positive theoretical value~\citep[$\dot P_{orb} / P_{orb} > 8.8 \times 10^{-8}$ yr$^{-1}$,][]{rap87} and the negative observed value~\citep[$\dot P_{orb} / P_{orb} =(-5.21 \pm 0.13) \times 10^{-8}$ yr$^{-1}$,][]{chou23} of the binary orbital period derivative, it has been proposed that 4U 1820-30 is being accelerated by the gravitational potential within the globular cluster NGC 6624~\citep{tan91,peu14}. However,~\citet{peu14} suggested that the maximum radial acceleration from the gravitational potential from NGC 6624 itself ($|a_{c,max}/c|=1.3 \times 10^{-9}$ yr$^{-1}$ is an order of magnitude smaller than the value required to explain the observed binary period period derivative. Therefore,~\citet{peu14} proposed  three possible scenarios to provide additional acceleration for 4U 1820-30, a flyby stellar mass dark remnant, a intermediate-mass black hole at the center of NGC 6624, and a central concentration of dark remnants. Only the last scenario was preferred because the first two scenarios tend to destroy the triple system~\citep{peu14}. However, if 4U 1820-30 is a pure binary system, the first two scenarios become viable explanations for the observed binary orbital period derivative.
+
+\subsection{Thermal Disk Instability}\label{tdi}
+The fact that the type-I X-ray bursts of 4U 1820-30 can only be observed in the low state~\citep{cla77,ste84} has been reconfirmed in this work (see Section~\ref{xbat}). This implies that the superorbital modulation of 4U 1820-30 is caused by variations in accretion rate rather than by external absorption or precession of accretion disk.~\citet{kot12} listed eight possible mechanisms to account for the superorbital modulations observed in X-ray binaries, but only the third body (i.e., triple model) and the X-ray state changes can possibly be responsible for the superorbital modulation of 4U 1820-30. If the triple model is ruled out due to the instability of superorbital period, the only remaining mechanism is the X-ray state changes. X-ray state changes refer to variations in mass accretion rate between high and low states due to thermal disk instability, as observed in dwarf novae and soft X-ray transients.~\citet{pri84} proposed that this mechanism could explain for the superorbital modulation of 4U 1820-30. However,~\citet{men02} pointed out that if thermal disk instability could occur in 4U 1820-30 system, the mass transfer rate ${\dot m} \leq {\dot m_{crit}=4.4 \times 10^{16}}$ g s$^{-1}$. From the mean flux of $<F_{bol}>=8.7 \times 10^{-9}$ erg cm$^{-2}$ s$^{-1}$ for 4U 1820-30~\citep{zdz07b} and the distance of 8.019 kpc for NGC 6624~\citep{bau21}, we obtained a mean luminosity of $<L>=6.7 \times 10^{37}$ erg s$^{-1}$ and a mass accretion rate of $\dot m_1 = 3.6 \times 10^{17}$ g s$^{-1}$ for a neutron star with a mass of 1.4 $M_{\sun}$ and a radius of $10^6$ cm. It is approximately an order of magnitude larger than the $\dot m_{crit}$. Therefore, this mechanism is unlikely to explain the superorbital modulation of 4U 1820-30.
+
+
+\subsection{Irradiation-induced Mass Transfer Instability}\label{idi}
+~\citet{zdz07b} discovered that the binary orbital modulation amplitude and the offset phase in 4U 1820-30 depend significantly on the accretion rate, which is highly related to the superorbital modulation phase. The orbital modulation in the X-ray band is believed to be caused by absorption from structures in the disk rim where the accretion flow from the companion impacts the outer edge of the disk~\citep{ste87}. As the mass loss rate changes, variations of the accretion stream induce changes in the absorption of outer edge structures and the position of impact point. This makes the amplitude and phase of orbital modulation dependent on the mass loss rate, and subsequently, on the accretion rate after a viscous time of $\sim 10^5$ s~\citep{zdz07b}. The variation in mass loss rate could be explained by the triple model as described in Section~\ref{intro}, where the eccentricity variation of the binary system induced by the third companion result in changes to the mass loss rate. Although the superorbital modulation is probably not a consequence of a third companion, the the discovery by~\citet{zdz07b}. implies that the superorbital modulation of 4U 1820-30 is due to changes in mass loss rate.   
+
+One possible cause of variations in the accretion flow, aside from the presence of a third companion, is irradiation-induced mass transfer instability. This model has ever proposed to explain the flux variation of soft X-ray transients~\citep{ham86} and was included into the hybrid model proposed by~\citet{sim03}. Due to small binary separation of 4U 1820-30, the irradiation on the companion by the X-ray emission from the neutron star and the inner part of accretion disk is strong. Because the companion of 4U 1820-30 is only partially degenerate~\citep{rap87}, irradiation on the non-degenerate envelope enhances the mass loss of the companion.~\citet{chou23} estimated that at least 40\% of the mass lost from the companion is ejected from the binary system. Such a strong outflow is probably caused by the irradiation on the companion, as proposed by~\citet{tav91}. However, a part of X-ray irradiation on the companion is blocked by the accretion disk, with the area that depending on the scale height of disk rim. When the scale height of disk rim is small, a larger irradiation area enhances the mass loss rate and the accretion flow, which increases the scale height of the accretion disk rim. Conversely, when the scale height of accretion disk rim is large, a larger portion of the companion's surface is shielded by the disk. This results in a reduction in the mass loss rate, as well as in the accretion flow and the scale height of the accretion disk rim. This a cyclical process may explain the quasi-periodic superorbital modulation of 4U 1820-30.
+
+Suppose the accretion disk in 4U 1820-30 is geometrically thin and optically thick~\citep{pri81}. The shielded region on the companion can be estimated. For 4U 1820-30 with a neutron star mass of $m_1 =1.4 M_{\sun}$, a companion mass of $m_2 = 0.07 M_{\sun}$~\citep{chou23}, and an orbital period of $P_{orb} = 685$ s, we derived the binary separation of $a=1.33 \times 10^{10}$ cm from Kepler's third law. The discovery of the superhump in 4U 1820-30 system~\citep{wan10} indicates that the rim of the accretion disk reaches a 3:1 resonance radius, giving a disk radius of  $r_d = 6.4 \times 10^{9}$ cm. The scale height of the accretion disk can be evaluated as $\sqrt{kT/\mu m_H}/\Omega_k$~\citep{spr10} where $T$ and $\Omega_k$ are the temperature and the Keplerian angular velocity at the disk radius $r$, $m_H$ is the mass of a hydrogen atom, $\mu=4$ for a helium-dominated disk, and $k$ is the Boltzmann constant. The temperature at the disk rim is estimated as
+
+\begin{equation}\label{tr}
+ T={\Big({{3G \dot m_1  m_1} \over {8 \pi \sigma r_d^3}} \Big)^{1 \over 4}}
+\end{equation}
+
+
+\noindent \citep{pri81} where $\sigma$ is Stefan-Boltzmann constant and $G$ is gravitational constant. The accretion rate of 4U 1820-30 $\dot m_1 = 3.6 \times 10^{17}$ g s$^{-1}$. Thus, the temperature at the disk rim is $T=2.7 \times 10^4$ $K$ and the scale height is $H=2.8 \times 10^7$ cm. For a Roche lobe filled companion, the radius of companion is $R_2 =R_L = 2/3^{4/3} [q/(1+q)]^{1/3}a$~\citep{pac71} where $q=m_2/m_1$. For 4U 1820-30 system, q=0.05, so $R_2 =1.68 \times 10^9$ cm. The scale height of the irradiation shielded by the accretion disk on the companion around $L_1$ point is $h=H(a-R_2)/r_d =5.0 \times 10^7$ cm, which equivalent to a latitudes of $\sin ^{-1} (h/R_2)=1.7^{\circ}$ on the companion surface. Although the shielded latitude is small, it covers the $L_1$ point if the orbital plane and the accretion disk are coplanar. The accretion stream flows from a small region around the $L_1$ point on the surface of companion. If the accretion disk rim partially obscures this region, even a marginal change in irradiation on this region due to variations in the scale height of accretion disk rim could induce a significant change in mass loss because of weak effective gravitational field around $L_1$ point. Such a large variation in mass loss rate  could result in quasi-periodic superorbital modulation, causing a 2-3 fold change in X-ray flux of 4U 1820-30. However, more observations and theoretical studies are required to verify this irradiation-induced mass transfer instability scenario, including the evolution of superorbital period discovered in this study.      
+
+
+
+\section{Summary} \label{sum}
+
+The triple model was once considered a plausible explanation for the superorbital modulation observed in 4U 1820-30. The stability of the superorbital period is the crucial evidence for verifying this model. CG01 suggested that the superorbital period was stable at 171 days and early RXTE ASM data support this 171-day periodicity, indicating stability of superorbital period.
+
+In this study, we analyzed the data collected by Ginga ASM, RXTE ASM, RXTE PCA, Swift BAT, and MAXI over a time span of 36 years to verify the triple model for the 4U 1820-30 system. The superorbital periods derived from the power spectra of these five instruments show a significant change from 171 days to 167 days between 1987 and 2023, suggesting the instability of the superorbital period. Phase analysis revealed that the superorbital period may have experienced a period glitch between late 2000 and early 2003, or may have changed smoothly with a period derivative of $\dot P_{sup}= (-3.58 \pm 0.72) \times 10^{-4}$ day/day. Two ephemerides, glitch and quadratic, were established to describe the expected superorbital minimum times of 4U 1820-30. These updated ephemerides accurately describe the superorbital minimum times with a mean phase jitters of $\sim0.08$ cycles. The fact that the Type-I X-ray bursts can be observed only in the low state implies that a high probability of detecting the bursts around the superorbital minimum. By examining previously reported burst detection dates with different ephemerides, we found that the burst dates are more clustered around the superorbital phase zero when folded with the glitch and quadratic ephemerides, rather than with linear and CG01 ephemerides. This is not only reconfirms the low state constraint for regular X-ray bursts as suggested by~\citet{cla77} and~\citet{ste84}, but also provides supportive evidence that the glitch and quadratic ephemerides better at describe the superorbital minimum times.
+
+
+The instability of the superorbital periodicity in 4U 1820-30 discovered in this work seriously challenges the triple model. According to  Eq.~\ref{msp}, the superorbital period change could be due to either the binary period variation or the orbital period change of the third companion. However, the binary orbital modulation has been monitored for over 46 years, and neither period glitch nor period derivative of an order of ${\dot P}_{orb}/P_{orb} \sim 10^{-4}$ yr$^{-1}$ has ever been observed \citep[see][]{chou23}. Therefore, the superorbital period changes likely reflect the orbital period variation of the third companion. While orbital period glitches have been observed in some eclipsing LMXBs, the magnitude of these change is much smaller than that the superorbital period glitch observed 4U 1820-30. The period derivative derived from the quadratic model indicates that the timescale of the orbital period evolution of the third companion is $\sim 2600$ years, which is inconsistent with the stability expected in a hierarchical triple system. If the triple model does not apply to the 4U 1820-30 system, two previously unfavorable scenarios proposed by~\citet{peu14} - a stellar mass dark remnant and an intermediate mass black hole - can be reconsidered to explain the discrepancy between the theoretical and observed binary orbital period derivatives.
+
+The absence of regular Type-I bursts in the high state suggests that the superorbital modulation of 4U 1820-30 results from variations in the accretion rate rather than from the occultation effect caused by the precession of a tilting or warping accretion disk. Thermal disk instability is unlikely to be the cause of the superorbital modulation due to the high accretion rate of 4U 1820-30. On the other hand, because the amplitude of orbital modulation highly depends on accretion rate~\citep{zdz07b}, the superorbital modulation could result from variation in mass transfer from companion. Given the instability of superorbital period of 4U 1820-30, such variation is unlikely to be induced by a third companion. We proposed that irradiation-induced mass transfer instability may be responsible for the superorbital modulation of 4U 1820-30. The accretion stream is expected to flow from a small region around the L$_1$ point on companion, where the effective gravitational field is weak. Therefore, the accretion stream is highly sensitive to the X-ray irradiation onto this region. The irradiation onto this region may be partly blocked by the accretion disk rim, whose scale height also depends on the accretion stream. Small variations in the scale height can lead to  significant changes in accretion stream. A cyclical process could result in quasi-periodic superorbital modulation in 4U 1820-30.
+
+Using the data collected by X-ray monitoring/scanning X-ray telescopes, we discovered the instability of the superorbital period of 4U 1820-30. Our study, we found that both the glitch model and the quadratic model describe the superorbital phase evolution well. However, additional observations are necessary to validate these models or to provide a better ephemeris for the superorbital modulation of 4U 1820-30. This period instability suggests that the triple model is unlikely suitable to explain the superorbital modulation of 4U 1820-30. Although we proposed that the irradiation-induced mass transfer instability may be responsible for the superorbital modulation, further observations and theoretical works are required to verify this model, including the periodicity, modulation amplitude and profile, and the puzzling phase evolution, which identified in this study. Fortunately, Swift BAT and MAXI are continuously monitoring the X-ray sky. Additionally, the newly operational Wide-field X-ray Telescope on-board the Einstein Probe~\citep{yua15}, which is sensitive to 0.5 to 4.0 keV X-ray photons and scans the entire night sky in three satellite orbits, can provide further data to better understand the nature of the superorbital modulation of 4U 1820-30.
+
+
+%% IMPORTANT! The old "\acknowledgment" command has be depreciated. It was
+%% not robust enough to handle our new dual anonymous review requirements and
+%% thus been replaced with the acknowledgment environment. If you try to 
+%% compile with \acknowledgment you will get an error print to the screen
+%% and in the compiled pdf.
+
+
+\begin{acknowledgments}
+This research has made use of data and software provided by the High Energy Astrophysics Science Archive Research Center (HEASARC), which is a service of the Astrophysics Science Division at NASA/GSFC. We also express our gratitude to  the RXTE team for archiving the RXTE PCA monitoring observations of the galactic center and plane data, and to MAXI team for archiving the MAXI data.
+\end{acknowledgments}
+
+%% To help institutions obtain information on the effectiveness of their 
+%% telescopes the AAS Journals has created a group of keywords for telescope 
+%% facilities.
+%
+%% Following the acknowledgments section, use the following syntax and the
+%% \facility{} or \facilities{} macros to list the keywords of facilities used 
+%% in the research for the paper.  Each keyword is check against the master 
+%% list during copy editing.  Individual instruments can be provided in 
+%% parentheses, after the keyword, but they are not verified.
+
+\vspace{5mm}
+\facilities{ADS, HEASRAC, Ginga (ASM), RXTE (ASM), RXTE (PCA),Swift (BAT), MAXI}
+
+%% Similar to \facility{}, there is the optional \software command to allow 
+%% authors a place to specify which programs were used during the creation of 
+%% the manuscript. Authors should list each code and include either a
+%% citation or url to the code inside ()s when available.
+
+%%\software{astropy \citep{2013A&A...558A..33A,2018AJ....156..123A},  
+%%          Cloudy \citep{2013RMxAA..49..137F}, 
+%%          Source Extractor \citep{1996A&AS..117..393B}
+%%          }
+
+\software{heasoft(v6.30)}
+
+
+%% Appendix material should be preceded with a single \appendix command.
+%% There should be a \section command for each appendix. Mark appendix
+%% subsections with the same markup you use in the main body of the paper.
+
+%% Each Appendix (indicated with \section) will be lettered A, B, C, etc.
+%% The equation counter will reset when it encounters the \appendix
+%% command and will number appendix equations (A1), (A2), etc. The
+%% Figure and Table counter will not reset.
+
+\begin{thebibliography}{}
+
+\bibitem[Barthelmy et al.(2005)]{bar05} Barthelmy, S.~D., Barbier, L.~M., Cummings, J.~R., et al.\ 2005, \ssr, 120, 143. doi:10.1007/s11214-005-5096-3
+\bibitem[Baumgardt \& Vasiliev(2021)]{bau21} Baumgardt, H. \& Vasiliev, E.\ 2021, \mnras, 505, 5957. doi:10.1093/mnras/stab1474
+\bibitem[Black(1982)]{bla82} Black, D.~C.\ 1982, \aj, 87, 1333. doi:10.1086/113220
+\bibitem[Chou \& Grindlay(2001)]{chou01} Chou, Y. \& Grindlay, J.~E.\ 2001, \apj, 563, 934. (CG01) doi:10.1086/324038
+\bibitem[Chou \& Jhang(2023)]{chou23} Chou, Y. \& Jhang, Y.-W.\ 2023, \apj, 951, 42. doi:10.3847/1538-4357/acd376
+\bibitem[Clark et al.(1977)]{cla77} Clark, G.~W., Li, F.~K., Canizares, C., et al.\ 1977, \mnras, 179, 651. doi:10.1093/mnras/179.4.651
+\bibitem[Cui et al.(1998)]{cui98} Cui, W., Morgan, E.~H., \& Titarchuk, L.~G.\ 1998, \apjl, 504, L27. doi:10.1086/311569
+\bibitem[Farrell et al.(2009)]{far09} Farrell, S.~A., Barret, D., \& Skinner, G.~K.\ 2009, \mnras, 393, 139. doi:10.1111/j.1365-2966.2008.14167.x
+\bibitem[Garc{\'\i}a et al.(2013)]{gar13} Garc{\'\i}a, F., Zhang, G., \& M{\'e}ndez, M.\ 2013, \mnras, 429, 3266. doi:10.1093/mnras/sts583
+\bibitem[Giacconi et al.(1974)]{gia74} Giacconi, R., Murray, S., Gursky, H., et al.\ 1974, \apjs, 27, 37. doi:10.1086/190288
+\bibitem[Grindlay et al.(1976)]{gri76} Grindlay, J., Gursky, H., Schnopper, H., et al.\ 1976, \apjl, 205, L127. doi:10.1086/182105
+\bibitem[Grindlay(1986)]{gri86} Grindlay, J.~E.\ 1986, The Evolution of Galactic X-Ray Binaries, 167, 25
+\bibitem[Grindlay(1988)]{gri88} Grindlay, J.~E.\ 1988, The Harlow-Shapley Symposium on Globular Cluster Systems in Galaxies, 126, 347
+\bibitem[Haberl et al.(1987)]{hab87} Haberl, F., Stella, L., White, N.~E., et al.\ 1987, \apj, 314, 266. doi:10.1086/165056
+\bibitem[Hameury et al.(1986)]{ham86} Hameury, J.~M., King, A.~R., \& Lasota, J.~P.\ 1986, \aap, 162, 71
+%\bibitem[Hellier et al.(1990)] {hel90} Hellier, C., Mason, K.~O., Smale, A.~P., et al.\ 1990, \mnras, 244, 39
+\bibitem[Horne \& Baliunas(1986)]{hor86} Horne, J.~H. \& Baliunas, S.~L.\ 1986, \apj, 302, 757. doi:10.1086/164037
+\bibitem[Jahoda et al.(1996)]{jah96} Jahoda, K., Swank, J.~H., Giles, A.~B., et al.\ 1996, \procspie, 2808, 59. doi:10.1117/12.256034
+\bibitem[in't Zand et al.(2011)]{int11} in't Zand, J., Serino, M., Kawai, N., et al.\ 2011, The Astronomer's Telegram, 3625
+\bibitem[Jain \& Paul(2011)]{jai11} Jain, C. \& Paul, B.\ 2011, \mnras, 413, 2. doi:10.1111/j.1365-2966.2010.18110.x
+\bibitem[Jain et al.(2022)]{jai22} Jain, C., Sharma, R., \& Paul, B.\ 2022, \mnras, 517, 2131. doi:10.1093/mnras/stac2804
+%\bibitem[Krimm et al.(2013)]{kri13} Krimm, H.~A., Holland, S.~T., Corbet, R.~H.~D., et al.\ 2013, \apjs, 209, 14. doi:10.1088/0067-0049/209/1/14
+\bibitem[Kotze \& Charles(2012)]{kot12} Kotze, M.~M. \& Charles, P.~A.\ 2012, \mnras, 420, 1575. doi:10.1111/j.1365-2966.2011.20146.x
+\bibitem[Levine et al.(1996)]{lev96} Levine, A.~M., Bradt, H., Cui, W., et al.\ 1996, \apjl, 469, L33. doi:10.1086/310260
+%\bibitem[Makishima et al.(1986)]{mak86} Makishima, K., Maejima, Y., Mitsuda, K., et al.\ 1986, \apj, 308, 635. doi:10.1086/164534
+\bibitem[Markwardt(2006)]{mar06} Markwardt, C.~B.\ 2006, The Transient Milky Way: A Perspective for MIRAX, 840, 45. doi:10.1063/1.2216601
+\bibitem[Matsuoka et al.(2009)]{mat09} Matsuoka, M., Kawasaki, K., Ueno, S., et al.\ 2009, \pasj, 61, 999. doi:10.1093/pasj/61.5.999
+\bibitem[Mazeh \& Shaham(1979)]{ma79} Mazeh, T. \& Shaham, J.\ 1979, \aap, 77, 1
+\bibitem[Menou et al.(2002)]{men02} Menou, K., Perna, R., \& Hernquist, L.\ 2002, \apjl, 564, L81. doi:10.1086/338909
+\bibitem[Paczy{\'n}ski(1971)]{pac71} Paczy{\'n}ski, B.\ 1971, \araa, 9, 183. doi:10.1146/annurev.aa.09.090171.001151
+\bibitem[Patruno \& Watts(2021)]{pat21} Patruno, A. \& Watts, A.~L.\ 2021, Timing Neutron Stars: Pulsations, Oscillations and Explosions, 461, 143. doi:10.1007/978-3-662-62110-3\_4
+\bibitem[Peuten et al.(2014)]{peu14} Peuten, M., Brockamp, M., K{\"u}pper, A.~H.~W., et al.\ 2014, \apj, 795, 116. doi:10.1088/0004-637X/795/2/116
+\bibitem[Ponti et al.(2017)]{pon17} Ponti, G., De, K., Mu{\~n}oz-Darias, T., et al.\ 2017, \mnras, 464, 840. doi:10.1093/mnras/stw2317
+\bibitem[Press et al.(2002)]{pre02} Press, W.~H., Teukolsky, S.~A., Vetterling, W.~T., et al.\ 2002, Numerical recipes in C++ : the art of scientific computing by William H. Press. xxviii, 1,002 p. : ill. ; 26 cm.  Includes bibliographical references and index. ISBN :  0521750334
+\bibitem[Priedhorsky \& Terrell(1984)]{pri84} Priedhorsky, W. \& Terrell, J.\ 1984, \apjl, 284, L17. doi:10.1086/184343
+\bibitem[Pringle(1981)]{pri81} Pringle, J.~E.\ 1981, \araa, 19, 137. doi:10.1146/annurev.aa.19.090181.001033
+\bibitem[Rappaport et al.(1987)]{rap87} Rappaport, S., Nelson, L.~A., Ma, C.~P., et al.\ 1987, \apj, 322, 842. doi:10.1086/165778
+\bibitem[{\v{S}}imon(2003)]{sim03} {\v{S}}imon, V.\ 2003, \aap, 405, 199. doi:10.1051/0004-6361:20030514
+\bibitem[Scargle(1982)]{sca82} Scargle, J.~D.\ 1982, \apj, 263, 835. doi:10.1086/160554
+\bibitem[Serino et al.(2021a)]{ser21a} Serino, M., Iwakiri, W., Negoro, H., et al.\ 2021a, The Astronomer's Telegram, 14871
+\bibitem[Serino et al.(2021b)]{ser21b} Serino, M., Iwakiri, W., Negoro, H., et al.\ 2021b, The Astronomer's Telegram, 15071
+\bibitem[Smale \& Lochner(1992)]{sm92} Smale, A.~P. \& Lochner, J.~C.\ 1992, \apj, 395, 582. doi:10.1086/171678
+\bibitem[Spruit(2010)]{spr10} Spruit, H.~C.\ 2010, arXiv:1005.5279. doi:10.48550/arXiv.1005.5279
+\bibitem[Stella et al.(1984)]{ste84} Stella, L., Kahn, S.~M., \& Grindlay, J.~E.\ 1984, \apj, 282, 713. doi:10.1086/162253
+\bibitem[Stella et al.(1987)]{ste87} Stella, L., Priedhorsky, W., \& White, N.~E.\ 1987, \apjl, 312, L17. doi:10.1086/184811
+\bibitem[Strohmayer \& Brown(2002)]{str02} Strohmayer, T.~E. \& Brown, E.~F.\ 2002, \apj, 566, 1045. doi:10.1086/338337
+\bibitem[Tan et al.(1991)]{tan91} Tan, J., Morgan, E., Lewin, W.~H.~G., et al.\ 1991, \apj, 374, 291. doi:10.1086/170118
+\bibitem[Tavani(1991)]{tav91} Tavani, M.\ 1991, \nat, 351, 39. doi:10.1038/351039a0
+\bibitem[Tsunemi et al.(1989)]{tsu89} Tsunemi, H., Kitamoto, S., Manabe, M., et al.\ 1989, \pasj, 41, 391
+\bibitem[Vacca et al.(1986)]{vac86} Vacca, W.~D., Lewin, W.~H.~G., \& van Paradijs, J.\ 1986, \mnras, 220, 339. doi:10.1093/mnras/220.2.339
+\bibitem[van der Klis et al.(1993a)]{van93a} van der Klis, M., Hasinger, G., Dotani, T., et al.\ 1993, \mnras, 260, 686. doi:10.1093/mnras/260.3.686
+\bibitem[van der Klis et al.(1993b)]{van93b} van der Klis, M., Hasinger, G., Verbunt, F., et al.\ 1993, \aap, 279, L21
+\bibitem[Wang \& Chakrabarty(2010)]{wan10} Wang, Z. \& Chakrabarty, D.\ 2010, \apj, 712, 653. doi:10.1088/0004-637X/712/1/653
+\bibitem[Wen et al.(2006)]{wen06} Wen, L., Levine, A.~M., Corbet, R.~H.~D., et al.\ 2006, \apjs, 163, 372. doi:10.1086/500648
+\bibitem[Wolff et al.(2009)]{wol09} Wolff, M.~T., Ray, P.~S., Wood, K.~S., et al.\ 2009, \apjs, 183, 156. doi:10.1088/0067-0049/183/1/156
+\bibitem[Yu et al.(2024)]{yu24} Yu, W., Li, Z., Lu, Y., et al.\ 2024, \aap, 683, A93. doi:10.1051/0004-6361/202348195
+\bibitem[Yuan \& Osborne(2015)]{yua15} Yuan, W. \& Osborne, J.~P.\ 2015, arXiv:1506.07736. doi:10.48550/arXiv.1506.07736
+\bibitem[Zdziarski et al.(2007a)]{zdz07a} Zdziarski, A.~A., Wen, L., \& Gierli{\'n}ski, M.\ 2007a, \mnras, 377, 1006. doi:10.1111/j.1365-2966.2007.11686.x
+\bibitem[Zdziarski et al.(2007b)]{zdz07b} Zdziarski, A.~A., Gierli{\'n}ski, M., Wen, L., et al.\ 2007b, \mnras, 377, 1017. doi:10.1111/j.1365-2966.2007.11688.x
+\end{thebibliography}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{CJK*}
+
+
+
+\end{document}
+
+% End of file `sample631.tex'.
+
+%%  LocalWords:  AMS

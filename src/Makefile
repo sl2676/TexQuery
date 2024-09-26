@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -Wextra -pedantic -g
+CXXFLAGS = -std=c++17 -Wall -Wextra -pedantic -g -fsanitize=address
 
 INCLUDES = -I. -I/opt/homebrew/opt/nlohmann-json/include
 
