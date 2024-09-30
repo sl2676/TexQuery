@@ -1,0 +1,90 @@
+{
+    "document": {
+        "content": [
+            {
+                "content": [
+                    "\\footnote [] {\nNote that at low frequencies (e.g., $f\\lesssim 10^{-9}\\hz$), the\nGWB may deviate from the canonical $-2/3$ power law, considering\nthat the environmental coupling effect \\citep{BBR80, Kocsis11} and the orbital\neccentricities of cosmic BBHs  \\citep{Enoki07} both lead to the bending of the\nGWB spectrum \\citep{ChenSY17, Rasskazov17,CYL20bbh}.\n}",
+                    "\\caption [] {Synthetic GWB strain spectra from cosmic BBHs generated from the\nreference BBH population model. The lower panel shows the GWB characteristic\nstrain amplitude $h\\rmc$ as a function of the GW frequency $f$ for 10\nrealizations of the cosmic BBHs (each one represented by a black curve with\nsignificant fluctuation at high frequencies). For comparison, the canonical\n$-2/3$ power-law strain spectrum for the same model is indicated by the cyan\nline. For each realization, the top contributor to $h\\rmc$ within each NANOGrav\nfrequency bin is marked by a red filled circle if that contributor dominates the\nfrequency bin, while an open magenta circle if not. In the upper panel, the thin\nhistogram shows the probability $P_{\\rm dom}(f)$ that a given realization\ncontains a dominant BBH source within a given NANOGrav frequency bin, and the\nthick dashed curve shows the cumulative probability $P_{\\rm dom,cum}(f)$ that a\ngiven realization contains at least one dominant BBH source in all NANOGrav\nfrequency bins left to a given frequency. Both probability distributions are\nevaluated based on $1000$ realizations generated from the reference BBH\npopulation model. The grey vertical lines in both panels denote the leftmost\n$14$ NANOGrav frequency bins. See details in Section~\\ref{sec:detectability}.}",
+                    "\\caption [] {Individual BBH sources in the $h_0$--$f$ plane. The lower panel shows\nthe BBH sources in $10$ realizations generated from the reference BBH population\nmodel. For each realization, we record the top $30$ contributors to the\nsynthetic GWB characteristic strain amplitude $h\\rmc$ within each NANOGrav\nfrequency bin (filled circles). Among them, those dominating the $h\\rmc$ of\ntheir frequency bins are marked in red colors (they are the same sources as\nthose red filled circles in Fig.~\\ref{fig:GWBSynthesisHigh}). The green curve\nrepresents the 95\\% upper limit on individual BBHs derived from the NANOGrav\n$15$-year data set \\citep{NG23indv}, and the blue curve represents the\nsensitivity curve on individual sources for the adopted CPTA configuration\nassuming an S/N threshold of $3$. In the upper panel, the thin histogram shows\nthe expected number of individual BBH sources detectable by CPTA in each\nNANOGrav frequency bin $\\langle N\\rangle(f)$, and the thick dashed curve shows\nthe corresponding cumulative expected number of detectable sources $\\langle\nN\\rangle_{\\rm cum}(f)$. Both quantities are the average evaluated based on\n$1000$ realizations of cosmic BBHs from the reference BBH population model. The\ngrey vertical lines in each panel indicate the leftmost $14$ NANOGrav frequency\nbins, and the magenta vertical dashed lines denote the three frequencies\nexplored by CPTA in \\citet{CPTA23hd}. See details in\nSection~\\ref{sec:detectability}.}",
+                    "\\tablecaption [] {Detection probabilities and corresponding expected numbers of\ndetectable individual BBHs (in the bracket) from the BBH population model by CPTA with\ndifferent settings of $T\\obs$ and $\\rhoth$. The BBH population model adopts\neither the MBH--host galaxy scaling relation calibrated by the GWB signal\nreported by NANOGrav (reference Model) or the empirical one given by\n\\citet{KH13} (empirical Model). \\label{tab:t1}}",
+                    "\\tablehead [] {\\multirow{2}{*}{$T\\obs(\\yr)$} & \\multicolumn{2}{c}{Reference Model}\n&& \\multicolumn{2}{c}{Empirical Model} \\\\ \\cline{2-3} \\cline{5-6}\n%\n& \\dcolhead{\\rhoth=3} & \\dcolhead{\\rhoth=5} && \\dcolhead{\\rhoth=3} &\n\\dcolhead{\\rhoth=5}}",
+                    "\\caption [] {Legends are the same as that for Fig.~\\ref{fig:LoudConstrained}, except\nthat the mock BBHs are generated from the BBH population model adopting the\nMBH-host galaxy relationship given by \\citet{KH13}, which leads to a GWB with\ncharacteristic strain amplitude only a fraction $\\sim 28\\%$ of the detected GWB\nsignal. See details in Section~\\ref{sec:detectability}.}"
+                ]
+            },
+            {
+                "content": [
+                    "In this work, we investigate the implications of the recently reported evidence\nfor a stochastic GWB by several PTAs ",
+                    "on the detection of individual BBHs. We first adopt the reported GWB signal to\nconstrain the BBH population synthesis model, focusing specifically on the\nredshift evolution of the MBH--host galaxy scaling relation, by assuming that\nthe GWB signal is entirely contributed by cosmic BBHs. With the constrained\nmodel, we then generate random realizations of the cosmic BBH populations to\nstudy the detections of individual BBHs as well as the dominance of individual\nBBHs over the stochastic GWB in different GW frequency bins. The detected GWB\nimplies a significant positive redshift evolution of the MBH--host galaxy\nscaling relation, which is consistent with ",
+                    ". We find a\nconsiderable probability that there have already been signatures emerged in the\ncurrent NANOGrav 15-year free-spectrum data set as caused by some individual\nBBHs dominating their frequency bins. Their occurrence probabilities are $63",
+                    "and $95",
+                    "corresponding to $f",
+                    "30",
+                    ", respectively. However, given\nthe current NANOGrav's capability ",
+                    ", the probability of detecting\nthese sources individually is rather low (i.e., $",
+                    "2",
+                    "that those loudest BBHs, if any, in the current CPTA data set (",
+                    {
+                        "content": "3.4",
+                        "type": "inline_math"
+                    },
+                    ",yr) may be\ndetectable with a detection probability of $",
+                    "85",
+                    "threshold of ",
+                    {
+                        "content": "3",
+                        "type": "inline_math"
+                    },
+                    ", and with ",
+                    {
+                        "content": "1.85",
+                        "type": "inline_math"
+                    },
+                    " such detectable BBHs being expected. If\nextending the observation time of CPTA to $5",
+                    "_",
+                    "BBH",
+                    "0.3$), a positive detection of individual BBHs by CPTA\ncan still be expected with an observation period of $",
+                    "10",
+                    "or $7.5-9.5",
+                    ") is\nbelow ",
+                    {
+                        "content": "0.5",
+                        "type": "inline_math"
+                    },
+                    " or ",
+                    {
+                        "content": "0.3",
+                        "type": "inline_math"
+                    },
+                    ", and the contribution fraction of the BBHs to the total\npower of the detected GWB signal is below $25",
+                    "detection (or non-detection) of individual BBHs by CPTA in the coming several\nyears can play an important role in not only interpreting the astrophysical\norigin of the recently detected GWB signal but also putting strong constraint on\nthe contribution from the cosmic BBHs to the GWB signal.\n\n"
+                ],
+                "references": [],
+                "section": "Conclusions",
+                "type": "text"
+            },
+            {
+                "content": [],
+                "references": [],
+                "section": "",
+                "type": "text"
+            }
+        ],
+        "metadata": {
+            "authors": [
+                {
+                    "affiliations": [],
+                    "name": "Yunfeng Chen"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Qingjuan Yu"
+                },
+                {
+                    "affiliations": [],
+                    "name": "Youjun Lu"
+                }
+            ]
+        },
+        "title": "\n%\nConstraining the origin of the nanohertz gravitational-wave background by pulsar\ntiming array observations of both the background and individual supermassive\nbinary black holes\n%\n"
+    }
+}

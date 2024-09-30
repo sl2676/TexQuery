@@ -3,6 +3,7 @@ import json
 import openai
 import math
 import re
+import pyttsx3
 
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.chat_models import ChatOpenAI
@@ -34,7 +35,6 @@ def split_text(text, max_size):
     for word in words:
         current_chunk.append(word)
         if len(' '.join(current_chunk).encode('utf-8')) > max_size:
-            # Remove the last word to keep under limit
             current_chunk.pop()
             chunks.append(' '.join(current_chunk))
             current_chunk = [word]
@@ -43,6 +43,14 @@ def split_text(text, max_size):
         chunks.append(' '.join(current_chunk))
 
     return chunks
+
+def delete_all_indexes():
+    """Delete all existing indexes in Pinecone."""
+    indexes = pc.list_indexes().names()
+    
+    for index_name in indexes:
+        print(f"Deleting index '{index_name}'...")
+        pc.delete_index(index_name)
 
 def sanitize_index_name(name):
     """Sanitize index name to comply with Pinecone naming conventions."""
@@ -63,18 +71,18 @@ def store_embeddings(document, source_file):
     if index_name not in indexes:
         pc.create_index(
             name=index_name,
-            dimension=1536, 
+            dimension=1536,
             metric='cosine',
             spec=ServerlessSpec(
                 cloud='aws',
-                region='us-east-1'  
+                region='us-east-1'
             )
         )
 
     index = pc.Index(index_name)
 
     vectors_to_upsert = []
-    
+
     doc_title = document['document'].get('title', 'Title not listed.')
     doc_metadata = document['document'].get('metadata', {})
     doc_authors = doc_metadata.get('authors', [])
@@ -88,7 +96,7 @@ def store_embeddings(document, source_file):
         affiliations.extend(author_affiliations)
 
     affiliations = list(set(affiliations))
-    max_metadata_size = 40000  
+    max_metadata_size = 40000
 
     vector_count = 0
     for idx, section in enumerate(document['document'].get('content', [])):
@@ -106,7 +114,22 @@ def store_embeddings(document, source_file):
         if image_file:
             extra_content += f"\nImage File: {image_file}"
 
-        full_content = section.get('content', '').strip() + extra_content
+        content = section.get('content', '')
+        if isinstance(content, list):
+            content_strings = []
+            for item in content:
+                if isinstance(item, dict):
+                    if item.get('type') == 'inline_math':
+                        content_strings.append(f"${item.get('content', '')}$")
+                    else:
+                        content_strings.append(json.dumps(item))
+                else:
+                    content_strings.append(item)
+            content = ''.join(content_strings)
+        elif not isinstance(content, str):
+            content = str(content)
+
+        full_content = content.strip() + extra_content
 
         content_chunks = split_text(full_content, max_metadata_size)
 
@@ -115,7 +138,7 @@ def store_embeddings(document, source_file):
             section_id = f"{source_file}_section_{idx+1}_chunk_{chunk_idx+1}"
 
             metadata = {
-                'source_file': source_file,  
+                'source_file': source_file,
                 'document_title': doc_title,
                 'authors': authors,
                 'affiliations': affiliations,
@@ -130,7 +153,7 @@ def store_embeddings(document, source_file):
             metadata_size = len(json.dumps(metadata).encode('utf-8'))
             if metadata_size > 40960:
                 print(f"Warning: Metadata size for vector {section_id} exceeds limit after splitting.")
-                continue  
+                continue
 
             embedding = embeddings_model.embed_query(chunk)
 
@@ -152,6 +175,9 @@ def store_embeddings(document, source_file):
 def query_pinecone(query, index_name):
     """Query Pinecone for relevant content based on user query."""
     embeddings_model = OpenAIEmbeddings()
+    if not query.strip():
+        raise ValueError("Query cannot be empty")
+
     query_embedding = embeddings_model.embed_query(query)
 
     index = pc.Index(index_name)
@@ -164,7 +190,7 @@ def query_pinecone(query, index_name):
     )
     return response
 
-def gpt_refined_query(query, pinecone_results):
+def gpt_refined_query(query, pinecone_results, temperature=0.1):
     """Refine the query response using GPT."""
     contexts = []
     for match in pinecone_results['matches']:
@@ -194,10 +220,17 @@ def gpt_refined_query(query, pinecone_results):
         HumanMessage(content=f"Context:\n{context_text}\n\nQuestion:\n{query}\n\nAnswer:")
     ]
 
-    chat = ChatOpenAI(model_name='gpt-3.5-turbo', temperature=0.1)
+    chat = ChatOpenAI(model_name='gpt-3.5-turbo', temperature=temperature)
 
     response = chat(messages)
     return response.content.strip()
+
+def text_to_speech(text):
+    """Convert the text to speech using pyttsx3."""
+    engine = pyttsx3.init()
+    engine.setProperty('rate', 200)  
+    engine.say(text)
+    engine.runAndWait()
 
 def main():
     json_folder = "json_output"  
@@ -205,6 +238,8 @@ def main():
     if not os.path.exists(json_folder):
         print(f"Error: The folder '{json_folder}' does not exist.")
         return
+
+    delete_all_indexes()
 
     index_names = []
     for filename in os.listdir(json_folder):
@@ -231,30 +266,79 @@ def main():
     for idx_name in index_names:
         print(f"- {idx_name}")
 
+    current_index_name = None
+    tts_enabled = False
+    temperature = 0.1
+
+    print("\nAvailable commands during query:")
+    print("- Type 'quit' to exit.")
+    print("- Type 'change index' to select a different index.")
+    print("- Type 'toggle tts' to enable/disable text-to-speech.")
+    print("- Type 'set temperature' to adjust the temperature (creativity) of the response.")
+    print("- Type 'help' to display this message again.\n")
+
     while True:
-        user_query = input("Enter your query (or type 'quit' to exit): ")
+        print(f"Current settings: Index='{current_index_name}', Text-to-Speech={'On' if tts_enabled else 'Off'}, Temperature={temperature}")
+        user_query = input("Enter your query (or type a command): ").strip()
         if user_query.lower() == 'quit':
             print("Exiting...")
             break
+        elif user_query.lower() == 'change index':
+            current_index_name = None
+            print("Index selection reset.")
+            continue
+        elif user_query.lower() == 'toggle tts':
+            tts_enabled = not tts_enabled
+            print(f"Text-to-Speech is now {'enabled' if tts_enabled else 'disabled'}.")
+            continue
+        elif user_query.lower() == 'set temperature':
+            temp_input = input(f"Enter the desired temperature (current: {temperature}): ").strip()
+            try:
+                new_temperature = float(temp_input)
+                if 0.0 <= new_temperature <= 1.0:
+                    temperature = new_temperature
+                    print(f"Temperature set to {temperature}.")
+                else:
+                    print("Temperature must be between 0.0 and 1.0.")
+            except ValueError:
+                print("Invalid input. Please enter a number between 0.0 and 1.0.")
+            continue
+        elif user_query.lower() == 'help':
+            print("\nAvailable commands during query:")
+            print("- Type 'quit' to exit.")
+            print("- Type 'change index' to select a different index.")
+            print("- Type 'toggle tts' to enable/disable text-to-speech.")
+            print("- Type 'set temperature' to adjust the temperature (creativity) of the response.")
+            print("- Type 'help' to display this message again.\n")
+            continue
 
-        index_name = input(f"Enter the index name to query (or type 'all' to query all indexes): ")
+        while not current_index_name:
+            index_input = input(f"Enter the index name to query (or type 'all' to query all indexes): ").strip()
+            if index_input.lower() == 'all':
+                current_index_name = 'all'
+            elif index_input in index_names:
+                current_index_name = index_input
+            else:
+                print("Invalid index name.")
+                print("Available indexes to query:")
+                for idx_name in index_names:
+                    print(f"- {idx_name}")
 
-        if index_name.lower() == 'all':
+        if current_index_name == 'all':
             combined_contexts = []
             for idx_name in index_names:
                 pinecone_results = query_pinecone(user_query, idx_name)
                 combined_contexts.extend(pinecone_results['matches'])
             pinecone_results = {'matches': combined_contexts}
-        elif index_name in index_names:
-            pinecone_results = query_pinecone(user_query, index_name)
         else:
-            print("Invalid index name.")
-            continue
+            pinecone_results = query_pinecone(user_query, current_index_name)
 
-        refined_response = gpt_refined_query(user_query, pinecone_results)
+        refined_response = gpt_refined_query(user_query, pinecone_results, temperature)
 
         print("\nRefined GPT Response:\n", refined_response)
         print("\n-----------------------------\n")
+        if tts_enabled:
+            text_to_speech(refined_response)
 
 if __name__ == "__main__":
     main()

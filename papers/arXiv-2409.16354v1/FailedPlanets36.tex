@@ -1,0 +1,877 @@
+\documentclass[useAMS,usenatbib]{mn2e}
+
+\voffset-1.4cm
+
+\usepackage{graphicx,amssymb}
+\usepackage[normalem]{ulem}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{soul}
+
+\newcommand{\rev}{ }
+
+
+
+
+\title[Forming only minor planets]
+{Forming planetary systems that contain only minor planets}
+
+\author[]{Dimitri Veras$^{1,2,3}$\thanks{E-mail: dimitri.veras@aya.yale.edu},
+Shigeru Ida$^{4}$
+%
+\\
+$^{1}$Centre for Exoplanets and Habitability, University of Warwick, Coventry CV4 7AL, UK
+\\
+$^{2}$Centre for Space Domain Awareness, University of Warwick, Coventry CV4 7AL, UK
+\\
+$^{3}$Department of Physics, University of Warwick, Coventry CV4 7AL, UK
+\\
+$^{4}$Earth-Life Science Institute, Tokyo Institute of Technology, Meguro, Tokyo 152-8550, Japan
+}
+
+
+
+\begin{document}
+\label{firstpage}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}}
+\maketitle
+
+
+\begin{abstract}
+Estimates of the frequency of planetary systems in the Milky Way are observationally limited by the low-mass planet regime. Nevertheless, substantial evidence for systems with undetectably low planetary masses now exist in the form of main-sequence stars which host debris discs, as well as metal-polluted white dwarfs. Further, low-mass sections of star formation regions impose upper bounds on protoplanetary disc masses, limiting the capacity for terrestrial or larger planets to form. Here, we use planetary population synthesis calculations to investigate the conditions that allow planetary systems to form only minor planets and smaller detritus. We simulate the accretional, collisional and migratory growth of $10^{17}$~kg embryonic seeds and then quantify which configurations with {\it entirely} sub-Earth-mass bodies ($\lesssim 10^{24}$~kg) survive. We find that substantial regions of the initial parameter space allow for sub-terrestrial configurations to form, with the success rate most closely tied to the initial dust mass. Total dust mass budgets of up to $10^2 M_{\oplus}$ within 10~au can be insufficiently high to form terrestrial or giant planets, resulting in systems with only minor planets. Consequently, the prevalence of planetary systems throughout the Milky Way might be higher than what is typically assumed, and minor planet-only systems may help inform the currently uncertain correspondence between planet-hosting white dwarfs and metal-polluted white dwarfs.
+\end{abstract}
+
+
+\begin{keywords}
+minor planets, asteroids: general --
+planets and satellites: formation --
+protoplanetary discs --
+planets and satellites: dynamical evolution and stability --
+planet-star interactions --
+stars: white dwarfs
+\end{keywords}
+
+
+
+\section{Introduction}
+
+The last 30 years of discoveries in exoplanetary science has revealed a vast diversity of planetary systems in mass, architecture, chemical composition and dynamical state.  Nevertheless, despite consistent technological advancements, the detection of the lowest mass planetary systems -- with sub-terrestrial bodies -- still usually resides beyond instrumental capabilities\footnote{Ironically, the first confirmed exoplanetary system contains sub-terrestrial planet masses \citep{wolfra1992,wolszczan1994}, and the first detected exoplanetary system does not yet feature any confirmed terrestrial or giant planets \citep{vanmaanen1917}.}.
+
+The difficulty in directly detecting these low-mass systems has increasing consequences for pressing questions in the evolution of planetary systems. The first question is foundational: what is the true fraction of planetary systems in the Milky Way? Giant planet frequencies alone appear to be on the order of 10 per cent \citep{bownie2018,baretal2019,fuletal2021}. However,  when expanding the sample size to include super-Neptunes and mini-Neptunes, the frequency increases  to tens of per cent \citep{vacetal2024}. Then, when sampling even lower planetary masses in the form of terrestrial planets, the frequency may increase to beyond 50 per cent \citep{casetal2012,heetal2021}. What if we are able to probe even lower masses?
+
+Another question relates to suggestive signatures in protoplanetary and debris discs orbiting main-sequence stars. All planets are formed in these discs. Nevertheless, despite the confirmations of over 5600 exoplanets which are not embedded in their birth discs, only a few exoplanets which actually are embedded in their birth discs have been detected with confidence \citep{kepetal2018,hafetal2019}. In dozens of other cases, planetary bodies represent a possible, but not definitive, explanation for a variety of disc signatures \citep{pinetal2023,pearce2024}. A more comprehensive assessment of planet formation would help assess the likelihood of these indirect signatures arising from planetary bodies.
+
+A third question relates to white dwarf planetary systems. Over 1700 of these systems are known, almost entirely through the detection of planetary debris in the stars' photospheres \citep{wiletal2024}. How the debris arrives at the white dwarf remains an outstanding question, with an increasing number of potential dynamical avenues \citep[e.g.][]{trietal2022,ocoetal2023,akietal2024,pharei2024}, some of which do not feature any type of terrestrial or giant planetary perturber \citep{veretal2022}. Further, the known white dwarfs which are most likely to host exoplanets do not (yet) illustrate a clear correlation with detectable rocky debris in their stellar photospheres {\rev \citep{thoetal1993,sigetal2003,luhetal2011,ganetal2019,vanetal2020,blaetal2021,limetal2024,muletal2024,zhaetal2024}}.
+
+All of these considerations motivate formation studies of planetary systems with only sub-terrestrial bodies. A potential starting point for such investigations is the true distributions of mass budgets in star forming regions and protoplanetary discs. However, as emphasised in the review article by \cite{draetal2023}, extracting the true dust mass from observations is difficult and uncertain \citep{muletal2021,mioetal2023}, and this extraction often leads to an underestimation of the true mass \citep{zhuetal2019}. As a result, performing a census of the mass budgets of the circumstellar environments of newly-born stars is fraught with challenges, and we do not attempt this task here.
+
+Instead, we appeal to the simple argument that the masses of protoplanetary discs can be arbitrary low and that the lowest mass protoplanetary discs cannot be detected\footnote{For quantitative perspective, surveys of populations of protoplanetary discs in different star-forming regions estimate the amount of mass and pebbles to be $\sim 10^{-2}-10^3M_{\oplus}$ \citep{baretal2016,pasetal2016,lonetal2018,cieetal2019,tobetal2020,tycetal2020}. However, probing lower masses remains difficult at this time.}. Here, we focus on the 7-8 order-of-magnitude mass gap between the Earth ($\sim 10^{24}-10^{25}$~kg) and planetesimal seeds of mass\footnote{This $10^{17}$~kg value is less massive than the mass of each named moon in the solar system, and is about one order-of-magnitude less massive than the {\it Lucy} mission Trojan target 617 Patroclus.} $10^{17}$~kg. We assume that the seeds have already formed, and consider only their future evolution while embedded in a protoplanetary disc of gas and dust.
+
+Our study is not the first to probe the sub-terrestrial mass regime from a theoretical point-of-view. \cite{najetal2022} evolve planetesimal rings with a total solid mass as low as $10^{-2} M_{\oplus}$, and show that minor planets were formed and survived disc dispersal. \cite{sanetal2024} investigate planet formation around low-mass stars, and show that core accretion efficiently forms minor planets. Our investigation features a different starting point -- with larger seeds -- as well as a different type of simulation code, and a dedicated parameter space exploration of this low-mass regime. In Section 2, we describe our methodology and the code used. Section 3 presents the results, and Section 4 contains a discussion. We summarise the work in Section 5, {\rev and show some additional plots for completeness in the Appendix}.
+
+ 
+
+
+
+
+\section{Formation model}
+
+In order to grow our $10^{17}$~kg seeds into minor planets, we use the core accretion model that has been developed over the last few decades by Ida \& Lin in a series of seven sequentially numbered papers (Papers I-VII) \citep{idalin2004a,idalin2004b,idalin2005,idalin2008a,idalin2008b,idalin2010,idaetal2013}. Many other core accretion prescriptions are of course available, including the more recent {\it New Generation Planetary Population Synthesis} models \citep{buretal2021,emsetal2021a,emsetal2021b,misetal2021,schetal2021a,schetal2021b}, plus models that specifically are intended to connect discs and planets \citep{buretal2022,emsetal2023}, and others which are not necessarily tied to population synthesis \citep[see e.g.][]{raymor2022}.
+
+The oligarchic growth formulation from Paper VII \citep{idaetal2013} with a few tweaks suits our purposes because it relies on well-established formation physics; we are not attempting to reproduce modern or historic observations of exoplanetary systems or debris discs (as few such observations are available for the studied mass regime). Additionally, various details of giant planet formation, such as Type II migration and runaway gas accretion, are unimportant for our study.
+
+This model (as explained in detail in Papers I-VII) assumes that the protoplanetary disc is parametrised by the following surface density dust distribution 
+
+
+\[
+\Sigma_{\rm dust}\left(r\right)
+=
+\Sigma_{\rm d,10}\eta_{\rm ice}f_{\rm d}
+       \left( \frac{r}{10 {\rm au}} \right)^{-q}
+\]
+
+
+\begin{equation}
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+=\Sigma_{\rm d,10}\eta_{\rm ice}f_{\rm g,10} 10^{\left[{\rm Fe/H}\right]}
+       \left( \frac{r}{10 {\rm au}} \right)^{-q}
+       \label{DustSigma}
+\end{equation}
+
+\noindent{}and the following surface density gas distribution
+
+\[
+\Sigma_{\rm gas}\left(r,t\right)
+=
+\Sigma_{\rm g,10}f_{\rm g}
+       \left( \frac{r}{10 {\rm au}} \right)^{-p}
+\]
+
+\begin{equation}
+\ \ \ \ \ \ \ \ \ \ \ \ \ 
+=\Sigma_{\rm g,10}f_{\rm g,10} e^{-\frac{t}{\tau_{\rm dep}}}
+       \left( \frac{r}{10 {\rm au}} \right)^{-p}.
+       \label{GasSigma}
+\end{equation}
+
+\noindent{}In Eqs. (\ref{DustSigma})-(\ref{GasSigma}), $t$ refers to time and $r$ refers to distance from the star, which has a metallicity of [Fe/H]. The other parameters are all constants: $\Sigma_{\rm d,10}=0.32$ g cm$^{-2}$, $\Sigma_{\rm g,10}=75$ g cm$^{-2}$, $f_{\rm g,10}$ is a dimensionless scaling factor common to both distributions, $\eta_{\rm ice}$ accounts for the location of the snow line, $\tau_{\rm dep}$ is a proxy for the protoplanetary disc dissipation timescale through gas depletion, and $q$ and $p$ determine the steepness of dust and gas distributions, respectively.
+
+We now elaborate more on these parameters. The values of $\Sigma_{\rm d,10}$ and $\Sigma_{\rm g,10}$ {\rev are normalisation factors that were used in Papers IV-VII and allow us here to model discs with surface densities within one order of magnitude of} the minimum mass solar nebula \citep[MMSN;][]{hayashi1981}. Hence, adjusting $f_{\rm g,10}$ by a few orders of magnitude below or above unity allows one to provide a rough comparison with the solar system's approximate nascent birth disc. The value of $\eta_{\rm ice}$ is taken to be 1.0 within the snow line, and 2.0 outside of the snow line\footnote{{\rev In Papers I-VII, the value of $\eta_{\rm ice}$ exterior to the snow line was taken to be 4.2 according to \cite{hayashi1981}, but it was recognised in Paper VII that this value may be smaller by a factor of 2 \citep{poletal1994}.}}. The location of the snow line itself, $a_{\rm snow}$, is taken to be $a_{\rm snow}=2.7~{\rm au}~\times \left(M_{\star}/M_{\odot}\right)$, where $M_{\star}$ is the mass of the star\footnote{{\rev This relation assumes a shallower mass dependence on luminosity than in Papers I-VII and is more reflective of pre-main-sequence stars \citep{stapal2004}. Regardless, this choice does not significantly affect the results, and for post-main-sequence systems, the consequences of this choice are negligible compared to the consequences of the star's luminosity increasing by many orders of magnitude during the giant branch phases.}}. For the other parameters, our fiducial values are $\tau_{\rm dep} = 10^{6.5}$~yr, $q=1.5$, and $p=1.0$, but here we explore the effect of the variation of these values on our results. 
+
+Other parameters which are of particular interest are the available mass budgets for formation: the total initial mass of the disc, $M_{\rm disc}$, and the total initial dust mass, $M_{\rm dust}$. The latter is important because sub-terrestrial bodies will be rocky, and will retain little, if none, of the gas mass. 
+
+Computation of these values requires us first to define the extent of our disc, from $a_{\rm min}$ to $a_{\rm max}$. Here we set $a_{\rm min} = 0.05$~au and $a_{\rm max} = 100$~au. Then we can compute:
+
+\[
+M_{\rm disc} \equiv M_{\rm disc, initial} \approx M_{\rm gas, initial}
+\]
+
+\[
+\ \ \ \ \ \
+= \int_{a_{\rm min}}^{a_{\rm max}} 2\pi r \Sigma_{\rm gas}\left(r,t=0\right)dr
+\]
+
+\[
+\ \ \ \ \ \ 
+=\frac{2 \pi \Sigma_{\rm g,10}f_{\rm g,10}}{\left(10 \ {\rm au} \right)^{-p}}
+\left[
+\frac{a_{\rm max}^{2-p} - a_{\rm min}^{2-p}}{2-p}\right], 
+\ \ p \ne 2,
+\]
+
+\begin{equation}
+\ \ \ \ \ \  
+= \frac{2 \pi \Sigma_{\rm g,10}f_{\rm g,10}}{\left(10 \ {\rm au} \right)^{-2}}
+\ln{\left( \frac{a_{\rm max}}{a_{\rm min}} \right)}, 
+\ \ \ \ \ \ \ \ p = 2.
+\label{Mdisc}
+\end{equation}
+
+
+\noindent{}In a similar manner, for the total dust mass, we have:
+
+\[
+M_{\rm dust} = \int_{a_{\rm min}}^{a_{\rm max}} 2\pi r \Sigma_{\rm dust}\left(r\right)dr
+\]
+
+\[
+\ \ \ \ \ \ 
+=\frac{2 \pi \Sigma_{\rm d,10}f_{\rm g,10}}{\left(10 \ {\rm au} \right)^{-q}}
+1.0\times 10^{\left[{\rm Fe/H}\right]}
+\left[
+\frac{a_{\rm snow}^{2-q} - a_{\rm min}^{2-q}}{2-q}\right], 
+\]
+
+\[
+\ \ \ \ \ \ \ \
++\frac{2 \pi \Sigma_{\rm d,10}f_{\rm g,10}}{\left(10 \ {\rm au} \right)^{-q}}
+2.0\times 10^{\left[{\rm Fe/H}\right]}
+\left[
+\frac{a_{\rm max}^{2-q} - a_{\rm snow}^{2-q}}{2-q}\right], 
+\ \ q \ne 2,
+\]
+
+\[
+\ \ \ \ \ \  
+= \frac{2 \pi \Sigma_{\rm d,10}f_{\rm g,10}}{\left(10 \ {\rm au} \right)^{-2}}
+1.0 \times 10^{\left[{\rm Fe/H}\right]}
+\ln{\left( \frac{a_{\rm snow}}{a_{\rm min}} \right)}
+\]
+
+\[
+\ \ \ \ \ \ \ \
++ \frac{2 \pi \Sigma_{\rm d,10}f_{\rm g,10}}{\left(10 \ {\rm au} \right)^{-2}}
+2.0 \times 10^{\left[{\rm Fe/H}\right]}
+\ln{\left( \frac{a_{\rm max}}{a_{\rm snow}} \right)}, 
+\ \ \ \ \ \ \ \  q = 2.
+\]
+
+
+\begin{equation}
+\label{Mdust}
+\end{equation}
+
+
+We assume that $10^{17}$~kg seeds have already formed and are interspersed throughout the disc between $a_{\rm min}$ and $a_{\rm max}$. {\rev The seeds have the same mass as the background, non-individually resolved planetesimals, which are treated as a continuum. The planetesimal surface density is time-evolved due to embryo accretion, and is resolved through $10^3$ logarithmically-spaced radial bins (see Section 3.1 of Paper IV). Hence, the initial state represents a fluid of planetesimals with seed particles of the same mass. We set 3~g~cm$^{-3}$ for the rocky planetesimals and 1~g~cm$^{-3}$ for the icy planetesimals.  
+
+The seeds interact with one another in two different ways depending on whether the gas disc is present, and our code self-consistently handles both. When the gas disc is present, the interaction is dictated by resonant interactions induced by orbital migration, and is modelled with an analytical prescription. This prescription is described in Section 2.4 of Paper VI. After the gas has been depleted, then the seeds, which have since grown into embryos, interact with each other through mutual impacts. These impacts are prompted by orbital eccentricity growth. The prescription for both eccentricity growth and mutual impacts is given in Section 2.6 and the Appendix of Paper VI, and is semi-analytic in nature. The application of this procedure has previously been compared favourably to outcomes of $N$-body simulations (Section 2.7 of Paper VI).
+}
+
+
+While the number of seeds varies per simulation depending on the initial conditions, this number is most strictly constrained by computational feasibility. In theory, one could maximally pack in $10^5$ or $10^6$ seeds between $a_{\rm min} = 0.05$~au and $a_{\rm max} = 100$~au. However, doing so is computationally unrealistic. Here, we place a strict upper limit of, at most, $10^3$ seeds per simulation, and importantly ensure that they are sufficiently separated so that the full width of their feeding zones do not overlap. {\rev We discuss the implications of this necessary restriction in Section 4.3.}
+
+
+
+
+%%%%%%%%%%%%%%%% Figure 
+\begin{figure*}
+\centerline{\Huge \underline{A fiducial case}}
+\centerline{}
+\centerline{}
+\centerline{
+\includegraphics[width=17cm]{PlotFinalPunch}
+}
+\centerline{}
+\centerline{
+\includegraphics[width=8.5cm]{PlotSemiPlot}
+\includegraphics[width=8.5cm]{FValues}
+}
+\caption{
+Forming planetary systems with only sub-Earth-mass minor planets, denoted {\it sub-terrestrial systems}. In the top panel, each symbol represents a different planetary system; the coloured shape symbols are the sub-terrestrial systems, and the filled brown circles indicate systems within which at least one surviving body formed with a mass $\ge 1M_{\oplus}$. The lower left panel contains the final state of only the sub-terrestrial systems, with the mass of the seeds indicated on the right $y$-axis, and the lower right panel illustrates the distribution of $f_{\rm g,10}$ that was used to generate all systems, where MMSN denotes Minimum Mass Solar Nebula. In all cases, $q=1.5$, $p=1.0$, $M_{\star} = 1.0M_{\odot}$ and $\tau_{\rm dep} = 10^{6.5}$~yr.
+}
+\label{FigFiducial}
+\end{figure*}
+%%%%%%%%%%%%%%%% Figure 
+
+
+%%%%%%%%%%%%%%%% Figure 
+\begin{figure*}
+\centerline{\Huge \underline{Effects of gas and dust distributions for $M_{\star}=0.5M_{\odot}$}}
+\centerline{}
+\centerline{}
+\centerline{
+\includegraphics[width=9.5cm]{Plotm05q00p00}
+\includegraphics[width=9.5cm]{Plotm05q30p00}
+}
+\centerline{}
+\centerline{
+\includegraphics[width=9.5cm]{Plotm05q00p30}
+\includegraphics[width=9.5cm]{Plotm05q30p30}
+}
+\caption{
+Dependence of sub-terrestrial system formation on the initial distributions of dust and gas, through $q$ and $p$, for host stars of $M_{\star}=0.5M_{\odot}$. The meaning of the symbols are the same as in Fig. \ref{FigFiducial}. The values of $q$ and $p$ shown were chosen to sample extremes, and they bound a realistic range of initial dust and gas distributions. This figure demonstrates that sub-terrestrial system formation is a strong function of $q$, and occurs in a widespread fashion as long as the dust mass is sufficiently low. 
+}
+\label{FigM05}
+\end{figure*}
+%%%%%%%%%%%%%%%% Figure 
+
+
+%%%%%%%%%%%%%%%% Figure 
+\begin{figure*}
+\centerline{\Huge \underline{Effects of gas and dust distributions for $M_{\star}=2.0M_{\odot}$}}
+\centerline{}
+\centerline{}
+\centerline{
+\includegraphics[width=9.5cm]{Plotm20q00p00}
+\includegraphics[width=9.5cm]{Plotm20q30p00}
+}
+\centerline{}
+\centerline{
+\includegraphics[width=9.5cm]{Plotm20q00p30}
+\includegraphics[width=9.5cm]{Plotm20q30p30}
+}
+\caption{
+Same as Fig. \ref{FigM05}, but for $M_{\star}=2.0M_{\odot}$. Comparison of this figure with Fig. \ref{FigM05} showcases few qualitative differences, the largest being the vertical dispersion in the different sets of triangles in the right panels. Overall, sub-terrestrial system formation is not directly affected much by stellar mass.
+}
+\label{FigM20}
+\end{figure*}
+%%%%%%%%%%%%%%%% Figure 
+
+
+
+%%%%%%%%%%%%%%%% Figure 
+\begin{figure*}
+\centerline{\Huge \underline{Effects of disc dispersal timescales}}
+\centerline{}
+\centerline{}
+%\centerline{\Large \underline{$q=3.0$ and $p=0.0$}}
+\centerline{
+\includegraphics[width=9.5cm]{PlotM10q30p00tdep55}
+\includegraphics[width=9.5cm]{PlotM10q30p00tdep75}
+}
+\centerline{}
+%\centerline{\Large \underline{$q=0.0$ and $p=3.0$}}
+\centerline{
+\includegraphics[width=9.5cm]{PlotM10q00p30tdep55}
+\includegraphics[width=9.5cm]{PlotM10q00p30tdep75}
+}
+\caption{
+How the protoplanetary disc dispersal timescale, $\tau_{\rm dep}$, affects the formation of sub-terrestrial systems, for host star masses of $1M_{\odot}$. The meaning of the symbols are the same as in Fig. \ref{FigFiducial}. The left panels feature $\tau_{\rm dep} = 10^{5.5}~{\rm yr}\approx 0.32~{\rm Myr}$ and the right panels feature $\tau_{\rm dep} = 10^{7.5}~{\rm yr}\approx 32~{\rm Myr}$, whereas in Figs. \ref{FigFiducial}-\ref{FigM20}, $\tau_{\rm dep} = 10^{6.5}~{\rm yr}\approx 3.2~{\rm Myr}$. The top plots sample steep dust profiles ($q=3$) and show almost no dependence on $\tau_{\rm dep}$, and the bottom plots sample flat dust profiles ($q=0$), whose formation outcomes are more strongly dependent on $\tau_{\rm dep}$.
+}
+\label{Figtdep}
+\end{figure*}
+%%%%%%%%%%%%%%%% Figure 
+
+
+
+%%%%%%%%%%%%%%%% Figure 
+\begin{figure*}
+\centerline{\Huge \underline{Sub-terrestrial-only formation for given dust budgets}}
+\centerline{}
+\centerline{}
+\centerline{
+\includegraphics[width=7.5cm]{PlotTable0top1} \ \ \ \ \ \ \
+\includegraphics[width=7.5cm]{PlotTablep2top3}
+}
+\centerline{}
+\centerline{
+\includegraphics[width=7.5cm]{PlotTablep1top2} \ \ \ \ \ \ \
+\includegraphics[width=7.5cm]{PlotTablep3top4}
+}
+\caption{
+Efficiency with which dust mass budgets can produce sub-terrestrial systems. Each percentage represents the fraction of systems sampled that formed only minor planets all with masses under $1M_{\oplus}$. Each table represents a different order-of-magnitude range of initial dust mass and includes results from 16 sets of simulations according to the given values of $q$ and $p$. To calculate how much of the dust mass is within 10~au only, multiply the total dust mass by $\left\lbrace 0.0096, 0.087, 0.59, 0.99 \right\rbrace$ for $q=\left\lbrace 0,1,2,3\right\rbrace$. The colour scheme corresponds to 0-20 per cent (red), 20-40 per cent (pink), 40-60 per cent (yellow), 60-80 per cent (lime) and 80-100 per cent (green). The figure demonstrates that total dust mass budgets of $\sim 10^{0}-10^{2}M_{\oplus}$ commonly produce sub-terrestrial systems, although dust budgets of $10^{4}M_{\oplus}$ can do so too when $q=0$.
+}
+\label{FigTables}
+\end{figure*}
+%%%%%%%%%%%%%%%% Figure 
+
+
+%%%%%%%%%%%%%%%% Figure 
+\begin{figure*}
+\centerline{\Huge \underline{Consequences for post-main-sequence evolution}}
+\centerline{}
+\centerline{}
+\centerline{
+\includegraphics[width=9.5cm]{PlotGBM15}
+\includegraphics[width=9.5cm]{PlotGBM20}
+}
+\centerline{}
+\centerline{
+\includegraphics[width=9.5cm]{PlotGBM30}
+\includegraphics[width=9.5cm]{PlotGBM50}
+}
+\caption{
+Resulting minor planet system architectures for different stellar masses, and approximate locations where sub-terrestrial systems would be subjected to stellar engulfment from their parent star's giant branch evolution. In all systems, $q=1.5$, $p=1.0$ and $\tau_{\rm dep}=10^{6.5}$~yr, and the stopping time of the simulation was selected to ensure that it did not exceed the star's main-sequence lifetime. The arrows indicate, to scale, the extent of the orbital expansion of the minor planets due to stellar mass loss during giant branch evolution. The plots illustrate that the higher the stellar mass, the less likely that surviving minor planets in sub-terrestrial systems will avoid engulfment, and those which do survive will harbour the lowest minor planet masses; many of these will be unprocessed seeds.
+}
+\label{FigPostMS}
+\end{figure*}
+%%%%%%%%%%%%%%%% Figure 
+
+
+
+
+\section{Results}
+
+Having established the parameters for the model, we now proceed to construct sets of simulations which allow us to explore sub-terrestrial system formation. Of particular interest is determining if and under what conditions {\it only} sub-terrestrial bodies can form {\it and} survive after a protoplanetary disc has dissipated. Consequently, we present our results in a way which highlights these systems.
+
+In order to probe the most relevant parameter space, we perform many sets of simulations, where each set consists of 1,000 individual simulations. Within an individual set, we fix $M_{\star}$, $q$, $p$ and $\tau_{\rm dep}$, but vary $f_{\rm g,10}$ and [Fe/H]. This choice allows us, within every set, to both sample a variety of magnitudes of both $M_{\rm disc}$ and $M_{\rm dust}$, as well as ensuring that their ratio is not fixed amongst different simulations. For each individual simulation, $f_{\rm g,10}$ is selected from a random distribution in log space with a mean of -1.0 and a dispersion of 2.0 (allowing us to focus on low-mass systems, but still sampling high mass ones and very low mass ones) and [Fe/H] is selected from a random distribution in linear space with a mean of 0.0 and a dispersion of 0.3 (allowing for the entire range of known exoplanet host star metallicities to be sampled).
+
+Our choices for the fixed values per simulation set depends on the intended application. For $M_{\star}$, we consider $0.5M_{\odot}$, $1.0M_{\odot}$, $1.5M_{\odot}$, $2.0M_{\odot}$, $3.0M_{\odot}$ and $5.0M_{\odot}$. The lowest of these values is very common in the Milky Way; the Sun-like value adheres to the human desire to seek out solar system analogues; and the higher values are particularly relevant for the known white dwarf planetary systems, as will be discussed later. Because the main-sequence lifetime of each of these stars differs, we end our simulations at $10^9$~yr for $M_{\star} = 0.5M_{\odot}, 1.0M_{\odot}$, $1.5M_{\odot}$ and $2.0M_{\odot}$, but at sooner times for more massive stellar hosts. For $\tau_{\rm dep}$, our default value is $10^{6.5}$~yr~$\approx 3.2$~Myr, but we will sample the effect of altering this value by one order of magnitude in both directions.
+
+Regarding the distribution of dust and gas within the disc, {\rev we adopt $q=1.5$ for the dust and $p=1.0$ for the gas (corresponding to} a steady accretion disc with a constant $\alpha$ viscosity). However, we allow for both much flatter and steeper gradients. Hence, we sample values in the ranges $q=0-3$ and $p=0-3$. These ranges yield $M_{\rm disc}/M_{\rm dust} \sim 10^0 - 10^4$, which is sensible given that the canonical gas-to-dust ratio in protoplanetary discs is $10^2$.
+
+\subsection{Fiducial case}
+
+First, we illustrate the outcome of a fiducial set of simulations, in Fig. \ref{FigFiducial}. In this set, we assume $q=1.5$, $p=1.0$, $M_{\star} = 1.0M_{\odot}$ and $\tau_{\rm dep} = 10^{6.5}$~yr. The top plot of the figure contains one data point per system and showcases two types of outcomes after 1 Gyr of simulation time. 
+
+The first type are simulations where at least one body with a mass at least as large as $1M_{\oplus}$ formed and survived protoplanetary disc dispersal. These systems are shown as filled brown circles, and are not of particular interest here, except to provide a useful visual boundary for the other systems.
+
+The second type are the systems of greatest interest, denoted by large coloured shape symbols. In these systems, sub-terrestrial bodies formed and survived and have masses which are all below the value indicated by the symbol. These are the systems to which we henceforth refer as {\it sub-terrestrial systems}. Amongst these, the systems with the smallest bodies are illustrated by the purple squares, and the systems with the largest bodies are illustrated by the leftward-pointing orange triangles. Any symbol appearing below the thin black horizontal line must represent a sub-terrestrial system.
+
+In this particular, fiducial, case, the upper plot demonstrates that for typical gas/dust (or disc/dust) ratios, sub-terrestrial systems are easily formed when the total {\rev initial} dust mass is up to two  orders of magnitude greater than an Earth mass. In fact, the correlation of the formation of these systems with dust mass is strong, as indicated by how the different symbols appear in roughly horizontal bands. The right $y$-axis displays the dust mass budget within 10~au only, where the seeds predominately reach their isolation masses.
+
+The lower left panel of Fig. \ref{FigFiducial} shows the aggregate spatial and mass distributions for all sub-terrestrial systems superimposed on the same plot. The spatial range is selected as such to demonstrate (i) the initial seed mass (right y-axis) relative to minor planet masses up to $1M_{\oplus}$, (ii) the outer extent of the disc ($10^2$~au), and (iii) the inner semi-major axis at which particles are assumed to be lost through stellar-induced destruction ($10^{-2}$~au). 
+
+This plot illustrates several aspects of the simulations. First, the horizontal lines between $10^{-7}M_{\oplus}$ and $10^{-8}M_{\oplus}$ indicate largely unaccreted and unprocessed seeds. Second, the highest mass minor planets, close to $1M_{\oplus}$, tend to form around $a_{\rm snow}$ (at about 2.7~au here). Third, outwards of $\sim 10$~au, minor planet masses remain low (under $\sim10^{-4}M_{\oplus}$). Fourth, inwards of $10^{-1}$~au, few minor planets migrate and/or survive in this region. In the context of Papers I-VII, all bodies in this plot would be considered ``rocky" except for the outermost seeds, which would instead be considered ``icy"; none of these objects would be considered ``gaseous".
+
+The lower-right plot of Fig. \ref{FigFiducial} indicates how we sampled simulations for this figure with our distribution of $f_{\rm g, 10}$ (which represents a proxy multiplicative factor for $\left[1.4\times~{\rm MMSN}\right]$). This distribution includes all 1,000 simulations sampled; a priori, we did not know which would eventually form sub-terrestrial systems.
+
+\subsection{Dependence on distribution of dust and gas}
+
+We next consider the effect of altering $q$ and $p$ on sub-terrestrial minor planet formation. In order to bound these effects, we adopt extreme limits of both $q$ and $p$ for $M_{\star} = 0.5M_{\odot}$ stars in Fig. \ref{FigM05} and for $M_{\star} = 2.0M_{\odot}$ stars in Fig. \ref{FigM20}. For all simulation sets, we adopt $\tau_{\rm dep} = 10^{6.5}$~yr.
+
+Both figures clearly demonstrate that (i) minor planet formation is a stronger function of $q$ than $p$, and that (ii) sub-terrestrial systems can form for any combination of physically reasonable values of $q$ and $p$. As $q$ is decreased while keeping all other variables fixed, the maximum dust mass which enables the formation of sub-terrestrial systems increases, and up to a value of $\sim10^4M_{\oplus}$ for the entire disc. However, in these cases, most of the mass is in the outer part of the disc. When comparing the right and left $y$-axes of both Figs. \ref{FigM05} and \ref{FigM20}, one can see that independent of $q$, the maximum dust mass budget within 10~au that can produce sub-terrestrial systems is about $10^{2}M_{\oplus}$.
+
+In each of Figs. \ref{FigM05} and \ref{FigM20}, the $y$-axis ranges are fixed. However, the $x$-axis ranges differ in all 8 plots. Hence, sub-terrestrial system formation is not strongly sensitive to the disc's gas-to-dust ratio, but instead is strongly sensitive to $q$.
+
+The differences between Figs. \ref{FigM05} and \ref{FigM20} appear to be overall slight. The most significant difference is the dispersion in maximum minor planet mass as a function of dust mass (compare the interleaving of the rightwards-pointing red triangles with the leftwards-pointing yellow triangles in the $q=3$ plots). Also, for the $p=3$ cases, the $0.5M_{\odot}$ systems allow for the formation of at least one planet more massive than $1M_{\oplus}$ with lower dust masses (by just $\sim 10$ per cent) than in the $2.0M_{\odot}$ systems. These differences showcase the weak direct dependence of sub-terrestrial system formation on host star mass.
+
+
+\subsection{Dependence on disc dispersal timescale}
+
+Figs. \ref{FigFiducial}-\ref{FigM20} all assume that $\tau_{\rm dep} = 10^{6.5}$~yr $\approx 3.2$~Myr. Now, we test how sensitive our results are on this choice, especially since disc dispersal timescales vary system-to-system. 
+
+In Fig. \ref{Figtdep}, we sample simulation outcomes with both $\tau_{\rm dep} = 10^{5.5}$~yr $\approx 0.32$~Myr and $\tau_{\rm dep} = 10^{7.5}$~yr $\approx 32$~Myr. These values span what is assumed to be the disc dispersal timescales for the vast majority of stellar systems \citep{mamajek2009,ercetal2011,ribetal2015,lixia2016,monetal2023}. In order to sample extremes, we have also chosen $q=3$ and $p=0$ in the top panel plots and $q=0$ and $p=3$ in the bottom panel plots. We adopt $M_{\star}=1M_{\odot}$ for all these simulations.
+
+The simulation outputs shown in the figure reinforces intuition that a longer-lived disc allows for higher-mass minor planets to form. In other words, for a given dust mass, the upper limit on minor planet mass is higher for $\tau_{\rm dep} = 10^{7.5}$~yr than for $\tau_{\rm dep} = 10^{5.5}$~yr, as can most easily be seen on the plots around dust mass bands of $10^2-10^4M_{\oplus}$ for $q=0$. However, the overall effect of this two orders-of-magnitude shift of disc dispersal timescale on sub-terrestrial system formation is slight, and instead is likely more important for terrestrial (and giant) planets. 
+
+
+\subsection{Formation frequencies as a function of dust mass}
+
+So far, we have shown that the maximum mass at which minor planets are formed in sub-terrestrial systems is strongly correlated with the initial dust mass budget. In fact, in most of the plots in Figs. \ref{FigFiducial}-\ref{Figtdep}, the same shape symbols appear in near-horizontal bands on the plots.
+
+Consequently, we now provide more detailed statistics of formation frequency as a function of dust mass band, as well as $q$ and $p$ in increments of 1.0. We perform 16 sets of 1,000 simulations with $M_{\star}=1M_{\odot}$ and $\tau_{\rm dep}=10^{6.5}$~yr, and report our results in Fig. \ref{FigTables}.
+
+The figure consists of 4 frequency tables, one for each order-of-magnitude range in dust mass. Each box contains the percentage of all initial condition sets sampled at the given values of (i) dust mass band, (ii) $p$ and (iii) $q$ for which sub-terrestrial systems were formed. The colour coding corresponds to: 0-20 per cent (red), 20-40 per cent (pink), 40-60 per cent (yellow), 60-80 per cent (lime) and 80-100 per cent (green).
+
+The figure suggests that the most efficient total dust mass budget for forming sub-terrestrial systems is $10^0-10^2M_{\oplus}$. Lower dust mass budgets always generate these systems, and flatter dust density profiles can produce these systems for the highest dust mass budgets. The figure reports total dust mass budgets; in order to calculate how much of the dust mass is within 10~au only, multiply the total dust mass by $\left\lbrace 0.0096, 0.087, 0.59, 0.99 \right\rbrace$ for $q=\left\lbrace 0,1,2,3\right\rbrace$. The dip in ubiquitous low-mass formation frequency for $q=2$ and $M_{\rm dust} = 10^0-10^2M_{\oplus}$ can be attributed to this dust distribution clustering around $a_{\rm snow}$, allowing seeds to more easily accrete $>1M_{\oplus}$ of mass (whereas the dust clusters inwards of $a_{\rm snow}$ for $q=3$, and does not cluster much anywhere for $q=1$ or $q=0$).
+
+\subsection{Beyond the main sequence}
+
+The potential survival of sub-terrestrial systems beyond the main sequence has potential consequences for white dwarf planetary systems, which predominately feature rocky planetary debris rather than planets themselves. Although simulating these systems during the giant branch phases of evolution is beyond the scope of this work given the complexities involved in modelling the radiative effects \citep{veretal2019,feretal2022,lietal2024}, we can nevertheless at least estimate which minor planets would be engulfed by the expanding host star.
+
+To do so, we perform an additional four sets of 1,000 simulations, where each set has $q=1.5$, $p=1.0$, and $\tau_{\rm dep}=10^{6.5}$~yr, but with different stellar masses and stopping times $t_{\rm stop}$. The host star mass is particularly important because the most common progenitor mass for the current white dwarf planet population is about $2M_{\odot}$ \citep{cumetal2018,cunetal2024}. Further, the highest progenitor mass for a white dwarf planetary system is about $5M_{\odot}$ \citep{holetal2021}.
+
+Hence, for our four sets of simulations, we adopt $M_{\star} = 1.5, 2.0, 3.0, 5.0M_{\odot}$. The higher the stellar mass, the shorter the main-sequence lifetime, $t_{\rm ms}$, and in each case this lifetime should not significantly exceed $t_{\rm stop}$. In order to compute both $t_{\rm ms}$ and the maximum stellar radius $R_{\rm max}$ during post-main-sequence evolution, we use the {\tt SSE} stellar evolution code \citep{huretal2000}. For $M_{\star} = \left\lbrace 1.5, 2.0, 3.0, 5.0 \right\rbrace M_{\odot}$, we obtain $t_{\rm ms} = \left\lbrace 2.6, 1.2, 0.4, 0.1 \right\rbrace$~Gyr, and $R_{\rm max} = \left\lbrace 1.4, 1.8, 2.9, 5.0 \right\rbrace$~au. Hence, we adopt $t_{\rm stop} = \left\lbrace 1.0, 1.0, 0.4, 0.1 \right\rbrace$~Gyr.
+
+We illustrate the results of the simulations in Fig. \ref{FigPostMS} in plots of masses versus orbital pericentre for sub-terrestrial systems. The orbital pericentre is more important than the semi-major axis with regards to the future survival of the bodies in order for them to avoid engulfment within the expanding star. However, the vast majority of the minor planets in our systems are formed on and remain on nearly circular orbits. Hence, plots of mass versus semi-major axis would look very similar.
+
+Each plot is partitioned into two regions. The left region, which has a background colour of yellow, approximates the maximum extent of the star during the giant branch phase through the value of $R_{\rm max}$. This number roughly corresponds to the maximum value which is acquired on the asymptotic giant branch phases of stellar evolution, which exceeds the maximum value on the red giant branch phases for these types of stars \citep{musvil2012,adablo2013}. 
+
+Minor planets in this region would actually not necessarily be engulfed because their orbital expansion due to stellar mass loss might allow these objects to ``outrun" the expanding stellar envelope \citep{hadjidemetriou1963}. We show with three arrows near the top of each plot the extent of this orbital expansion under the adiabatic assumption \citep{veretal2011}: for $M_{\star} = \left\lbrace 1.5, 2.0, 3.0, 5.0 \right\rbrace M_{\odot}$, the orbital expansion factors are $\left\lbrace 2.6, 3.1, 4.0, 5.0 \right\rbrace$.
+
+The right region in each plot, without a background colour, contains minor planets which are not in danger of engulfment, but instead will be subjected to radiative sublimation, melting, YORP and Yarkovsky effects \citep{jurxu2010,juretal2012,veretal2014,veretal2015,veretal2019,versch2020,malper2016,malper2017a,malper2017b,katz2018,lietal2024}. Hence, by no means will these minor planets be ``safe", but they will not be directly engulfed by the star. Further, they will not be ejected from the system, given the lack of larger perturbers. Hence, these minor planets will remain in some, perhaps broken-down, form, until the white dwarf phase of stellar evolution.
+
+The potential consequences for white dwarf planetary systems will be discussed in {\rev Section 4.5}. Here, we just comment on what the figure illustrates. First, the symbol distribution on all four plots look very similar, demonstrating the weak dependence of sub-terrestrial system formation both on stellar mass and the ending time of the simulations. Second, based simply on $R_{\rm max}$, higher mass stellar hosts will be left with lower-mass minor planets. In the $5.0M_{\odot}$ case, these minor planets all will have masses under $10^{-4}M_{\oplus}$.
+
+
+\section{Discussion}
+
+We now discuss various aspects and implications of our results.
+
+
+\subsection{Minor planet migration}
+
+Our simulations do incorporate both Type I and II migration. However, the latter is irrelevant for our studied mass regime, and the former has a small-to-negligible effect on the results. Paper VII shows that the Type I migration timescale scales as $\sim 10^5 (M_{\rm seed}/M_{\oplus})^{-1}~{\rm yr}$, where $M_{\rm seed}$ is the mass of the seed. Hence, just for this timescale to be comparable to the disc depletion timescale, the seed would need to accrete enough mass to reach $\sim 10^{-1}M_{\oplus}$. Even just that accretion process takes time ($\sim 3\times 10^5 f_{\rm d}^{-1}f_{\rm g}^{-2/5}~{\rm yr}$), during which the disc is consistently depleting.
+
+\subsection{Isolation mass}
+
+Given that migration is typically ineffectual, a seed should remain at a relatively fixed orbital distance from the star accreting material in its feeding zone, with width $\Delta a_{\rm c}$, until either all the material in this zone has been depleted or until the disc dissipates. In the former case, the final mass of the seed becomes the so-called {\rev ``local isolation mass", $M_{\rm iso}$, given by
+
+\[
+M_{\rm iso} \approx 2 \pi r \Sigma_d \Delta a_{\rm c}
+\]
+\[
+\ \ \ 
+\approx 20 \pi a^2 \left( \frac{2M_{\rm iso}}{3M_{\star}} \right)^{1/3}
+\Sigma_{\rm d,10}\eta_{\rm ice}f_{\rm g,10} 10^{\left[{\rm Fe/H}\right]}
+       \left( \frac{r}{10 {\rm \ au}} \right)^{-q}
+\]
+
+%\vspace{-20mm}
+
+\begin{equation}       
+\ \ \ 
+\sim 0.9 M_{\oplus} \left(\frac{a}{10~{\rm au}} \right)^{3-\frac{3q}{2}}
+f_{\rm g,10}^{\frac{3}{2}}\left[ \eta_{\rm ice} 10^{\left[{\rm Fe/H}\right]} \right]^{\frac{3}{2}}      
+,
+\label{Miso}
+\end{equation}
+}
+
+\noindent{}where the term in square brackets typically does not vary by more than one order of magnitude.
+
+This local isolation mass represents the upper mass limit for fully-formed minor planets. For our simulations, the term in parentheses can change the numerical coefficient of the equation by a {\rev factor of $\sim 10^{-7}-10^{2}$}, and the value of $f_{g,10}$ can change {\rev that factor by $\sim 10^{-8}-10^3$}.
+
+Although in this paper we have presented ensembles of simulations, equation (\ref{Miso}) can be useful to place a bound on an individual system. It also shows an explicit dependence of the upper mass limit on $q$ and $a$, helping to explain the trends seen in the simulation output.
+
+However, equation (\ref{Miso}) should be used just as a guide. In our simulations, we do not artificially truncate planetesimal accretion according to this equation. The evolution of the surface density distribution of planetesimals by accretion of seeds is self-consistently calculated in the code (see Section 2.2 of Paper VI). As a result, in-situ growth of a seed naturally stops at the isolation mass: the local planetesimal surface density is depleted as the seed mass approaches the isolation mass.  
+
+In not all cases does accretion allow a seed to reach the local isolation mass. In fact, in the outer regions of the disc, planetesimal growth is slow. As a result, many partially accreted or largely unaccreted seeds will remain behind after the disc dissipates. Examples of these largely unprocessed seeds can be seen in Figs. \ref{FigFiducial} and \ref{FigPostMS}, and they may represent a source of white dwarf planetary signatures, as described {\rev in Section 4.5}.
+
+{\rev
+\subsection{Computational limitations}
+
+The mass of the seeds, coupled with the requirement that their feeding zones do not overlap, has both theoretical and computational consequences. The smaller the seed mass, the more of the formation process that could be modelled, and the greater number of seeds that could be packed into a given radial range. However, computationally, the practical upper limit of the number of seeds which could be modelled by our code is approximately $10^3$.
+
+Consequently, there should be a larger reservoir of icy and rocky material in the outer regions of planetary systems than predicted in this paper. If no planets form in these regions to scatter this material away, then the small bodies will be dynamically stagnant and contribute to the already substantial low-mass tail of objects seen in the aggregate portraits of Figs. \ref{FigFiducial} and \ref{FigPostMS}. The consequences for post-main-sequence systems may be significant, as this more substantial reservoir could allow for higher accretion rates of planetary metals onto white dwarfs at a wider variety of cooling ages in the absence of planets themselves \citep{veretal2022}.
+
+Potential improvements to our model, aside from the application of increased computational power, include incorporating analytical integration of the initial planet formation stage in order to facilitate seed placement \citep{voeetal2020,voeetal2021a,voeetal2021b} or from more general, purely analytic mass scaling arguments and estimates \citep[e.g.][]{goletal2004,emsetal2023}.
+
+}
+
+
+\subsection{Post-formation gravitational instability}
+
+The results of Fig. \ref{FigPostMS}, and their comparison to Fig. \ref{FigFiducial}, indicate that subsequent to disc dissipation, sub-terrestrial planetary architectures remain relatively static. Without any terrestrial or giant planets to dynamically excite the minor planets, the minor planets can only excite one another.
+
+However, they may be too far separated from one another to do so. $\Delta a_{\rm c}$ is approximately equal to 10 mutual Hill radii. The required number of mutual Hill radii to induce instability over long timescales is unclear because both it is a function of the minor planet-to-star mass ratio and because of a lack of dedicated investigations at very low ratios. This ratio is typically explored for terrestrial and giant planet masses but not often for minor planets \citep{chaetal1996,zhoetal2007,chaetal2008,smilis2009,funetal2010,puwu2015,yeeetal2021,ricste2023,yanetal2023}.
+
+In addition to gravitational scattering, another potential avenue for instability is escape from the system. This prospect can be quantified with the Safronov number \citep{safronov1972}
+
+\[
+\Theta = \frac{a}{R_{\rm p}}\left(\frac{M_{\rm p}}{M_{\star}} \right)
+\]
+
+\[
+\ \ \ \
+\approx 5 \times 10^{-4} \left(\frac{M_{\rm p}}{10^{-3}M_{\oplus}} \right)^{2/3}
+                         \left(\frac{M_{\star}}{M_{\odot}} \right)^{-1}
+                         \left(\frac{a}{1~{\rm au}}\right)
+                         \left(\frac{\rho_{\rm p}}{2~{\rm g/cm}^3} \right)^{1/3} 
+\]
+
+\begin{equation}
+\ \ \ \ 
+\ll 1
+\end{equation}
+
+\noindent{}where $M_{\rm p}$, $R_{\rm p}$ and $\rho_{\rm p}$ represent the mass, radius and density of the minor planet. Escape becomes likely when $\Theta \gtrsim 1$. However, as can be seen here, even for high minor planet masses, $\Theta$ remains less than one. Hence, escape from the system is unlikely.
+
+
+\subsection{Post-main-sequence evolution}
+
+As a result of minor planets not escaping the system and probably not scattering off of one another, their orbits will remain fixed for the main-sequence lifetime of their parent star. Then, the minor planets which avoid engulfment during the giant branch phases (Fig. \ref{FigPostMS}) will stick around even longer, until the star becomes a white dwarf.
+
+However, these minor planets will remain in the system in a possibly broken-up or partially sublimated form, depending on a variety of radiative effects \citep{jurxu2010,juretal2012,veretal2014,veretal2015,veretal2019,versch2020,malper2016,malper2017a,malper2017b,katz2018,lietal2024}. Any dust which is greater than the blow-out size will survive to the white dwarf phase \citep{bonwya2010,donetal2010,zotver2020}, albeit potentially severely displaced due to radiative migration \citep{veretal2015,veretal2019}. The dust, boulders, asteroids and minor planets which then orbit the white dwarf may reach the stellar photosphere through radiation alone \citep{veretal2022} or through mutual gravitational scatterings, but only for the highest-mass minor planets \citep{verros2023}.
+
+Neither of these pathways requires terrestrial or giant planets to shepherd material to the white dwarf photosphere\footnote{Planetary debris that the white dwarf accretes is often {\rev referred} to as ``metal pollution" because it produces observational signatures in otherwise pristine atmospheres composed of only H and He \citep{bonsor2024,xuetal2024}.}. However, the viability of either mechanism to reproduce accretion rates of pollution onto white dwarfs strongly depends on both the amount of mass which survives -- which our simulations cannot quantify given that they are resolution-limited with respect to the initial number of seeds -- and the amount of time in which this material resides in debris discs surrounding the white dwarfs \citep{giretal2012,verhen2020}. 
+
+{\rev
+Further, obtaining a realistic assessment of the amount of material which survives would entail accounting for how disc properties change with the main-sequence stellar host mass. Observations suggest that host star mass and disc mass are positively correlated \citep{pasetal2016,ansetal2017,tobetal2020}, as is host star mass and accretion rate, acting as a proxy for gas disc mass \citep{manetal2023}. As for $\tau_{\rm dep}$, the value of this parameter is thought to decrease with higher stellar masses \citep{ribetal2015,ricetal2018}. 
+
+None of these trends are reflected in Fig. \ref{FigPostMS}, in which all of the simulations use the same underlying distribution of disc properties. To demonstrate that, we overplot the ensemble of disc masses adopted in each of those simulations on top of one another in Fig. \ref{MassHist}. The differences in the four different distributions are relatively minor compared to the expected trends with stellar mass. As more metal-polluted white dwarfs with progenitor masses exceeding a few solar masses are discovered \citep{ouldetal2024}, dedicated planet formation studies in intermediate-mass and high-mass discs will become increasingly important \citep{veretal2020,kunetal2021,johetal2024}.
+}
+
+So far, none of the white dwarfs which show robust indications of orbiting planets have detected metal pollution {\rev 
+\citep{thoetal1993,sigetal2003,luhetal2011,ganetal2019,vanetal2020,blaetal2021,limetal2024,muletal2024,zhaetal2024}.
+} However, the reason may be due to observational limitations. Hence, claiming that there is an anti-correlation between planet hosts and metal polluted hosts would be too strong at this time. Nevertheless, as observations reveal more information, a comparison of  different pollution mechanisms, such as the ones presented in this section, become increasingly warranted.   
+
+
+
+%%%%%%%%%%%%%%%% Figure
+\begin{figure}
+\includegraphics[width=8cm]{MassHist}
+\caption{
+{\rev
+The total disc masses of all four ensembles of systems that were simulated to generate each panel of Fig. \ref{FigPostMS}. The brown bars indicate where all four ensembles overlap, and the other colours are different ensemble overlap permutations. This plot illustrates that all four underlying disc distributions that were simulated are similar. An accurate accounting of the amount of mass retained in these systems throughout the white dwarf phase would require the incorporation of the true correlation of disc properties with stellar mass (coupled with radiative modelling during the giant branch phases).
+}
+}
+\label{MassHist}
+\end{figure}
+%%%%%%%%%%%%%%%% Figure
+
+{\rev
+\subsection{Model extrapolation to observed systems}
+
+The ability of our code to match theoretical predictions with observations -- the essence of population synthesis -- has been demonstrated in Papers I-VII. For this paper, enough observations of exclusively sub-terrestrial systems do not yet exist for a similar comparison to be conducted. 
+
+Nevertheless, illustrating that the code remains valid in terms of broadly reproducing aspects of the exoplanet population helps improve the predictive power of our study. To this end, we have retained information about the subset of simulations which did form planets, and show this information in Figs. \ref{MassFig1} and \ref{MassivePostMS}.
+
+These figures reveal that our code roughly matches key aspects of the modern (as of 2024) known exoplanet population \citep{cloutier2024}: (i) the abundant formation of Super-Earths and Mini-Neptunes, which are now thought to represent two of the most common classes of exoplanets in the Milky Way, (ii) the formation of gas giants, and (iii) the presence of all these classes of planets within $\sim 0.1$~au, indicating that inward migration (whether it be Type I, II or III migration) is common. 
+
+One aspect of the exoplanet population which has revealed itself more fully since the publication of Paper VII but has actually been predicted by the code in some sense since Paper I is the so-called ``Neptunian desert" \citep[e.g.][]{fraetal2023,guietal2023,hawetal2023,osbetal2023,feretal2024,nabetal2024}. Fig. \ref{MassFig1} clearly reproduces a semi-major axis (or orbital period) deficit which is reflective of this desert. 
+
+Another feature of the exoplanet population which has become apparent over the last decade is the ``radius gap" or ``radius valley" \citep[e.g.][]{fulpet2018,petetal2022}. This gap is not reproduced by the code, perhaps because the code does not incorporate prescriptions for atmospheric evaporation. However, atmospheric evaporation is not relevant for minor planets. Two other, more longstanding aspects of the exoplanet population that the code has not been able to reproduce (since Paper I) are the pile-up of gas giants beyond 1~au and their relatively high orbital eccentricities.
+
+Finally, our code generates super-Earths and mini-Neptunes in the $1-10$~au range. These planets are currently difficult to detect due to observational biases. However, the {\it Nancy Grace Roman Space Telescope} is predicted to open up this key parameter space to observations. In this respect -- without digressing too much from the main message of our study -- our code predicts that these planets are formed, migrate and settle in this region.
+}
+
+\section{Summary}
+
+We have investigated the formation of planetary systems that contain {\it only} minor planets with masses $\sim 10^{-7}M_{\oplus}-10^{0}M_{\oplus}$ by simulating the accretional, collisional and migratory growth of $10^{17}$~kg seeds embedded within a nascent protoplanetary disc. We find that:
+
+\begin{itemize}
+
+\item These systems are readily formed throughout the parameter space of initial conditions, suggesting that they may contribute substantially to estimates of planetary system frequency throughout the Galaxy.
+
+\item The mass of the largest minor planets in these systems is most strongly correlated to the initial dust mass of the disc, and next most strongly correlated to the spatial distribution of this dust through the power-law exponent $q$.
+
+\item These systems can form from initial dust mass budgets of up to $\sim 10^{2}M_{\oplus}$ within 10~au.
+
+\item The minor planets in these systems which reside beyond about 10~au rarely accrete enough mass to exceed about $10^{-4}M_{\oplus}$. In this region, for flat distributions of dust, a substantial number of mostly unaccreted seeds will remain behind after the protoplanetary disc dissipates. {\rev The true number of these dynamically stagnant seeds may be even higher that what has been modelled here due to computational limitations.}
+
+\item The formation of these systems are weakly dependent on the stellar mass {\rev (when assuming equal disc masses)}, disc dissipation timescale, gas density profile, Type I migration effects, and duration of the simulations.
+
+\item The outermost minor planets in these systems may survive both main-sequence and giant branch evolution, and end up as a potential pollution reservoir for white dwarfs without any assistance from terrestrial or giant planets. 
+
+\end{itemize}
+
+\section*{Acknowledgements}
+
+{\rev We thank the expert reviewer for thoughtful and constructive comments that have improved the manuscript}. This research was supported by the Munich Institute for Astro-, Particle and BioPhysics (MIAPbP), which is funded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) under Germany's Excellence Strategy – EXC-2094 – 390783311.
+
+\section*{Data Availability}
+
+The numerical implementation of the model presented in this paper is available upon reasonable request to the second author.
+
+
+{\rev
+\appendix
+\renewcommand{\thefigure}{A-\arabic{figure}}
+\section*{Appendix}
+
+Although the focus of this work is on sub-terrestrial bodies, some of the simulations we ran did generate planets with masses greater than $1M_{\oplus}$. Partly for completeness and partly to demonstrate the workings of the population synthesis code, we show the planets that were formed from the simulations which were carried out to generate the plots in Figs. \ref{FigFiducial} and \ref{FigPostMS} in Figs. \ref{MassFig1} and \ref{MassivePostMS}. The figures demonstrate an expected outcome of sampling a wide range of $f_{\rm g,10}$ values: in many cases super-Earths are formed, and in some cases, giant planets are too. Just as with the minor planets, most of the larger planets will be engulfed by the host star during the giant branch phases.
+
+%%%%%%%%%%%%%%%% Figure
+\begin{figure}
+\includegraphics[width=8cm]{MassiveFiducial}
+\caption{
+{\rev
+The planetary-mass objects formed in the simulations whose output is displayed in Fig. \ref{FigFiducial} (corresponding to the filled brown circles in the top panel of that figure). In this figure, the red circles indicate gas giants and the black diamonds indicate other planets.
+}
+}
+\label{MassFig1}
+\end{figure}
+%%%%%%%%%%%%%%%% Figure
+
+
+%%%%%%%%%%%%%%%% Figure 
+\begin{figure*}
+\centerline{\Huge \underline{Planetary-mass survivors of post-main-sequence evolution}}
+\centerline{}
+\centerline{}
+\centerline{
+\includegraphics[width=9.5cm]{M15Massive}
+\includegraphics[width=9.5cm]{M20Massive}
+}
+\centerline{}
+\centerline{
+\includegraphics[width=9.5cm]{M30Massive}
+\includegraphics[width=9.5cm]{M50Massive}
+}
+\caption{
+{\rev
+The planetary-mass objects formed in the simulation ensemble which generated the sub-terrestrial systems that are displayed in Fig. \ref{FigPostMS}. Just as in that figure, here the simulation stopping time in the top two panels is 1~Gyr, in the lower-left panel is 0.4~Gyr, and in the lower-right panel is 0.1~Gyr.
+}
+}
+\label{MassivePostMS}
+\end{figure*}
+%%%%%%%%%%%%%%%% Figure 
+
+
+}
+
+\begin{thebibliography}{99}
+
+ 
+\bibitem[Adams \& Bloch(2013)]{adablo2013} Adams, F.~C. \& Bloch, A.~M.\ 2013, ApJL, 777, L30. doi:10.1088/2041-8205/777/2/L30 
+ 
+\bibitem[Akiba et al.(2024)]{akietal2024} Akiba, T., McIntyre, S., \& Madigan, A.-M.\ 2024, ApJL, 966, L4. doi:10.3847/2041-8213/ad394c
+
+\bibitem[Ansdell et al.(2017)]{ansetal2017} Ansdell, M., Williams, J.~P., Manara, C.~F., et al.\ 2017, AJ, 153, 240. doi:10.3847/1538-3881/aa69c0
+
+\bibitem[Barenfeld et al.(2016)]{baretal2016} Barenfeld, S.~A., Carpenter, J.~M., Ricci, L., et al.\ 2016, ApJ, 827, 142. doi:10.3847/0004-637X/827/2/142
+
+\bibitem[Baron et al.(2019)]{baretal2019} Baron, F., Lafreni{\`e}re, D., Artigau, {\'E}., et al.\ 2019, AJ, 158, 187. doi:10.3847/1538-3881/ab4130
+
+\bibitem[Blackman et al.(2021)]{blaetal2021} Blackman, J.~W., Beaulieu, J.~P., Bennett, D.~P., et al.\ 2021, Nature, 598, 272. doi:10.1038/s41586-021-03869-6
+
+\bibitem[Bonsor \& Wyatt(2010)]{bonwya2010} Bonsor, A. \& Wyatt, M.\ 2010, MNRAS, 409, 1631. doi:10.1111/j.1365-2966.2010.17412.x
+
+\bibitem[Bonsor(2024)]{bonsor2024} Bonsor, A.\ 2024, Encyclopedia of Astrophysics, arXiv:2409.13294. doi:10.48550/arXiv.2409.13294
+
+\bibitem[Bowler \& Nielsen(2018)]{bownie2018} Bowler, B.~P. \& Nielsen, E.~L.\ 2018, Handbook of Exoplanets, 155. doi:10.1007/978-3-319-55333-7\_155
+
+\bibitem[Burn et al.(2021)]{buretal2021} Burn, R., Schlecker, M., Mordasini, C., et al.\ 2021, A\&A, 656, A72. doi:10.1051/0004-6361/202140390
+
+\bibitem[Burn et al.(2022)]{buretal2022} Burn, R., Emsenhuber, A., Weder, J., et al.\ 2022, A\&A, 666, A73. doi:10.1051/0004-6361/202243262
+
+\bibitem[Cassan et al.(2012)]{casetal2012} Cassan, A., Kubas, D., Beaulieu, J.-P., et al.\ 2012, Nature, 481, 167. doi:10.1038/nature10684
+
+\bibitem[Chambers et al.(1996)]{chaetal1996} Chambers, J.~E., Wetherill, G.~W., \& Boss, A.~P.\ 1996, Icarus, 119, 261. doi:10.1006/icar.1996.0019
+
+\bibitem[Chatterjee et al.(2008)]{chaetal2008} Chatterjee, S., Ford, E.~B., Matsumura, S., et al.\ 2008, ApJ, 686, 580. doi:10.1086/590227
+
+\bibitem[Cieza et al.(2019)]{cieetal2019} Cieza, L.~A., Ru{\'\i}z-Rodr{\'\i}guez, D., Hales, A., et al.\ 2019, MNRAS, 482, 698. doi:10.1093/mnras/sty2653
+
+\bibitem[Cloutier(2024)]{cloutier2024} Cloutier, R.\ 2024, Encyclopedia of Astrophysics, arXiv:2409.13062. doi:10.48550/arXiv.2409.13062
+
+\bibitem[Cummings et al.(2018)]{cumetal2018} Cummings, J.~D., Kalirai, J.~S., Tremblay, P.-E., et al.\ 2018, ApJ, 866, 21. doi:10.3847/1538-4357/aadfd6
+
+\bibitem[Cunningham et al.(2024)]{cunetal2024} Cunningham, T., Tremblay, P.-E., \& W. O'Brien, M.\ 2024, MNRAS, 527, 3602. doi:10.1093/mnras/stad3275
+
+\bibitem[Dong et al.(2010)]{donetal2010} Dong, R., Wang, Y., Lin, D.~N.~C., et al.\ 2010, ApJ, 715, 1036. doi:10.1088/0004-637X/715/2/1036
+
+\bibitem[Dr{\c{a}}{\.z}kowska et al.(2023)]{draetal2023} Dr{\c{a}}{\.z}kowska, J., Bitsch, B., Lambrechts, M., et al.\ 2023, Protostars and Planets VII, 534, 717. doi:10.48550/arXiv.2203.09759
+
+\bibitem[Emsenhuber et al.(2021a)]{emsetal2021a} Emsenhuber, A., Mordasini, C., Burn, R., et al.\ 2021a, A\&A, 656, A69. doi:10.1051/0004-6361/202038553
+
+\bibitem[Emsenhuber et al.(2021b)]{emsetal2021b} Emsenhuber, A., Mordasini, C., Burn, R., et al.\ 2021b, A\&A, 656, A70. doi:10.1051/0004-6361/202038863
+
+\bibitem[Emsenhuber et al.(2023)]{emsetal2023} Emsenhuber, A., Burn, R., Weder, J., et al.\ 2023, A\&A, 673, A78. doi:10.1051/0004-6361/202244767
+
+\bibitem[Ercolano et al.(2011)]{ercetal2011} Ercolano, B., Bastian, N., Spezzi, L., et al.\ 2011, MNRAS, 416, 439. doi:10.1111/j.1365-2966.2011.19051.x
+
+\bibitem[Fern{\'a}ndez Fern{\'a}ndez et al.(2024)]{feretal2024} Fern{\'a}ndez Fern{\'a}ndez, J., Wheatley, P.~J., King, G.~W., et al.\ 2024, MNRAS, 527, 911. doi:10.1093/mnras/stad3263
+
+\bibitem[Ferich et al.(2022)]{feretal2022} Ferich, N., Baronett, S.~A., Tamayo, D., et al.\ 2022, ApJS, 262, 41. doi:10.3847/1538-4365/ac8d60
+
+\bibitem[Frame et al.(2023)]{fraetal2023} Frame, G., Armstrong, D.~J., Cegla, H.~M., et al.\ 2023, MNRAS, 523, 1163. doi:10.1093/mnras/stad1452
+
+\bibitem[Fulton \& Petigura(2018)]{fulpet2018} Fulton, B.~J. \& Petigura, E.~A.\ 2018, AJ, 156, 264. doi:10.3847/1538-3881/aae828
+
+\bibitem[Fulton et al.(2021)]{fuletal2021} Fulton, B.~J., Rosenthal, L.~J., Hirsch, L.~A., et al.\ 2021, ApJS, 255, 14. doi:10.3847/1538-4365/abfcc1
+
+\bibitem[Funk et al.(2010)]{funetal2010} Funk, B., Wuchterl, G., Schwarz, R., et al.\ 2010, A\&A, 516, A82. doi:10.1051/0004-6361/200912698
+
+\bibitem[G{\"a}nsicke et al.(2019)]{ganetal2019} G{\"a}nsicke, B.~T., Schreiber, M.~R., Toloza, O., et al.\ 2019, Nature, 576, 61. doi:10.1038/s41586-019-1789-8
+
+\bibitem[Girven et al.(2012)]{giretal2012} Girven, J., Brinkworth, C.~S., Farihi, J., et al.\ 2012, ApJ, 749, 154
+
+\bibitem[Goldreich et al.(2004)]{goletal2004} Goldreich, P., Lithwick, Y., \& Sari, R.\ 2004, ApJ, 614, 497. doi:10.1086/423612
+
+\bibitem[Guilluy et al.(2023)]{guietal2023} Guilluy, G., Bourrier, V., Jaziri, Y., et al.\ 2023, A\&A, 676, A130. doi:10.1051/0004-6361/202346419
+
+\bibitem[Hadjidemetriou(1963)]{hadjidemetriou1963} Hadjidemetriou, J.~D.\ 1963, Icarus, 2, 440. doi:10.1016/0019-1035(63)90072-1
+
+\bibitem[Haffert et al.(2019)]{hafetal2019} Haffert, S.~Y., Bohn, A.~J., de Boer, J., et al.\ 2019, Nature Astronomy, 3, 749. doi:10.1038/s41550-019-0780-5
+
+\bibitem[Hawthorn et al.(2023)]{hawetal2023} Hawthorn, F., Bayliss, D., Armstrong, D.~J., et al.\ 2023, MNRAS, 524, 3877. doi:10.1093/mnras/stad1840
+
+\bibitem[Hayashi(1981)]{hayashi1981} Hayashi, C.\ 1981, Progress of Theoretical Physics Supplement, 70, 35. doi:10.1143/PTPS.70.35
+
+\bibitem[He et al.(2021)]{heetal2021} He, M.~Y., Ford, E.~B., \& Ragozzine, D.\ 2021, AJ, 161, 16. doi:10.3847/1538-3881/abc68b
+
+\bibitem[Hollands et al.(2021)]{holetal2021} Hollands, M.~A., Tremblay, P.-E., G{\"a}nsicke, B.~T., et al.\ 2021, Nature Astronomy, 5, 451. doi:10.1038/s41550-020-01296-7
+
+\bibitem[Hurley et al.(2000)]{huretal2000} Hurley, J.~R., Pols, O.~R., \& Tout, C.~A.\ 2000, MNRAS, 315, 543. doi:10.1046/j.1365-8711.2000.03426.x
+
+\bibitem[Ida \& Lin(2004a)]{idalin2004a} Ida, S. \& Lin, D.~N.~C.\ 2004a, ApJ, 604, 388. doi:10.1086/381724 (Paper I)
+
+\bibitem[Ida \& Lin(2004b)]{idalin2004b} Ida, S. \& Lin, D.~N.~C.\ 2004b, ApJ, 616, 567. doi:10.1086/424830 (Paper II)
+
+\bibitem[Ida \& Lin(2005)]{idalin2005} Ida, S. \& Lin, D.~N.~C.\ 2005, ApJ, 626, 1045. doi:10.1086/429953 (Paper III)
+
+\bibitem[Ida \& Lin(2008a)]{idalin2008a} Ida, S. \& Lin, D.~N.~C.\ 2008a, ApJ, 673, 487. doi:10.1086/523754 (Paper IV)
+
+\bibitem[Ida \& Lin(2008b)]{idalin2008b} Ida, S. \& Lin, D.~N.~C.\ 2008b, ApJ, 685, 584. doi:10.1086/590401 (Paper V)
+
+\bibitem[Ida \& Lin(2010)]{idalin2010} Ida, S. \& Lin, D.~N.~C.\ 2010, ApJ, 719, 810. doi:10.1088/0004-637X/719/1/810 (Paper VI)
+
+\bibitem[Ida et al.(2013)]{idaetal2013} Ida, S., Lin, D.~N.~C., \& Nagasawa, M.\ 2013, ApJ, 775, 42. doi:10.1088/0004-637X/775/1/42 (Paper VII)
+
+\bibitem[Johnston et al.(2024)]{johetal2024} Johnston, H.~F., Pani{\'c}, O., \& Liu, B.\ 2024, MNRAS, 527, 2303. doi:10.1093/mnras/stad3254
+
+\bibitem[Jura \& Xu(2010)]{jurxu2010} Jura, M. \& Xu, S.\ 2010, AJ, 140, 1129. doi:10.1088/0004-6256/140/5/1129
+
+\bibitem[Jura et al.(2012)]{juretal2012} Jura, M., Xu, S., Klein, B., et al.\ 2012, ApJ, 750, 69. doi:10.1088/0004-637X/750/1/69
+
+\bibitem[Katz(2018)]{katz2018} Katz, J.~I.\ 2018, MNRAS, 478, L95. doi:10.1093/mnrasl/sly074
+
+\bibitem[Keppler et al.(2018)]{kepetal2018} Keppler, M., Benisty, M., M{\"u}ller, A., et al.\ 2018, A\&A, 617, A44. doi:10.1051/0004-6361/201832957
+
+\bibitem[Kunitomo et al.(2021)]{kunetal2021} Kunitomo, M., Ida, S., Takeuchi, T., et al.\ 2021, ApJ, 909, 109. doi:10.3847/1538-4357/abdb2a
+
+\bibitem[Li \& Xiao(2016)]{lixia2016} Li, M. \& Xiao, L.\ 2016, ApJ, 820, 36. doi:10.3847/0004-637X/820/1/36
+
+\bibitem[Li et al.(2024)]{lietal2024} Li, Y., Bonsor, A., \& Shorttle, O.\ 2024, MNRAS, 527, 1014. doi:10.1093/mnras/stad3131
+
+\bibitem[Limbach et al.(2024)]{limetal2024} Limbach, M.~A., Vanderburg, A., Venner, A., et al.\ 2024, In Press ApJL, arXiv:2408.16813. doi:10.48550/arXiv.2408.16813
+
+\bibitem[Long et al.(2018)]{lonetal2018} Long, F., Pinilla, P., Herczeg, G.~J., et al.\ 2018, ApJ, 869, 17. doi:10.3847/1538-4357/aae8e1
+
+\bibitem[Luhman et al.(2011)]{luhetal2011} Luhman, K.~L., Burgasser, A.~J., \& Bochanski, J.~J.\ 2011, ApJL, 730, L9. doi:10.1088/2041-8205/730/1/L9
+
+\bibitem[Malamud \& Perets(2016)]{malper2016} Malamud, U. \& Perets, H.~B.\ 2016, ApJ, 832, 160. doi:10.3847/0004-637X/832/2/160
+
+\bibitem[Malamud \& Perets(2017a)]{malper2017a} Malamud, U. \& Perets, H.~B.\ 2017a, ApJ, 842, 67. doi:10.3847/1538-4357/aa7055
+
+\bibitem[Malamud \& Perets(2017b)]{malper2017b} Malamud, U. \& Perets, H.~B.\ 2017b, ApJ, 849, 8. doi:10.3847/1538-4357/aa8df5
+
+\bibitem[Mamajek(2009)]{mamajek2009} Mamajek, E.~E.\ 2009, Exoplanets and Disks: Their Formation and Diversity, 1158, 3. doi:10.1063/1.3215910
+
+\bibitem[Manara et al.(2023)]{manetal2023} Manara, C.~F., Ansdell, M., Rosotti, G.~P., et al.\ 2023, Protostars and Planets VII, 534, 539. doi:10.48550/arXiv.2203.09930
+
+\bibitem[Miotello et al.(2023)]{mioetal2023} Miotello, A., Kamp, I., Birnstiel, T., et al.\ 2023, Protostars and Planets VII, 534, 501. doi:10.48550/arXiv.2203.09818
+
+\bibitem[Mishra et al.(2021)]{misetal2021} Mishra, L., Alibert, Y., Leleu, A., et al.\ 2021, A\&A, 656, A74. doi:10.1051/0004-6361/202140761
+
+\bibitem[Monsch et al.(2023)]{monetal2023} Monsch, K., Drake, J.~J., Garraffo, C., et al.\ 2023, ApJ, 959, 140. doi:10.3847/1538-4357/ad0a60
+
+\bibitem[Mulders et al.(2021)]{muletal2021} Mulders, G.~D., Pascucci, I., Ciesla, F.~J., et al.\ 2021, ApJ, 920, 66. doi:10.3847/1538-4357/ac178e
+
+\bibitem[Mullally et al.(2024)]{muletal2024} Mullally, S.~E., Debes, J., Cracraft, M., et al.\ 2024, ApJL, 962, L32. doi:10.3847/2041-8213/ad2348
+
+\bibitem[Mustill \& Villaver(2012)]{musvil2012} Mustill, A.~J., \& Villaver, E.\ 2012, ApJ, 761, 121 
+
+\bibitem[Nabbie et al.(2024)]{nabetal2024} Nabbie, E., Huang, C.~X., Burt, J.~A., et al.\ 2024, AJ, 168, 132. doi:10.3847/1538-3881/ad60be
+
+\bibitem[Najita et al.(2022)]{najetal2022} Najita, J.~R., Kenyon, S.~J., \& Bromley, B.~C.\ 2022, ApJ, 925, 45. doi:10.3847/1538-4357/ac37b6
+
+\bibitem[O'Connor et al.(2023)]{ocoetal2023} O'Connor, C.~E., Lai, D., \& Seligman, D.~Z.\ 2023, MNRAS, 524, 6181. doi:10.1093/mnras/stad2281
+
+\bibitem[Osborn et al.(2023)]{osbetal2023} Osborn, A., Armstrong, D.~J., Fern{\'a}ndez Fern{\'a}ndez, J., et al.\ 2023, MNRAS, 526, 548. doi:10.1093/mnras/stad2575
+
+\bibitem[Ould Rouis et al.(2024)]{ouldetal2024} Ould Rouis, L.-B., Hermes, J.~J. et al., submitted to AAS journals.
+
+\bibitem[Pascucci et al.(2016)]{pasetal2016} Pascucci, I., Testi, L., Herczeg, G.~J., et al.\ 2016, ApJ, 831, 125. doi:10.3847/0004-637X/831/2/125
+
+\bibitem[Pearce(2024)]{pearce2024} Pearce, T.~D.\ 2024, Encyclopedia of Astrophysics, arXiv:2403.11804. doi:10.48550/arXiv.2403.11804
+
+\bibitem[Petigura et al.(2022)]{petetal2022} Petigura, E.~A., Rogers, J.~G., Isaacson, H., et al.\ 2022, AJ, 163, 179. doi:10.3847/1538-3881/ac51e3
+
+\bibitem[Pham \& Rein(2024)]{pharei2024} Pham, D. \& Rein, H.\ 2024, MNRAS, 530, 2526. doi:10.1093/mnras/stae986
+
+\bibitem[Pinte et al.(2023)]{pinetal2023} Pinte, C., Teague, R., Flaherty, K., et al.\ 2023, Protostars and Planets VII, 534, 645. doi:10.48550/arXiv.2203.09528
+
+\bibitem[Pollack et al.(1994)]{poletal1994} Pollack, J.~B., Hollenbach, D., Beckwith, S., et al.\ 1994, ApJ, 421, 615. doi:10.1086/173677
+
+\bibitem[Pu \& Wu(2015)]{puwu2015} Pu, B. \& Wu, Y.\ 2015, ApJ, 807, 44. doi:10.1088/0004-637X/807/1/44
+
+\bibitem[Raymond \& Morbidelli(2022)]{raymor2022} Raymond, S.~N. \& Morbidelli, A.\ 2022, Demographics of Exoplanetary Systems, Lecture Notes of the 3rd Advanced School on Exoplanetary Science, 466, 3. doi:10.1007/978-3-030-88124-5\_1
+
+\bibitem[Ribas et al.(2015)]{ribetal2015} Ribas, {\'A}., Bouy, H., \& Mer{\'\i}n, B.\ 2015, A\&A, 576, A52. doi:10.1051/0004-6361/201424846
+
+\bibitem[Rice \& Steffen(2023)]{ricste2023} Rice, D.~R. \& Steffen, J.~H.\ 2023, M/NRAS, 520, 4057. doi:10.1093/mnras/stad393
+
+\bibitem[Richert et al.(2018)]{ricetal2018} Richert, A.~J.~W., Getman, K.~V., Feigelson, E.~D., et al.\ 2018, MNRAS, 477, 5191. doi:10.1093/mnras/sty949
+
+\bibitem[Safronov(1972)]{safronov1972} Safronov, V.~S.\ 1972, Evolution of the protoplanetary cloud and formation of the earth and planets., by Safronov, V. S.. Translated from Russian. Jerusalem (Israel): Israel Program for Scientific Translations, Keter Publishing House, 212 p.
+
+\bibitem[Sanchez et al.(2024)]{sanetal2024} Sanchez, M., van der Marel, N., Lambrechts, M., et al.\ 2024, arXiv:2406.07760. Submitted to A\&A. doi:10.48550/arXiv.2406.07760
+
+\bibitem[Schlecker et al.(2021a)]{schetal2021a} Schlecker, M., Mordasini, C., Emsenhuber, A., et al.\ 2021a, A\&A, 656, A71. doi:10.1051/0004-6361/202038554
+
+\bibitem[Schlecker et al.(2021b)]{schetal2021b} Schlecker, M., Pham, D., Burn, R., et al.\ 2021b, A\&A, 656, A73. doi:10.1051/0004-6361/202140551
+
+\bibitem[Sigurdsson et al.(2003)]{sigetal2003} Sigurdsson, S., Richer, H.~B., Hansen, B.~M., et al.\ 2003, Science, 301, 193. doi:10.1126/science.1086326
+
+\bibitem[Smith \& Lissauer(2009)]{smilis2009} Smith, A.~W. \& Lissauer, J.~J.\ 2009, Icarus, 201, 381. doi:10.1016/j.icarus.2008.12.027
+
+\bibitem[Stahler \& Palla(2004)]{stapal2004} Stahler, S.~W. \& Palla, F.\ 2004, The Formation of Stars, by Steven W. Stahler, Francesco Palla, 865 pp. ISBN 3-527-40559-3. Wiley-VCH, 2004.
+
+\bibitem[Thorsett et al.(1993)]{thoetal1993} Thorsett, S.~E., Arzoumanian, Z., \& Taylor, J.~H.\ 1993, ApJL, 412, L33. doi:10.1086/186933
+
+\bibitem[Tobin et al.(2020)]{tobetal2020} Tobin, J.~J., Sheehan, P.~D., Megeath, S.~T., et al.\ 2020, ApJ, 890, 130. doi:10.3847/1538-4357/ab6f64
+
+\bibitem[Trierweiler et al.(2022)]{trietal2022} Trierweiler, I.~L., Doyle, A.~E., Melis, C., et al.\ 2022, ApJ, 936, 30. doi:10.3847/1538-4357/ac86d5
+
+\bibitem[Tychoniec et al.(2020)]{tycetal2020} Tychoniec, {\L}., Manara, C.~F., Rosotti, G.~P., et al.\ 2020, A\&A, 640, A19. doi:10.1051/0004-6361/202037851
+
+\bibitem[van Maanen(1917)]{vanmaanen1917} van Maanen, A.\ 1917, PASP, 29, 258. doi:10.1086/122654
+
+\bibitem[Vach et al.(2024)]{vacetal2024} Vach, S., Zhou, G., Huang, C.~X., et al.\ 2024, AJ, 167, 210. doi:10.3847/1538-3881/ad3108
+
+\bibitem[Vanderburg et al.(2020)]{vanetal2020} Vanderburg, A., Rappaport, S.~A., Xu, S., et al.\ 2020, Nature, 585, 363. doi:10.1038/s41586-020-2713-y
+
+\bibitem[Veras et al.(2011)]{veretal2011} Veras, D., Wyatt, M.~C., Mustill, A.~J., et al.\ 2011, MNRAS, 417, 2104. doi:10.1111/j.1365-2966.2011.19393.x
+
+\bibitem[Veras et al.(2014)]{veretal2014} Veras, D., Jacobson, S.~A., G\"{a}nsicke, B.~T.\ 2014, MNRAS, 445, 2794 
+
+\bibitem[Veras et al.(2015)]{veretal2015} Veras, D., Eggl, S., G{\"a}nsicke, B.~T.\ 2015, MNRAS, 451, 2814 
+
+\bibitem[Veras et al.(2019)]{veretal2019} Veras, D., Higuchi, A., \& Ida, S.\ 2019, MNRAS, 485, 708
+
+\bibitem[Veras \& Heng(2020)]{verhen2020} Veras, D. \& Heng, K.\ 2020, MNRAS, 496, 2292. doi:10.1093/mnras/staa1632
+
+\bibitem[Veras \& Scheeres(2020)]{versch2020} Veras, D., \& Scheeres, D.~J.\ 2020, MNRAS, 492, 2437
+
+\bibitem[Veras et al.(2020)]{veretal2020} Veras, D., Tremblay, P.-E., Hermes, J.~J., et al.\ 2020, MNRAS, 493, 765. doi:10.1093/mnras/staa241
+
+\bibitem[Veras et al.(2022)]{veretal2022} Veras, D., Birader, Y., \& Zaman, U.\ 2022, MNRAS, 510, 3379. doi:10.1093/mnras/stab3490
+
+\bibitem[Veras \& Rosengren(2023)]{verros2023} Veras, D. \& Rosengren, A.~J.\ 2023, MNRAS, 519, 6257. doi:10.1093/mnras/stad130
+
+\bibitem[Voelkel et al.(2020)]{voeetal2020} Voelkel, O., Klahr, H., Mordasini, C., et al.\ 2020, A\&A, 642, A75. doi:10.1051/0004-6361/202038085
+
+\bibitem[Voelkel et al.(2021a)]{voeetal2021a} Voelkel, O., Deienno, R., Kretke, K., et al.\ 2021a, A\&A, 645, A131. doi:10.1051/0004-6361/202039214
+
+\bibitem[Voelkel et al.(2021b)]{voeetal2021b} Voelkel, O., Deienno, R., Kretke, K., et al.\ 2021b, A\&A, 645, A132. doi:10.1051/0004-6361/202039245
+
+\bibitem[Williams et al.(2024)]{wiletal2024} Williams, J.~T., G\"{a}nsicke, B.~T., Swan, A., O'Brien, M.~W., et al.\ 2024, A\&A In Press
+
+\bibitem[Wolszczan \& Frail(1992)]{wolfra1992} Wolszczan, A. \& Frail, D.~A.\ 1992, Nature, 355, 145. doi:10.1038/355145a0
+
+\bibitem[Wolszczan(1994)]{wolszczan1994} Wolszczan, A.\ 1994, Science, 264, 538. doi:10.1126/science.264.5158.538
+
+\bibitem[Xu et al.(2024)]{xuetal2024} Xu, S., Rogers, L.~K., \& Blouin, S.\ 2024, arXiv:2404.15425. doi:10.48550/arXiv.2404.15425
+
+\bibitem[Yang et al.(2023)]{yanetal2023} Yang, S., Wu, L., Zheng, Z., et al.\ 2023, Icarus, 406, 115757. doi:10.1016/j.icarus.2023.115757
+
+\bibitem[Yee et al.(2021)]{yeeetal2021} Yee, S.~W., Tamayo, D., Hadden, S., et al.\ 2021, AJ, 162, 55. doi:10.3847/1538-3881/ac00a9
+
+\bibitem[Zhang et al.(2024)]{zhaetal2024} Zhang, K., Zang, W., El-Badry, K., et al.\ 2024, arXiv:2409.02157. doi:10.48550/arXiv.2409.02157
+
+\bibitem[Zhou et al.(2007)]{zhoetal2007} Zhou, J.-L., Lin, D.~N.~C., \& Sun, Y.-S.\ 2007, ApJ, 666, 423. doi:10.1086/519918
+
+\bibitem[Zhu et al.(2019)]{zhuetal2019} Zhu, Z., Zhang, S., Jiang, Y.-F., et al.\ 2019, ApJL, 877, L18. doi:10.3847/2041-8213/ab1f8c
+
+\bibitem[Zotos \& Veras(2020)]{zotver2020} Zotos, E.~E. \& Veras, D.\ 2020, A\&A, 637, A14. doi:10.1051/0004-6361/202037514
+
+
+
+\end{thebibliography}
+
+
+\label{lastpage}
+\end{document}

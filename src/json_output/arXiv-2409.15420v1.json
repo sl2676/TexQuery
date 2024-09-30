@@ -1,0 +1,22 @@
+{
+    "document": {
+        "content": [
+            {
+                "content": [
+                    "\\author [A.~Ziampras et al.] {Alexandros~Ziampras$^{1}$\\thanks{E-mail: \\texttt{a.ziampras@qmul.ac.uk}},\nPrakruti~Sudarshan$^{2}$\\thanks{Correspondence for the dust fluid module: \\texttt{sudarshan@mpia.de}},\nCornelis~P.~Dullemond$^{3}$,\nMario~Flock$^{2}$,\nVittoria~Berta$^{4}$,\n\\newauthor\nRichard~P.~Nelson$^{1}$,\nAndrea~Mignone$^{4}$\n\\\\\n% List of institutions\n$^{1}$Astronomy Unit, School of Physics and Astronomy, Queen Mary University of London, London E1 4NS, UK\\\\\n$^{2}$Max-Planck-Institut f{\\\"u}r Astronomie, K{\\\"o}nigstuhl 17, 69117 Heidelberg, Germany\\\\\n$^{3}$Institute for Theoretical Astrophysics, Center for Astronomy (ZAH), Heidelberg University, Albert Ueberle Str.~2, 69120 Heidelberg,\nGermany\\\\\n$^{4}$Dipartimento di Fisica, Universit{\\`a} di Torino, via Pietro Giuria 1, 10125 Torino, Italy\\\\\n}",
+                    "\\citep [$Q\\gtrsim2$, see] {}",
+                    "\\citep [$\\kappa_\\text{small}\\propto T^{1.5\\text{--}2}$, see e.g.,] {}"
+                ]
+            }
+        ],
+        "metadata": {
+            "authors": [
+                {
+                    "affiliations": [],
+                    "name": "Alexandros~Ziampras$^"
+                }
+            ]
+        },
+        "title": "Dusty substructures induced by planets in ALMA disks:\\\\how dust growth and dynamics changes the picture"
+    }
+}

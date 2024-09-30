@@ -1,0 +1,675 @@
+\begin{thebibliography}{}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\href{#1}{#1}}
+\providecommand{\dodoi}[1]{doi:~\href{http://doi.org/#1}{\nolinkurl{#1}}}
+\providecommand{\doeprint}[1]{\href{http://ascl.net/#1}{\nolinkurl{http://ascl.net/#1}}}
+\providecommand{\doarXiv}[1]{\href{https://arxiv.org/abs/#1}{\nolinkurl{https://arxiv.org/abs/#1}}}
+
+\bibitem[{Abbott {et~al.}(2016)Abbott, Abbott, Abbott, Abernathy, \&
+  et~al.}]{GW150914-detection}
+Abbott, B., Abbott, R., Abbott, T., Abernathy, M., \& et~al. 2016, Physical
+  Review D, 93, \dodoi{10.1103/physrevd.93.122003}
+
+\bibitem[{Abbott {et~al.}(2019)Abbott, Abbott, Abbott, Abraham, \&
+  et~al.}]{GWTC-1}
+Abbott, B., Abbott, R., Abbott, T., Abraham, S., \& et~al. 2019, Physical
+  Review X, 9, 031040
+
+\bibitem[{Abbott {et~al.}(2021{\natexlab{a}})Abbott, Abbott, Abraham, Acernese,
+  \& et~al.}]{GWTC-2}
+Abbott, R., Abbott, T., Abraham, S., Acernese, F., \& et~al.
+  2021{\natexlab{a}}, Physical Review X, 11, 021053
+
+\bibitem[{Abbott {et~al.}(2021{\natexlab{b}})Abbott, Abbott, Abraham, \&
+  et~al.}]{LIGO-O3-O3b-NSBH}
+Abbott, R., Abbott, T.~D., Abraham, S., \& et~al., F.~A. 2021{\natexlab{b}},
+  The Astrophysical Journal Letters, 915, L5, \dodoi{10.3847/2041-8213/ac082e}
+
+\bibitem[{{Anders} \& {Grevesse}(1989)}]{Anders1989}
+{Anders}, E., \& {Grevesse}, N. 1989, Geochimica et Cosmochimica Acta, 53, 197,
+  \dodoi{10.1016/0016-7037(89)90286-X}
+
+\bibitem[{Ashton {et~al.}(2019)Ashton, Hübner, Lasky, Talbot, Ackley,
+  Biscoveanu, Chu, Divakarla, Easter, Goncharov, Vivanco, Harms, Lower,
+  Meadors, Melchor, Payne, Pitkin, Powell, Sarin, Smith, \& Thrane}]{Bilby2019}
+Ashton, G., Hübner, M., Lasky, P.~D., {et~al.} 2019, The Astrophysical Journal
+  Supplement Series, 241, 27, \dodoi{10.3847/1538-4365/ab06fc}
+
+\bibitem[{{Asplund} {et~al.}(2009){Asplund}, {Grevesse}, {Sauval}, \&
+  {Scott}}]{Asplund2009}
+{Asplund}, M., {Grevesse}, N., {Sauval}, A.~J., \& {Scott}, P. 2009, \araa, 47,
+  481, \dodoi{10.1146/annurev.astro.46.060407.145222}
+
+\bibitem[{{Astropy Collaboration} {et~al.}(2018){Astropy Collaboration},
+  {Price-Whelan}, {Sip{\H{o}}cz}, {G{\"u}nther}, \& et~al.}]{astropy:2018}
+{Astropy Collaboration}, {Price-Whelan}, A.~M., {Sip{\H{o}}cz}, B.~M.,
+  {G{\"u}nther}, H.~M., \& et~al. 2018, \aj, 156, 123,
+  \dodoi{10.3847/1538-3881/aabc4f}
+
+\bibitem[{{Astropy Collaboration} {et~al.}(2013){Astropy Collaboration},
+  {Robitaille}, {Tollerud}, {Greenfield}, \& et~al.}]{astropy:2013}
+{Astropy Collaboration}, {Robitaille}, T.~P., {Tollerud}, E.~J., {Greenfield},
+  P., \& et~al. 2013, \aap, 558, A33, \dodoi{10.1051/0004-6361/201322068}
+
+\bibitem[{Barrett {et~al.}(2017)Barrett, Gaebel, Neijssel, Vigna-Gómez,
+  Stevenson, Berry, Farr, \& Mandel}]{Barrett2017}
+Barrett, J.~W., Gaebel, S.~M., Neijssel, C.~J., {et~al.} 2017, Monthly Notices
+  of the Royal Astronomical Society, \dodoi{10.1093/mnras/sty908}
+
+\bibitem[{Belczynski {et~al.}(2020)Belczynski, Klencki, Fields, Olejak, \&
+  et~al.}]{Belczynski2020-EvolutionaryRoads}
+Belczynski, K., Klencki, J., Fields, C.~E., Olejak, A., \& et~al. 2020,
+  Astronomy \& Astrophysics, 636, A104, \dodoi{10.1051/0004-6361/201936528}
+
+\bibitem[{{Benacquista} \& {Holley-Bockelmann}(2006)}]{Benacquista2006}
+{Benacquista}, M., \& {Holley-Bockelmann}, K. 2006, \apj, 645, 589,
+  \dodoi{10.1086/504024}
+
+\bibitem[{Breivik {et~al.}(2020)Breivik, Coughlin, Zevin, Rodriguez, \&
+  et~al}]{Breivik2020}
+Breivik, K., Coughlin, S., Zevin, M., Rodriguez, C.~L., \& et~al. 2020, The
+  Astrophysical Journal, 898, 71, \dodoi{10.3847/1538-4357/ab9d85}
+
+\bibitem[{Breivik {et~al.}(2018)Breivik, Kremer, Bueno, Larson, Coughlin, \&
+  Kalogera}]{Breivik2018WD}
+Breivik, K., Kremer, K., Bueno, M., {et~al.} 2018, The Astrophysical Journal
+  Letters, 854, L1, \dodoi{10.3847/2-041-8213/aaaa23}
+
+\bibitem[{{Breivik} {et~al.}(2020){Breivik}, {Mingarelli}, \&
+  {Larson}}]{Breivik2020b}
+{Breivik}, K., {Mingarelli}, C. M.~F., \& {Larson}, S.~L. 2020, \apj, 901, 4,
+  \dodoi{10.3847/1538-4357/abab99}
+
+\bibitem[{{Breivik} {et~al.}(2021){Breivik}, {Coughlin}, {Zevin}, {Rodriguez},
+  {Kremer}, {Ye}, {Andrews}, {Kurkowski}, {Digman}, {Larson}, \&
+  {Rasio}}]{COSMIC_code}
+{Breivik}, K., {Coughlin}, S., {Zevin}, M., {et~al.} 2021, {COSMIC: Compact
+  Object Synthesis and Monte Carlo Investigation Code}, Astrophysics Source
+  Code Library, record ascl:2108.022
+
+\bibitem[{Broekgaarden \& Berger(2021)}]{broekgaarden2021formation}
+Broekgaarden, F.~S., \& Berger, E. 2021, The Astrophysical Journal Letters,
+  920, L13
+
+\bibitem[{Broekgaarden {et~al.}(2021)Broekgaarden, Berger, Stevenson, Justham,
+  Mandel, \& Chru{\'s}li{\'n}ska}]{broekgaarden2021impact}
+Broekgaarden, F.~S., Berger, E., Stevenson, S., {et~al.} 2021, arXiv preprint
+  arXiv:2112.05763
+
+\bibitem[{{Broekgaarden} {et~al.}(2019){Broekgaarden}, {Justham}, {de Mink},
+  {Gair}, {Mandel}, {Stevenson}, {Barrett}, {Vigna-G{\'o}mez}, \&
+  {Neijssel}}]{2019MNRAS.490.5228B}
+{Broekgaarden}, F.~S., {Justham}, S., {de Mink}, S.~E., {et~al.} 2019, \mnras,
+  490, 5228, \dodoi{10.1093/mnras/stz2558}
+
+\bibitem[{{Callister}(2021)}]{CallisterPrior2021}
+{Callister}, T.~A. 2021, arXiv e-prints, arXiv:2104.09508.
+\newblock \doarXiv{2104.09508}
+
+\bibitem[{{Claeys, J. S. W.} {et~al.}(2014){Claeys, J. S. W.}, {Pols, O. R.},
+  {Izzard, R. G.}, {Vink, J.}, \& {Verbunt, F. W. M.}}]{Claeys2014}
+{Claeys, J. S. W.}, {Pols, O. R.}, {Izzard, R. G.}, {Vink, J.}, \& {Verbunt, F.
+  W. M.} 2014, A\&A, 563, A83, \dodoi{10.1051/0004-6361/201322714}
+
+\bibitem[{Collaboration \& Collaboration(2021)}]{GWTC-2p1-Zenodo}
+Collaboration, L.~S., \& Collaboration, V. 2021, {GWTC-2.1: Deep Extended
+  Catalog of Compact Binary Coalescences Observed by LIGO and Virgo During the
+  First Half of the Third Observing Run - Parameter Estimation Data Release},
+  v2,  Zenodo, \dodoi{10.5281/zenodo.6513631}
+
+\bibitem[{Collaboration {et~al.}(2021)Collaboration, Collaboration, \&
+  Collaboration}]{GWTC-3-Zenodo}
+Collaboration, L.~S., Collaboration, V., \& Collaboration, K. 2021, {GWTC-3:
+  Compact Binary Coalescences Observed by LIGO and Virgo During the Second Part
+  of the Third Observing Run — Parameter estimation data release},  Zenodo,
+  \dodoi{10.5281/zenodo.5546663}
+
+\bibitem[{Collette(2013)}]{collette_python_hdf5_2014}
+Collette, A. 2013, Python and HDF5 (O'Reilly)
+
+\bibitem[{{Colpi} {et~al.}(2024){Colpi}, {Danzmann}, {Hewitson},
+  {Holley-Bockelmann}, {Jetzer}, {Nelemans}, {Petiteau}, {Shoemaker},
+  {Sopuerta}, {Stebbins}, {Tanvir}, {Ward}, {Weber}, {Thorpe}, {Daurskikh},
+  {Deep}, {Fern{\'a}ndez N{\'u}{\~n}ez}, {Garc{\'\i}a Marirrodriga}, {Gehler},
+  {Halain}, {Jennrich}, {Lammers}, {Larra{\~n}aga}, {Lieser},
+  {L{\"u}tzgendorf}, {Martens}, {Mondin}, {Piris Ni{\~n}o}, {Amaro-Seoane},
+  {Arca Sedda}, {Auclair}, {Babak}, {Baghi}, {Baibhav}, {Baker}, {Bayle},
+  {Berry}, {Berti}, {Boileau}, {Bonetti}, {Brito}, {Buscicchio}, {Calcagni},
+  {Capelo}, {Caprini}, {Caputo}, {Castelli}, {Chen}, {Chen}, {Chua}, {Davies},
+  {Derdzinski}, {Domcke}, {Doneva}, {Dvorkin}, {Mar{\'\i}a Ezquiaga}, {Gair},
+  {Haiman}, {Harry}, {Hartwig}, {Hees}, {Heffernan}, {Husa},
+  {Izquierdo-Villalba}, {Karnesis}, {Klein}, {Korol}, {Korsakova}, {Kupfer},
+  {Laghi}, {Lamberts}, {Larson}, {Le Jeune}, {Lewicki}, {Littenberg}, {Madge},
+  {Mangiagli}, {Marsat}, {Vilchez}, {Maselli}, {Mathews}, {van de Meent},
+  {Muratore}, {Nardini}, {Pani}, {Peloso}, {Pieroni}, {Pound},
+  {Quelquejay-Leclere}, {Ricciardone}, {Rossi}, {Sartirana}, {Savalle},
+  {Sberna}, {Sesana}, {Shoemaker}, {Slutsky}, {Sotiriou}, {Speri}, {Staab},
+  {Steer}, {Tamanini}, {Tasinato}, {Torrado}, {Torres-Orjuela}, {Toubiana},
+  {Vallisneri}, {Vecchio}, {Volonteri}, {Yagi}, \& {Zwick}}]{LISASensitivity}
+{Colpi}, M., {Danzmann}, K., {Hewitson}, M., {et~al.} 2024, arXiv e-prints,
+  arXiv:2402.07571, \dodoi{10.48550/arXiv.2402.07571}
+
+\bibitem[{Cutler \& Flanagan(1994)}]{Cutler1994FisherGW}
+Cutler, C., \& Flanagan, E.~E. 1994, Phys. Rev. D, 49, 2658,
+  \dodoi{10.1103/PhysRevD.49.2658}
+
+\bibitem[{{De Marco} {et~al.}(2011){De Marco}, {Passy}, {Moe}, {Herwig}, {Mac
+  Low}, \& {Paxton}}]{DeMarco2011}
+{De Marco}, O., {Passy}, J.-C., {Moe}, M., {et~al.} 2011, \mnras, 411, 2277,
+  \dodoi{10.1111/j.1365-2966.2010.17891.x}
+
+\bibitem[{Delfavero {et~al.}(2023)Delfavero, O'Shaughnessy, Belczynski, Drozda,
+  \& Wysocki}]{st_inference_interp}
+Delfavero, V., O'Shaughnessy, R., Belczynski, K., Drozda, P., \& Wysocki, D.
+  2023, Phys. Rev. D, 108, 043023, \dodoi{10.1103/PhysRevD.108.043023}
+
+\bibitem[{Delfavero {et~al.}(2021)Delfavero, O'Shaughnessy, Wysocki, \&
+  Yelikar}]{nal-chieff-paper}
+Delfavero, V., O'Shaughnessy, R., Wysocki, D., \& Yelikar, A. 2021, Normal
+  Approximate Likelihoods to Gravitational Wave Events,  arXiv,
+  \dodoi{10.48550/ARXIV.2107.13082}
+
+\bibitem[{Delfavero {et~al.}(2022)Delfavero, O'Shaughnessy, Wysocki, \&
+  Yelikar}]{nal-methods-paper}
+---. 2022, Compressed Parametric and Non-Parametric Approximations to the
+  Gravitational Wave Likelihood,  arXiv, \dodoi{10.48550/ARXIV.2205.14154}
+
+\bibitem[{Eldridge {et~al.}(2017)Eldridge, Stanway, Xiao, McClelland, Taylor,
+  Ng, Greis, \& Bray}]{Eldridge2017}
+Eldridge, J.~J., Stanway, E.~R., Xiao, L., {et~al.} 2017, Publications of the
+  Astronomical Society of Australia, 34, e058, \dodoi{10.1017/pasa.2017.51}
+
+\bibitem[{eLISA Consortium~et al.(2013)}]{LISA-white}
+eLISA Consortium~et al., T. 2013, The Gravitational Universe.
+\newblock \doarXiv{1305.5720}
+
+\bibitem[{{Fabbiano}(2006)}]{Fabbiano2006}
+{Fabbiano}, G. 2006, \araa, 44, 323,
+  \dodoi{10.1146/annurev.astro.44.051905.092519}
+
+\bibitem[{{Finch} {et~al.}(2023){Finch}, {Bartolucci}, {Chucherko},
+  {Patterson}, {Korol}, {Klein}, {Bandopadhyay}, {Middleton}, {Moore}, \&
+  {Vecchio}}]{FinchGlobalFit2023}
+{Finch}, E., {Bartolucci}, G., {Chucherko}, D., {et~al.} 2023, \mnras, 522,
+  5358, \dodoi{10.1093/mnras/stad1288}
+
+\bibitem[{Flournoy \& Tsutakawa(1991)}]{flournoy1991statistical}
+Flournoy, N., \& Tsutakawa, R.~K. 1991, Statistical Multiple Integration:
+  Proceedings of a Joint Summer Research Conference Held at Humboldt
+  University, June 17-23, 1989, Vol. 115 (American Mathematical Soc.)
+
+\bibitem[{{Fortin, Francis} {et~al.}(2023){Fortin, Francis}, {García,
+  Federico}, {Simaz Bunzel, Adolfo}, \& {Chaty, Sylvain}}]{Fortin2023}
+{Fortin, Francis}, {García, Federico}, {Simaz Bunzel, Adolfo}, \& {Chaty,
+  Sylvain}. 2023, A\&A, 671, A149, \dodoi{10.1051/0004-6361/202245236}
+
+\bibitem[{Fragione {et~al.}(2020)Fragione, Loeb, \& Rasio}]{Fragione_2020}
+Fragione, G., Loeb, A., \& Rasio, F.~A. 2020, The Astrophysical Journal, 902,
+  L26, \dodoi{10.3847/2041-8213/abbc0a}
+
+\bibitem[{Fragos {et~al.}(2022)Fragos, Andrews, Bavera, Berry, Coughlin,
+  Dotter, Giri, Kalogera, Katsaggelos, Kovlakas, Lalvani, Misra, Srivastava,
+  Qin, Rocha, Roman-Garza, Serra, Stahle, Sun, Teng, Trajcevski, Tran, Xing,
+  Zapartas, \& Zevin}]{posydon}
+Fragos, T., Andrews, J.~J., Bavera, S.~S., {et~al.} 2022, POSYDON: A
+  General-Purpose Population Synthesis Code with Detailed Binary-Evolution
+  Simulations.
+\newblock \doarXiv{2202.05892}
+
+\bibitem[{{Frohmaier} {et~al.}(2018){Frohmaier}, {Sullivan}, {Maguire}, \&
+  {Nugent}}]{Frohmaier2018}
+{Frohmaier}, C., {Sullivan}, M., {Maguire}, K., \& {Nugent}, P. 2018, \apj,
+  858, 50, \dodoi{10.3847/1538-4357/aabc0b}
+
+\bibitem[{{Gamba} {et~al.}(2023){Gamba}, {Breschi}, {Carullo}, {Albanesi},
+  {Rettegno}, {Bernuzzi}, \& {Nagar}}]{Gamba2023Nature}
+{Gamba}, R., {Breschi}, M., {Carullo}, G., {et~al.} 2023, Nature Astronomy, 7,
+  11, \dodoi{10.1038/s41550-022-01813-w}
+
+\bibitem[{{Gao} {et~al.}(2023){Gao}, {Fan}, {Cao}, \&
+  {Zhang}}]{GaoGlobalFit2023}
+{Gao}, P., {Fan}, X.-L., {Cao}, Z.-J., \& {Zhang}, X.-H. 2023, \prd, 107,
+  123029, \dodoi{10.1103/PhysRevD.107.123029}
+
+\bibitem[{{Garrison-Kimmel} {et~al.}(2017){Garrison-Kimmel}, {Wetzel},
+  {Bullock}, {Hopkins}, {Boylan-Kolchin}, {Faucher-Gigu{\`e}re}, {Kere{\v{s}}},
+  {Quataert}, {Sanderson}, {Graus}, \& {Kelley}}]{Garrison-Kimmel2017}
+{Garrison-Kimmel}, S., {Wetzel}, A., {Bullock}, J.~S., {et~al.} 2017, \mnras,
+  471, 1709, \dodoi{10.1093/mnras/stx1710}
+
+\bibitem[{Gayathri {et~al.}(2022)Gayathri, Healy, Lange, O'Brien, Szczepanczyk,
+  Bartos, Campanelli, Klimenko, Lousto, \& O'Shaughnessy}]{Gayathri2022}
+Gayathri, V., Healy, J., Lange, J., {et~al.} 2022, Nature Astronomy, 6,
+  344–349, \dodoi{https://doi.org/10.1038/s41550-021-01568-w}
+
+\bibitem[{Giacobbo {et~al.}(2017)Giacobbo, Mapelli, \& Spera}]{Giacobbo2017}
+Giacobbo, N., Mapelli, M., \& Spera, M. 2017, Monthly Notices of the Royal
+  Astronomical Society, 474, 2959, \dodoi{10.1093/mnras/stx2933}
+
+\bibitem[{{Giacobbo} {et~al.}(2018){Giacobbo}, {Mapelli}, \&
+  {Spera}}]{Giacobbo2018}
+{Giacobbo}, N., {Mapelli}, M., \& {Spera}, M. 2018, \mnras, 474, 2959,
+  \dodoi{10.1093/mnras/stx2933}
+
+\bibitem[{{Gokhale} {et~al.}(2007){Gokhale}, {Peng}, \& {Frank}}]{Gokhale2007}
+{Gokhale}, V., {Peng}, X.~M., \& {Frank}, J. 2007, \apj, 655, 1010,
+  \dodoi{10.1086/510119}
+
+\bibitem[{Harris {et~al.}(2020)Harris, Millman, van~der Walt, Gommers, \&
+  et~al.}]{harris2020array}
+Harris, C.~R., Millman, K.~J., van~der Walt, S.~J., Gommers, R., \& et~al.
+  2020, Nature, 585, 357, \dodoi{10.1038/s41586-020-2649-2}
+
+\bibitem[{{Hofman} \& {Nelemans}(2024)}]{Hofman2024}
+{Hofman}, S., \& {Nelemans}, G. 2024, arXiv e-prints, arXiv:2407.10642,
+  \dodoi{10.48550/arXiv.2407.10642}
+
+\bibitem[{Hopkins(2015)}]{Hopkins2015}
+Hopkins, P.~F. 2015, Monthly Notices of the Royal Astronomical Society, 450,
+  53, \dodoi{10.1093/mnras/stv195}
+
+\bibitem[{Hopkins {et~al.}(2014)Hopkins, Kereš, Oñorbe, Faucher-Giguère,
+  Quataert, Murray, \& Bullock}]{Hopkins2014}
+Hopkins, P.~F., Kereš, D., Oñorbe, J., {et~al.} 2014, Monthly Notices of the
+  Royal Astronomical Society, 445, 581, \dodoi{10.1093/mnras/stu1738}
+
+\bibitem[{{Hopkins} {et~al.}(2018){Hopkins}, {Wetzel}, {Kere{\v{s}}},
+  {Faucher-Gigu{\`e}re}, {Quataert}, {Boylan-Kolchin}, {Murray}, {Hayward},
+  {Garrison-Kimmel}, {Hummels}, {Feldmann}, {Torrey}, {Ma},
+  {Angl{\'e}s-Alc{\'a}zar}, {Su}, {Orr}, {Schmitz}, {Escala}, {Sanderson},
+  {Grudi{\'c}}, {Hafen}, {Kim}, {Fitts}, {Bullock}, {Wheeler}, {Chan},
+  {Elbert}, \& {Narayanan}}]{Hopkins2018}
+{Hopkins}, P.~F., {Wetzel}, A., {Kere{\v{s}}}, D., {et~al.} 2018, \mnras, 480,
+  800, \dodoi{10.1093/mnras/sty1690}
+
+\bibitem[{Hunter(2007)}]{Hunter_2007}
+Hunter, J.~D. 2007, Computing in Science \& Engineering, 9, 90,
+  \dodoi{10.1109/MCSE.2007.55}
+
+\bibitem[{Hurley {et~al.}(2000)Hurley, Pols, \& Tout}]{Hurley2000}
+Hurley, J.~R., Pols, O.~R., \& Tout, C.~A. 2000, Monthly Notices of the Royal
+  Astronomical Society, 315, 543, \dodoi{10.1046/j.1365-8711.2000.03426.x}
+
+\bibitem[{Hurley {et~al.}(2002)Hurley, Tout, \& Pols}]{Hurley2002}
+Hurley, J.~R., Tout, C.~A., \& Pols, O.~R. 2002, Monthly Notices of the Royal
+  Astronomical Society, 329, 897, \dodoi{10.1046/j.1365-8711.2002.05038.x}
+
+\bibitem[{{Inoue} {et~al.}(2022){Inoue}, {Yabe}, \& {Ueda}}]{Inoue2022}
+{Inoue}, Y., {Yabe}, K., \& {Ueda}, Y. 2022, {VizieR Online Data Catalog:
+  Extragalactic X-ray binaries catalog (Inoue+, 2021)}, VizieR On-line Data
+  Catalog: J/PASJ/73/1315. Originally published in: 2021PASJ...73.1315I
+
+\bibitem[{Ivanova(2011)}]{IvanovaRemnant2011}
+Ivanova, N. 2011, The Astrophysical Journal, 730, 76,
+  \dodoi{10.1088/0004-637x/730/2/76}
+
+\bibitem[{Ivanova \& Chaichenets(2011)}]{IvanovaEnthalpy2011}
+Ivanova, N., \& Chaichenets, S. 2011, The Astrophysical Journal, 731, L36,
+  \dodoi{10.1088/2041-8205/731/2/l36}
+
+\bibitem[{Karnesis {et~al.}(2021)Karnesis, Babak, Pieroni, Cornish, \&
+  Littenberg}]{Karnesis2021}
+Karnesis, N., Babak, S., Pieroni, M., Cornish, N., \& Littenberg, T. 2021,
+  Phys. Rev. D, 104, 043019, \dodoi{10.1103/PhysRevD.104.043019}
+
+\bibitem[{{Katz} {et~al.}(2024){Katz}, {Karnesis}, {Korsakova}, {Gair}, \&
+  {Stergioulas}}]{KatzGlobalFit2024}
+{Katz}, M.~L., {Karnesis}, N., {Korsakova}, N., {Gair}, J.~R., \&
+  {Stergioulas}, N. 2024, arXiv e-prints, arXiv:2405.04690,
+  \dodoi{10.48550/arXiv.2405.04690}
+
+\bibitem[{{Keim} {et~al.}(2023){Keim}, {Korol}, \& {Rossi}}]{Keim2023}
+{Keim}, M.~A., {Korol}, V., \& {Rossi}, E.~M. 2023, \mnras, 521, 1088,
+  \dodoi{10.1093/mnras/stad554}
+
+\bibitem[{Klencki {et~al.}(2021)Klencki, Nelemans, Istrate, \&
+  Chruslinska}]{Klencki2021}
+Klencki, J., Nelemans, G., Istrate, A.~G., \& Chruslinska, M. 2021, Astronomy
+  \& Astrophysics, 645, A54, \dodoi{10.1051/0004-6361/202038707}
+
+\bibitem[{Korol {et~al.}(2022{\natexlab{a}})Korol, Belokurov, \&
+  Toonen}]{Korol2022CE}
+Korol, V., Belokurov, V., \& Toonen, S. 2022{\natexlab{a}}, Monthly Notices of
+  the Royal Astronomical Society, 515, 1228, \dodoi{10.1093/mnras/stac1686}
+
+\bibitem[{Korol {et~al.}(2022{\natexlab{b}})Korol, Hallakoun, Toonen, \&
+  Karnesis}]{Korol2022}
+Korol, V., Hallakoun, N., Toonen, S., \& Karnesis, N. 2022{\natexlab{b}},
+  Monthly Notices of the Royal Astronomical Society, 511, 5936,
+  \dodoi{10.1093/mnras/stac415}
+
+\bibitem[{Korol {et~al.}(2023)Korol, Igoshev, Toonen, Karnesis, Moore, Finch,
+  \& Klein}]{Korol2023NS}
+Korol, V., Igoshev, A.~P., Toonen, S., {et~al.} 2023, Neutron Star - White
+  Dwarf Binaries: Probing Formation Pathways and Natal Kicks with LISA.
+\newblock \doarXiv{2310.06559}
+
+\bibitem[{{Korol} {et~al.}(2018){Korol}, {Koop}, \& {Rossi}}]{Korol2018b}
+{Korol}, V., {Koop}, O., \& {Rossi}, E.~M. 2018, \apjl, 866, L20,
+  \dodoi{10.3847/2041-8213/aae587}
+
+\bibitem[{Korol {et~al.}(2018)Korol, Rossi, \& Barausse}]{Korol2018}
+Korol, V., Rossi, E.~M., \& Barausse, E. 2018, Monthly Notices of the Royal
+  Astronomical Society, 483, 5518, \dodoi{10.1093/mnras/sty3440}
+
+\bibitem[{Korol {et~al.}(2017)Korol, Rossi, Groot, Nelemans, Toonen, \&
+  Brown}]{Korol2017}
+Korol, V., Rossi, E.~M., Groot, P.~J., {et~al.} 2017, Monthly Notices of the
+  Royal Astronomical Society, 470, 1894, \dodoi{10.1093/mnras/stx1285}
+
+\bibitem[{{Korol} {et~al.}(2020){Korol}, {Toonen}, {Klein}, {Belokurov},
+  {Vincenzo}, {Buscicchio}, {Gerosa}, {Moore}, {Roebber}, {Rossi}, \&
+  {Vecchio}}]{Korol2020}
+{Korol}, V., {Toonen}, S., {Klein}, A., {et~al.} 2020, \aap, 638, A153,
+  \dodoi{10.1051/0004-6361/202037764}
+
+\bibitem[{Kremer {et~al.}(2017)Kremer, Breivik, Larson, \&
+  Kalogera}]{Kremer2017}
+Kremer, K., Breivik, K., Larson, S.~L., \& Kalogera, V. 2017, The Astrophysical
+  Journal, 846, 95, \dodoi{10.3847/1538-4357/aa8557}
+
+\bibitem[{{Kremer} {et~al.}(2018){Kremer}, {Chatterjee}, {Breivik},
+  {Rodriguez}, {Larson}, \& {Rasio}}]{Kremer2018}
+{Kremer}, K., {Chatterjee}, S., {Breivik}, K., {et~al.} 2018, \prl, 120,
+  191103, \dodoi{10.1103/PhysRevLett.120.191103}
+
+\bibitem[{{Kremer} {et~al.}(2021){Kremer}, {Rui}, {Weatherford}, {Chatterjee},
+  {Fragione}, {Rasio}, {Rodriguez}, \& {Ye}}]{Kremer2021}
+{Kremer}, K., {Rui}, N.~Z., {Weatherford}, N.~C., {et~al.} 2021, \apj, 917, 28,
+  \dodoi{10.3847/1538-4357/ac06d4}
+
+\bibitem[{{Kremer} {et~al.}(2015){Kremer}, {Sepinsky}, \&
+  {Kalogera}}]{Kremer2015}
+{Kremer}, K., {Sepinsky}, J., \& {Kalogera}, V. 2015, \apj, 806, 76,
+  \dodoi{10.1088/0004-637X/806/1/76}
+
+\bibitem[{{Kremer} {et~al.}(2020){Kremer}, {Ye}, {Rui}, {Weatherford},
+  {Chatterjee}, {Fragione}, {Rodriguez}, {Spera}, \& {Rasio}}]{Kremer2020}
+{Kremer}, K., {Ye}, C.~S., {Rui}, N.~Z., {et~al.} 2020, \apjs, 247, 48,
+  \dodoi{10.3847/1538-4365/ab7919}
+
+\bibitem[{Kroupa \& Weidner(2003)}]{Kroupa2003}
+Kroupa, P., \& Weidner, C. 2003, The Astrophysical Journal, 598, 1076,
+  \dodoi{10.1086/379105}
+
+\bibitem[{Kullback(1959)}]{KL-div}
+Kullback. 1959, Information theory and statistics (John Wiley and Sons, NY)
+
+\bibitem[{{Lackeos} {et~al.}(2023){Lackeos}, {Littenberg}, {Cornish}, \&
+  {Thorpe}}]{LackeosGlobalFit2023}
+{Lackeos}, K., {Littenberg}, T.~B., {Cornish}, N.~J., \& {Thorpe}, J.~I. 2023,
+  \aap, 678, A123, \dodoi{10.1051/0004-6361/202347222}
+
+\bibitem[{{Lamberts} {et~al.}(2019){Lamberts}, {Blunt}, {Littenberg},
+  {Garrison-Kimmel}, {Kupfer}, \& {Sanderson}}]{Lamberts2019}
+{Lamberts}, A., {Blunt}, S., {Littenberg}, T.~B., {et~al.} 2019, \mnras, 490,
+  5888, \dodoi{10.1093/mnras/stz2834}
+
+\bibitem[{Littenberg {et~al.}(2020)Littenberg, Cornish, Lackeos, \&
+  Robson}]{ldasoft}
+Littenberg, T., Cornish, N., Lackeos, K., \& Robson, T. 2020,
+  tlittenberg/ldasoft: GBMCMC v1.0.1, 1.0.1,  Zenodo,
+  \dodoi{10.5281/zenodo.3756199}
+
+\bibitem[{{Littenberg} \& {Cornish}(2023)}]{TysonGlobalFit2023}
+{Littenberg}, T.~B., \& {Cornish}, N.~J. 2023, \prd, 107, 063004,
+  \dodoi{10.1103/PhysRevD.107.063004}
+
+\bibitem[{Mandel \& Farmer(2022)}]{MANDEL20221}
+Mandel, I., \& Farmer, A. 2022, Physics Reports, 955, 1,
+  \dodoi{https://doi.org/10.1016/j.physrep.2022.01.003}
+
+\bibitem[{{Marsh} {et~al.}(2004){Marsh}, {Nelemans}, \& {Steeghs}}]{Marsh2004}
+{Marsh}, T.~R., {Nelemans}, G., \& {Steeghs}, D. 2004, \mnras, 350, 113,
+  \dodoi{10.1111/j.1365-2966.2004.07564.x}
+
+\bibitem[{Miller-Jones(2014)}]{miller-jones_2014}
+Miller-Jones, J. C.~A. 2014, Publications of the Astronomical Society of
+  Australia, 31, e016, \dodoi{10.1017/pasa.2014.7}
+
+\bibitem[{Moe {et~al.}(2019)Moe, Kratter, \& Badenes}]{Moe19}
+Moe, M., Kratter, K.~M., \& Badenes, C. 2019, The Astrophysical Journal, 875,
+  61, \dodoi{10.3847/1538-4357/ab0d88}
+
+\bibitem[{Moller \& Waagepetersen(2003)}]{moller2003statistical}
+Moller, J., \& Waagepetersen, R.~P. 2003, Statistical inference and simulation
+  for spatial point processes (CRC press)
+
+\bibitem[{Moore {et~al.}(2023)Moore, Finch, Klein, Korol, Pham, \&
+  Robins}]{Moore2023}
+Moore, C.~J., Finch, E., Klein, A., {et~al.} 2023, Discovering neutron stars
+  with LISA via measurements of orbital eccentricity in Galactic binaries.
+\newblock \doarXiv{2310.06568}
+
+\bibitem[{{Nelemans} {et~al.}(2001){Nelemans}, {Yungelson}, \& {Portegies
+  Zwart}}]{Nelemans2001}
+{Nelemans}, G., {Yungelson}, L.~R., \& {Portegies Zwart}, S.~F. 2001, \aap,
+  375, 890, \dodoi{10.1051/0004-6361:20010683}
+
+\bibitem[{{Nissanke} {et~al.}(2012){Nissanke}, {Vallisneri}, {Nelemans}, \&
+  {Prince}}]{Nissanke2012}
+{Nissanke}, S., {Vallisneri}, M., {Nelemans}, G., \& {Prince}, T.~A. 2012,
+  \apj, 758, 131, \dodoi{10.1088/0004-637X/758/2/131}
+
+\bibitem[{{Offner} {et~al.}(2023){Offner}, {Moe}, {Kratter}, {Sadavoy},
+  {Jensen}, \& {Tobin}}]{2023ASPC..534..275O}
+{Offner}, S.~S.~R., {Moe}, M., {Kratter}, K.~M., {et~al.} 2023, in Astronomical
+  Society of the Pacific Conference Series, Vol. 534, Protostars and Planets
+  VII, ed. S.~{Inutsuka}, Y.~{Aikawa}, T.~{Muto}, K.~{Tomida}, \& M.~{Tamura},
+  275, \dodoi{10.48550/arXiv.2203.10066}
+
+\bibitem[{O'Shaughnessy(2013)}]{1204.3117}
+O'Shaughnessy, R. 2013, Phys. Rev. D, 88, 084061,
+  \dodoi{10.1103/PhysRevD.88.084061}
+
+\bibitem[{{Paczynski}(1976)}]{Paczynski1976}
+{Paczynski}, B. 1976, in Structure and Evolution of Close Binary Systems, ed.
+  P.~{Eggleton}, S.~{Mitton}, \& J.~{Whelan}, Vol.~73, 75
+
+\bibitem[{Peters(1964)}]{Peters1964}
+Peters, P.~C. 1964, Phys. Rev., 136, B1224, \dodoi{10.1103/PhysRev.136.B1224}
+
+\bibitem[{{Pols} {et~al.}(1998){Pols}, {Schr{\"o}der}, {Hurley}, {Tout}, \&
+  {Eggleton}}]{Pols1998}
+{Pols}, O.~R., {Schr{\"o}der}, K.-P., {Hurley}, J.~R., {Tout}, C.~A., \&
+  {Eggleton}, P.~P. 1998, \mnras, 298, 525,
+  \dodoi{10.1046/j.1365-8711.1998.01658.x}
+
+\bibitem[{Pordes {et~al.}(2007)Pordes, Petravick, Kramer, Olson, Livny, Roy,
+  Avery, Blackburn, Wenaus, W{\"u}rthwein, Foster, Gardner, Wilde, Blatecky,
+  McGee, \& Quick}]{osg07}
+Pordes, R., Petravick, D., Kramer, B., {et~al.} 2007, in 78, Vol.~78, J. Phys.
+  Conf. Ser., 012057, \dodoi{10.1088/1742-6596/78/1/012057}
+
+\bibitem[{{Portegies Zwart} \& {Verbunt}(1996)}]{PortegiesZwart1996}
+{Portegies Zwart}, S.~F., \& {Verbunt}, F. 1996, \aap, 309, 179
+
+\bibitem[{Remillard \& McClintock(2006)}]{Remillard_2006}
+Remillard, R.~A., \& McClintock, J.~E. 2006, Annual Review of Astronomy and
+  Astrophysics, 44, 49–92, \dodoi{10.1146/annurev.astro.44.051905.092532}
+
+\bibitem[{{Riley} {et~al.}(2022){Riley}, {Agrawal}, {Barrett}, {Boyett},
+  {Broekgaarden}, {Chattopadhyay}, {Gaebel}, {Gittins}, {Hirai}, {Howitt},
+  {Justham}, {Khandelwal}, {Kummer}, {Lau}, {Mandel}, {de Mink}, {Neijssel},
+  {Riley}, {van Son}, {Stevenson}, {Vigna-G{\'o}mez}, {Vinciguerra}, {Wagg},
+  {Willcox}, \& {Team Compas}}]{Riley2022}
+{Riley}, J., {Agrawal}, P., {Barrett}, J.~W., {et~al.} 2022, \apjs, 258, 34,
+  \dodoi{10.3847/1538-4365/ac416c}
+
+\bibitem[{{Roebber} {et~al.}(2020){Roebber}, {Buscicchio}, {Vecchio}, {Moore},
+  {Klein}, {Korol}, {Toonen}, {Gerosa}, {Goldstein}, {Gaebel}, \&
+  {Woods}}]{Roebber2020}
+{Roebber}, E., {Buscicchio}, R., {Vecchio}, A., {et~al.} 2020, \apjl, 894, L15,
+  \dodoi{10.3847/2041-8213/ab8ac9}
+
+\bibitem[{Romero-Shaw {et~al.}(2020)Romero-Shaw, Lasky, Thrane, \&
+  Bustillo}]{RomeroShawGW190521}
+Romero-Shaw, I.~M., Lasky, P.~D., Thrane, E., \& Bustillo, J.~C. 2020, The
+  Astrophysical Journal Letters, \dodoi{10.3847/2041-8213/abbe26}
+
+\bibitem[{Ruiter {et~al.}(2010)Ruiter, Belczynski, Benacquista, Larson, \&
+  Williams}]{Ruiter2010}
+Ruiter, A.~J., Belczynski, K., Benacquista, M., Larson, S.~L., \& Williams, G.
+  2010, The Astrophysical Journal, 717, 1006,
+  \dodoi{10.1088/0004-637X/717/2/1006}
+
+\bibitem[{Sanderson {et~al.}(2020)Sanderson, Wetzel, Loebman, Sharma, Hopkins,
+  Garrison-Kimmel, Faucher-Giguère, Kereš, \& Quataert}]{Sanderson2020}
+Sanderson, R.~E., Wetzel, A., Loebman, S., {et~al.} 2020, The Astrophysical
+  Journal Supplement Series, 246, 6, \dodoi{10.3847/1538-4365/ab5b9d}
+
+\bibitem[{{Scherbak} \& {Fuller}(2023)}]{Scherbak2023}
+{Scherbak}, P., \& {Fuller}, J. 2023, \mnras, 518, 3966,
+  \dodoi{10.1093/mnras/stac3313}
+
+\bibitem[{Scott(2015)}]{scotts-rule}
+Scott, D.~W. 2015, Multivariate density estimation: theory, practice, and
+  visualization (John Wiley \& Sons)
+
+\bibitem[{{Sepinsky} {et~al.}(2010){Sepinsky}, {Willems}, {Kalogera}, \&
+  {Rasio}}]{Sepinsky2010}
+{Sepinsky}, J.~F., {Willems}, B., {Kalogera}, V., \& {Rasio}, F.~A. 2010, \apj,
+  724, 546, \dodoi{10.1088/0004-637X/724/1/546}
+
+\bibitem[{{Sesana}(2016)}]{Sesana2016}
+{Sesana}, A. 2016, \prl, 116, 231102, \dodoi{10.1103/PhysRevLett.116.231102}
+
+\bibitem[{Sfiligoi {et~al.}(2009)Sfiligoi, Bradley, Holzman, Mhashilkar, Padhi,
+  \& Wurthwein}]{osg09}
+Sfiligoi, I., Bradley, D.~C., Holzman, B., {et~al.} 2009, in 2, Vol.~2, 2009
+  WRI World Congress on Computer Science and Information Engineering, 428--432,
+  \dodoi{10.1109/CSIE.2009.950}
+
+\bibitem[{{Staelens} \& {Nelemans}(2024)}]{Staelens2024}
+{Staelens}, S., \& {Nelemans}, G. 2024, \aap, 683, A139,
+  \dodoi{10.1051/0004-6361/202348429}
+
+\bibitem[{{Stevenson} {et~al.}(2017){Stevenson}, {Berry}, \&
+  {Mandel}}]{Stevenson2017}
+{Stevenson}, S., {Berry}, C. P.~L., \& {Mandel}, I. 2017, \mnras, 471, 2801,
+  \dodoi{10.1093/mnras/stx1764}
+
+\bibitem[{Stevenson \& Clarke(2022)}]{Stevenson2022}
+Stevenson, S., \& Clarke, T.~A. 2022, Monthly Notices of the Royal Astronomical
+  Society, 517, 4034
+
+\bibitem[{{Strub} {et~al.}(2024){Strub}, {Ferraioli}, {Schmelzbach},
+  {St{\"a}hler}, \& {Giardini}}]{StrubGlobalFit2024}
+{Strub}, S.~H., {Ferraioli}, L., {Schmelzbach}, C., {St{\"a}hler}, S.~C., \&
+  {Giardini}, D. 2024, \prd, 110, 024005, \dodoi{10.1103/PhysRevD.110.024005}
+
+\bibitem[{{Tang} {et~al.}(2024){Tang}, {Eldridge}, {Meyer}, {Lamberts},
+  {Boileau}, \& {van Zeist}}]{Tang2024}
+{Tang}, P., {Eldridge}, J., {Meyer}, R., {et~al.} 2024, arXiv e-prints,
+  arXiv:2405.20484, \dodoi{10.48550/arXiv.2405.20484}
+
+\bibitem[{{The LIGO Scientific Collaboration} \& {The Virgo
+  Collaboration}(2021)}]{GWTC-2p1}
+{The LIGO Scientific Collaboration}, \& {The Virgo Collaboration}. 2021,
+  GWTC-2.1: Deep Extended Catalog of Compact Binary Coalescences Observed by
+  LIGO and Virgo During the First Half of the Third Observing Run.
+\newblock \doarXiv{2108.01045}
+
+\bibitem[{{The LIGO Scientific Collaboration} {et~al.}(2020){The LIGO
+  Scientific Collaboration}, {The Virgo Collaboration}, \& {The KAGRA
+  Collaboration}}]{LIGO-O3-O3a-RP}
+{The LIGO Scientific Collaboration}, {The Virgo Collaboration}, \& {The KAGRA
+  Collaboration}. 2020, Available as LIGO-P2000077.
+\newblock \url{https://dcc.ligo.org/LIGO-P2000077}
+
+\bibitem[{{The LIGO Scientific Collaboration} {et~al.}(2021{\natexlab{a}}){The
+  LIGO Scientific Collaboration}, {The Virgo Collaboration}, \& {The KAGRA
+  Collaboration}}]{GWTC-3}
+---. 2021{\natexlab{a}}, GWTC-3: Compact Binary Coalescences Observed by LIGO
+  and Virgo During the Second Part of the Third Observing Run.
+\newblock \doarXiv{2111.03606}
+
+\bibitem[{{The LIGO Scientific Collaboration} {et~al.}(2021{\natexlab{b}}){The
+  LIGO Scientific Collaboration}, {The Virgo Collaboration}, \& {The KAGRA
+  Collaboration}}]{LIGO-O3-O3b-RP}
+---. 2021{\natexlab{b}}, The population of merging compact binaries inferred
+  using gravitational waves through GWTC-3.
+\newblock \doarXiv{2111.03634}
+
+\bibitem[{Thiele {et~al.}(2023)Thiele, Breivik, Sanderson, \&
+  Luger}]{Thiele2023}
+Thiele, S., Breivik, K., Sanderson, R.~E., \& Luger, R. 2023, The Astrophysical
+  Journal, 945, 162, \dodoi{10.3847/1538-4357/aca7be}
+
+\bibitem[{{Toonen} {et~al.}(2012){Toonen}, {Nelemans}, \& {Portegies
+  Zwart}}]{Toonen2012TypeIa}
+{Toonen}, S., {Nelemans}, G., \& {Portegies Zwart}, S. 2012, \aap, 546, A70,
+  \dodoi{10.1051/0004-6361/201218966}
+
+\bibitem[{{Tout} {et~al.}(1996){Tout}, {Pols}, {Eggleton}, \& {Han}}]{Tout1996}
+{Tout}, C.~A., {Pols}, O.~R., {Eggleton}, P.~P., \& {Han}, Z. 1996, \mnras,
+  281, 257, \dodoi{10.1093/mnras/281.1.257}
+
+\bibitem[{Vallisneri(2008)}]{Vallisneri2008}
+Vallisneri, M. 2008, Phys. Rev. D, 77, 042001,
+  \dodoi{10.1103/PhysRevD.77.042001}
+
+\bibitem[{Veitch {et~al.}(2015)Veitch, Raymond, Farr, Farr, Graff, Vitale,
+  Aylott, Blackburn, Christensen, Coughlin, Del~Pozzo, Feroz, Gair, Haster,
+  Kalogera, Littenberg, Mandel, O'Shaughnessy, Pitkin, Rodriguez, R\"over,
+  Sidery, Smith, Van Der~Sluys, Vecchio, Vousden, \&
+  Wade}]{Veitch2015LALInference}
+Veitch, J., Raymond, V., Farr, B., {et~al.} 2015, Phys. Rev. D, 91, 042003,
+  \dodoi{10.1103/PhysRevD.91.042003}
+
+\bibitem[{Virtanen {et~al.}(2020)Virtanen, Gommers, Oliphant, Haberland, Reddy,
+  Cournapeau, Burovski, Peterson, Weckesser, Bright, {van der Walt}, Brett,
+  Wilson, Millman, Mayorov, Nelson, Jones, Kern, Larson, Carey, Polat, Feng,
+  Moore, {VanderPlas}, Laxalde, Perktold, Cimrman, Henriksen, Quintero, Harris,
+  Archibald, Ribeiro, Pedregosa, {van Mulbregt}, \& {SciPy 1.0
+  Contributors}}]{2020SciPy-NMeth}
+Virtanen, P., Gommers, R., Oliphant, T.~E., {et~al.} 2020, Nature Methods, 17,
+  261, \dodoi{10.1038/s41592-019-0686-2}
+
+\bibitem[{{Wagg} {et~al.}(2022){Wagg}, {Breivik}, \& {de Mink}}]{LEGWORK}
+{Wagg}, T., {Breivik}, K., \& {de Mink}, S. 2022, The Journal of Open Source
+  Software, 7, 3998, \dodoi{10.21105/joss.03998}
+
+\bibitem[{{Wetzel} {et~al.}(2016){Wetzel}, {Hopkins}, {Kim},
+  {Faucher-Gigu{\`e}re}, {Kere{\v{s}}}, \& {Quataert}}]{Wetzel2016}
+{Wetzel}, A.~R., {Hopkins}, P.~F., {Kim}, J.-h., {et~al.} 2016, \apjl, 827,
+  L23, \dodoi{10.3847/2041-8205/827/2/L23}
+
+\bibitem[{{Willems} {et~al.}(2007){Willems}, {Kalogera}, {Vecchio}, {Ivanova},
+  {Rasio}, {Fregeau}, \& {Belczynski}}]{Willems2007}
+{Willems}, B., {Kalogera}, V., {Vecchio}, A., {et~al.} 2007, \apjl, 665, L59,
+  \dodoi{10.1086/521049}
+
+\bibitem[{{Wilson} \& {Nordhaus}(2022)}]{Wilson2022}
+{Wilson}, E.~C., \& {Nordhaus}, J. 2022, arXiv e-prints, arXiv:2203.06091.
+\newblock \doarXiv{2203.06091}
+
+\bibitem[{Wysocki {et~al.}(2019)Wysocki, Lange, \&
+  O’Shaughnessy}]{Wysocki2019}
+Wysocki, D., Lange, J., \& O’Shaughnessy, R. 2019, Physical Review D, 100,
+  \dodoi{10.1103/physrevd.100.043012}
+
+\bibitem[{{Yamaguchi} {et~al.}(2024{\natexlab{a}}){Yamaguchi}, {El-Badry},
+  {Rees}, {Shahaf}, {Mazeh}, \& {Andrae}}]{Yamaguchi2024b}
+{Yamaguchi}, N., {El-Badry}, K., {Rees}, N., {et~al.} 2024{\natexlab{a}}, arXiv
+  e-prints, arXiv:2405.06020, \dodoi{10.48550/arXiv.2405.06020}
+
+\bibitem[{{Yamaguchi} {et~al.}(2024{\natexlab{b}}){Yamaguchi}, {El-Badry},
+  {Fuller}, {Latham}, {Cargile}, {Mazeh}, {Shahaf}, {Bieryla}, {Buchhave}, \&
+  {Hobson}}]{Yamaguchi2024a}
+{Yamaguchi}, N., {El-Badry}, K., {Fuller}, J., {et~al.} 2024{\natexlab{b}},
+  \mnras, 527, 11719, \dodoi{10.1093/mnras/stad4005}
+
+\bibitem[{{Zevin} {et~al.}(2021){Zevin}, {Bavera}, {Berry}, {Kalogera},
+  {Fragos}, {Marchant}, {Rodriguez}, {Antonini}, {Holz}, \&
+  {Pankow}}]{COSMICZevin2021}
+{Zevin}, M., {Bavera}, S.~S., {Berry}, C. P.~L., {et~al.} 2021, \apj, 910, 152,
+  \dodoi{10.3847/1538-4357/abe40e}
+
+\bibitem[{{Zorotovic} {et~al.}(2010){Zorotovic}, {Schreiber}, {G{\"a}nsicke},
+  \& {Nebot G{\'o}mez-Mor{\'a}n}}]{Zorotovic2010}
+{Zorotovic}, M., {Schreiber}, M.~R., {G{\"a}nsicke}, B.~T., \& {Nebot
+  G{\'o}mez-Mor{\'a}n}, A. 2010, \aap, 520, A86,
+  \dodoi{10.1051/0004-6361/200913658}
+
+\end{thebibliography}

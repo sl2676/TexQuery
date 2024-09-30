@@ -1,0 +1,1385 @@
+{
+    "document": {
+        "content": [
+            {
+                "content": [
+                    "\\institute [] {Astronomical Institute, Czech Academy of Sciences, Fri{\\v c}ova 298, 251 65, Ond\\v{r}ejov, Czech Republic\n         \\and\n         Center for Astrophysics ${\\rm \\mid}$ Harvard {\\rm \\&} Smithsonian, 60 Garden Street, Cambridge, MA 02138, USA\n         \\and\n         Dipartimento di Fisica, Universit\\'a degli Studi di Torino, via Pietro Giuria 1, I-10125, Torino, Italy\n         \\and\n         Th\\\"uringer Landessternwarte Tautenburg, Sternwarte 5, 07778 Tautenburg, Germany\n         \\and\n         NASA Ames Research Center, Moffett Field, CA 94035, USA\n         \\and\n         Research Institute for Advanced Computer Science, Universities Space Research Association, Washington, DC 20024, USA\n         \\and\n         Institute of Astronomy, Faculty of Physics, Astronomy and Informatics, Nicolaus Copernicus University, Grudzi\\c{a}dzka 5, 87-100 Toru\\'n, Poland\n         \\and\n         Astrobiology Center of NINS, 2-21-1, Osawa, Mitaka, Tokyo, 181-8588, Japan\n         \\and\n         National Astronomical Observatory of Japan, 2-21-2, Osawa, Mitaka, Tokyo 181-8588, Japan\n         \\and\n         Institute for Astronomy, University of Hawai`i, 2680 Woodlawn Drive, Honolulu, HI 96822, USA\n         \\and\n         Department of Physics, University of Warwick, Gibbet Hill Road, Coventry CV4 7AL, United Kingdom\n         \\and\n         SETI Institute, Mountain View, CA  94043, USA\n         \\and\n         Department of Astrophysical Sciences, Princeton University, Princeton, NJ 08544, USA\n         \\and\n         McDonald Observatory, The University of Texas, Austin Texas USA\n         \\and\n         Center for Planetary Systems Habitability, The University of Texas, Austin Texas USA\n         \\and\n         Instituto de Astrof\\'\\i sica de Canarias (IAC), C. V\\'\\i a L\\'actea S/N, E-38205 La Laguna, Tenerife, Spain\n         \\and\n         Universidad de La Laguna (ULL), Dept. de Astrof\\'\\i sica, E-38206 La Laguna, Tenerife, Spain\n         \\and\n         Universit\\'e Paris-Saclay, Universit\\'e Paris Cit\\'e, CEA, CNRS, AIM, 91191, Gif-sur-Yvette, France\n         \\and\n         Lund Observatory, Division of Astrophysics, Department of Physics, Lund University, Box 118, 22100 Lund, Sweden\n         \\and\n         Astronomical Science Program, Graduate University for Advanced Studies, SOKENDAI, 2-21-1, Osawa, Mitaka, Tokyo, 181-8588, Japan\n         \\and\n         Komaba Institute for Science, The University of Tokyo, 3-8-1 Komaba, Meguro, Tokyo 153-8902, Japan\n         \\and\n         Institute of Astronomy, Faculty of Physics, Astronomy and Informatics, Nicolaus Copernicus University, Grudzi\\c{a}dzka 5, 87-100 Toru\\'n, Poland\n         \\and\n         Chalmers University of Technology, Department of Space, Earth and Environment, Onsala Space Observatory, SE-439 92 Onsala, Sweden\n         \\and\n         Astronomy Department and Van Vleck Observatory, Wesleyan University, Middletown, CT 06459, USA\n         \\and\n         Planetary Discoveries, Valencia CA 91354, USA\n         \\and\n         Department of Physics, Engineering and Astronomy, Stephen F. Austin State University, 1936 North St, Nacogdoches, TX 75962, USA\n        }",
+                    "\\abstract [] {We report on the discovery and spectroscopic confirmation of TOI-2458\\,b, a transiting mini-Neptune around an F-type star leaving the main-sequence with a mass of $M_\\star=1.05 \\pm 0.03$\\,M$_{\\odot}$, a radius of $R_\\star=1.31 \\pm 0.03$\\,R$_{\\odot}$, an effective temperature of $T_{\\rm eff}=6005\\pm50$\\,K, and a metallicity of $-0.10\\pm0.05$\\,dex. By combining TESS photometry with high-resolution spectra acquired with the HARPS spectrograph, we found that the transiting planet has an orbital period of $\\sim$3.74 days, a mass of $M_p=13.31\\pm0.99$\\,M$_{\\oplus}$ and a radius of $R_p=2.83\\pm0.20$\\,R$_{\\oplus}$. The host star TOI-2458 shows a short activity cycle of $\\sim$54\\,days revealed in the HARPS S-index time series. We took the opportunity to investigate other F stars showing activity cycle periods comparable to that of TOI-2458 and found that they have shorter rotation periods than would be expected based on the gyrochronology predictions.\n%Our discussion of this sample uncovered unexpectedly fast rotation periods for numerous stars, possibly including also TOI-2458. As an implication, the transiting TOI-2458\\,b may orbit around the poles of its host star.\nIn addition, we determined TOI-2458's stellar inclination angle to be $i_\\star\\,=\\,10.6_{-10.6}^{+13.3}$\\,degrees.\nWe discuss that both phenomena (fast stellar rotation and planet orbit inclination) could be explained by in situ formation of a hot Jupiter interior to TOI-2458\\,b. It is plausible that this hot Jupiter was recently engulfed by the star. Analysis of HARPS spectra has identified the presence of another planet with a period of P\\,=\\,$16.55\\pm0.06$\\,days and a minimum mass of $M_p \\sin i=10.22\\pm1.90$\\,M$_{\\oplus}$.\n\n%We found the stellar rotation period to be about 7.4\\,days which is unexpectedly fast for the system's derived age of $5.7\\pm0.9$\\,Gyr. \n}"
+                ]
+            },
+            {
+                "content": [
+                    "The first discovery of an exoplanet around a Sun-like star, 51~Peg",
+                    ",b, was an unexpected breakthrough, given the planet's dissimilarity from any known planets within our Solar System ",
+                    ". Subsequent population studies revealed that hot Jupiters exist around roughly 1",
+                    "The formation of hot Jupiters in situ represents a potential alternative to migration mechanisms ",
+                    "[]",
+                    "Pollack96,Boss97,Batygin16,Hasegawa19,Poon21",
+                    ". Several arguments have been proposed in support of this scenario. Firstly, the rate of disk-driven migration observed in simulations for giant planets appears to be independent of planetary mass ",
+                    ", suggesting that the physical properties of hot and cold giant planets should be similar on average. However, recent studies have shown that close-in and distant giant planet populations exhibit intrinsic differences, with hot giant planets generally having smaller masses ",
+                    ". Secondly, in situ formation has previously been discounted due to a lack of sufficiently massive cores at small orbital radii ",
+                    ". However, radial velocity surveys and space-based transit photometry have shown that the inner regions of planetary systems are not typically empty. Instead, hot planets with a period of less than 100 days and a mass of less than $30",
+                    ",M_",
+                    ". However, it remains an open question whether there is sufficient gaseous material available within a few AU. Therefore, the initial population of close-in giant planets formed in situ is expected to consist of low-mass planets occupying a similar orbital range. Considering the high occurrence of low-mass planets, it is reasonable to assume that in situ-formed giant planets are often accompanied by low-mass planets on similar orbits. This assumption leads to dynamical evolution that has observable implications ",
+                    ". Recent observations from space-based observatories and radial velocity follow-up measurements of known transiting hot Jupiters have led to the detection of new low-mass planetary companions to hot Jupiters. Examples of such systems include WASP-47 ",
+                    ", Kepler-730 ",
+                    ", TOI-1130 ",
+                    ", WASP-132 ",
+                    ", TOI-2000 ",
+                    ", and WASP-148 ",
+                    ". These new discoveries provide evidence that at least some hot Jupiters may have formed in situ. They also suggest that nearby low-mass planetary companions to stars hosting hot Jupiters may be more common than previously thought. Furthermore, such companions could be below the detection limits of many past surveys.\n\nThe majority of systems mentioned above exhibit low-mass companions on inner orbits to hot Jupiters, which is expected in the theory ",
+                    ". In this case, the nodal recession of the inner orbit is always faster, meaning that a secular resonance can never be established. Hence, such planets are expected to remain in unperturbed, coplanar orbits. However, if low-mass companions exhibit on exterior orbits, the initially slower nodal regression of the orbit will accelerate as the inner body gains mass and the star spins down. Once affected by secular resonances, the orbit may become unstable or acquire high mutual inclination, making observations of both interior and exterior planets extremely challenging as, in this case, a non-transiting planet might orbit at a low inclination relative to the line of sight and produce only weak radial-velocity variations. Observation of a system with a transiting low-mass planet orbiting close to the poles of a star with non-transiting hot Jupiter would be an important piece of the puzzle addressing the in situ formation of hot Jupiters.\n\n",
+                    "We have spectroscopically confirmed a transiting planet candidate from TESS TOI-2458",
+                    ",b as a mini-Neptune planet orbiting an F-type star. Our paper includes a description of the observations in Section ",
+                    ", data analysis in Section ",
+                    ", a discussion in Section ",
+                    ", and a summary of our results in Section ",
+                    ".\n\n\n"
+                ],
+                "references": [],
+                "section": "Introduction",
+                "type": "text"
+            },
+            {
+                "content": [],
+                "references": [],
+                "section": "Observations",
+                "type": "text"
+            },
+            {
+                "content": [
+                    "The Transiting Exoplanet Survey Satellite ",
+                    "[]",
+                    "Ricker15",
+                    "conducted a photometric monitoring campaign of TOI-2458 (TIC 449197831) in sector 32 from November 20, 2020, to December 16, 2020, employing a 120-second time sampling. The resulting data for TOI-2458 are publicly available on the Mikulski Archive for Space Telescopes (MAST)",
+                    ". These data were processed by the TESS Science Processing Operations Center ",
+                    "[]",
+                    "Jenkins16",
+                    "located at the NASA Ames Research Center. The SPOC conducted a transit search of the light curve on January 8, 2021, with an adaptive, noise-compensating matched filter ",
+                    ", producing a Threshold Crossing Event (TCE) with 3.74 d period for which an initial limb-darkened transit model was fitted ",
+                    "and a suite of diagnostic tests were conducted to help assess the planetary nature of the signal ",
+                    ". The TESS Science Office reviewed the vetting information and issued an alert for TOI 2458.01.01 on February 03, 2021 ",
+                    ".\n\nThe light curve (LC) derived from TESS sector 32 was obtained from the MAST archive using the ",
+                    "lightkurve",
+                    "software package ",
+                    ". We used the PDCSAP LC ",
+                    "processed by the SPOC pipeline, which also removes systematic errors associated with the instrument. The Pixel Response Functions (PRFs) were employed to investigate the crowding, and a correction for crowding was incorporated into the PDCSAP flux time series. Failure to incorporate such a correction may lead to an underestimation of the planet's radius. In addition, the SPOC Data Validation difference image centroid offset analysis ",
+                    "locates the source of the transit signature within $3.0",
+                    "2.7$ arcsec of the target star. This excludes all TIC objects other than TOI-2458 as potential sources of the transit signature.\n\nWe utilized the Python package, ",
+                    "citlalicue",
+                    ", to remove residual stellar variability from the PDCSAP LCs. Combining a Gaussian process regression with transit models computed via the ",
+                    "pytransit",
+                    "code ",
+                    ", ",
+                    "citlalicue",
+                    "generated a model comprising both the light curve variability and the transits. We subtracted the variability part and produced a flattened LC containing only the transit photometric variations. We detected 7 transits. The LCs before and after the process is shown in Fig.~",
+                    ".\n\nTo compare the Gaia DR2 catalog with the TESS target pixel file (TPF), we utilized the ",
+                    "tpfplotter",
+                    "tool ",
+                    ". This tool is used to detect any potential stars that could dilute the TESS photometry with a set limit of up to six magnitudes difference. Fig. ",
+                    "displays the resulting TPF image. Our analysis did not reveal any additional sources within the TESS aperture that could dilute the TESS LC. We should note only the source Gaia ID 3233785163260952192, which is relatively close to the used aperture, although it is three magnitudes fainter.\n\n",
+                    "width=0.48",
+                    "lccr",
+                    "Parameter & Description & Value & Source",
+                    "& Right Ascension (RA) & 05:18:29.17 & 1",
+                    "& Declination (Dec) & 01:15:13.92 & 1",
+                    "B_T",
+                    {
+                        "content": " & Tycho-2 ",
+                        "type": "inline_math"
+                    },
+                    "B_T",
+                    {
+                        "content": " mag & ",
+                        "type": "inline_math"
+                    },
+                    "9.900 ",
+                    "0.028$ & 2",
+                    "B_P",
+                    {
+                        "content": " & Gaia ",
+                        "type": "inline_math"
+                    },
+                    "B_P",
+                    {
+                        "content": " mag & ",
+                        "type": "inline_math"
+                    },
+                    "9.384 ",
+                    "0.003$ & 1",
+                    "T",
+                    {
+                        "content": " & TESS ",
+                        "type": "inline_math"
+                    },
+                    "T",
+                    {
+                        "content": " mag & ",
+                        "type": "inline_math"
+                    },
+                    "8.710 ",
+                    "0.006$ & 3",
+                    "H",
+                    {
+                        "content": " & 2MASS ",
+                        "type": "inline_math"
+                    },
+                    "H",
+                    {
+                        "content": " mag & ",
+                        "type": "inline_math"
+                    },
+                    "7.990 ",
+                    "0.044$ & 4",
+                    "WISE1",
+                    {
+                        "content": " & WISE1 mag & ",
+                        "type": "inline_math"
+                    },
+                    "7.827 ",
+                    "0.028$ & 5",
+                    "_",
+                    "_",
+                    "field of view. The images were calibrated by the standard LCOGT ",
+                    "BANZAI",
+                    "pipeline ",
+                    "and differential photometric data were extracted using ",
+                    "AstroImageJ",
+                    ".\n\nThe TOI-2458 SPOC pipeline transit depth of 310",
+                    ",ppm is generally too shallow to detect with ground-based observations reliably, so we instead checked for possible nearby eclipsing binaries (NEBs) that could be contaminating the TESS photometric aperture and causing the ",
+                    "detection. To account for possible contamination from the wings of neighboring star PSFs, we searched for NEBs out to $2",
+                    "5$ from TOI-2458. If fully blended in the SPOC aperture, a neighboring star that is fainter than the target star by 8.8 magnitudes in TESS band could produce the SPOC-reported flux deficit at mid-transit (assuming a 100"
+                ],
+                "references": [],
+                "section": "TESS light curves",
+                "type": "text"
+            },
+            {
+                "content": [
+                    "To eliminate any potential sources of dilution within the Gaia separation limit of 0.4",
+                    ", we obtained high-resolution images using adaptive optics and speckle imaging of TOI-2458. This was done as part of follow-up observations that were coordinated through the TESS Follow-up Observing Program (TFOP) High-Resolution Imaging Sub-Group 3 (SG3).\n\nOn October 16, 2021, TOI-2458 was observed through the Alopeke speckle imager ",
+                    ", which is mounted on the 8.1",
+                    ",m Gemini-North. The Alopeke system employs high-speed iXon Ultra 888 back-illuminated Electron Multiplying CCDs (EMCCDs) to simultaneously capture data in two bands centered around 562",
+                    ",nm and 832",
+                    ",nm. The data were processed using the procedures outlined in ",
+                    ". The final reconstructed image, displayed in Fig. ",
+                    ", attains a contrast of $",
+                    "mag$ = 6.60 at a separation of 0.5",
+                    "in the 832",
+                    ",nm band and $",
+                    "mag$ = 5.63 at a separation of 0.5",
+                    "in the 562",
+                    ",nm band. A contrast of $",
+                    "mag$",
+                    ",$",
+                    "5.50$ is achieved in both bands at a separation of 0.2",
+                    ", (22",
+                    ",au). The estimated point spread function (PSF) is 0.02",
+                    "wide.\n\nOn February 24, 2021, observation of TOI-2458 was conducted using the Palomar High Angular Resolution Observer ",
+                    "[]",
+                    "Hayward01",
+                    "with the JPL Palomar Adaptive Optics System, mounted on the 5.0",
+                    ",m Hale telescope. PHARO uses a $1024 ",
+                    "1024$ HAWAII HgCdTe detector to capture images in the 1 to 2.5",
+                    ",$",
+                    "filter was used. The reconstructed image, as shown in Fig. ",
+                    ", achieves a contrast of $",
+                    "mag",
+                    {
+                        "content": " = 6.83 at a separation of ",
+                        "type": "inline_math"
+                    },
+                    "0.5",
+                    ",115,000 and covers wavelengths ranging from $",
+                    "690",
+                    ",nm. The observations of TOI-2458 were carried out as part of our follow-up programs of TESS transiting planets (IDs: 1102.C-0923, 106.21TJ.001, 110.2438.001, 111.254R.002; PIs: Gandolfi, Dai, Wilson). We set the exposure time to ",
+                    {
+                        "content": "1200-1800",
+                        "type": "inline_math"
+                    },
+                    ",s depending on weather conditions, seeing, and nightly schedule constraints. We extracted the spectra using the HARPS data reduction software ",
+                    "[]",
+                    "Lovis2007",
+                    "available at the telescope. The signal-to-noise ratio (S/N) per pixel at 550",
+                    ",nm on the extracted spectra ranges from 57 to 124. We utilized the ",
+                    "TERRA",
+                    "algorithm ",
+                    "to extract relative radial velocities (RVs) and spectral activity indicators. The ",
+                    "TERRA",
+                    "algorithm achieves this by using a least-squares matching technique of each observed spectrum to a high signal-to-noise ratio template, which was derived from the same observations. The radial velocities were adjusted for barycentric motion, secular perspective acceleration, instrumental drift, and nightly zero points.\n\n"
+                ],
+                "references": [],
+                "section": "Contamination from nearby sources",
+                "type": "text"
+            },
+            {
+                "content": [],
+                "references": [],
+                "section": "Analysis",
+                "type": "text"
+            },
+            {
+                "content": [
+                    "We achieved an S/N of 600 per pixel at 550",
+                    ",nm by co-adding all the high-resolution HARPS spectra that were corrected for RV shifts. The combined spectrum was then used to determine the stellar parameters of TOI-2458 via the Spectroscopy Made Easy radiative transfer code ",
+                    "[]",
+                    "Valenti96,Piskunov17",
+                    ", which is incorporated into ",
+                    "iSpec",
+                    ". Complementary to this, we modeled the spectrum with MARCS models of atmospheres ",
+                    "and utilized version 5 of the GES atomic line list ",
+                    ". The iSpec software calculates synthetic spectra and compares them to the observed spectrum by minimizing the chi-squared value between them using a nonlinear least-squares (Levenberg-Marquardt) fitting algorithm ",
+                    ".\n\nIn our study, we employed the spectrum region spanning between ",
+                    {
+                        "content": "490-580",
+                        "type": "inline_math"
+                    },
+                    ",nm to determine the effective temperature $T_",
+                    "eff",
+                    ". We utilized the Bayesian parameter estimation code ",
+                    "PARAM 1.5",
+                    "to compute the surface gravity $",
+                    "T_",
+                    "eff",
+                    "[",
+                    "Fe/H",
+                    "]",
+                    {
+                        "content": " (dex) & ",
+                        "type": "inline_math"
+                    },
+                    "-0.10 ",
+                    "0.05",
+                    {
+                        "content": " & ",
+                        "type": "inline_math"
+                    },
+                    "0.05 ",
+                    "0.09$ ",
+                    "(cgs) & $4.20 ",
+                    "0.05",
+                    {
+                        "content": " & ",
+                        "type": "inline_math"
+                    },
+                    "4.28 ",
+                    "0.12$ ",
+                    "(km/s) & $2.5 ",
+                    "2.5$ ",
+                    "(",
+                    ") & 0.055 & ",
+                    "($",
+                    "R_",
+                    ") & $1.31 ",
+                    "0.03$ ",
+                    "& ARIADNE analysis & ",
+                    "[",
+                    "Fe/H",
+                    "]",
+                    {
+                        "content": " & ",
+                        "type": "inline_math"
+                    },
+                    "-0.11 ",
+                    "0.16$ ",
+                    "& $4.22 ",
+                    "0.17$ ",
+                    "(L$_",
+                    "R_",
+                    ") & $1.32 ",
+                    "0.03$ ",
+                    "& Other parameters & ",
+                    "(days) & $8.9_",
+                    "-2.5",
+                    "^",
+                    "+3.9"
+                ],
+                "references": [],
+                "section": "Modeling Stellar Parameters with iSpec and SpecMatch",
+                "type": "text"
+            },
+            {
+                "content": [
+                    "As an additional validation of the derived stellar parameters, we used the HARPS co-added spectrum as an input to the ",
+                    "SpecMatch",
+                    "package ",
+                    ". The determination of stellar parameters by ",
+                    "SpecMatch",
+                    "involves a comparison of the observed spectrum with a library of well-characterized high signal-to-noise (S/N",
+                    ",>",
+                    ",400) HIRES spectra. All the derived parameters are documented in Table ",
+                    "and are in agreement with the ones derived from ",
+                    "iSpec",
+                    ".\n\n"
+                ],
+                "references": [],
+                "section": "Stellar parameters with SpecMatch",
+                "type": "text"
+            },
+            {
+                "content": [
+                    "We conducted an independent verification of the derived stellar parameters by modelling the Spectral Energy Distribution (SED) using the spectrAl eneRgy dIstribution bAyesian moDel averagiNg fittEr ",
+                    "[]",
+                    "Vines22",
+                    ". To determine the effective temperature $T_",
+                    "eff",
+                    ", metallicity $",
+                    "[Fe/H]$, and stellar luminosity and radius, we employed a combination of 3D dust Bayestar maps for interstellar extinction ",
+                    "and four distinct models: Phoenix ",
+                    ", BT-Settl ",
+                    ", Kurucz ",
+                    ", and Ck04 ",
+                    ". Our priors for these parameters were based on results obtained from ",
+                    "iSpec",
+                    ". The derived final parameters, which are listed in Table ",
+                    ", are in good agreement with previously derived parameters. The SED of TOI-2458 is shown in Fig.~",
+                    ", along with the best fitting Phoenix atmospheric model ",
+                    ".\n\n"
+                ],
+                "references": [],
+                "section": "SED analysis with ARIADNE",
+                "type": "text"
+            },
+            {
+                "content": [
+                    "The SPOC PDC pipeline module often eliminates a portion of the stellar variability. Therefore, we used the ",
+                    "lightkurve",
+                    "package to retrieve the TESS target pixel files from the MAST archive. Subsequently, a suitable aperture mask was selected to obtain a light curve, which was then normalized and corrected for outliers. To eliminate systematics from the data, we utilized the Pixel Level Decorrelation (PLD) method ",
+                    ". Data points within transits were excluded from the analysis. The SPOC SAP light curve peak-to-peak range is 1.9",
+                    "\\caption [] {Left: TESS PLD LC (black points) with the MAP model prediction. It is important to note that the long trends and transits have been removed prior to analysis. The blue line shows the predictive mean, and the red contours show the predictive standard deviation. Middle: probability density of the natural log of the rotation period. The period is the parameter $P_{rot}$ in Equation \\ref{eq_rot}. The 1$\\sigma$ error bar is indicated with the dashed black lines. Right: GLS periodogram of the TESS PLD LC which was processed in accordance with the methods outlined in the text.}",
+                    "S(",
+                    ") = ",
+                    "(",
+                    "^2-",
+                    "^2_",
+                    "k",
+                    ")^2+2",
+                    "^2_",
+                    "k",
+                    "^2/Q^2_k",
+                    ",\n   ",
+                    "where, \n",
+                    "Q_1 = 1/2 + Q_0 + ",
+                    "Q, ",
+                    "_",
+                    "1",
+                    "= ",
+                    "P_",
+                    "rot",
+                    ", ",
+                    "S_1 = ",
+                    "(1+f)",
+                    "_1Q_1",
+                    ", ",
+                    "Q_2 = 1/2 + Q_0, ",
+                    "_",
+                    "2",
+                    "= ",
+                    "P_",
+                    "rot",
+                    ", ",
+                    "S_2 = ",
+                    "(1+f)",
+                    "_2Q_2",
+                    ",\n   ",
+                    "where $",
+                    "is the rotation period. The maximum a posteriori (MAP) parameters are estimated using the L-BFGS-B nonlinear optimization routine ",
+                    ". To obtain the marginalized posterior distributions of free parameters, we ran a Markov Chain Monte Carlo (MCMC) analysis using ",
+                    "emcee",
+                    ". Our analysis yielded a derived rotational period of $P_",
+                    "rot",
+                    "=8.9_",
+                    "-2.5",
+                    "^",
+                    "+3.9",
+                    "alongside the MAP model prediction.\n\nWe have also applied the generalized Lomb-Scargle (GLS) periodograms ",
+                    "to the light curve obtained from TESS to verify the derived rotational period independently. Our analysis indicates a significant peak around 7.64 days, as illustrated in Fig. ",
+                    ".\n\n",
+                    "\\caption [] {Posterior distributions for line-of-sight stellar inclination in the form of cos\\,i$_{\\star}$. Blue shadow regions show 1-$\\sigma$ and 2-$\\sigma$ credible intervals.}"
+                ],
+                "references": [],
+                "section": "Stellar rotation",
+                "type": "text"
+            },
+            {
+                "content": [
+                    "The rotation period of TOI-2458 holds significant importance in further discussions regarding the system. To validate the variability in TESS LCs, we extracted cuts of TESS full-frame images around TOI-2458 and analyzed the variations in its neighboring stars. We used the same detrending vectors for each star to remove systematics. While none of the stars exhibit similar variability to TOI-2458, we still hesitate to rule out that we observe residual variations caused by systematic effects, given the suspicious phase that appears to be roughly synced with the spacecraft orbit. The WASP photometry has been able to exclude any variability of TOI-2458 down to a limit of 0.6",
+                    ",mmag, which is insufficient to negate the variability observed in the TESS LC. Hence, the null detection in the WASP photometry is likely due to the small photometric amplitude of the signal. \n\nWe investigated the robustness of the isolation of the stellar rotation signal by performing a series of injection and recovery experiments. We used the TESS Pixel Response Functions (PRFs) to inject sinusoidal signals modeled after the isolated signal, with a period of 7.5 days and an amplitude of 50 electrons/s, into the target pixel file (TPF) for TOI-2485 at six phases ($",
+                    ", $",
+                    ", $",
+                    ") with respect to the stellar rotation signal. We also tested an injection with half of the amplitude at $",
+                    ". These results increase confidence in the interpretation of the 7.5-day signal as being intrinsic to the star. However, the ratio of the peak-to-peak range of the suspected stellar oscillation ($",
+                    "19,300",
+                    ",ppm), along with the similarity in the oscillation period with those at which instrumental effects can occur, highlight the need for some caution with respect to this interpretation.\n\nAdditional high-precision photometry is required to confirm the rotation period of the star. Nevertheless, we have found a similar signal in the HARPS H$",
+                    ", $v ",
+                    ", yielding a value for TOI-2458 of $i_",
+                    ",=",
+                    ",10.6_",
+                    "-10.6",
+                    "^",
+                    "+13.3",
+                    "120",
+                    ",Myr), M37 cluster ($",
+                    "650",
+                    ",Myr), NGC",
+                    ",6811 ($",
+                    "2.7",
+                    ",Gyr) from ",
+                    "and M",
+                    ",67 cluster ($",
+                    "minus G$_",
+                    "Rp",
+                    "was determined by fitting the line with a Gaussian profile and calculating the area under the resulting curve. Subsequently, we compared the EW of lithium to that of well-established members of studied clusters from the literature. These are the Tuc-Hor young moving group ",
+                    "\\citep [$\\sim$45 Myr;] {}",
+                    "[]",
+                    "Mentuch08",
+                    ", the Pleiades ",
+                    "\\citep [$\\sim$120 Myr;] {}",
+                    "[]",
+                    "Soderblom93",
+                    ", M34 ",
+                    "\\citep [$\\sim$220 Myr;] {}",
+                    "[]",
+                    "Jones97",
+                    ", Ursa Major Group ",
+                    "\\citep [$\\sim$400 Myr;] {}",
+                    "[]",
+                    "Soderblom1993",
+                    ", Praesepe ",
+                    "\\citep [$\\sim$650 Myr;] {}",
+                    "[]",
+                    "Soderblom993",
+                    ", Hyades ",
+                    "\\citep [$\\sim$650 Myr;] {}",
+                    "[]",
+                    "Soderblom90",
+                    ", and M67 clusters ",
+                    "\\citep [$\\sim$4 Gyr;] {}",
+                    "[]",
+                    "Jones99",
+                    ". If necessary, we dereddened clusters using E(B-V) values obtained from ",
+                    ". Our findings reveal that TOI-2458 exhibits quite a high abundance of lithium. However, our measurements are still consistent with those obtained for the 4",
+                    ",Gyr-old cluster M67.\n\n",
+                    "\\subsection [] {$R'_{HK}$ index}",
+                    "To obtain a time-averaged measurement of the activity index of TOI-2458, $",
+                    "R'_",
+                    "HK",
+                    "= -4.98 ",
+                    "0.06",
+                    {
+                        "content": ", we utilized standard relations to convert the time-averaged ",
+                        "type": "inline_math"
+                    },
+                    "S$-index measurements from our spectroscopy ",
+                    "using ",
+                    "PyAstronomy",
+                    ". According to the study by ",
+                    ", the obtained value is in line with typical values of field stars. The correlation between $R'_",
+                    "HK",
+                    "observed in numerous stars ",
+                    "[]",
+                    "Lovis11,Mascareno15",
+                    "stems from a complex relationship that lacks complete theoretical understanding. Specifically, the impact of increased stellar rotation due to planet engulfment on this correlation remains ambiguous. Moreover, the utilization of this method is limited due to the wide dispersion in rotation periods, which can extend to tens of days. We discuss in the discussion section that TOI-2458 and several stars resembling TOI-2458 deviate from this correlation, potentially indicating past planet engulfment.\n\n"
+                ],
+                "references": [],
+                "section": "TESS variability validation",
+                "type": "text"
+            },
+            {
+                "content": [
+                    "In an effort to distinguish the Doppler reflex motion from planetary candidates and stellar activity and to detect the existence of plausible additional signals, \na frequency analysis was performed on the RVs, H$",
+                    "activity indicator after the removal of the long activity signal. While the 7-day signal in the H$",
+                    "representing the period of the activity signal, $",
+                    "_p",
+                    {
+                        "content": " indicating the inverse of the harmonic complexity, and ",
+                        "type": "inline_math"
+                    },
+                    "_e",
+                    {
+                        "content": " representing the long-term evolution timescale. We have set the prior for ",
+                        "type": "inline_math"
+                    },
+                    "P_",
+                    "GP",
+                    "activity indicator.\n\nIn this study, two models were compared, one with a single transiting planet and an activity, and the other additionally accounting for a second planet found in frequency analysis, as explained in Section ",
+                    ". The models were evaluated by computing the Bayesian model log evidence (ln",
+                    ",Z), a widely used metric. If the difference in ln",
+                    ",Z between the models is less than two, they are considered indistinguishable ",
+                    ". The analysis produced $",
+                    ",ln",
+                    ",Z",
+                    ",=",
+                    ",16",
+                    {
+                        "content": ", indicating a preference for the two-planet model. The quadratic limb darkening law was employed, with coefficients ",
+                        "type": "inline_math"
+                    },
+                    "q_1",
+                    {
+                        "content": " and ",
+                        "type": "inline_math"
+                    },
+                    "q_2$. The posteriors of fitted parameters and the physical parameters derived from them are presented in Table ",
+                    ". The RVs with the RV model, along with the phased RVs of both planets, are shown in Fig. ",
+                    ". The phased LC with the transit model is displayed in Fig. ",
+                    ". Finally, the correlations between the main free parameters and the derived posterior probability distributions are plotted in Fig. ",
+                    ".\n\nOur study detects a Neptune-mass planet, with an RV semi-amplitude of $K",
+                    ",=",
+                    ",5.3",
+                    "0.4$",
+                    ",m",
+                    ",s$^",
+                    "-1",
+                    ". To investigate the significance of the non-circular orbit, we computed a Bayesian model log evidence by comparing models with fixed zero eccentricity and eccentricity as a free parameter. The resulting value of $",
+                    ",ln",
+                    ",Z",
+                    ",=",
+                    ",1.5$ indicates that we are unable to differentiate between a circular or non-circular orbit. \n\nThe timing of the second planet's transit remains uncertain, and it could potentially be located anywhere within the TESS LC. Even the gap situated in the middle of the sector cannot be ruled out as a possible location. Despite the lack of any single-transit event indication in the TESS LC, given the planet's unknown size, it is still possible that the planet transits. Our analysis has revealed a minimum mass of approximately $10",
+                    ",",
+                    {
+                        "content": "M",
+                        "type": "inline_math"
+                    },
+                    "_",
+                    "and R$_p=2.83",
+                    "0.20$",
+                    ",R$_",
+                    ".\n\nWe present a comparative analysis of the mass and radius of TOI-2458",
+                    ",b with other well-characterized planets of comparable mass and size. Fig.~",
+                    "showcases the analysis results through three subplots distinguished by their color coding based on different parameters such as orbital period, equilibrium temperature, and transmission spectroscopic metric. \nThe placement of TOI-2458",
+                    ",b on the mass-radius diagram is rather conventional, with several planets positioned within the middle of the radius range observed for planets orbiting F-type stars. These planets align with composition tracks corresponding to water content ranging from $50-100",
+                    "Additionally, due to the relatively large size of the primary star, the TOI-2458",
+                    ",b's transmission spectroscopy metric of 25 is quite low, although comparable with other planets in this region. Nonetheless, it presents a challenging target for atmospheric characterization. When compared with the mass-radius tracks from ",
+                    ", the planet appears to be composed of a large fraction of silicate rocks and water.\n\nWe can compare TOI-2458",
+                    ",b with HD",
+                    ",106315b ",
+                    ", as both exoplanets share comparable mass, radius, and stellar hosts. HD106315b, orbiting an F-type star with a period of 9.55 days, exhibits a mass of $12.6",
+                    "3.2$",
+                    ",M$_",
+                    ". Similarly to the TOI-2458 system, the HD106315 system features a second outer companion with a mass of $15.2",
+                    "3.7$",
+                    ",M$_",
+                    ", and an orbital period of approximately 21 days. The authors discuss that the distinct densities of the two planets may stem from disparate formation regions.\n\n",
+                    "TOI–2458b has a radius that positions it slightly above the known radius valley ",
+                    ". There are currently several hypotheses behind the origin of these distinct populations of low-mass exoplanets, such as photo-evaporation ",
+                    ", core-powered mass loss ",
+                    ", or migration after formation beyond the ice-line ",
+                    ". \n\n\n"
+                ],
+                "references": [],
+                "section": "Frequency Analysis",
+                "type": "text"
+            },
+            {
+                "content": [
+                    "We have utilized a machine learning model called ",
+                    "ExoMDN",
+                    ", which is based on mixture density networks, to model the interior structure of TOI-2458",
+                    ",b. This model has been trained on a massive dataset of over 5.6 million synthetic planets that are less than 25 Earth masses in order to create a highly accurate representation of their internal composition. This synthetic dataset, created using the ",
+                    "TATOOINE",
+                    "code ",
+                    ", consists of planets with an iron core, a silicate mantle, a water and a high-pressure ice layer, and a H/He atmosphere. ",
+                    "ExoMDN",
+                    "consists of two trained models: one trained on planetary mass, radius, and equilibrium temperature and the second including the fluid Love number k2 as an additional input, which is used to overcome degeneracy between layers. The fluid Love number k2 is a parameter that depends on the density distribution of the planet and can be computed for some planets, as highlighted in previous studies ",
+                    ". Another potential method to mitigate degeneracy in planetary interior modeling is to use the elemental abundances of the host star, which may provide insights into the planet's bulk composition and atmospheric composition ",
+                    ". However, such an approach requires making additional assumptions regarding the planet's formation and evolutionary history. In the case of TOI-2458",
+                    ",b, this planet does not conform to the known track of any planet with a k2 detection. Consequently, we have chosen not to incorporate such a constraint in our analysis, thereby broadening the range of potential interior configurations. To account for the uncertainties associated with planetary parameters, we model normal distributions with a standard deviation equivalent to the uncertainties of each parameter.\n\nAnalysis of TOI–2458b suggests a core-mass fraction of $0.34 ",
+                    "0.19",
+                    {
+                        "content": ", a mantle-mass fraction of ",
+                        "type": "inline_math"
+                    },
+                    "0.39 ",
+                    "0.25",
+                    {
+                        "content": ", a water-mass fraction of ",
+                        "type": "inline_math"
+                    },
+                    "0.27 ",
+                    "0.16",
+                    {
+                        "content": ", and a volatile element mass fraction of ",
+                        "type": "inline_math"
+                    },
+                    "0.0011 ",
+                    "0.0044",
+                    {
+                        "content": ". The core-radius fraction is estimated to be ",
+                        "type": "inline_math"
+                    },
+                    "0.37 ",
+                    "0.10",
+                    {
+                        "content": ", while the mantle-radius fraction is ",
+                        "type": "inline_math"
+                    },
+                    "0.26 ",
+                    "0.17",
+                    {
+                        "content": ", and the water-radius fraction is ",
+                        "type": "inline_math"
+                    },
+                    "0.26 ",
+                    "0.13",
+                    {
+                        "content": ". The atmosphere-radius fraction constitutes ",
+                        "type": "inline_math"
+                    },
+                    "0.10 ",
+                    "0.06$ of the total radius. Due to the large uncertainty in these parameters, several different planetary configurations are possible, such as one where the mantle mass fraction is close to zero. To achieve a more precise determination of the radius, additional high-precision photometric observations are necessary. Unfortunately, it is very difficult to establish the actual structure of planets similar to TOI–2458b using mass and radius alone. These planets lie in a region of the parameter space where several composition tracks are in close proximity to each other. The mass-radius configuration of TOI-2458",
+                    ",b is equally consistent with a water-rich world without an extended volatile atmosphere and a rocky core with a H",
+                    {
+                        "content": "_2",
+                        "type": "inline_math"
+                    },
+                    " layer. To fully ascertain the nature of these scenarios, a further characterization of the planet's atmosphere is required. Ternary plots from the analysis are presented in Fig. ",
+                    ".\n\n"
+                ],
+                "references": [],
+                "section": "Transiting planet composition",
+                "type": "text"
+            },
+            {
+                "content": [
+                    "We report on the activity cycle of TOI-2458, which exhibits a period of 53 days. This cycle is the second shortest on record for an F-type star. The first star discovered with a short cycle was $",
+                    ",Boo is found to be in close proximity to 3.3",
+                    ",days, indicating synchronization. Nonetheless, this star is noteworthy because of additional variability in the Ca",
+                    ",",
+                    "lines, characterized by a surprisingly short period. This finding is supported by ",
+                    ", who determined a period of 116",
+                    ",days, which was later confirmed by ",
+                    "and ",
+                    "investigating the S-index with the NARVAL and TIGRE instruments, respectively. ",
+                    "further showed that the X-ray data support a periodicity of approximately 120",
+                    ",days, raising an intriguing question about the representative nature of $",
+                    ",Boo with respect to the activity cycle. The star is of the same F7 spectral type and hosts an L9 type companion at a projected physical separation of 1420",
+                    ",AU ",
+                    ". Using the SONG spectrograph, the authors found evidence of a chromospheric cycle with a period of 127 days. Recently, ",
+                    "found that stars $",
+                    ",Vir also exhibit short-term activity cycles both well below 100 days.\n\nWe investigate a sample of stars exhibiting short-term activity cycles with the aim of identifying common characteristics among them, focusing on their age, rotation period, $R'_",
+                    "HK",
+                    ",Dra, and $",
+                    "indexes and advanced ages yet also possess unexpectedly short rotation periods. $",
+                    "of field stars (-4.91).\n\nThe rotational period of stars can be influenced by their nearby companions through tidal interactions ",
+                    "[]",
+                    "Fleming19,Santos19",
+                    ". Tidal friction causes the companion to migrate inwards and to spin up the star gradually. Furthermore, the presence of a hot Jupiter in close proximity to a star, as postulated by ",
+                    ", may be responsible for accelerating the star's cycle by synchronizing its outer convective envelope due to tidal interactions. As such, the presence of close companions can offer an explanation for observed phenomena. For instance, $",
+                    "Boo & HD",
+                    ",46588 & HD",
+                    ",16673 & HD",
+                    ",49933 & HD",
+                    ",100563 & HD",
+                    ",75332 & $",
+                    ",Vir",
+                    "Age (Gyr) & $5.7_",
+                    "-0.8",
+                    "^",
+                    "+0.9",
+                    "& $2.1_",
+                    "-0.8",
+                    "^",
+                    "+1.3",
+                    "& $2.2_",
+                    "-0.3",
+                    "^",
+                    "+0.3",
+                    "& $2.0_",
+                    "-0.5",
+                    "^",
+                    "+0.6",
+                    "& $3.1_",
+                    "-0.8",
+                    "^",
+                    "+0.8",
+                    "(days) & $8.9_",
+                    "-2.5",
+                    "^",
+                    "+3.9",
+                    "& $-4.98 ",
+                    "0.06",
+                    {
+                        "content": " & ",
+                        "type": "inline_math"
+                    },
+                    "-4.67 ",
+                    "0.06",
+                    {
+                        "content": " & ",
+                        "type": "inline_math"
+                    },
+                    "-4.88 ",
+                    "0.06",
+                    {
+                        "content": " & ",
+                        "type": "inline_math"
+                    },
+                    "-4.60 ",
+                    "0.06",
+                    {
+                        "content": " & ",
+                        "type": "inline_math"
+                    },
+                    "-4.50 ",
+                    "0.06",
+                    {
+                        "content": " & ",
+                        "type": "inline_math"
+                    },
+                    "-4.64 ",
+                    "0.06",
+                    {
+                        "content": " & ",
+                        "type": "inline_math"
+                    },
+                    "-4.46 ",
+                    "0.06",
+                    {
+                        "content": " & ",
+                        "type": "inline_math"
+                    },
+                    "-4.68 ",
+                    "0.06",
+                    {
+                        "content": " & ",
+                        "type": "inline_math"
+                    },
+                    "-4.91 ",
+                    "0.06$ ",
+                    "P$_",
+                    "cyc",
+                    "on close-in orbits with a period of fewer than 100 days ",
+                    "[]",
+                    "Mulders15,Winn15",
+                    ", suggests that many in situ formed hot Jupiters conglomerate within systems that also contain low-mass planets. ",
+                    "have studied the in situ formation and dynamical evolution of such hot Jupiter systems and demonstrated that under conditions appropriate to the inner regions of protoplanetary disks, rapid gas accretion can be initiated by 10--20 Earth-mass planets, which are very common. Their findings suggest that the interaction of in-situ formed hot Jupiters with outer low-mass planets has observable consequences. They determined a critical semimajor axis of low-mass planets beyond which secular resonant excitation of mutual inclination of both planets is guaranteed. Therefore, in the case of an almost circular orbit of a hot Jupiter, dynamical interactions during the early stages of planetary systems' lifetimes should highly increase the mutual inclinations for the specific range of the semimajor axis. Disk lifetime, stellar rotation rate, and semimajor axis of hot Jupiter are among the critical parameters that influence this specific range. Figure~9 from ",
+                    "indicates that TOI-2458",
+                    ",b can be located within this range in a large portion of parameter space, which could explain the observed low inclination of its orbit.\n\nNot only is the TOI-2458 system consistent with the scenario of in situ formed hot Jupiter but the orbital orientation of TOI-2458",
+                    ",b would be its natural consequence. If the hot Jupiter has not yet been engulfed, its detection in RVs and photometry would be prevented due to its orbital orientation. Based on our radial velocity observations, we have determined the minimum orbital inclination required to prevent the detection of a hot Jupiter close and massive enough to affect the tidal spin-up of TOI-2458. We used the criterium from ",
+                    "to define the theoretical mass and period boundary for planets causing strong tidal spin-up. ",
+                    "showed that objects within this boundary spin up their hosts, which tend to spin faster than the stars hosting cold Jupiters. Our findings suggest that the orbital inclination would need to be below two degrees to prevent the detection of a hot Jupiter with a period of three days (see Fig. ",
+                    "), quite an improbable scenario indicating that any hot Jupiter present may have been ingested. To date, no planet system has been observed that convincingly satisfies the implications described in ",
+                    ". WASP-47 may be an undisrupted system with an in situ formed hot Jupiter, where an increase of mutual inclination has been avoided. In this context, TOI-2458 represents evidence supporting the in situ formation of a hot Jupiter in this system, with consequent dynamical evolution matching the observed orbital orientation of TOI-2458",
+                    ",b. Due to the low $v ",
+                    "m in the WISE/W4 bandpass,\nwith an excess level of 75 $",
+                    "photospheric flux ",
+                    ". High-resolution imaging confirms the absence of photometric contaminants around the star, suggesting that the infrared excess may be attributed to a debris disc. While debris discs are typically associated with stars younger than 1",
+                    ",Gyr ",
+                    "[]",
+                    "siegler07, gaspar09, mizuki24",
+                    ", it's important to note that the presence of such a disc does not necessarily indicate the youth of the system. Indeed, some older systems have been found to have debris discs, although their occurrence is less common compared to younger stars ",
+                    "[]",
+                    "Trilling08",
+                    ".\n\nSmall dust grains present in debris discs are the result of a collisional cascade, where planetesimals are gradually reduced in size ",
+                    ". The timescale for the crossing of orbits within a planetesimal belt due to planet stirring can be calculated using equation (15) from ",
+                    ", taking into consideration the characteristics of both the planet and the disc. The disc temperature of $166_",
+                    "-30",
+                    "^",
+                    "+42",
+                    ",AU using the equation (1) in ",
+                    ". These values were used to illustrate the planetary perturbation for the disc in the TOI-2458 system. The timescale of secular perturbation for planet TOI-2458",
+                    ",b varies from 0.2",
+                    ",Gyr to 14",
+                    ",Gyr, depending on the precise position of the disc. Planet TOI-2458",
+                    ",c, which orbits slightly beyond the transiting planet, exhibits a larger orbital eccentricity uncertainty and only a lower limit for its mass, indicating its potential role as a perturber for the debris disc. Nevertheless, we note that also unseen outer planets in proximity to the debris disc may exert a more substantial influence on the belt's dynamics. To comprehensively understand the architecture of the TOI-2458 planetary system, encompassing both planets and a disc, future research endeavors could concentrate on confirming the debris disc and characterizing its location through spectroscopic observations.\n\n"
+                ],
+                "references": [],
+                "section": "Stellar activity",
+                "type": "text"
+            },
+            {
+                "content": [
+                    "We have presented a discovery of the transiting mini-Neptune TOI-2458",
+                    ",b around an F-type star. TOI-2458",
+                    ",b has an orbital period of P",
+                    ",=",
+                    ",$3.73662",
+                    "0.00053$",
+                    ",days, a mass of $M_p=13.31",
+                    "0.99",
+                    ",M_",
+                    ". The star appears to be relatively old, with an estimated age of approximately 5.7",
+                    ",Gyr. Given this age, we found an unexpectedly fast stellar rotation period of $8.9_",
+                    "-2.5",
+                    "^",
+                    "+3.9",
+                    ", $v ",
+                    ", we constrained a low stellar inclination angle of $i_",
+                    ",=",
+                    ",10.6_",
+                    "-10.6",
+                    "^",
+                    "+13.3",
+                    ".\n\nOverall, our findings suggest that TOI-2458 is an interesting system for further study, particularly in the context of hot Jupiter formation and its influence on short-term activity cycles of F-type stars.\n\n\n",
+                    "J.",
+                    ". would like to acknowledge the support from GACR grant 23-06384O.\nC.M.P. gratefully acknowledges the support of the  Swedish National Space Agency (DNR 65/19 and  177/19).\nD.J., K.G. and G.N. gratefully acknowledges the Centre of Informatics Tricity Academic Supercomputer and networK (CI TASK, Gda",
+                    "'nsk, Poland) for computing resources (grant no. PT01016).\nG.N. thanks for the research funding from the Ministry of Science and Higher Education programme the \"Excellence Initiative - Research University\" conducted at the Centre of Excellence in Astrophysics and Astrochemistry of the Nicolaus Copernicus University in Toru",
+                    "'n, Poland.\nThis work is partly supported by JSPS KAKENHI Grant Number\nJPJP24H00017 and JSPS Bilateral Program Number JPJSBP120249910.\nJ.K. acknowledges the Swedish Research Council (VR: Etableringsbidrag 2017-04945).\nS.M.",
+                    "acknowledges support by the Spanish Ministry of Science and Innovation through AEI under the Severo Ochoa Centres of Excellence Programme 2020--2023 (CEX2019-000920-S).\nP.K. is grateful for the support from grant LTT-20015.\nHJD acknowledges support from the Spanish Research Agency of the Ministry of Science and Innovation (AEI-MICINN) under grant PID2019-107061GB-C66, DOI:\n10.13039/501100011033.\nR.A.G. acknowledges the support from the PLATO Centre National D'",
+                    "'",
+                    "E",
+                    "tudes Spatiales grant.\nDR was supported by NASA under award number NNA16BD14C for NASA Academic Mission Services.\nKAC acknowledges support from the TESS mission via subaward s3449 from MIT.\nTGW acknowledges support from the UKSA and the University of Warwick.\n\nFunding for the TESS mission is provided by NASA's Science Mission Directorate.\n\nWe acknowledge the use of public TESS data from pipelines at the TESS Science Office and at the TESS Science Processing Operations Center.\n\nResources supporting this work were provided by the NASA High-End Computing (HEC) Program through the NASA Advanced Supercomputing (NAS) Division at Ames Research Center for the production of the SPOC data products.\n\n",
+                    "This paper includes data collected by the TESS mission that are publicly available from the Mikulski Archive for Space Telescopes (MAST).\n\n",
+                    "This research has made use of the Exoplanet Follow-up Observation Program (ExoFOP; DOI: 10.26134/ExoFOP5) website, which is operated by the California Institute of Technology, under contract with the National Aeronautics and Space Administration under the Exoplanet Exploration Program.\n\nThe PLATOSpec team would like to thank observers Marek Skarka, Ji",
+                    "'",
+                    "i",
+                    "Srba, Zuzana Balk",
+                    "'",
+                    "o",
+                    "v",
+                    "'",
+                    "a",
+                    ", Petr ",
+                    "koda and Lud",
+                    "k ",
+                    "ezba.\n\nThis work makes use of observations from the LCOGT network. Part of the LCOGT telescope time was granted by NOIRLab through the Mid-Scale Innovations Program (MSIP). MSIP is funded by NSF.\n\nThis publication was produced within the framework of institutional support for the development of the research organization of Masaryk University.\n\nThis research has made use of the Simbad and Vizier databases, operated at the centre de Donn",
+                    "'ees Astronomiques de Strasbourg (CDS), and of NASA's Astrophysics Data System Bibliographic Services (ADS).\n\nThis work has made use of data from the European Space Agency (ESA) mission ",
+                    "Gaia",
+                    "(",
+                    "), processed by the ",
+                    "Gaia",
+                    "Data Processing and Analysis Consortium (DPAC, ",
+                    "). Funding for the DPAC\nhas been provided by national institutions, in particular, the institutions participating in the ",
+                    "Gaia",
+                    "Multilateral Agreement.\n"
+                ],
+                "references": [],
+                "section": "Summary",
+                "type": "text"
+            },
+            {
+                "content": [
+                    "lccc",
+                    "l",
+                    "Comments: 1 - based on the equation from ",
+                    ",",
+                    "l",
+                    "2 - from stellar parameters, 3 - based on the equation from ",
+                    ",",
+                    "l",
+                    "4 - from ",
+                    {
+                        "content": "K",
+                        "type": "inline_math"
+                    },
+                    " and $R_p/R_",
+                    "M_",
+                    ") &  $ 1.05 _",
+                    "- 0.03",
+                    "^",
+                    "+ 0.03",
+                    "R_",
+                    ") & $1.31 _",
+                    "- 0.03",
+                    "^",
+                    "+ 0.03",
+                    "T_",
+                    "eff",
+                    ") & $ 6005 _",
+                    "- 50",
+                    "^",
+                    "+ 50",
+                    "v_",
+                    "rot",
+                    ") & $ 2.5 ",
+                    "2.5 $ ",
+                    "& (mag) & $ 8.196 ",
+                    "0.020 $ ",
+                    "c",
+                    "Fitted parameters",
+                    "& $",
+                    "P",
+                    {
+                        "content": " & (days) &  ",
+                        "type": "inline_math"
+                    },
+                    " 3.73659_",
+                    "-0.00047",
+                    "^",
+                    "+0.00044",
+                    "[3.74,0.01] ",
+                    "& () & $ -0.10_",
+                    "-0.16",
+                    "^",
+                    "+0.21",
+                    "[-1,1] ",
+                    "& () & $ 0.20_",
+                    "-0.16",
+                    "^",
+                    "+0.11",
+                    "[-1,1] ",
+                    "b & () & $ 0.847_",
+                    "-0.042",
+                    "^",
+                    "+0.034",
+                    "[0,1.2] ",
+                    "& (g",
+                    ",cm$^",
+                    "-3",
+                    ")",
+                    {
+                        "content": " & ",
+                        "type": "inline_math"
+                    },
+                    " 0.672_",
+                    "-0.096",
+                    "^",
+                    "+0.93",
+                    "[0.66,0.1] ",
+                    "& () & $ 0.0198_",
+                    "-0.0012",
+                    "^",
+                    "+0.0014",
+                    "[0,0.1] ",
+                    "& $",
+                    "M_p",
+                    {
+                        "content": " & (M",
+                        "type": "inline_math"
+                    },
+                    "_",
+                    ") & $ 2.83_",
+                    "-0.18",
+                    "^",
+                    "+0.20",
+                    "e",
+                    {
+                        "content": " & () & ",
+                        "type": "inline_math"
+                    },
+                    " 0.087_",
+                    "-0.056",
+                    "^",
+                    "+0.062",
+                    "depth & (ppm) & $ 391.8_",
+                    "-46.3",
+                    "^",
+                    "+55.3",
+                    ") & $ 0.31_",
+                    "-0.11",
+                    "^",
+                    "+0.12",
+                    ") & $ 865.0_",
+                    "-77.9",
+                    "^",
+                    "+98.8",
+                    "& (hours) & $ 2.13_",
+                    "-0.14",
+                    "^",
+                    "+0.13",
+                    "_p$ & (g",
+                    ",cm$^",
+                    "-3",
+                    ")",
+                    {
+                        "content": " & ",
+                        "type": "inline_math"
+                    },
+                    " 3.23_",
+                    "-0.64",
+                    "^",
+                    "+0.76",
+                    "g_p",
+                    {
+                        "content": "",
+                        "type": "inline_math"
+                    },
+                    "^4$ & (cm",
+                    ",s$^",
+                    "-2",
+                    ") & $ 1632_",
+                    "-236",
+                    "^",
+                    "+264",
+                    "c",
+                    "Parameters for planet TOI-2458",
+                    ",c",
+                    "& $",
+                    "P",
+                    {
+                        "content": " & (days) &  ",
+                        "type": "inline_math"
+                    },
+                    " 16.553_",
+                    "-0.061",
+                    "^",
+                    "+0.059",
+                    "[16.6,1.0] ",
+                    "& () & $ 0.04_",
+                    "-0.32",
+                    "^",
+                    "+0.28",
+                    "[-1,1] ",
+                    "& () & $ 0.45_",
+                    "-0.36",
+                    "^",
+                    "+0.17",
+                    "[-1,1] ",
+                    "& $",
+                    "M_psini",
+                    {
+                        "content": " & (M",
+                        "type": "inline_math"
+                    },
+                    "_",
+                    "e & () & $ 0.29 ",
+                    "0.16 $ ",
+                    "& (deg) & $ 4.3_",
+                    "-41.1",
+                    "^",
+                    "+48.1",
+                    "q_1",
+                    {
+                        "content": " & () & ",
+                        "type": "inline_math"
+                    },
+                    " 0.43_",
+                    "-0.28",
+                    "^",
+                    "+0.36",
+                    "[0,1]",
+                    "& $",
+                    "u_1",
+                    {
+                        "content": " & () & ",
+                        "type": "inline_math"
+                    },
+                    " 0.44_",
+                    "-0.31",
+                    "^",
+                    "+0.36",
+                    "[0,1]",
+                    "& $",
+                    ") & $ 0.0016_",
+                    "-0.0041",
+                    "^",
+                    "+0.0049",
+                    "[-0.5,0.5] ",
+                    "Sys. shift HARPS S-index & () & $ 0.1544 ",
+                    "0.0012 ",
+                    {
+                        "content": " & ",
+                        "type": "inline_math"
+                    },
+                    "& () & $ 2.15_",
+                    "-0.20",
+                    "^",
+                    "+0.24",
+                    "[-0.5,0.5] ",
+                    "RV jitter & (m",
+                    ",s$^",
+                    "-1",
+                    "& $",
+                    "[0,0.005]",
+                    "c",
+                    "GP parameters",
+                    "A0 &  & $ 0.0084_",
+                    "-0.0040",
+                    "^",
+                    "+0.0053",
+                    "[-0.5,0.5] ",
+                    "A1 &  & $ -0.051_",
+                    "-0.045",
+                    "^",
+                    "+0.031",
+                    "[-0.5,0.5] ",
+                    "A2 &  & $ -0.0007_",
+                    "-0.0030",
+                    "^",
+                    "+0.0024",
+                    "[-0.5,0.5] ",
+                    "A3 &  & $ -0.123_",
+                    "-0.065",
+                    "^",
+                    "+0.053",
+                    "[-0.5,0.5] ",
+                    "A4 &  & $ 0.0028_",
+                    "-0.0015",
+                    "^",
+                    "+0.0024",
+                    "[-0.5,0.5] ",
+                    "A5 &  & $ 0.055_",
+                    "-0.028",
+                    "^",
+                    "+0.044",
+                    "[-0.5,0.5] ",
+                    "& $",
+                    "_p",
+                    {
+                        "content": " & & ",
+                        "type": "inline_math"
+                    },
+                    " 3.10_",
+                    "-1.18",
+                    "^",
+                    "+1.24",
+                    "[0.1,5] ",
+                    "P$_",
+                    "GP",
+                    "& $"
+                ],
+                "references": [],
+                "section": "Additional material",
+                "type": "text"
+            }
+        ],
+        "metadata": {
+            "authors": [
+                {
+                    "affiliations": [
+                        "Astronomical Institute, Czech Academy of Sciences, Fri{\\v c}ova 298, 251 65, Ond\\v{r}ejov, Czech Republic",
+                        "Center for Astrophysics ${\\rm \\mid}$ Harvard {\\rm \\&} Smithsonian, 60 Garden Street, Cambridge, MA 02138, USA"
+                    ],
+                    "name": "J",
+                    "orcid": "0000-0002-5313-9722"
+                },
+                {
+                    "affiliations": [
+                        "Dipartimento di Fisica, Universit\\'a degli Studi di Torino, via Pietro Giuria 1, I-10125, Torino, Italy"
+                    ],
+                    "name": "Davide Gandolfi",
+                    "orcid": "0000-0001-8627-9628"
+                },
+                {
+                    "affiliations": [
+                        "Dipartimento di Fisica, Universit\\'a degli Studi di Torino, via Pietro Giuria 1, I-10125, Torino, Italy",
+                        "Th\\\"uringer Landessternwarte Tautenburg, Sternwarte 5, 07778 Tautenburg, Germany"
+                    ],
+                    "name": "Elisa Goffo",
+                    "orcid": "0000-0001-9670-961X"
+                },
+                {
+                    "affiliations": [
+                        "NASA Ames Research Center, Moffett Field, CA 94035, USA",
+                        "Research Institute for Advanced Computer Science, Universities Space Research Association, Washington, DC 20024, USA"
+                    ],
+                    "name": "David Rapetti",
+                    "orcid": "0000-0003-2196-6675"
+                },
+                {
+                    "affiliations": [
+                        "Institute of Astronomy, Faculty of Physics, Astronomy and Informatics, Nicolaus Copernicus University, Grudzi\\c{a}dzka 5, 87-100 Toru\\'n, Poland"
+                    ],
+                    "name": "Grzegorz Nowak",
+                    "orcid": "0000-0002-7031-7754"
+                },
+                {
+                    "affiliations": [
+                        "Astrobiology Center of NINS, 2-21-1, Osawa, Mitaka, Tokyo, 181-8588, Japan",
+                        "National Astronomical Observatory of Japan, 2-21-2, Osawa, Mitaka, Tokyo 181-8588, Japan"
+                    ],
+                    "name": "Toshiyuki Mizuki",
+                    "orcid": "0009-0002-9832-0004"
+                },
+                {
+                    "affiliations": [
+                        "Institute for Astronomy, University of Hawai`i, 2680 Woodlawn Drive, Honolulu, HI 96822, USA"
+                    ],
+                    "name": "Fei Dai",
+                    "orcid": "0000-0002-8958-0683"
+                },
+                {
+                    "affiliations": [
+                        "Dipartimento di Fisica, Universit\\'a degli Studi di Torino, via Pietro Giuria 1, I-10125, Torino, Italy"
+                    ],
+                    "name": "Luisa M. Serrano",
+                    "orcid": "0009-0006-4279-8032"
+                },
+                {
+                    "affiliations": [
+                        "Department of Physics, University of Warwick, Gibbet Hill Road, Coventry CV4 7AL, United Kingdom"
+                    ],
+                    "name": "Thomas G. Wilson",
+                    "orcid": "0000-0001-8749-1962"
+                },
+                {
+                    "affiliations": [
+                        "Institute of Astronomy, Faculty of Physics, Astronomy and Informatics, Nicolaus Copernicus University, Grudzi\\c{a}dzka 5, 87-100 Toru\\'n, Poland"
+                    ],
+                    "name": "Dawid Jankowski",
+                    "orcid": "0009-0007-5863-9690"
+                },
+                {
+                    "affiliations": [
+                        "Institute of Astronomy, Faculty of Physics, Astronomy and Informatics, Nicolaus Copernicus University, Grudzi\\c{a}dzka 5, 87-100 Toru\\'n, Poland"
+                    ],
+                    "name": "Krzysztof Go",
+                    "orcid": "0000-0002-8705-1577"
+                },
+                {
+                    "affiliations": [
+                        "NASA Ames Research Center, Moffett Field, CA 94035, USA"
+                    ],
+                    "name": "Jon M. Jenkins",
+                    "orcid": "0000-0002-4715-9460"
+                },
+                {
+                    "affiliations": [
+                        "NASA Ames Research Center, Moffett Field, CA 94035, USA",
+                        "SETI Institute, Mountain View, CA  94043, USA"
+                    ],
+                    "name": "Joseph D. Twicken",
+                    "orcid": "0000-0002-6778-7552"
+                },
+                {
+                    "affiliations": [
+                        "Department of Astrophysical Sciences, Princeton University, Princeton, NJ 08544, USA"
+                    ],
+                    "name": "Joshua N.",
+                    "orcid": "0000-0002-4265-047X"
+                },
+                {
+                    "affiliations": [
+                        "Center for Astrophysics ${\\rm \\mid}$ Harvard {\\rm \\&} Smithsonian, 60 Garden Street, Cambridge, MA 02138, USA"
+                    ],
+                    "name": "Allyson Bieryla",
+                    "orcid": "0000-0001-6637-5401"
+                },
+                {
+                    "affiliations": [
+                        "McDonald Observatory, The University of Texas, Austin Texas USA",
+                        "Center for Planetary Systems Habitability, The University of Texas, Austin Texas USA"
+                    ],
+                    "name": "William D. Cochran",
+                    "orcid": "0000-0001-9662-3496"
+                },
+                {
+                    "affiliations": [
+                        "Center for Astrophysics ${\\rm \\mid}$ Harvard {\\rm \\&} Smithsonian, 60 Garden Street, Cambridge, MA 02138, USA"
+                    ],
+                    "name": "Karen A.",
+                    "orcid": "0000-0001-6588-9574"
+                },
+                {
+                    "affiliations": [
+                        "Instituto de Astrof\\'\\i sica de Canarias (IAC), C. V\\'\\i a L\\'actea S/N, E-38205 La Laguna, Tenerife, Spain",
+                        "Universidad de La Laguna (ULL), Dept. de Astrof\\'\\i sica, E-38206 La Laguna, Tenerife, Spain"
+                    ],
+                    "name": "Hans J. Deeg",
+                    "orcid": "0000-0003-0047-4241"
+                },
+                {
+                    "affiliations": [
+                        "Universit\\'e Paris-Saclay, Universit\\'e Paris Cit\\'e, CEA, CNRS, AIM, 91191, Gif-sur-Yvette, France"
+                    ],
+                    "name": "Rafael A. Garc",
+                    "orcid": "0000-0002-8854-3776"
+                },
+                {
+                    "affiliations": [
+                        "Th\\\"uringer Landessternwarte Tautenburg, Sternwarte 5, 07778 Tautenburg, Germany"
+                    ],
+                    "name": "Eike W. Guenther",
+                    "orcid": "0000-0002-9130-6747"
+                },
+                {
+                    "affiliations": [
+                        "Th\\\"uringer Landessternwarte Tautenburg, Sternwarte 5, 07778 Tautenburg, Germany"
+                    ],
+                    "name": "Artie P. Hatzes",
+                    "orcid": "0000-0002-3404-8358"
+                },
+                {
+                    "affiliations": [
+                        "Astronomical Institute, Czech Academy of Sciences, Fri{\\v c}ova 298, 251 65, Ond\\v{r}ejov, Czech Republic"
+                    ],
+                    "name": "Petr Kab",
+                    "orcid": "0000-0002-1623-5352"
+                },
+                {
+                    "affiliations": [
+                        "Lund Observatory, Division of Astrophysics, Department of Physics, Lund University, Box 118, 22100 Lund, Sweden"
+                    ],
+                    "name": "Judith Korth",
+                    "orcid": "0000-0002-0076-6239"
+                },
+                {
+                    "affiliations": [
+                        "Center for Astrophysics ${\\rm \\mid}$ Harvard {\\rm \\&} Smithsonian, 60 Garden Street, Cambridge, MA 02138, USA"
+                    ],
+                    "name": "David W. Latham",
+                    "orcid": "0000-0001-9911-7388"
+                },
+                {
+                    "affiliations": [
+                        "Research Institute for Advanced Computer Science, Universities Space Research Association, Washington, DC 20024, USA",
+                        "Astrobiology Center of NINS, 2-21-1, Osawa, Mitaka, Tokyo, 181-8588, Japan",
+                        "Astronomical Science Program, Graduate University for Advanced Studies, SOKENDAI, 2-21-1, Osawa, Mitaka, Tokyo, 181-8588, Japan"
+                    ],
+                    "name": "John",
+                    "orcid": "0000-0002-4881-3620"
+                },
+                {
+                    "affiliations": [
+                        "Instituto de Astrof\\'\\i sica de Canarias (IAC), C. V\\'\\i a L\\'actea S/N, E-38205 La Laguna, Tenerife, Spain",
+                        "Universidad de La Laguna (ULL), Dept. de Astrof\\'\\i sica, E-38206 La Laguna, Tenerife, Spain"
+                    ],
+                    "name": "Savita Mathur",
+                    "orcid": "0000-0002-0129-0316"
+                },
+                {
+                    "affiliations": [
+                        "Astrobiology Center of NINS, 2-21-1, Osawa, Mitaka, Tokyo, 181-8588, Japan",
+                        "Instituto de Astrof\\'\\i sica de Canarias (IAC), C. V\\'\\i a L\\'actea S/N, E-38205 La Laguna, Tenerife, Spain",
+                        "Komaba Institute for Science, The University of Tokyo, 3-8-1 Komaba, Meguro, Tokyo 153-8902, Japan"
+                    ],
+                    "name": "Norio Narita",
+                    "orcid": "0000-0001-8511-2981"
+                },
+                {
+                    "affiliations": [
+                        "Instituto de Astrof\\'\\i sica de Canarias (IAC), C. V\\'\\i a L\\'actea S/N, E-38205 La Laguna, Tenerife, Spain",
+                        "Universidad de La Laguna (ULL), Dept. de Astrof\\'\\i sica, E-38206 La Laguna, Tenerife, Spain"
+                    ],
+                    "name": "Jaume Orell-Miquel",
+                    "orcid": "0000-0003-2066-8959"
+                },
+                {
+                    "affiliations": [
+                        "Instituto de Astrof\\'\\i sica de Canarias (IAC), C. V\\'\\i a L\\'actea S/N, E-38205 La Laguna, Tenerife, Spain",
+                        "Universidad de La Laguna (ULL), Dept. de Astrof\\'\\i sica, E-38206 La Laguna, Tenerife, Spain"
+                    ],
+                    "name": "Enric Pall",
+                    "orcid": "0000-0003-0987-1593"
+                },
+                {
+                    "affiliations": [
+                        "Chalmers University of Technology, Department of Space, Earth and Environment, Onsala Space Observatory, SE-439 92 Onsala, Sweden"
+                    ],
+                    "name": "Carina M. Persson",
+                    "orcid": "0000-0003-1257-5146"
+                },
+                {
+                    "affiliations": [
+                        "Astronomy Department and Van Vleck Observatory, Wesleyan University, Middletown, CT 06459, USA"
+                    ],
+                    "name": "Seth Redfield",
+                    "orcid": "0000-0003-3786-3486"
+                },
+                {
+                    "affiliations": [
+                        "Center for Astrophysics ${\\rm \\mid}$ Harvard {\\rm \\&} Smithsonian, 60 Garden Street, Cambridge, MA 02138, USA"
+                    ],
+                    "name": "Richard P. Schwarz",
+                    "orcid": "[0000-0001-8227-1020"
+                },
+                {
+                    "affiliations": [
+                        "Planetary Discoveries, Valencia CA 91354, USA"
+                    ],
+                    "name": "David Watanabe",
+                    "orcid": "0000-0002-3555-8464"
+                },
+                {
+                    "affiliations": [
+                        "Department of Physics, Engineering and Astronomy, Stephen F. Austin State University, 1936 North St, Nacogdoches, TX 75962, USA"
+                    ],
+                    "name": "Carl Ziegler",
+                    "orcid": "0000-0002-0619-7639"
+                }
+            ]
+        },
+        "title": "TOI-2458\\,b: A mini-Neptune consistent with in situ hot Jupiter formation\n   "
+    }
+}
