@@ -65,8 +65,9 @@ def store_embeddings(document, source_file):
     """Store structured vectors in Pinecone based on the document's components."""
     embeddings_model = OpenAIEmbeddings()
 
+    doc_title_page = document['document'].get('title', 'Title not listed.')
     index_name = sanitize_index_name(f"index-{source_file}")
-
+    #index_name = sanitize_index_name(f"index-{doc_title_page[0:10]}")
     indexes = pc.list_indexes().names()
     if index_name not in indexes:
         pc.create_index(

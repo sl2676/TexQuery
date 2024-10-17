@@ -1,3 +1,0 @@
-/Users/seanly/lsearch/test_suite/build/CMakeFiles/TEST_SUITE.dir
-/Users/seanly/lsearch/test_suite/build/CMakeFiles/edit_cache.dir
-/Users/seanly/lsearch/test_suite/build/CMakeFiles/rebuild_cache.dir

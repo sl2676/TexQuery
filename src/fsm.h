@@ -10,19 +10,22 @@
 #include <iostream>
 #include <codecvt>
 #include <locale>
+#include <unordered_map>
 
 #include <nlohmann/json.hpp>
 #include "ast.h" 
-
-
+#include "dag_node.h" 
+#include "ner.h"
 
 class ASTNode;
 
 struct Author {
     std::string name;
-    std::vector<int> affiliationIndices;
     std::string email;
     std::string orcid;
+    std::vector<int> affiliationIndices;
+    std::vector<std::string> affiliationLabels; 
+    std::vector<std::string> affiliations;     
 };
 
 struct Affiliation {
@@ -45,13 +48,26 @@ public:
     FSM();
 
     void traverseAST(const std::shared_ptr<ASTNode>& node, std::string& currentChunk, std::vector<std::string>& chunks);
-
     nlohmann::json chunkDocumentToJson(const std::shared_ptr<ASTNode>& root);
-
     std::vector<std::string> chunkDocument(const std::shared_ptr<ASTNode>& root);
+	DAG& getDAG();
 
 private:
     FSMState currentState;
+    
+    std::unordered_map<std::string, std::string> affiliationMap;
+    std::vector<Author> authors;
+    std::vector<std::string> unlabeledAffiliations;
+
+    DAG dag;
+	NER ner;  
+
+	bool insideAuthorBlock = false;
+    std::string authorBlockContent;
+    bool insideInstituteBlock = false;
+    std::string instituteBlockContent;
+
+	std::shared_ptr<DAGNode> createOrGetDAGNode(const std::string& content, NodeType type);
 
     void handleDocument(const std::shared_ptr<ASTNode>& node, std::string& currentChunk);
     void handleSection(const std::shared_ptr<ASTNode>& node, std::string& currentChunk, std::vector<std::string>& chunks);
@@ -67,8 +83,14 @@ private:
     std::string extractFigureCaption(const std::string& captionCommand);
     std::string extractCitationLabel(const std::string& citationCommand);
 
-	void parseAffiliations(const std::string& instituteBlock, std::vector<Affiliation>& affiliations);
-	void parseAuthors(const std::string& authorBlock, std::vector<Author>& authors);
+//    void parseAffiliations(const std::string& instituteBlock, std::unordered_map<std::string, std::string>& affiliationMap, std::vector<std::string>& unlabeledAffiliations);
+	void parseAffiliations(const std::string& affiliationBlock, std::unordered_map<std::string, std::string>& affiliationMap, std::vector<Author>     & authors, std::shared_ptr<DAGNode> currentAuthorDAGNode);	 
+    void parseAuthors(const std::string& authorBlock, std::vector<Author>& authors, const std::unordered_map<std::string, std::string>& affiliationMap);
+    void processAuthorCommand(const std::string& content, Author& author);
+    void parseAuthorsStyle1(const std::string& authorBlock, std::vector<Author>& authors, const std::unordered_map<std::string, std::string>& affiliationMap);
+    void parseAuthorsStyle2(const std::string& content, std::vector<Author>& authors);
+	void linkUnlabeledAffiliations(std::vector<Author>& authors, std::vector<std::string>& unlabeledAffiliations);
+
 
     std::string extractContentBetweenBraces(const std::string& str, size_t start_pos);
     std::string removeInvalidUTF8(const std::string& input);

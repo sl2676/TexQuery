@@ -83,12 +83,12 @@ void ASTNode::printHelper(int indent, std::unordered_set<const ASTNode*>& visite
                   << ", Content: \"" << content << "\"\n";
     }
 
-    else if (inAuthorGroup && content.find("\\affiliation") != std::string::npos) {
+    else if ((inAuthorGroup && content.find("\\affiliation") != std::string::npos) || (inAuthorGroup && content.find("\\institute") != std::string::npos)) {
         std::cout << indentStr << "  Node Type: " << getNodeTypeName(type)
                   << ", Content: \"" << content << "\"\n";
     }
 
-    else if (inAuthorGroup && content.find("\\affiliation") == std::string::npos && content.find("\\author") == std::string::npos) {
+    else if ((inAuthorGroup && content.find("\\affiliation") == std::string::npos && content.find("\\author") == std::string::npos) || (inAuthorGroup && content.find("\\institute") == std::string::npos && content.find("\\author") == std::string::npos)) {
         std::cout << indentStr << "[End of Author-Affiliation Group]\n";
         inAuthorGroup = false;
 
@@ -171,10 +171,10 @@ std::vector<std::string> AST::chunk() const {
 
         if (auto dagNode = node->getDAGNode()) {
             for (const auto& childDagNode : dagNode->getChildren()) {
-                if (auto linkedAstNode = childDagNode->astNode.lock()) {
-                    traverse(linkedAstNode, currentChunk);
-                }
-            }
+				if (auto linkedAstNode = childDagNode->getASTNode().lock()) {
+					traverse(linkedAstNode, currentChunk);
+				}	
+			}
         }
     };
 

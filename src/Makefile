@@ -1,40 +1,39 @@
-# Compiler and flags
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall -Wextra -pedantic -g -fsanitize=address -arch arm64
 
-# Include directories
-INCLUDES = -I. \
+INCLUDES = -I./include \
            -I/opt/homebrew/opt/nlohmann-json/include \
            -I/opt/homebrew/opt/icu4c/include \
-           -I/opt/homebrew/opt/uchardet/include
+           -I/opt/homebrew/opt/uchardet/include \
+           -I/opt/homebrew/Cellar/googletest/1.15.2/include
 
-# Source files
-SRCS = main.cpp lexer.cpp parser.cpp ast.cpp dag_node.cpp fsm.cpp symbol_table.cpp
+SRCS = lexer.cpp parser.cpp ast.cpp dag_node.cpp fsm.cpp symbol_table.cpp ner.cpp
+TEST_SRCS = tests/test_fsm.cpp
 
-# Object files
 OBJS = ${SRCS:.cpp=.o}
+TEST_OBJS = ${TEST_SRCS:.cpp=.o}
 
-# Executable name
 EXEC = parser
+TEST_EXEC = run_tests
 
-# Library paths and linking
-# Using system's default libiconv and linking with uchardet
 LDFLAGS = -L/opt/homebrew/opt/icu4c/lib \
           -L/opt/homebrew/opt/uchardet/lib \
-          -liconv -luchardet
+          -L/opt/homebrew/Cellar/googletest/1.15.2/lib \
+          -lgtest -lgtest_main -pthread -liconv -luchardet
 
-# Build target
 all: $(EXEC)
 
-$(EXEC): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(INCLUDES) $(LDFLAGS) -o $@ $(OBJS)
+$(EXEC): $(OBJS) main.o
+	$(CXX) $(CXXFLAGS) $(INCLUDES) $(LDFLAGS) -o $@ $^
+
+tests: $(TEST_OBJS) $(OBJS)
+	$(CXX) $(CXXFLAGS) $(INCLUDES) $(LDFLAGS) -o $(TEST_EXEC) $(TEST_OBJS) $(OBJS)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
-# Clean up
 clean:
-	rm -f $(OBJS) $(EXEC)
+	rm -f $(OBJS) main.o $(TEST_OBJS) $(EXEC) $(TEST_EXEC)
 
-.PHONY: all clean
+.PHONY: all clean tests
 

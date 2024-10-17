@@ -1,7 +1,9 @@
 #include "fsm.h"
 using json = nlohmann::json;
 
-FSM::FSM() : currentState(FSMState::Start) {}
+FSM::FSM() : currentState(FSMState::Start), ner() {}
+
+
 
 void FSM::traverseAST(const std::shared_ptr<ASTNode>& node, std::string& currentChunk, std::vector<std::string>& chunks) {
     if (!node) return;
@@ -27,18 +29,23 @@ void FSM::traverseAST(const std::shared_ptr<ASTNode>& node, std::string& current
     }
 
     for (const auto& child : node->getChildren()) {
-        traverseAST(child, currentChunk, chunks);
+        if (child) {  
+            traverseAST(child, currentChunk, chunks);
+        }
     }
 
     if (auto dagNode = node->getDAGNode()) {
         for (const auto& childDagNode : dagNode->getChildren()) {
-            if (auto linkedAstNode = childDagNode->astNode.lock()) {
-                traverseAST(linkedAstNode, currentChunk, chunks);
+            if (childDagNode) { 
+                if (auto linkedAstNode = childDagNode->getASTNode().lock()) {
+                    if (linkedAstNode) {
+                        traverseAST(linkedAstNode, currentChunk, chunks);
+                    }
+                }
             }
         }
     }
 }
-
 
 std::vector<std::string> FSM::chunkDocument(const std::shared_ptr<ASTNode>& root) {
     std::vector<std::string> chunks;
@@ -53,6 +60,15 @@ std::vector<std::string> FSM::chunkDocument(const std::shared_ptr<ASTNode>& root
     return chunks;
 }
 
+std::shared_ptr<DAGNode> FSM::createOrGetDAGNode(const std::string& content, NodeType type) {
+    auto existingNode = dag.getNode(content);
+    if (!existingNode) {
+        auto newNode = std::make_shared<DAGNode>(content, type);
+        dag.addNode(newNode);
+        return newNode;
+    }
+    return existingNode;
+}
 
 std::string convertSpecialSequences(const std::string& input) {
     std::string output;
@@ -92,42 +108,16 @@ std::string convertSpecialSequences(const std::string& input) {
 }
 
 
-void FSM::parseAffiliations(const std::string& instituteBlock, std::vector<Affiliation>& affiliations) {
-    std::string content = instituteBlock;
-
-    std::regex commentRegex(R"(%[^\n]*\n?)");
-    content = std::regex_replace(content, commentRegex, "");
-
-    content = std::regex_replace(content, std::regex(R"(\r?\n)"), " ");
-
-    std::regex splitRegex(R"(\\and)");
-    std::sregex_token_iterator iter(content.begin(), content.end(), splitRegex, -1);
-    std::sregex_token_iterator end;
-    int index = 1;
-
-    for (; iter != end; ++iter) {
-        std::string affilContent = iter->str();
-        affilContent = std::regex_replace(affilContent, std::regex(R"(^\s+|\s+$)"), "");
-
-        if (!affilContent.empty()) {
-            Affiliation affiliation;
-            affiliation.index = index++;
-            affiliation.details = affilContent;
-            affiliations.push_back(affiliation);
-        }
-    }
-}
 
 
-void FSM::parseAuthors(const std::string& authorBlock, std::vector<Author>& authors) {
+void FSM::parseAuthors(const std::string& authorBlock, std::vector<Author>& authors, const std::unordered_map<std::string, std::string>& affiliationMap) {
     std::string content = authorBlock;
 
     std::regex commentRegex(R"(%[^\n]*\n?)");
     content = std::regex_replace(content, commentRegex, "");
-
     content = std::regex_replace(content, std::regex(R"(\r?\n)"), " ");
 
-    std::regex andRegex(R"(\\and)");
+    std::regex andRegex(R"(\\and)");  
     std::sregex_token_iterator iter(content.begin(), content.end(), andRegex, -1);
     std::sregex_token_iterator end;
 
@@ -137,51 +127,134 @@ void FSM::parseAuthors(const std::string& authorBlock, std::vector<Author>& auth
 
         authorContent = std::regex_replace(authorContent, std::regex(R"(\s+)"), " ");
         authorContent = std::regex_replace(authorContent, std::regex(R"(^\s+|\s+$)"), "");
-
         authorContent = std::regex_replace(authorContent, std::regex(R"(\\fnmsep|\\!)"), "");
 
-        std::regex nameRegex(R"(^([^\\"{]+))");
-        std::smatch nameMatch;
-        if (std::regex_search(authorContent, nameMatch, nameRegex)) {
-            author.name = nameMatch[1].str();
-            author.name = std::regex_replace(author.name, std::regex(R"(^\s+|\s+$)"), "");
+        std::regex orcidRegex(R"(\[\d{4}-\d{4}-\d{4}-\d{4}\])");
+        std::smatch orcidMatch;
+        if (std::regex_search(authorContent, orcidMatch, orcidRegex)) {
+            author.orcid = orcidMatch.str();
+            authorContent = std::regex_replace(authorContent, orcidRegex, "");  
         }
 
-        std::regex instRegex(R"(\\inst\{([^\}]*)\})");
-        auto instIter = std::sregex_iterator(authorContent.begin(), authorContent.end(), instRegex);
-        for (; instIter != std::sregex_iterator(); ++instIter) {
-            std::string indicesStr = (*instIter)[1].str();
-            std::regex commaSpaceRegex(R"([\s,]+)");
-            std::sregex_token_iterator indexIter(indicesStr.begin(), indicesStr.end(), commaSpaceRegex, -1);
-            std::sregex_token_iterator indexEnd;
-			for (; indexIter != indexEnd; ++indexIter) {
-                std::string index = indexIter->str();
-                index = std::regex_replace(index, std::regex(R"(\s+)"), "");
-                if (!index.empty()) {
-                    try {
-                        int affilIndex = std::stoi(index);
-                        author.affiliationIndices.push_back(affilIndex);
-                    } catch (const std::invalid_argument& e) {
-                        std::cerr << "Warning: Invalid affiliation index '" << index << "' for author '" << author.name << "'. Skipping this index.\n";
-                    } catch (const std::out_of_range& e) {
-                        std::cerr << "Warning: Affiliation index out of range '" << index << "' for author '" << author.name << "'. Skipping this index.\n";
-                    }
-                }
-            }
+        author.name = authorContent;
+
+        auto authorDAGNode = dag.getOrCreateNode(author.name, NodeType::Author);
+        dag.addNode(authorDAGNode);
+        authors.push_back(author);
+    }
+}
+
+
+void FSM::parseAffiliations(const std::string& affiliationBlock, std::unordered_map<std::string, std::string>& affiliationMap, std::vector<Author>& authors, std::shared_ptr<DAGNode> currentAuthorDAGNode) {
+    if (!currentAuthorDAGNode) {
+        std::cerr << "Error: No author found for affiliation: " << affiliationBlock << "\n";
+        unlabeledAffiliations.push_back(affiliationBlock);  
+        return;
+    }
+
+    std::vector<std::string> affiliations = ner.matchRegex(affiliationBlock, ner.getAffiliationPattern());  
+    if (affiliations.empty()) {
+        std::cerr << "Warning: No affiliations found in block: " << affiliationBlock << "\n";
+        return;
+    }
+
+    for (const auto& affiliation : affiliations) {
+        if (affiliation.empty()) {
+            std::cerr << "Warning: Empty affiliation found and skipped.\n";
+            continue;
         }
 
-        std::regex emailRegex(R"(\\thanks\{\\email\{([^\}]*)\}\})");
-        std::smatch emailMatch;
-        if (std::regex_search(authorContent, emailMatch, emailRegex)) {
+        auto affiliationDAGNode = dag.getOrCreateNode(affiliation, NodeType::Affiliation);
+        if (!affiliationDAGNode) {
+            std::cerr << "Error: Failed to create or get affiliation node for: " << affiliation << "\n";
+            continue;
+        }
+        currentAuthorDAGNode->addChild(affiliationDAGNode);
+        affiliationDAGNode->addParent(currentAuthorDAGNode);
+        affiliationMap[affiliation] = affiliation;  
+        dag.addAffiliationNode(affiliation);  
+    }
+}
+
+
+
+
+void FSM::linkUnlabeledAffiliations(std::vector<Author>& authors, std::vector<std::string>& unlabeledAffiliations) {
+    size_t numAuthors = authors.size();
+    size_t numUnlabeledAffils = unlabeledAffiliations.size();
+
+    for (size_t i = 0; i < numAuthors && i < numUnlabeledAffils; ++i) {
+        authors[i].affiliations.push_back(unlabeledAffiliations[i]);
+
+        auto authorNode = dag.getOrCreateNode(authors[i].name, NodeType::Author);
+        auto affiliationNode = dag.getOrCreateNode(unlabeledAffiliations[i], NodeType::Affiliation);
+        dag.linkAuthorToAffiliation(authors[i].name, unlabeledAffiliations[i]);
+    }
+}
+
+
+void FSM::parseAuthorsStyle2(const std::string& content, std::vector<Author>& authors) {
+    std::regex authorRegex(R"(\\author(\[[^\]]*\])?\{([^\}]*)\})");
+    auto authorIter = std::sregex_iterator(content.begin(), content.end(), authorRegex);
+    auto authorEnd = std::sregex_iterator();
+
+    for (; authorIter != authorEnd; ++authorIter) {
+        std::smatch match = *authorIter;
+        Author author;
+        size_t authorEndPos = match.position(0) + match.length(0);
+
+        if (match[1].matched) {
+            std::string orcidContent = match[1].str();
+            orcidContent = orcidContent.substr(1, orcidContent.length() - 2); 
+            author.orcid = orcidContent;
+        }
+        author.name = match[2].str();
+
+        size_t nextAuthorStart = content.length();
+        auto nextAuthorIter = authorIter;
+        ++nextAuthorIter;
+        if (nextAuthorIter != authorEnd) {
+            nextAuthorStart = (*nextAuthorIter).position(0);
+        }
+        std::string authorBlock = content.substr(authorEndPos, nextAuthorStart - authorEndPos);
+
+        std::regex affiliationRegex(R"(\\affiliation\{([^\}]*)\})");
+        auto affilIter = std::sregex_iterator(authorBlock.begin(), authorBlock.end(), affiliationRegex);
+        for (; affilIter != std::sregex_iterator(); ++affilIter) {
+            std::smatch affilMatch = *affilIter;
+            author.affiliations.push_back(affilMatch[1].str());
+        }
+
+        std::regex emailRegex(R"(\\email\{([^\}]*)\})");
+        auto emailIter = std::sregex_iterator(authorBlock.begin(), authorBlock.end(), emailRegex);
+        for (; emailIter != std::sregex_iterator(); ++emailIter) {
+            std::smatch emailMatch = *emailIter;
             author.email = emailMatch[1].str();
         }
 
-        std::regex orcidRegex(R"(\\orcidlink\{([^\}]*)\})");
-        std::smatch orcidMatch;
-        if (std::regex_search(authorContent, orcidMatch, orcidRegex)) {
-            author.orcid = orcidMatch[1].str();
+        std::cout << "Extracted author name: " << author.name << std::endl;
+        if (!author.affiliations.empty()) {
+            std::cout << "Affiliations: " << std::endl;
+            for (const auto& affil : author.affiliations) {
+                std::cout << " - " << affil << std::endl;
+            }
+        }
+        if (!author.email.empty()) {
+            std::cout << "Email: " << author.email << std::endl;
         }
 
+        authors.push_back(author);
+    }
+}
+
+void FSM::parseAuthorsStyle1(const std::string& authorBlock, std::vector<Author>& authors, const std::unordered_map<std::string, std::string>& affiliationMap) {
+    std::vector<std::string> authorNames = ner.matchRegex(authorBlock, ner.getAuthorPattern());  
+    for (const std::string& authorName : authorNames) {
+        Author author;
+        author.name = ner.cleanText(authorName);
+
+        auto authorDAGNode = dag.getOrCreateNode(author.name, NodeType::Author);
+        dag.addAuthorNode(author.name);
         authors.push_back(author);
     }
 }
@@ -189,126 +262,58 @@ void FSM::parseAuthors(const std::string& authorBlock, std::vector<Author>& auth
 json FSM::chunkDocumentToJson(const std::shared_ptr<ASTNode>& root) {
     json documentJson;
     documentJson["document"]["metadata"]["authors"] = json::array();
+    documentJson["document"]["metadata"]["affiliations"] = json::array(); 
     documentJson["document"]["content"] = json::array();
 
-    std::vector<Author> authors;
-    std::vector<Affiliation> affiliations;
+    std::string currentChunk;
+    std::vector<std::string> chunks;
 
-    std::string currentSection;
-    json currentSectionJson;
-    currentSectionJson["content"] = json::array(); 
-    bool inAbstract = false;
-    bool inEquation = false;
-    bool inFigure = false;
-    std::string currentEquationContent;
+    traverseAST(root, currentChunk, chunks);
 
-    std::function<void(const std::shared_ptr<ASTNode>&)> traverse;
-    traverse = [&](const std::shared_ptr<ASTNode>& node) {
-        if (!node) return;
-        std::string content = node->getContent();
+    const auto& entities = ner.getEntities();
 
-        if (node->getType() == ASTNode::NodeType::Document) {
-            documentJson["document"]["title"] = "Untitled Document";
-        } else if (node->getType() == ASTNode::NodeType::Command) {
+    std::unordered_map<std::string, int> affiliationIds;
+    int affiliationCounter = 1;
 
-            if (content.find("\\title") != std::string::npos) {
-                documentJson["document"]["title"] = extractSectionName(content);
-            } else if (content.find("\\author") != std::string::npos) {
-                std::string authorBlock = extractContentBetweenBraces(content, content.find("{"));
-                parseAuthors(authorBlock, authors);
-            } else if (content.find("\\institute") != std::string::npos || content.find("\\affil") != std::string::npos) {
-                std::string instituteBlock = extractContentBetweenBraces(content, content.find("{"));
-                parseAffiliations(instituteBlock, affiliations);
-            }
-            std::regex beginEnvRegex(R"(\\begin\{(equation|align|eqnarray|multline|gather|align\*)\})");
-            std::regex endEnvRegex(R"(\\end\{(equation|align|eqnarray|multline|gather|align\*)\})");
+    if (entities.find("authors") != entities.end()) {
+        for (const auto& authorName : entities.at("authors")) {
+            json authorJson;
+            authorJson["name"] = authorName;
+            authorJson["affiliations"] = json::array();
 
-            if (std::regex_search(content, beginEnvRegex)) {
-                inEquation = true;
-                currentSectionJson["type"] = "equation";
-                currentEquationContent.clear();
-            } else if (std::regex_search(content, endEnvRegex)) {
-                inEquation = false;
-                currentSectionJson["content"] = currentEquationContent;
-                documentJson["document"]["content"].push_back(currentSectionJson);
-                currentSectionJson.clear();
-                currentSectionJson["content"] = json::array(); 
-            } else if (content.find("$") != std::string::npos) {
-                currentSectionJson["content"].push_back(content);
-            }
-            else if (content.find("\\section") != std::string::npos || content.find("\\subsection") != std::string::npos) {
-                if (!currentSectionJson.empty()) {
-                    documentJson["document"]["content"].push_back(currentSectionJson);
-                    currentSectionJson.clear();
-                    currentSectionJson["content"] = json::array(); 
-                }
-                currentSection = extractSectionName(content);
-                currentSectionJson["section"] = currentSection;
-                currentSectionJson["type"] = "text";
-                currentSectionJson["references"] = json::array();
-            }
-        } else if (node->getType() == ASTNode::NodeType::Text) {
-            if (inEquation) {
-                currentEquationContent += node->getContent();
-            } else if (inAbstract || !currentSection.empty()) {
-                std::string textContent = node->getContent();
-                std::regex inlineMathRegex(R"(\$(.*?)\$)");
-                std::smatch matches;
-                std::string::const_iterator searchStart(textContent.cbegin());
-                while (std::regex_search(searchStart, textContent.cend(), matches, inlineMathRegex)) {
-                    std::string beforeMath = matches.prefix().str();
-                    std::string mathExpression = matches[1].str();
+            auto authorNode = dag.getNode(authorName);
+            if (authorNode) {
+                for (const auto& child : authorNode->getChildren()) {
+                    if (child->getNodeType() == NodeType::Affiliation) {
+                        std::string affiliation = child->getId();
 
-                    if (!beforeMath.empty()) {
-                        currentSectionJson["content"].push_back(beforeMath);
+                        if (affiliationIds.find(affiliation) == affiliationIds.end()) {
+                            affiliationIds[affiliation] = affiliationCounter++;
+
+                            json affiliationJson;
+                            affiliationJson["id"] = affiliationIds[affiliation];
+                            affiliationJson["details"] = affiliation;
+                            documentJson["document"]["metadata"]["affiliations"].push_back(affiliationJson);
+                        }
+
+                        authorJson["affiliations"].push_back(affiliationIds[affiliation]);
                     }
-
-                    json inlineMathJson;
-                    inlineMathJson["type"] = "inline_math";
-                    inlineMathJson["content"] = mathExpression;
-
-                    currentSectionJson["content"].push_back(inlineMathJson);
-
-                    searchStart = matches.suffix().first;
-                }
-                std::string remainingText = std::string(searchStart, textContent.cend());
-                if (!remainingText.empty()) {
-                    currentSectionJson["content"].push_back(remainingText);
                 }
             }
+
+            documentJson["document"]["metadata"]["authors"].push_back(authorJson);
         }
-
-        for (const auto& child : node->getChildren()) {
-            traverse(child);
-        }
-    };
-
-    traverse(root);
-
-    if (!currentSectionJson.empty()) {
-        documentJson["document"]["content"].push_back(currentSectionJson);
+    } else {
+        std::cerr << "Warning: No authors found in the NER entities." << std::endl;
     }
 
-    for (const auto& author : authors) {
-        json authorJson;
-        authorJson["name"] = author.name;
-        if (!author.email.empty()) {
-            authorJson["email"] = author.email;
-        }
-        if (!author.orcid.empty()) {
-            authorJson["orcid"] = author.orcid;
-        }
-        authorJson["affiliations"] = json::array();
-        for (int idx : author.affiliationIndices) {
-            if (idx - 1 >= 0 && idx - 1 < affiliations.size()) {
-                authorJson["affiliations"].push_back(affiliations[idx - 1].details);
-            }
-        }
-        documentJson["document"]["metadata"]["authors"].push_back(authorJson);
+    for (const auto& chunk : chunks) {
+        documentJson["document"]["content"].push_back(chunk);
     }
 
     return documentJson;
 }
+
 
 std::string FSM::removeInvalidUTF8(const std::string& input) {
     std::string output;
@@ -329,9 +334,14 @@ std::string FSM::removeNewlines(const std::string& input) {
     return output;
 }
 
-std::string FSM::extractAuthorName(const std::string& authorCommand) {
-    std::string cleanedCommand = removeNewlines(authorCommand);
 
+std::string FSM::extractAuthorName(const std::string& authorCommand) {
+    if (authorCommand.empty()) {
+        std::cerr << "Error: Empty author command provided to extractAuthorName.\n";
+        return "";
+    }
+
+    std::string cleanedCommand = removeNewlines(authorCommand);
     std::regex authorRegex(R"(\\author\s*{([^}]*)})");
     std::smatch match;
 
@@ -342,8 +352,10 @@ std::string FSM::extractAuthorName(const std::string& authorCommand) {
         return authorName;
     }
 
+    std::cerr << "Error: No valid author name found in command: " << authorCommand << "\n";
     return "";
 }
+
 
 std::string FSM::extractContentBetweenBraces(const std::string& str, size_t start_pos) {
     if (start_pos >= str.length() || str[start_pos] != '{') {
@@ -509,24 +521,70 @@ void FSM::handleSection(const std::shared_ptr<ASTNode>& node, std::string& curre
         currentChunk.clear();
     }
 }
+    
 
 void FSM::handleCommand(const std::shared_ptr<ASTNode>& node, std::string& currentChunk) {
     std::string commandContent = node->getContent();
     
+    if (commandContent.find("\\author") != std::string::npos) {
+        insideAuthorBlock = true;
+        size_t bracePos = commandContent.find('{');
+        if (bracePos != std::string::npos) {
+            authorBlockContent += commandContent.substr(bracePos + 1) + "\n";
+        } else {
+            std::cerr << "Error: No opening brace found after \\author command.\n";
+        }
+        return; 
+    }
+    
+    if (commandContent.find("\\institute") != std::string::npos) {
+        insideInstituteBlock = true;
+        size_t bracePos = commandContent.find('{');
+        if (bracePos != std::string::npos) {
+            instituteBlockContent += commandContent.substr(bracePos + 1) + "\n";
+        } else {
+            std::cerr << "Error: No opening brace found after \\institute command.\n";
+        }
+        return; 
+    }
+    
+    if (insideAuthorBlock) {
+        size_t closingBrace = commandContent.find('}');
+        if (closingBrace != std::string::npos) {
+            authorBlockContent += commandContent.substr(0, closingBrace);
+            ner.parseLaTeX("\\author{" + authorBlockContent + "}", dag, node);
+            insideAuthorBlock = false;
+            authorBlockContent.clear();
+        } else {
+            authorBlockContent += commandContent + "\n";
+        }
+        return; 
+    }
+    
+    if (insideInstituteBlock) {
+        size_t closingBrace = commandContent.find('}');
+        if (closingBrace != std::string::npos) {
+            instituteBlockContent += commandContent.substr(0, closingBrace);
+            ner.parseLaTeX("\\institute{" + instituteBlockContent + "}", dag, node);
+            insideInstituteBlock = false;
+            instituteBlockContent.clear();
+        } else {
+            instituteBlockContent += commandContent + "\n";
+        }
+        return; 
+    }
+    
     if (commandContent.find("\\begin{equation}") != std::string::npos) {
         currentChunk += "[Equation Start]\n";
     }
-    
     else if (commandContent.find("\\label") != std::string::npos) {
         std::string label = extractCitationLabel(commandContent);
         currentChunk += "Equation Label: " + label + "\n";
     }
-    
     else if (commandContent.find("\\cite") != std::string::npos) {
         std::string citationLabel = extractCitationLabel(commandContent);
         currentChunk += "Citation: " + citationLabel + "\n";
     }
-    
     else if (commandContent.find("\\end{equation}") != std::string::npos) {
         currentChunk += "[Equation End]\n";
     } 
@@ -535,8 +593,20 @@ void FSM::handleCommand(const std::shared_ptr<ASTNode>& node, std::string& curre
     }
 }
 
+
+
 void FSM::handleText(const std::shared_ptr<ASTNode>& node, std::string& currentChunk) {
     std::string textContent = node->getContent();
+
+    if (insideAuthorBlock) {
+        authorBlockContent += textContent + "\n";
+        return; 
+    }
+
+    if (insideInstituteBlock) {
+        instituteBlockContent += textContent + "\n";
+        return; 
+    }
 
     if (currentChunk.find("[Equation Start]") != std::string::npos && currentChunk.find("[Equation End]") == std::string::npos) {
         currentChunk += "Equation Content: " + textContent + "\n";
@@ -544,6 +614,7 @@ void FSM::handleText(const std::shared_ptr<ASTNode>& node, std::string& currentC
         std::regex inlineMathRegex(R"(\$(.*?)\$)");
         std::smatch matches;
         std::string::const_iterator searchStart(textContent.cbegin());
+        std::string remainingText = textContent;
         while (std::regex_search(searchStart, textContent.cend(), matches, inlineMathRegex)) {
             currentChunk += "Inline Math: " + matches[1].str() + "\n";
             searchStart = matches.suffix().first;
@@ -572,4 +643,9 @@ std::string FSM::extractCitationLabel(const std::string& citationCommand) {
     size_t start = citationCommand.find("{") + 1;
     size_t end = citationCommand.find("}");
     return citationCommand.substr(start, end - start);
-} 
+}
+
+DAG& FSM::getDAG() {
+    return dag;
+}
+ 

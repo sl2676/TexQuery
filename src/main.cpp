@@ -6,6 +6,7 @@
 #include <vector>
 #include <string>
 #include <map>
+#include <set>
 #include <regex>
 #include <algorithm>
 #include <iconv.h>
@@ -26,20 +27,42 @@ std::string make_safe_filename(const fs::path& path) {
 }
 
 void collect_tex_files(const fs::path& directory, std::vector<fs::path>& tex_files) {
-    for (const auto& entry : fs::recursive_directory_iterator(directory)) {
+    for (const auto& entry : fs::directory_iterator(directory)) {
         if (entry.is_regular_file() && entry.path().extension() == ".tex") {
             tex_files.push_back(entry.path());
         }
     }
 }
 
+fs::path find_main_tex_file(const std::vector<fs::path>& tex_files) {
+    for (const auto& tex_file : tex_files) {
+        std::string filename = tex_file.filename().string();
+        if (filename == "main.tex" || filename == "mainfile.tex") {
+            return tex_file;
+        }
+    }
+    for (const auto& tex_file : tex_files) {
+        std::ifstream file(tex_file);
+        std::string line;
+        while (std::getline(file, line)) {
+            if (line.find("\\begin{document}") != std::string::npos) {
+                return tex_file;
+            }
+        }
+    }
+    if (!tex_files.empty()) {
+        return tex_files[0];
+    }
+    return fs::path();
+}
+
 std::string detect_encoding_from_latex(const fs::path& file_path) {
     std::ifstream file(file_path);
     if (!file.is_open()) {
-        return "UTF-8"; 
+        return "UTF-8";
     }
     std::string line;
-    size_t max_lines = 50; 
+    size_t max_lines = 50;
     size_t line_count = 0;
     while (std::getline(file, line) && line_count++ < max_lines) {
         std::regex inputenc_regex(R"(\\usepackage\[(.*?)\]\{inputenc\})");
@@ -62,7 +85,7 @@ std::string detect_encoding_from_latex(const fs::path& file_path) {
             return encoding;
         }
     }
-    return "UTF-8"; 
+    return "UTF-8";
 }
 
 std::string detect_encoding(const std::string& content) {
@@ -86,7 +109,7 @@ std::string convert_encoding(const std::string& input, const std::string& from_e
     }
 
     size_t in_bytes_left = input.size();
-    size_t out_bytes_left = in_bytes_left * 4; 
+    size_t out_bytes_left = in_bytes_left * 4;
     const char* in_buf = input.c_str();
     std::string output;
     output.resize(out_bytes_left);
@@ -116,7 +139,7 @@ std::string convert_encoding(const std::string& input, const std::string& from_e
     iconv_close(cd);
 
     size_t out_buf_used = output.size() - out_bytes_left;
-    output.resize(out_buf_used); 
+    output.resize(out_buf_used);
     return output;
 }
 
@@ -125,24 +148,24 @@ bool is_valid_utf8(const std::string& string) {
     for (i = 0, ix = string.length(); i < ix; i++) {
         c = (unsigned char)string[i];
         if (0x00 <= c && c <= 0x7F) {
-            continue; 
+            continue;
         } else if ((c & 0xE0) == 0xC0) {
-            n = 1; 
+            n = 1;
         } else if ((c & 0xF0) == 0xE0) {
-            n = 2; 
+            n = 2;
         } else if ((c & 0xF8) == 0xF0) {
-            n = 3; 
+            n = 3;
         } else {
-            return false; 
+            return false;
         }
         if (i + n >= ix) {
-            return false; 
+            return false;
         }
         for (j = 0; j < n; j++) {
             i++;
             c = (unsigned char)string[i];
             if ((c & 0xC0) != 0x80) {
-                return false; 
+                return false;
             }
         }
     }
@@ -160,7 +183,7 @@ std::string read_file_as_utf8(const fs::path& file_path) {
     file.close();
 
     std::string encoding = detect_encoding_from_latex(file_path);
-    std::cout << "Detected LaTeX encoding: " << encoding << "\n";
+    std::cout << "Detected LaTeX encoding in file " << file_path << ": " << encoding << "\n";
 
     if (encoding == "UTF-8") {
         std::string detected_encoding = detect_encoding(content);
@@ -182,6 +205,52 @@ std::string read_file_as_utf8(const fs::path& file_path) {
     return utf8_content;
 }
 
+std::string read_tex_file_with_includes(const fs::path& file_path, std::set<fs::path>& included_files, bool is_main_file = false) {
+    if (included_files.count(file_path)) {
+        return "";
+    }
+    included_files.insert(file_path);
+
+    std::string content = read_file_as_utf8(file_path);
+    if (content.empty()) {
+        return "";
+    }
+
+    if (!is_main_file) {
+        content = std::regex_replace(content, std::regex(R"(\\begin\{document\})"), "");
+        content = std::regex_replace(content, std::regex(R"(\\end\{document\})"), "");
+    }
+
+    std::regex include_regex(R"(\\(input|include)\{([^}]+)\})");
+    std::smatch match;
+    std::string processed_content;
+    std::string::const_iterator search_start(content.cbegin());
+    while (std::regex_search(search_start, content.cend(), match, include_regex)) {
+        processed_content += match.prefix().str();
+
+        std::string command = match[1].str();
+        std::string filename = match[2].str();
+
+        fs::path included_file_path = file_path.parent_path() / filename;
+        if (!included_file_path.has_extension()) {
+            included_file_path += ".tex";
+        }
+        if (!fs::exists(included_file_path)) {
+            std::cerr << "Included file not found: " << included_file_path << "\n";
+            processed_content += match.str(); 
+        } else {
+            std::string included_content = read_tex_file_with_includes(included_file_path, included_files);
+            processed_content += included_content;
+        }
+
+        search_start = match.suffix().first;
+    }
+    processed_content += std::string(search_start, content.cend());
+
+    return processed_content;
+}
+
+
 int main(int argc, char* argv[]) {
     if (argc < 2) {
         std::cerr << "Usage: ./parser <input_directory>\n";
@@ -198,12 +267,9 @@ int main(int argc, char* argv[]) {
     fs::path outputDir = "json_output";
     fs::create_directories(outputDir);
 
-	std::vector<std::string> fs_paths;	
-
     for (const auto& arxiv_dir_entry : fs::directory_iterator(inputPath)) {
         if (arxiv_dir_entry.is_directory()) {
             fs::path arxiv_dir = arxiv_dir_entry.path();
-			fs_paths.push_back(arxiv_dir_entry.path());
             std::cout << "Processing arXiv directory: " << arxiv_dir << "\n";
 
             std::vector<fs::path> tex_files;
@@ -214,17 +280,17 @@ int main(int argc, char* argv[]) {
                 continue;
             }
 
-            std::string combined_input;
-            for (const auto& tex_file : tex_files) {
-                std::cout << "Including file: " << tex_file << "\n";
-                std::string content = read_file_as_utf8(tex_file);
-                if (content.empty()) {
-                    std::cerr << "Could not read the file: " << tex_file << "\n";
-                    continue;
-                }
-                combined_input += content;
-                combined_input += "\n"; 
+            fs::path main_tex_file = find_main_tex_file(tex_files);
+
+            if (main_tex_file.empty()) {
+                std::cerr << "No main .tex file found in directory: " << arxiv_dir << "\n";
+                continue;
             }
+
+            std::cout << "Main .tex file: " << main_tex_file << "\n";
+
+            std::set<fs::path> included_files;
+            std::string combined_input = read_tex_file_with_includes(main_tex_file, included_files, true);
 
             if (combined_input.empty()) {
                 std::cerr << "No valid content to parse for directory: " << arxiv_dir << "\n";
@@ -238,9 +304,9 @@ int main(int argc, char* argv[]) {
                 std::shared_ptr<AST> ast = parser.parseDocument();
                 std::cout << "Printing AST structure for arXiv directory: " << arxiv_dir << "\n";
                 ast->print();
-
-                FSM fsm;
-                nlohmann::json jsonDocument = fsm.chunkDocumentToJson(ast->root);
+                
+                std::shared_ptr<FSM> fsm = std::make_shared<FSM>();  
+                nlohmann::json jsonDocument = fsm->chunkDocumentToJson(ast->root);
 
                 fs::path relativeDir = fs::relative(arxiv_dir, inputPath);
                 std::string jsonFileName = make_safe_filename(relativeDir) + ".json";
@@ -251,17 +317,21 @@ int main(int argc, char* argv[]) {
                     jsonFile << jsonDocument.dump(4);
                     jsonFile.close();
                     std::cout << "Document successfully written to " << jsonFilePath << "\n";
-					fs_paths.push_back(jsonFilePath);
                 } else {
                     std::cerr << "Error opening file for writing JSON output: " << jsonFilePath << "\n";
                 }
+
+				std::string dotFileName = make_safe_filename(relativeDir) + ".dot";
+                fs::path dotFilePath = outputDir / dotFileName;
+                fsm->getDAG().generateDOT(dotFilePath.string());
+				std::cout << "DAG structure successfully written to " << dotFilePath << "\n";
+
             } catch (const std::exception& e) {
                 std::cerr << "Error processing arXiv directory " << arxiv_dir << ": " << e.what() << "\n";
                 continue;
             }
         }
     }
-    for (const auto& path : fs_paths) std::cout << "PATH " << path << std::endl;
-	return 0;
+    return 0;
 }
 

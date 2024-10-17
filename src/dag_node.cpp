@@ -1,40 +1,85 @@
 #include "dag_node.h"
-#include "ast.h"
-#include <iostream>
-#include <fstream>
 
-// Constructor initializes the DAG node with a unique identifier
-DAGNode::DAGNode(const std::string& id_) : id(id_) {}
+DAGNode::DAGNode(const std::string& id_) : id(id_), nodeType(NodeType::Author) {}
 
-// Adds a parent DAG node to this node
-void DAGNode::addParent(const std::shared_ptr<DAGNode>& parent) {
-    if (parent) {
-        parents.push_back(parent);
-    } else {
-        std::cerr << "Warning: Attempted to add a null parent to DAGNode \"" << id << "\"\n";
-    }
-}
+DAGNode::DAGNode(const std::string& id_, NodeType type_) : id(id_), nodeType(type_) {}
 
-// Adds a child DAG node to this node
 void DAGNode::addChild(const std::shared_ptr<DAGNode>& child) {
-    if (child) {
-        children.push_back(child);
-    } else {
-        std::cerr << "Warning: Attempted to add a null child to DAGNode \"" << id << "\"\n";
-    }
+    children.push_back(child);
 }
 
-// Getter for id
+void DAGNode::addParent(const std::shared_ptr<DAGNode>& parent) {
+    parents.push_back(parent);
+}
+
+
 std::string DAGNode::getId() const {
     return id;
 }
 
-// Getter for children
 const std::vector<std::shared_ptr<DAGNode>>& DAGNode::getChildren() const {
     return children;
 }
 
-// Generates a DOT file representing the DAG
+void DAGNode::setASTNode(const std::shared_ptr<ASTNode>& astNode_) {
+    astNode = astNode_;
+}
+
+void DAG::addNode(const std::shared_ptr<DAGNode>& node) {
+    if (node) {
+        nodes[node->getId()] = node;
+    }
+}
+
+std::shared_ptr<DAGNode> DAG::getOrCreateNode(const std::string& id, NodeType type) {
+    auto it = nodes.find(id);
+    if (it != nodes.end() && it->second) {  
+        return it->second;
+    }
+
+    auto newNode = std::make_shared<DAGNode>(id, type);
+    nodes[id] = newNode;
+    return newNode;
+}
+
+std::shared_ptr<DAGNode> DAG::getNode(const std::string& id) const {
+    auto it = nodes.find(id);
+    if (it != nodes.end() && it->second) {  
+        return it->second;
+    }
+    return nullptr; 
+}
+
+
+void DAG::addAuthorNode(const std::string& authorName) {
+    auto authorNode = std::make_shared<DAGNode>(authorName, NodeType::Author);
+    nodes[authorName] = authorNode;
+}
+
+void DAG::addAffiliationNode(const std::string& affiliationName) {
+    auto affiliationNode = std::make_shared<DAGNode>(affiliationName, NodeType::Affiliation);
+    nodes[affiliationName] = affiliationNode;
+}
+
+void DAG::linkAuthorToAffiliation(const std::string& authorName, const std::string& affiliationName) {
+    auto authorNode = getNode(authorName);  
+    auto affiliationNode = getNode(affiliationName);  
+
+    if (authorNode && affiliationNode) {
+        authorNode->addChild(affiliationNode);
+        affiliationNode->addParent(authorNode);
+    } else {
+        std::cerr << "Error: Unable to link author to affiliation. One of the nodes does not exist.\n";
+        if (!authorNode) {
+            std::cerr << "Missing author node: " << authorName << "\n";
+        }
+        if (!affiliationNode) {
+            std::cerr << "Missing affiliation node: " << affiliationName << "\n";
+        }
+    }
+}
+
+
 void DAG::generateDOT(const std::string& filename) const {
     std::ofstream file(filename);
     if (!file.is_open()) {
@@ -45,7 +90,6 @@ void DAG::generateDOT(const std::string& filename) const {
     file << "digraph DAG {\n";
     file << "    node [shape=ellipse, style=filled, color=lightgreen];\n";
 
-    // Assign unique integer IDs to DAGNodes
     std::unordered_map<std::shared_ptr<DAGNode>, int> nodeIds;
     int nodeId = 0;
 
@@ -55,8 +99,7 @@ void DAG::generateDOT(const std::string& filename) const {
             nodeIds[dagNode] = nodeId++;
             std::string label = dagNode->getId();
 
-            // Optionally, include ASTNode content
-            if (auto astPtr = dagNode->astNode.lock()) {
+            if (auto astPtr = dagNode->getASTNode().lock()) {
                 label += "\\nAST Node: " + astPtr->getContent();
             }
 
@@ -64,7 +107,6 @@ void DAG::generateDOT(const std::string& filename) const {
         }
     }
 
-    // Add edges
     for (const auto& pair : nodes) {
         const auto& dagNode = pair.second;
         if (dagNode) {
