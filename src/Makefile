@@ -7,7 +7,7 @@ INCLUDES = -I./include \
            -I/opt/homebrew/opt/uchardet/include \
            -I/opt/homebrew/Cellar/googletest/1.15.2/include
 
-SRCS = lexer.cpp parser.cpp ast.cpp dag_node.cpp fsm.cpp symbol_table.cpp ner.cpp
+SRCS = lexer.cpp parser.cpp ast.cpp dag_node.cpp fsm.cpp symbol_table.cpp ner.cpp crf_model.cpp
 TEST_SRCS = tests/test_fsm.cpp
 
 OBJS = ${SRCS:.cpp=.o}

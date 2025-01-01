@@ -26,9 +26,11 @@ void Parser::advance() {
         default:
             break;
     }
+/*
     std::cout << "Advanced to token: Type=" << static_cast<int>(currentToken.type)
               << ", Value=\"" << currentToken.value << "\""
               << ", State=" << static_cast<int>(currentState()) << "\n";    
+*/
 }
 
 ParserState Parser::currentState() const {
@@ -211,4 +213,3 @@ std::vector<std::string> Parser::chunkDocument() {
     auto ast = parseDocument(); 
     return fsm.chunkDocument(ast->root);
 }
-

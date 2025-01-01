@@ -4,46 +4,32 @@
 #include <string>
 #include <vector>
 #include <unordered_map>
-#include <memory>
 #include <regex>
+#include <memory>
 #include "dag_node.h"
 #include "ast.h"
-
+#include "lexer.h"
+#include "crf_model.h"
 
 class NER {
 public:
     NER();
+    void initializeCRFModel();
 
-    void parseLaTeX(const std::string& content, DAG& dag, const std::shared_ptr<ASTNode>& astNode);
+    void annotateWithCRF(const std::vector<Token>& tokens, DAG& dag, const std::shared_ptr<ASTNode>& astNode);
 
-    const std::unordered_map<std::string, std::vector<std::string>>& getEntities() const;
-
-    std::string cleanText(const std::string& input) const;
-
-    const std::regex& getAuthorPattern() const { return authorPattern; }
-    const std::regex& getAffiliationPattern() const { return affiliationPattern; }
-    const std::regex& getAffilPattern() const { return affilPattern; }
-    const std::regex& getInstPattern() const { return instPattern; }
-    const std::regex& getInstitutePattern() const { return institutePattern; }
-
+    const std::unordered_map<std::string, std::vector<std::string>>& getEntities() const { return entities; }
     std::vector<std::string> matchRegex(const std::string& content, const std::regex& pattern) const;
+    const std::regex& getAffiliationPattern() const;
+
 
 private:
-    void extractAuthors(const std::string& content, DAG& dag, const std::shared_ptr<ASTNode>& astNode);
-    void extractAffiliations(const std::string& content, DAG& dag, const std::shared_ptr<ASTNode>& astNode);
-    void linkAuthorsToAffiliations(DAG& dag);
-    void mapAuthorsToAffiliations(DAG& dag);  
+    std::vector<std::vector<std::string>> extractFeatures(const std::vector<Token>& tokens) const;
 
-    std::unordered_map<std::string, std::vector<std::string>> entities; 
-    std::unordered_map<std::string, std::vector<std::string>> authorInstMap;
-    std::unordered_map<std::string, std::string> instAffilMap; 
+    std::unordered_map<std::string, std::vector<std::string>> entities;
 
-    std::regex authorPattern;
-    std::regex affiliationPattern;
-    std::regex affilPattern;        
-    std::regex instPattern;
-    std::regex institutePattern;    
+    std::unique_ptr<CRFModel> crfModel;
 };
 
-#endif 
+#endif
 

@@ -267,6 +267,10 @@ int main(int argc, char* argv[]) {
     fs::path outputDir = "json_output";
     fs::create_directories(outputDir);
 
+    NER ner;
+    ner.initializeCRFModel();  
+
+
     for (const auto& arxiv_dir_entry : fs::directory_iterator(inputPath)) {
         if (arxiv_dir_entry.is_directory()) {
             fs::path arxiv_dir = arxiv_dir_entry.path();
@@ -298,6 +302,7 @@ int main(int argc, char* argv[]) {
             }
 
             Lexer lexer(combined_input);
+            //DAG dag;
             Parser parser(lexer);
 
             try {
@@ -322,10 +327,21 @@ int main(int argc, char* argv[]) {
                 }
 
 				std::string dotFileName = make_safe_filename(relativeDir) + ".dot";
+                std::string methodFileName = make_safe_filename(relativeDir) + "method.dot";
+                std::string semanticMapFileName = make_safe_filename(relativeDir) + "semantic.dot";
+                std::string knowledgeGraphFileName = make_safe_filename(relativeDir) + "know.dot";
                 fs::path dotFilePath = outputDir / dotFileName;
+                fs::path dotMethodFilePath = outputDir / methodFileName;
+                fs::path dotSemanticMapFilePath = outputDir / semanticMapFileName;
+                fs::path dotKnowledgeGraphFilePath = outputDir / knowledgeGraphFileName;
                 fsm->getDAG().generateDOT(dotFilePath.string());
 				std::cout << "DAG structure successfully written to " << dotFilePath << "\n";
-
+                fsm->getDAG().generateMethodologyFlow(dotMethodFilePath.string());
+                std::cout << "DAG methodology flow structure successfully written to " << dotMethodFilePath << "\n";
+                fsm->getDAG().generateSemanticMap(dotSemanticMapFilePath.string());
+                std::cout << "DAG Semantic map structure successfully written to " << dotSemanticMapFilePath << "\n";
+                fsm->getDAG().exportToKnowledgeGraph(dotKnowledgeGraphFilePath.string());
+                std::cout << "DAG Knowledge graph structure successfully written to " << dotKnowledgeGraphFilePath << "\n";
             } catch (const std::exception& e) {
                 std::cerr << "Error processing arXiv directory " << arxiv_dir << ": " << e.what() << "\n";
                 continue;

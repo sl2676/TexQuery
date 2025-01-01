@@ -7,24 +7,27 @@
 #include <cctype>
 #include <stdexcept>
 
+
 enum class TokenType {
-	Command, 
-	BeginEnvironment,
-	EndEnvironment,
-	Text,
-	OpenBrace,
+	Command,            
+	BeginEnvironment,   
+	EndEnvironment,     
+	Text,               
+	OpenBrace,          
 	CloseBrace,
 	CloseBracket,
-	MathShift,
-	Comment,
-	EOFToken
+	MathShift,          
+	Comment,           
+	EOFToken            
 };
+
 
 struct Token {
 	TokenType type;
 	std::string value;
 	std::size_t position;
 };
+
 
 class Lexer {
 public:
@@ -44,7 +47,8 @@ private:
 	void skipComment();
 
 	Token lexCommand();
-	Token lexText();
+	
+    Token lexText();
 	void expect(char expectedChar);
 };
 

@@ -1,29 +1,86 @@
 #include "ast.h"
 
-
 ASTNode::ASTNode(NodeType type, const std::string& content, size_t position, ParserState state)  
-    : type(type), content(content), position(position), state(state) {}
+    : type(type), content(content), position(position), state(state) {
+    try {
+        validateNode();
+    } catch (const std::exception& e) {
+        std::cerr << "Node validation error: " << e.what() << std::endl;
+    }
+}
 
+void ASTNode::validateNode() {
+    if (content.empty() && type != NodeType::Document) {
+        throw std::runtime_error("Empty content for non-document node");
+    }
+
+    switch (type) {
+        case NodeType::Math:
+            validateMathContent();
+            break;
+        case NodeType::Section:
+            validateSectionContent();
+            break;
+        case NodeType::Command:
+            validateCommandContent();
+            break;
+        default:
+            break;
+    }
+}
+
+void ASTNode::validateMathContent() {
+    if (content.find("$") == std::string::npos && 
+        content.find("\\begin{equation}") == std::string::npos) {
+        throw std::runtime_error("Invalid math content format");
+    }
+}
+
+void ASTNode::validateSectionContent() {
+    if (content.find("\\section") == std::string::npos && 
+        content.find("\\subsection") == std::string::npos) {
+        throw std::runtime_error("Invalid section content format");
+    }
+}
+
+void ASTNode::validateCommandContent() {
+    if (content.empty() || content[0] != '\\') {
+        throw std::runtime_error("Invalid command format");
+    }
+}
 
 std::string ASTNode::getContent() const {
     return content;
 }
 
+ASTNode::NodeType ASTNode::getType() const {
+    return type;
+}
+
+ParserState ASTNode::getState() const {
+    return state;
+}
+
+size_t ASTNode::getPosition() const {
+    return position;
+}
+
 std::string ASTNode::getNodeTypeName(ASTNode::NodeType type) const {
-    switch (type) {
-        case ASTNode::NodeType::Command:
-            return "Command";
-        case ASTNode::NodeType::Text:
-            return "Text";
-        case ASTNode::NodeType::Section:
-            return "Section";
-        case ASTNode::NodeType::Math:
-            return "Math";
-        case ASTNode::NodeType::Document:
-            return "Document";
-        default:
-            return "Unknown";
-    }
+    static const std::unordered_map<NodeType, std::string> nodeTypeNames = {
+        {NodeType::Command, "Command"},
+        {NodeType::Text, "Text"},
+        {NodeType::Section, "Section"},
+        {NodeType::Math, "Math"},
+        {NodeType::Document, "Document"},
+        {NodeType::Environment, "Environment"},
+        {NodeType::Author, "Author"},
+        {NodeType::Affiliation, "Affiliation"},
+        {NodeType::Abstract, "Abstract"},
+        {NodeType::Bibliography, "Bibliography"}
+    };
+
+    auto it = nodeTypeNames.find(type);
+    return it != nodeTypeNames.end() ? it->second : "Unknown";
 }
 
 const std::vector<std::shared_ptr<ASTNode>>& ASTNode::getChildren() const {
@@ -31,23 +88,76 @@ const std::vector<std::shared_ptr<ASTNode>>& ASTNode::getChildren() const {
 }
 
 void ASTNode::addChild(const std::shared_ptr<ASTNode>& child) {
-    if (child) {
+    try {
+        if (!child) {
+            throw std::runtime_error("Attempted to add null child to node");
+        }
+
+        if (!isValidChild(child)) {
+            throw std::runtime_error("Invalid child type for current node");
+        }
+
         children.push_back(child);
-    } else {
-        std::cerr << "Warning: Attempted to add a null child to node \"" << content << "\"\n";
+    } catch (const std::exception& e) {
+        std::cerr << "Error adding child to node \"" << content << "\": " 
+                  << e.what() << std::endl;
     }
 }
 
+bool ASTNode::isValidChild(const std::shared_ptr<ASTNode>& child) const {
+    static const std::unordered_map<NodeType, std::set<NodeType>> validChildren = {
+        {NodeType::Document, {
+            NodeType::Section, 
+            NodeType::Command, 
+            NodeType::Text, 
+            NodeType::Environment, 
+            NodeType::Author,
+            NodeType::Affiliation,  
+            NodeType::Abstract,     
+            NodeType::Bibliography, 
+            NodeType::Math,        
+            NodeType::Label,       
+            NodeType::Reference,   
+            NodeType::EnvironmentContent 
+        }},
+        {NodeType::Section, {NodeType::Text, NodeType::Command, NodeType::Math}},
+        {NodeType::Math, {NodeType::Text}},
+        {NodeType::Environment, {NodeType::Text, NodeType::Command, NodeType::Math}},
+        {NodeType::Author, {NodeType::Affiliation, NodeType::Text}}
+    };
+
+    auto it = validChildren.find(type);
+    if (it != validChildren.end()) {
+        if (it->second.find(child->getType()) == it->second.end()) {
+            std::cerr << "Invalid child type: " << getNodeTypeName(child->getType()) 
+                      << " for parent type: " << getNodeTypeName(type) << std::endl;
+        }
+        return it->second.find(child->getType()) != it->second.end();
+    }
+    return true; 
+}
+
 void ASTNode::addReference(const std::shared_ptr<ASTNode>& node) {
-    if (node) {
+    try {
+        if (!node) {
+            throw std::runtime_error("Attempted to add null reference");
+        }
         references.push_back(node);
-    } else {
-        std::cerr << "Warning: Attempted to add a null reference to node \"" << content << "\"\n";
+    } catch (const std::exception& e) {
+        std::cerr << "Error adding reference to node \"" << content << "\": " 
+                  << e.what() << std::endl;
     }
 }
 
 void ASTNode::setDAGNode(const std::shared_ptr<DAGNode>& dagNode_) {
-    dagNode = dagNode_;
+    try {
+        if (!dagNode_) {
+            throw std::runtime_error("Attempted to set null DAG node");
+        }
+        dagNode = dagNode_;
+    } catch (const std::exception& e) {
+        std::cerr << "Error setting DAG node: " << e.what() << std::endl;
+    }
 }
 
 std::shared_ptr<DAGNode> ASTNode::getDAGNode() const {
@@ -109,12 +219,20 @@ void ASTNode::printHelper(int indent, std::unordered_set<const ASTNode*>& visite
 }
 
 AST::AST() {
-    root = std::make_shared<ASTNode>(ASTNode::NodeType::Document, "Document Root", 0, ParserState::DefaultState);
+    try {
+        root = std::make_shared<ASTNode>(ASTNode::NodeType::Document, "Document Root", 
+                                       0, ParserState::DefaultState);
+    } catch (const std::exception& e) {
+        std::cerr << "Error creating AST root node: " << e.what() << std::endl;
+        throw;
+    }
 }
 
 void AST::print() const {
     if (root) {
         root->print();
+    } else {
+        std::cerr << "Warning: Attempting to print empty AST" << std::endl;
     }
 }
 
@@ -173,7 +291,7 @@ std::vector<std::string> AST::chunk() const {
             for (const auto& childDagNode : dagNode->getChildren()) {
 				if (auto linkedAstNode = childDagNode->getASTNode().lock()) {
 					traverse(linkedAstNode, currentChunk);
-				}	
+				}
 			}
         }
     };
@@ -187,4 +305,3 @@ std::vector<std::string> AST::chunk() const {
 
     return chunks;
 }
-
