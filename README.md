@@ -1,4 +1,4 @@
-# TexQuery ~ LaTeX Parser
+# TexQuery ~ LaTeX Parser ~ SIGCHI 2025 CHI Conference
 
 ## Introduction
 
